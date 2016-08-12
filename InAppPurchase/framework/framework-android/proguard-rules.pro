@@ -1,0 +1,3 @@
+-keep class org.moe.frameworks.inapppurchase.android.** { *; }
+-keep class org.moe.frameworks.inapppurchase.android.util.** { *; }
+-keep class com.android.vending.billing.** { *; }

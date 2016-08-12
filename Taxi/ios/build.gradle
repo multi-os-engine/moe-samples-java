@@ -1,0 +1,31 @@
+buildscript {
+    repositories {
+        mavenCentral()
+
+        maven {
+            url uri(System.getenv("MOE_HOME") + "/gradle")
+        }
+    }
+    dependencies {
+        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+    }
+}
+
+apply plugin: 'moe'
+
+dependencies {
+    compile project(':common')
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+moe {
+    xcode {
+//        generateProject = false
+        mainTarget 'Taxi'
+        bundleID 'org.moe.Taxi'
+        packageName 'org.moe.samples.taxi.ios'
+        appIconsSource 'AppIcon'
+        launchScreenFilePath 'src/main/resources/LaunchScreen.xib'
+        locationWhenInUseUsageDescription 'We do our best to preserve your battery life'
+    }
+}

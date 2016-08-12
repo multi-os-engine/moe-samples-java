@@ -1,0 +1,65 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+
+        maven {
+            url uri(System.getenv("MOE_HOME") + "/gradle")
+        }
+    }
+    dependencies {
+        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+    }
+}
+
+apply plugin: 'moe'
+
+configurations { natives }
+
+// Extracts native libs (*.a) from the native-ios.jar and places them
+// under build/libs/ios/.
+task copyNatives << {
+    file("xcode/native/ios/").mkdirs();
+    configurations.natives.files.each { jar ->
+        def outputDir = null
+        if (jar.name.endsWith("natives-ios.jar")) outputDir = file("xcode/native/ios")
+        if (outputDir != null) {
+            FileCollection fileCollection = zipTree(jar)
+            for (File libFile : fileCollection) {
+                if (libFile.getAbsolutePath().endsWith(".a") && !libFile.getAbsolutePath().contains("/tvos/")) {
+                    copy {
+                        from libFile.getAbsolutePath()
+                        into outputDir
+                    }
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+
+    compile project(":common")
+
+    compile "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
+    natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
+}
+
+moe {
+    xcode {
+        mainTarget 'LibGDXMissileCommand'
+        companyIdentifier 'org.moe'
+        packageName 'org.moe.samples.LibGDXMissileCommand.ios'
+        //infoPlistPath '' // Absolute path to Info.plist file. If this arg is not set new Info.plist will be generated.
+        deploymentTarget '9.0'
+        xcodeProjectDirPath 'xcode'
+        generateProject false
+
+    }
+}
+
+moeMainReleaseIphoneosXcodeBuild.dependsOn copyNatives
+moeMainDebugIphoneosXcodeBuild.dependsOn copyNatives
+moeMainReleaseIphonesimulatorXcodeBuild.dependsOn copyNatives
+moeMainDebugIphonesimulatorXcodeBuild.dependsOn copyNatives

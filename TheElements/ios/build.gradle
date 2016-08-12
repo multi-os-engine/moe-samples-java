@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+
+        maven {
+            url uri(System.getenv("MOE_HOME") + "/gradle")
+        }
+    }
+    dependencies {
+        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+    }
+}
+
+apply plugin: 'moe'
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+    compile project(':common')
+}
+
+moe {
+    xcode {
+        mainTarget 'TheElements'
+        packageName 'org.moe.samples.elements.ios'
+    }
+}

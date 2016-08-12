@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+
+        maven {
+            url uri(System.getenv("MOE_HOME") + "/gradle")
+        }
+    }
+    dependencies {
+        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+    }
+}
+
+apply plugin: 'moe'
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+    compile project(':common')
+}
+
+moe {
+    xcode {
+        mainTarget 'Calculator'
+        packageName 'org.moe.samples.calculator.ios'
+        launchScreenFilePath 'src/main/resources/LaunchScreen.xib'
+        appIconsSource 'AppIcon'
+        applicationExitOnSuspend false
+        bundleShortVersionString '1.0'
+        bundleVersion '1'
+        deploymentTarget '9.0'
+    }
+}

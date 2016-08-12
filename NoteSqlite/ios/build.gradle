@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+
+        maven {
+            url uri(System.getenv("MOE_HOME") + "/gradle")
+        }
+    }
+    dependencies {
+        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+    }
+}
+
+apply plugin: 'moe'
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+    compile (project(':lib')) {
+        transitive=false
+    }
+}
+
+moe {
+    xcode {
+        mainTarget 'NoteSqlite'
+        companyIdentifier 'org.moe'
+        packageName 'org.moe.ios'
+        appIconsSource 'AppIcon'
+        //infoPlistPath '' // Absolute path to Info.plist file. If this arg is not set new Info.plist will be generated.
+        mainUIStoryboardPath 'src/main/resources/MainUI.storyboard'
+        applicationExitOnSuspend false
+        bundleShortVersionString '1.0'
+        bundleVersion '1'
+        deploymentTarget '9.0'
+    }
+}

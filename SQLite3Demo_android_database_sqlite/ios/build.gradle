@@ -1,0 +1,40 @@
+buildscript {
+    repositories {
+        mavenCentral()
+
+        maven {
+            url uri(System.getenv("MOE_HOME") + "/gradle")
+        }
+    }
+    dependencies {
+        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+    }
+}
+
+apply plugin: 'moe'
+
+dependencies {
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+moe {
+    sourceSets {
+        main {
+            java.srcDir 'src'
+            java.srcDir '../common/src'
+        }
+    }
+    xcode {
+        mainTarget 'SQLite3Demo_android_database_sqlite'
+        packageName 'org.moe.ios'
+        applicationExitOnSuspend false
+        bundleShortVersionString '1.0'
+        bundleVersion '1'
+        deploymentTarget '9.0'
+
+        supportedInterfaceOrientations = ['UIInterfaceOrientationPortrait',
+                                        'UIInterfaceOrientationLandscapeLeft',
+                                        'UIInterfaceOrientationLandscapeRight']
+    }
+}
+
