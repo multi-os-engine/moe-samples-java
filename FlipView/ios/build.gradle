@@ -1,17 +1,11 @@
 buildscript {
     repositories {
-        mavenCentral()
         jcenter()
-
-        maven {
-            url uri(System.getenv("MOE_HOME") + "/gradle")
-        }
     }
     dependencies {
-        classpath 'org.moe.gradle:moeGradlePlugin:1.1.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.0.+'
     }
 }
-
 apply plugin: 'moe'
 
 dependencies {

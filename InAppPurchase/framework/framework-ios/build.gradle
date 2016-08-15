@@ -1,5 +1,13 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.0.+'
+    }
+}
 
-apply plugin: 'java'
+apply plugin: 'moe-sdk'
 
 compileJava {
     targetCompatibility = 1.7
@@ -8,6 +16,6 @@ compileJava {
 
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
-    compile fileTree(dir: System.getenv("MOE_HOME") + "/sdk", include: '*.jar')
+    compile files(moe.platformJar)
     compile project(':framework:framework-common')
 }
