@@ -1,0 +1,68 @@
+/*
+Copyright (C) 2016 Migeran
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+/************************/
+/** Build Script Setup **/
+/************************/
+
+buildscript {
+    // Add central and local Maven repos
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+    dependencies {
+        // MOE plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.1.+'
+    }
+}
+
+/*******************/
+/** Project Setup **/
+/*******************/
+
+// Apply plugins
+apply plugin: 'moe'
+
+// Set source and target to Java 8
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+// Set maven repository
+
+// Exclude all files from Gradle's test runner
+test { exclude '**' }
+
+// Setup MOE
+moe {
+    xcode.mainTarget = 'FastJNI'
+    xcode.testTarget = 'FastJNI-Test'
+    xcode.packageName = 'org.moe.moe.fastjni'
+    xcode.launchScreenFilePath = 'src/main/resources/LaunchScreen.xib'
+    xcode.bundleID = 'org.moe.FastJNI'
+    xcode.generateProject = false
+    xcode.xcodeProjectDirPath = 'xcode'
+}
+
+// Set dependencies
+dependencies {
+    // Compile with 'jar' files in the project's 'lib' directory
+    compile fileTree(dir: 'lib', include: '*.jar')
+
+}
+
+
+
