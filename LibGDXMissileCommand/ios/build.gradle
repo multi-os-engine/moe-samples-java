@@ -39,6 +39,7 @@ dependencies {
 
     compile "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
     natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
+    natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
 }
 
 moe {
