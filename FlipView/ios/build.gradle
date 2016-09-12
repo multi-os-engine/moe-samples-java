@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.1.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
     }
 }
 apply plugin: 'moe'
