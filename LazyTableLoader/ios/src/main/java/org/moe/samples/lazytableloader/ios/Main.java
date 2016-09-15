@@ -29,7 +29,7 @@
 
 package org.moe.samples.lazytableloader.ios;
 
-import ios.uikit.c.UIKit;
+import apple.uikit.c.UIKit;
 
 import org.moe.natj.general.ann.RegisterOnStartup;
 

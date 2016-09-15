@@ -13,11 +13,11 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.notetaking.common.Data;
 
-import ios.foundation.NSArray;
-import ios.foundation.NSBundle;
-import ios.foundation.NSCoder;
-import ios.uikit.UITextView;
-import ios.uikit.UIViewController;
+import apple.foundation.NSArray;
+import apple.foundation.NSBundle;
+import apple.foundation.NSCoder;
+import apple.uikit.UITextView;
+import apple.uikit.UIViewController;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("DetailViewController")

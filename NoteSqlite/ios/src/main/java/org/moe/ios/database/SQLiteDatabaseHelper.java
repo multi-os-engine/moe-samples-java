@@ -30,10 +30,10 @@
 
 package org.moe.ios.database;
 
-import ios.foundation.NSArray;
-import ios.foundation.c.Foundation;
-import ios.foundation.enums.NSSearchPathDirectory;
-import ios.foundation.enums.NSSearchPathDomainMask;
+import apple.foundation.NSArray;
+import apple.foundation.c.Foundation;
+import apple.foundation.enums.NSSearchPathDirectory;
+import apple.foundation.enums.NSSearchPathDomainMask;
 
 public class SQLiteDatabaseHelper extends com.example.database.SQLiteDatabaseHelper {
 

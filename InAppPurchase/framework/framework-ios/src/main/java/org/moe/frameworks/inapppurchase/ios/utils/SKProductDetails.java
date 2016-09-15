@@ -30,10 +30,10 @@ package org.moe.frameworks.inapppurchase.ios.utils;
 
 import org.moe.frameworks.inapppurchase.CommonProductDetails;
 
-import ios.foundation.NSDecimalNumber;
-import ios.foundation.NSNumberFormatter;
-import ios.foundation.enums.NSNumberFormatterBehavior;
-import ios.foundation.enums.NSNumberFormatterStyle;
+import apple.foundation.NSDecimalNumber;
+import apple.foundation.NSNumberFormatter;
+import apple.foundation.enums.NSNumberFormatterBehavior;
+import apple.foundation.enums.NSNumberFormatterStyle;
 
 public class SKProductDetails extends CommonProductDetails {
 

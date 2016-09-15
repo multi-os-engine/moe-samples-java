@@ -29,19 +29,19 @@
 
 package org.moe.wordsearch;
 
-import ios.NSObject;
-import ios.coregraphics.struct.CGRect;
-import ios.foundation.NSDictionary;
-import ios.uikit.UIApplication;
-import ios.uikit.UIColor;
-import ios.uikit.UIImage;
-import ios.uikit.UINavigationController;
-import ios.uikit.UIScreen;
-import ios.uikit.UIViewController;
-import ios.uikit.UIWindow;
-import ios.uikit.c.UIKit;
-import ios.uikit.enums.UIBarStyle;
-import ios.uikit.protocol.UIApplicationDelegate;
+import apple.NSObject;
+import apple.coregraphics.struct.CGRect;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIApplication;
+import apple.uikit.UIColor;
+import apple.uikit.UIImage;
+import apple.uikit.UINavigationController;
+import apple.uikit.UIScreen;
+import apple.uikit.UIViewController;
+import apple.uikit.UIWindow;
+import apple.uikit.c.UIKit;
+import apple.uikit.enums.UIBarStyle;
+import apple.uikit.protocol.UIApplicationDelegate;
 
 import org.moe.wordsearch.ui.WordSearchController;
 import org.moe.natj.general.NatJ;

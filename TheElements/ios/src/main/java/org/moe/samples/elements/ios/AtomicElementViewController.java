@@ -40,21 +40,21 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.elements.common.AtomicElement;
 
-import ios.coregraphics.c.CoreGraphics;
-import ios.coregraphics.struct.CGRect;
-import ios.coregraphics.struct.CGSize;
-import ios.foundation.NSNumber;
-import ios.foundation.NSString;
-import ios.foundation.c.Foundation;
-import ios.uikit.UIBarButtonItem;
-import ios.uikit.UIButton;
-import ios.uikit.UIImage;
-import ios.uikit.UIImageView;
-import ios.uikit.UIView;
-import ios.uikit.UIViewController;
-import ios.uikit.enums.UIControlEvents;
-import ios.uikit.enums.UIControlState;
-import ios.uikit.enums.UIViewAnimationTransition;
+import apple.coregraphics.c.CoreGraphics;
+import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
+import apple.foundation.NSNumber;
+import apple.foundation.NSString;
+import apple.foundation.c.Foundation;
+import apple.uikit.UIBarButtonItem;
+import apple.uikit.UIButton;
+import apple.uikit.UIImage;
+import apple.uikit.UIImageView;
+import apple.uikit.UIView;
+import apple.uikit.UIViewController;
+import apple.uikit.enums.UIControlEvents;
+import apple.uikit.enums.UIControlState;
+import apple.uikit.enums.UIViewAnimationTransition;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("AtomicElementViewController")

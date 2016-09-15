@@ -47,11 +47,11 @@ import org.moe.ios.IOSDBManagerFactory;
 
 import java.util.List;
 
-import ios.foundation.NSBundle;
-import ios.foundation.NSCoder;
-import ios.uikit.UITextField;
-import ios.uikit.UIViewController;
-import ios.uikit.protocol.UITextFieldDelegate;
+import apple.foundation.NSBundle;
+import apple.foundation.NSCoder;
+import apple.uikit.UITextField;
+import apple.uikit.UIViewController;
+import apple.uikit.protocol.UITextFieldDelegate;
 
 @Generated
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)

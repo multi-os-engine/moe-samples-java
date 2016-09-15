@@ -30,16 +30,16 @@
 
 package org.moe.ios;
 
-import ios.NSObject;
-import ios.foundation.NSDictionary;
-import ios.uikit.UIApplication;
-import ios.uikit.UINavigationController;
-import ios.uikit.UISplitViewController;
-import ios.uikit.UIViewController;
-import ios.uikit.UIWindow;
-import ios.uikit.c.UIKit;
-import ios.uikit.protocol.UIApplicationDelegate;
-import ios.uikit.protocol.UISplitViewControllerDelegate;
+import apple.NSObject;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIApplication;
+import apple.uikit.UINavigationController;
+import apple.uikit.UISplitViewController;
+import apple.uikit.UIViewController;
+import apple.uikit.UIWindow;
+import apple.uikit.c.UIKit;
+import apple.uikit.protocol.UIApplicationDelegate;
+import apple.uikit.protocol.UISplitViewControllerDelegate;
 
 import org.moe.ios.ui.DetailViewController;
 import org.moe.natj.general.NatJ;

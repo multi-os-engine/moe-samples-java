@@ -38,10 +38,10 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import ios.foundation.NSFileManager;
-import ios.foundation.NSURL;
-import ios.foundation.enums.NSSearchPathDirectory;
-import ios.foundation.enums.NSSearchPathDomainMask;
+import apple.foundation.NSFileManager;
+import apple.foundation.NSURL;
+import apple.foundation.enums.NSSearchPathDirectory;
+import apple.foundation.enums.NSSearchPathDomainMask;
 
 public class IOSDBManagerFactory extends AbstractDBManagerFactory {
 

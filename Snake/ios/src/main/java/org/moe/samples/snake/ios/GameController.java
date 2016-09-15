@@ -39,23 +39,23 @@ import org.moe.natj.general.ann.Owned;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.coregraphics.c.CoreGraphics;
-import ios.coregraphics.struct.CGRect;
-import ios.foundation.NSRunLoop;
-import ios.foundation.NSTimer;
-import ios.foundation.c.Foundation;
-import ios.uikit.UIBarButtonItem;
-import ios.uikit.UIButton;
-import ios.uikit.UIColor;
-import ios.uikit.UIImage;
-import ios.uikit.UIImageView;
-import ios.uikit.UIScreen;
-import ios.uikit.UIView;
-import ios.uikit.UIViewController;
-import ios.uikit.enums.UIBarButtonItemStyle;
-import ios.uikit.enums.UIControlEvents;
-import ios.uikit.enums.UIControlState;
-import ios.uikit.enums.UIInterfaceOrientation;
+import apple.coregraphics.c.CoreGraphics;
+import apple.coregraphics.struct.CGRect;
+import apple.foundation.NSRunLoop;
+import apple.foundation.NSTimer;
+import apple.foundation.c.Foundation;
+import apple.uikit.UIBarButtonItem;
+import apple.uikit.UIButton;
+import apple.uikit.UIColor;
+import apple.uikit.UIImage;
+import apple.uikit.UIImageView;
+import apple.uikit.UIScreen;
+import apple.uikit.UIView;
+import apple.uikit.UIViewController;
+import apple.uikit.enums.UIBarButtonItemStyle;
+import apple.uikit.enums.UIControlEvents;
+import apple.uikit.enums.UIControlState;
+import apple.uikit.enums.UIInterfaceOrientation;
 
 @ObjCClassName("GameController")
 public class GameController extends UIViewController {

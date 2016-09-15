@@ -43,12 +43,12 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.ann.Property;
 
-import ios.uikit.UIViewController;
-import ios.foundation.NSBundle;
-import ios.uikit.UITextView;
+import apple.uikit.UIViewController;
+import apple.foundation.NSBundle;
+import apple.uikit.UITextView;
 import java.lang.String;
 
-import ios.foundation.NSCoder;
+import apple.foundation.NSCoder;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("DetailViewController")

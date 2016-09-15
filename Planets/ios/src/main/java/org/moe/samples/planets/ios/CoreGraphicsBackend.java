@@ -33,11 +33,11 @@ import org.moe.natj.general.Pointer;
 import org.moe.samples.planets.common.Planet;
 import org.moe.samples.planets.common.Simulation;
 
-import ios.coregraphics.struct.CGPoint;
-import ios.coregraphics.struct.CGRect;
-import ios.uikit.UIBezierPath;
-import ios.uikit.UIColor;
-import ios.uikit.UIView;
+import apple.coregraphics.struct.CGPoint;
+import apple.coregraphics.struct.CGRect;
+import apple.uikit.UIBezierPath;
+import apple.uikit.UIColor;
+import apple.uikit.UIView;
 
 public class CoreGraphicsBackend extends UIView {
 

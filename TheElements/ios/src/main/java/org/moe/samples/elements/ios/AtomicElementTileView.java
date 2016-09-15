@@ -36,15 +36,15 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.elements.common.AtomicElement;
 
-import ios.coregraphics.c.CoreGraphics;
-import ios.coregraphics.struct.CGPoint;
-import ios.coregraphics.struct.CGRect;
-import ios.coregraphics.struct.CGSize;
-import ios.foundation.NSString;
-import ios.uikit.UIColor;
-import ios.uikit.UIFont;
-import ios.uikit.UIImage;
-import ios.uikit.UIView;
+import apple.coregraphics.c.CoreGraphics;
+import apple.coregraphics.struct.CGPoint;
+import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
+import apple.foundation.NSString;
+import apple.uikit.UIColor;
+import apple.uikit.UIFont;
+import apple.uikit.UIImage;
+import apple.uikit.UIView;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("AtomicElementTileView")

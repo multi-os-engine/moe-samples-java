@@ -31,8 +31,8 @@ package org.moe.samples.elements.ios;
 
 import org.moe.samples.elements.common.AtomicElement;
 
-import ios.foundation.NSIndexPath;
-import ios.uikit.UIImage;
+import apple.foundation.NSIndexPath;
+import apple.uikit.UIImage;
 
 public interface ElementsDataSource {
 

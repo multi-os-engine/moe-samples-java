@@ -13,10 +13,10 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.coregraphics.struct.CGRect;
-import ios.uikit.UILabel;
-import ios.uikit.UITableViewCell;
-import ios.uikit.UITextView;
+import apple.coregraphics.struct.CGRect;
+import apple.uikit.UILabel;
+import apple.uikit.UITableViewCell;
+import apple.uikit.UITextView;
 
 @Generated
 @Runtime(ObjCRuntime.class)

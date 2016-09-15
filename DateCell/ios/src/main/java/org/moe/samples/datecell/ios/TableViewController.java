@@ -39,19 +39,19 @@ import org.moe.natj.objc.ann.Selector;
 import java.util.HashMap;
 import java.util.Map;
 
-import ios.foundation.NSArray;
-import ios.foundation.NSDate;
-import ios.foundation.NSDateFormatter;
-import ios.foundation.NSIndexPath;
-import ios.foundation.enums.NSDateFormatterStyle;
-import ios.uikit.UIBarButtonItem;
-import ios.uikit.UIDatePicker;
-import ios.uikit.UITableView;
-import ios.uikit.UITableViewCell;
-import ios.uikit.UITableViewController;
-import ios.uikit.UIView;
-import ios.uikit.enums.UITableViewCellSelectionStyle;
-import ios.uikit.enums.UITableViewRowAnimation;
+import apple.foundation.NSArray;
+import apple.foundation.NSDate;
+import apple.foundation.NSDateFormatter;
+import apple.foundation.NSIndexPath;
+import apple.foundation.enums.NSDateFormatterStyle;
+import apple.uikit.UIBarButtonItem;
+import apple.uikit.UIDatePicker;
+import apple.uikit.UITableView;
+import apple.uikit.UITableViewCell;
+import apple.uikit.UITableViewController;
+import apple.uikit.UIView;
+import apple.uikit.enums.UITableViewCellSelectionStyle;
+import apple.uikit.enums.UITableViewRowAnimation;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("TableViewController")

@@ -7,16 +7,16 @@ import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.NSObject;
-import ios.foundation.NSDictionary;
-import ios.uikit.UIApplication;
-import ios.uikit.UINavigationController;
-import ios.uikit.UISplitViewController;
-import ios.uikit.UIViewController;
-import ios.uikit.UIWindow;
-import ios.uikit.c.UIKit;
-import ios.uikit.protocol.UIApplicationDelegate;
-import ios.uikit.protocol.UISplitViewControllerDelegate;
+import apple.NSObject;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIApplication;
+import apple.uikit.UINavigationController;
+import apple.uikit.UISplitViewController;
+import apple.uikit.UIViewController;
+import apple.uikit.UIWindow;
+import apple.uikit.c.UIKit;
+import apple.uikit.protocol.UIApplicationDelegate;
+import apple.uikit.protocol.UISplitViewControllerDelegate;
 
 @RegisterOnStartup
 public class Main extends NSObject implements UIApplicationDelegate, UISplitViewControllerDelegate {

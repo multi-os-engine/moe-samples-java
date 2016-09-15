@@ -33,10 +33,10 @@ import org.moe.natj.general.Pointer;
 
 import java.util.ArrayList;
 
-import ios.foundation.NSIndexPath;
-import ios.uikit.UITableView;
-import ios.uikit.UITableViewCell;
-import ios.uikit.UITableViewController;
+import apple.foundation.NSIndexPath;
+import apple.uikit.UITableView;
+import apple.uikit.UITableViewCell;
+import apple.uikit.UITableViewController;
 
 public abstract class CustomCellTableController extends UITableViewController {
 

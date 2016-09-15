@@ -28,12 +28,12 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package org.moe.inapppurchase;
 
-import ios.NSObject;
-import ios.foundation.NSDictionary;
-import ios.uikit.UIApplication;
-import ios.uikit.UIWindow;
-import ios.uikit.c.UIKit;
-import ios.uikit.protocol.UIApplicationDelegate;
+import apple.NSObject;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIApplication;
+import apple.uikit.UIWindow;
+import apple.uikit.c.UIKit;
+import apple.uikit.protocol.UIApplicationDelegate;
 
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.RegisterOnStartup;

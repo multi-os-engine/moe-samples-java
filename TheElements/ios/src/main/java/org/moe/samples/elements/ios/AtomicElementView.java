@@ -34,19 +34,19 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.elements.common.AtomicElement;
 
-import ios.coregraphics.c.CoreGraphics;
-import ios.coregraphics.opaque.CGContextRef;
-import ios.coregraphics.struct.CGPoint;
-import ios.coregraphics.struct.CGRect;
-import ios.coregraphics.struct.CGSize;
-import ios.foundation.NSString;
-import ios.foundation.c.Foundation;
-import ios.uikit.UIColor;
-import ios.uikit.UIFont;
-import ios.uikit.UIGestureRecognizer;
-import ios.uikit.UIImage;
-import ios.uikit.UITapGestureRecognizer;
-import ios.uikit.UIView;
+import apple.coregraphics.c.CoreGraphics;
+import apple.coregraphics.opaque.CGContextRef;
+import apple.coregraphics.struct.CGPoint;
+import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
+import apple.foundation.NSString;
+import apple.foundation.c.Foundation;
+import apple.uikit.UIColor;
+import apple.uikit.UIFont;
+import apple.uikit.UIGestureRecognizer;
+import apple.uikit.UIImage;
+import apple.uikit.UITapGestureRecognizer;
+import apple.uikit.UIView;
 
 public class AtomicElementView extends UIView {
 

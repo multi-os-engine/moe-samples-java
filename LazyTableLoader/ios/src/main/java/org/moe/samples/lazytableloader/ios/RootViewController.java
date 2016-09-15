@@ -47,13 +47,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ios.foundation.NSIndexPath;
-import ios.foundation.c.Foundation;
-import ios.foundation.enums.NSSearchPathDirectory;
-import ios.foundation.enums.NSSearchPathDomainMask;
-import ios.uikit.UIImage;
-import ios.uikit.UITableView;
-import ios.uikit.UITableViewController;
+import apple.foundation.NSIndexPath;
+import apple.foundation.c.Foundation;
+import apple.foundation.enums.NSSearchPathDirectory;
+import apple.foundation.enums.NSSearchPathDomainMask;
+import apple.uikit.UIImage;
+import apple.uikit.UITableView;
+import apple.uikit.UITableViewController;
 
 import static org.moe.natj.objc.Class.fromJavaClass;
 

@@ -45,25 +45,25 @@ import org.moe.samples.currencyconverter.common.Currency;
 
 import java.math.BigDecimal;
 
-import ios.NSObject;
-import ios.c.Globals;
-import ios.coregraphics.c.CoreGraphics;
-import ios.foundation.NSMutableArray;
-import ios.foundation.struct.NSRange;
-import ios.uikit.UIBarButtonItem;
-import ios.uikit.UIButton;
-import ios.uikit.UIColor;
-import ios.uikit.UILabel;
-import ios.uikit.UIPickerView;
-import ios.uikit.UITextField;
-import ios.uikit.UIToolbar;
-import ios.uikit.UIViewController;
-import ios.uikit.enums.UIBarButtonItemStyle;
-import ios.uikit.enums.UIBarButtonSystemItem;
-import ios.uikit.enums.UIBarStyle;
-import ios.uikit.protocol.UIPickerViewDataSource;
-import ios.uikit.protocol.UIPickerViewDelegate;
-import ios.uikit.protocol.UITextFieldDelegate;
+import apple.NSObject;
+import apple.c.Globals;
+import apple.coregraphics.c.CoreGraphics;
+import apple.foundation.NSMutableArray;
+import apple.foundation.struct.NSRange;
+import apple.uikit.UIBarButtonItem;
+import apple.uikit.UIButton;
+import apple.uikit.UIColor;
+import apple.uikit.UILabel;
+import apple.uikit.UIPickerView;
+import apple.uikit.UITextField;
+import apple.uikit.UIToolbar;
+import apple.uikit.UIViewController;
+import apple.uikit.enums.UIBarButtonItemStyle;
+import apple.uikit.enums.UIBarButtonSystemItem;
+import apple.uikit.enums.UIBarStyle;
+import apple.uikit.protocol.UIPickerViewDataSource;
+import apple.uikit.protocol.UIPickerViewDelegate;
+import apple.uikit.protocol.UITextFieldDelegate;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("AppViewController")

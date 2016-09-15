@@ -36,14 +36,14 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.lazytableloader.common.TopAppParser;
 
-import ios.c.Globals;
-import ios.foundation.NSDictionary;
-import ios.uikit.UIAlertView;
-import ios.uikit.UIApplication;
-import ios.uikit.UINavigationController;
-import ios.uikit.UIResponder;
-import ios.uikit.UIWindow;
-import ios.uikit.protocol.UIApplicationDelegate;
+import apple.c.Globals;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIAlertView;
+import apple.uikit.UIApplication;
+import apple.uikit.UINavigationController;
+import apple.uikit.UIResponder;
+import apple.uikit.UIWindow;
+import apple.uikit.protocol.UIApplicationDelegate;
 
 @ObjCClassName("LazyTableAppDelegate")
 public class LazyTableAppDelegate extends UIResponder implements UIApplicationDelegate {

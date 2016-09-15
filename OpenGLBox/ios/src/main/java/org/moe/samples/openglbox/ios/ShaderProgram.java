@@ -34,8 +34,8 @@ import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.moe.samples.openglbox.common.ShaderProgramBase;
 
-import ios.opengles.c.OpenGLES;
-import ios.opengles.enums.ES2;
+import apple.opengles.c.OpenGLES;
+import apple.opengles.enums.ES2;
 
 public class ShaderProgram extends ShaderProgramBase {
 

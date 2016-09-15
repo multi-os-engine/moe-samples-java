@@ -33,12 +33,12 @@ import org.moe.natj.general.Pointer;
 
 import java.util.ArrayList;
 
-import ios.foundation.NSArray;
-import ios.foundation.NSIndexPath;
-import ios.uikit.UITableView;
-import ios.uikit.UITableViewCell;
-import ios.uikit.UITableViewController;
-import ios.uikit.enums.UITableViewRowAnimation;
+import apple.foundation.NSArray;
+import apple.foundation.NSIndexPath;
+import apple.uikit.UITableView;
+import apple.uikit.UITableViewCell;
+import apple.uikit.UITableViewController;
+import apple.uikit.enums.UITableViewRowAnimation;
 
 public class SimpleTableController extends UITableViewController {
 

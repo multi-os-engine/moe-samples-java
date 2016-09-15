@@ -41,10 +41,10 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.coregraphics.struct.CGRect;
-import ios.foundation.NSCoder;
-import ios.uikit.UILabel;
-import ios.uikit.UITableViewCell;
+import apple.coregraphics.struct.CGRect;
+import apple.foundation.NSCoder;
+import apple.uikit.UILabel;
+import apple.uikit.UITableViewCell;
 
 @Generated
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)

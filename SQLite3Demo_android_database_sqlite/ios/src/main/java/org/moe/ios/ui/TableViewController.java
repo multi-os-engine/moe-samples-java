@@ -47,16 +47,16 @@ import org.moe.ios.IOSDBManagerFactory;
 
 import java.util.List;
 
-import ios.foundation.NSBundle;
-import ios.foundation.NSCoder;
-import ios.foundation.NSIndexPath;
-import ios.uikit.UIStoryboardSegue;
-import ios.uikit.UITableView;
-import ios.uikit.UITableViewCell;
-import ios.uikit.UITableViewController;
-import ios.uikit.enums.UITableViewCellEditingStyle;
-import ios.uikit.protocol.UITableViewDataSource;
-import ios.uikit.protocol.UITableViewDelegate;
+import apple.foundation.NSBundle;
+import apple.foundation.NSCoder;
+import apple.foundation.NSIndexPath;
+import apple.uikit.UIStoryboardSegue;
+import apple.uikit.UITableView;
+import apple.uikit.UITableViewCell;
+import apple.uikit.UITableViewController;
+import apple.uikit.enums.UITableViewCellEditingStyle;
+import apple.uikit.protocol.UITableViewDataSource;
+import apple.uikit.protocol.UITableViewDelegate;
 
 @Generated
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)

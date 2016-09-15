@@ -38,12 +38,12 @@ import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.tictactoe.common.TicTacToe;
 
-import ios.NSObject;
-import ios.uikit.UIButton;
-import ios.uikit.UIColor;
-import ios.uikit.UILabel;
-import ios.uikit.UIViewController;
-import ios.uikit.enums.UIControlState;
+import apple.NSObject;
+import apple.uikit.UIButton;
+import apple.uikit.UIColor;
+import apple.uikit.UILabel;
+import apple.uikit.UIViewController;
+import apple.uikit.enums.UIControlState;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("TicTacToeViewController")

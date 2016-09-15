@@ -44,14 +44,14 @@ import org.moe.googlemaps.GMSMarker;
 import org.moe.googlemaps.protocol.GMSMapViewDelegate;
 import org.moe.samples.taxi.common.Parameters;
 
-import ios.NSObject;
-import ios.corelocation.CLLocation;
-import ios.corelocation.struct.CLLocationCoordinate2D;
-import ios.uikit.UIImage;
-import ios.uikit.UISearchBar;
-import ios.uikit.UIViewController;
-import ios.uikit.enums.UISearchBarStyle;
-import ios.uikit.protocol.UISearchBarDelegate;
+import apple.NSObject;
+import apple.corelocation.CLLocation;
+import apple.corelocation.struct.CLLocationCoordinate2D;
+import apple.uikit.UIImage;
+import apple.uikit.UISearchBar;
+import apple.uikit.UIViewController;
+import apple.uikit.enums.UISearchBarStyle;
+import apple.uikit.protocol.UISearchBarDelegate;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("MapsViewController")

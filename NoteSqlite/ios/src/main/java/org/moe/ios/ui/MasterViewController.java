@@ -44,28 +44,28 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 
 import java.util.ArrayList;
 
-import ios.coregraphics.c.CoreGraphics;
-import ios.foundation.NSArray;
-import ios.foundation.NSIndexPath;
-import ios.uikit.UIBarButtonItem;
-import ios.uikit.UIDevice;
-import ios.uikit.UINavigationController;
-import ios.uikit.UIStoryboardSegue;
-import ios.uikit.UITableView;
-import ios.uikit.UITableViewCell;
-import ios.uikit.UITableViewController;
-import ios.uikit.enums.UIBarButtonSystemItem;
-import ios.uikit.enums.UITableViewCellEditingStyle;
-import ios.uikit.enums.UITableViewRowAnimation;
-import ios.uikit.enums.UIUserInterfaceIdiom;
+import apple.coregraphics.c.CoreGraphics;
+import apple.foundation.NSArray;
+import apple.foundation.NSIndexPath;
+import apple.uikit.UIBarButtonItem;
+import apple.uikit.UIDevice;
+import apple.uikit.UINavigationController;
+import apple.uikit.UIStoryboardSegue;
+import apple.uikit.UITableView;
+import apple.uikit.UITableViewCell;
+import apple.uikit.UITableViewController;
+import apple.uikit.enums.UIBarButtonSystemItem;
+import apple.uikit.enums.UITableViewCellEditingStyle;
+import apple.uikit.enums.UITableViewRowAnimation;
+import apple.uikit.enums.UIUserInterfaceIdiom;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.ios.database.SQLiteDatabaseHelper;
 
-import ios.foundation.NSBundle;
-import ios.foundation.NSCoder;
-import ios.uikit.protocol.UIApplicationDelegate;
+import apple.foundation.NSBundle;
+import apple.foundation.NSCoder;
+import apple.uikit.protocol.UIApplicationDelegate;
 
 import java.lang.String;
 import java.util.PriorityQueue;

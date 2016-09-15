@@ -39,16 +39,16 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 
-import ios.coregraphics.c.CoreGraphics;
-import ios.coregraphics.struct.CGRect;
-import ios.coregraphics.struct.CGSize;
-import ios.foundation.NSNumber;
-import ios.foundation.NSString;
-import ios.foundation.c.Foundation;
-import ios.uikit.UIImage;
-import ios.uikit.UIView;
-import ios.uikit.UIViewController;
-import ios.uikit.enums.UIViewAnimationTransition;
+import apple.coregraphics.c.CoreGraphics;
+import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
+import apple.foundation.NSNumber;
+import apple.foundation.NSString;
+import apple.foundation.c.Foundation;
+import apple.uikit.UIImage;
+import apple.uikit.UIView;
+import apple.uikit.UIViewController;
+import apple.uikit.enums.UIViewAnimationTransition;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("FlipViewController")

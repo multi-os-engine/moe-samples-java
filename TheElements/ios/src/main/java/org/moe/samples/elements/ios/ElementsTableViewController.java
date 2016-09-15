@@ -36,11 +36,11 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.elements.common.AtomicElement;
 
-import ios.NSObject;
-import ios.foundation.NSIndexPath;
-import ios.uikit.UIStoryboardSegue;
-import ios.uikit.UITableViewController;
-import ios.uikit.protocol.UITableViewDataSource;
+import apple.NSObject;
+import apple.foundation.NSIndexPath;
+import apple.uikit.UIStoryboardSegue;
+import apple.uikit.UITableViewController;
+import apple.uikit.protocol.UITableViewDataSource;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("ElementsTableViewController")

@@ -36,10 +36,10 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.uikit.UIColor;
-import ios.uikit.UIImage;
-import ios.uikit.UINavigationController;
-import ios.uikit.enums.UIBarStyle;
+import apple.uikit.UIColor;
+import apple.uikit.UIImage;
+import apple.uikit.UINavigationController;
+import apple.uikit.enums.UIBarStyle;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("NavigationController")

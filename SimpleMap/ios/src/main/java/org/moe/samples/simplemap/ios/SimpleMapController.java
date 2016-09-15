@@ -35,27 +35,27 @@ import org.moe.natj.objc.ann.Selector;
 
 import java.lang.ref.WeakReference;
 
-import ios.foundation.NSMutableArray;
-import ios.foundation.NSMutableDictionary;
-import ios.mapkit.MKAnnotationView;
-import ios.mapkit.MKMapView;
-import ios.mapkit.MKPinAnnotationView;
-import ios.mapkit.MKPointAnnotation;
-import ios.mapkit.enums.MKPinAnnotationColor;
-import ios.mapkit.protocol.MKAnnotation;
-import ios.mapkit.protocol.MKMapViewDelegate;
-import ios.uikit.NSLayoutConstraint;
-import ios.uikit.UIButton;
-import ios.uikit.UIColor;
-import ios.uikit.UITextField;
-import ios.uikit.UIViewController;
-import ios.uikit.enums.UIButtonType;
-import ios.uikit.enums.UIControlEvents;
-import ios.uikit.enums.UIControlState;
-import ios.uikit.enums.UIRectEdge;
-import ios.uikit.enums.UIReturnKeyType;
-import ios.uikit.enums.UITextBorderStyle;
-import ios.uikit.protocol.UITextFieldDelegate;
+import apple.foundation.NSMutableArray;
+import apple.foundation.NSMutableDictionary;
+import apple.mapkit.MKAnnotationView;
+import apple.mapkit.MKMapView;
+import apple.mapkit.MKPinAnnotationView;
+import apple.mapkit.MKPointAnnotation;
+import apple.mapkit.enums.MKPinAnnotationColor;
+import apple.mapkit.protocol.MKAnnotation;
+import apple.mapkit.protocol.MKMapViewDelegate;
+import apple.uikit.NSLayoutConstraint;
+import apple.uikit.UIButton;
+import apple.uikit.UIColor;
+import apple.uikit.UITextField;
+import apple.uikit.UIViewController;
+import apple.uikit.enums.UIButtonType;
+import apple.uikit.enums.UIControlEvents;
+import apple.uikit.enums.UIControlState;
+import apple.uikit.enums.UIRectEdge;
+import apple.uikit.enums.UIReturnKeyType;
+import apple.uikit.enums.UITextBorderStyle;
+import apple.uikit.protocol.UITextFieldDelegate;
 
 public class SimpleMapController extends UIViewController {
 

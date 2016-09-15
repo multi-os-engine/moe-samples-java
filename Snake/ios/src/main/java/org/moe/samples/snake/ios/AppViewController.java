@@ -37,11 +37,11 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.NSObject;
-import ios.uikit.UIButton;
-import ios.uikit.UIImage;
-import ios.uikit.UILabel;
-import ios.uikit.UIViewController;
+import apple.NSObject;
+import apple.uikit.UIButton;
+import apple.uikit.UIImage;
+import apple.uikit.UILabel;
+import apple.uikit.UIViewController;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("AppViewController")

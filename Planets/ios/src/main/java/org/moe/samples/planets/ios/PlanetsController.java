@@ -35,13 +35,13 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.planets.common.Planet;
 import org.moe.samples.planets.common.Simulation;
 
-import ios.foundation.NSArray;
-import ios.foundation.NSDictionary;
-import ios.foundation.NSTimer;
-import ios.uikit.NSLayoutConstraint;
-import ios.uikit.UIColor;
-import ios.uikit.UIView;
-import ios.uikit.UIViewController;
+import apple.foundation.NSArray;
+import apple.foundation.NSDictionary;
+import apple.foundation.NSTimer;
+import apple.uikit.NSLayoutConstraint;
+import apple.uikit.UIColor;
+import apple.uikit.UIView;
+import apple.uikit.UIViewController;
 
 public class PlanetsController extends UIViewController {
 

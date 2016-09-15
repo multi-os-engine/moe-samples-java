@@ -29,16 +29,16 @@
 
 package org.moe.samples.museummap.ios;
 
-import ios.NSObject;
-import ios.coregraphics.struct.CGRect;
-import ios.foundation.NSDictionary;
-import ios.uikit.UIApplication;
-import ios.uikit.UINavigationController;
-import ios.uikit.UIScreen;
-import ios.uikit.UIViewController;
-import ios.uikit.UIWindow;
-import ios.uikit.c.UIKit;
-import ios.uikit.protocol.UIApplicationDelegate;
+import apple.NSObject;
+import apple.coregraphics.struct.CGRect;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIApplication;
+import apple.uikit.UINavigationController;
+import apple.uikit.UIScreen;
+import apple.uikit.UIViewController;
+import apple.uikit.UIWindow;
+import apple.uikit.c.UIKit;
+import apple.uikit.protocol.UIApplicationDelegate;
 
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.RegisterOnStartup;

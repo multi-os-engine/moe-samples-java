@@ -38,26 +38,26 @@ import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.general.ann.Generated;
 
-import ios.NSObject;
-import ios.coregraphics.struct.CGPoint;
-import ios.coregraphics.struct.CGRect;
-import ios.foundation.NSDictionary;
-import ios.foundation.NSNotification;
-import ios.foundation.NSNotificationCenter;
-import ios.foundation.NSString;
-import ios.foundation.NSURL;
-import ios.foundation.c.Foundation;
-import ios.foundation.struct.NSRange;
-import ios.uikit.NSLayoutConstraint;
-import ios.uikit.NSTextAttachment;
-import ios.uikit.UIBarButtonItem;
-import ios.uikit.UIScrollView;
-import ios.uikit.UITextView;
-import ios.uikit.UIView;
-import ios.uikit.UIViewController;
-import ios.uikit.c.UIKit;
-import ios.uikit.protocol.UITextViewDelegate;
-import ios.uikit.struct.UIEdgeInsets;
+import apple.NSObject;
+import apple.coregraphics.struct.CGPoint;
+import apple.coregraphics.struct.CGRect;
+import apple.foundation.NSDictionary;
+import apple.foundation.NSNotification;
+import apple.foundation.NSNotificationCenter;
+import apple.foundation.NSString;
+import apple.foundation.NSURL;
+import apple.foundation.c.Foundation;
+import apple.foundation.struct.NSRange;
+import apple.uikit.NSLayoutConstraint;
+import apple.uikit.NSTextAttachment;
+import apple.uikit.UIBarButtonItem;
+import apple.uikit.UIScrollView;
+import apple.uikit.UITextView;
+import apple.uikit.UIView;
+import apple.uikit.UIViewController;
+import apple.uikit.c.UIKit;
+import apple.uikit.protocol.UITextViewDelegate;
+import apple.uikit.struct.UIEdgeInsets;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("ViewController")

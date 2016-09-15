@@ -38,18 +38,18 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.taxi.common.TaxiRequest;
 import org.moe.samples.taxi.common.TaxiService;
 
-import ios.NSObject;
-import ios.corelocation.CLLocation;
-import ios.corelocation.struct.CLLocationCoordinate2D;
-import ios.uikit.UIAlertAction;
-import ios.uikit.UIAlertController;
-import ios.uikit.UIAlertView;
-import ios.uikit.UILabel;
-import ios.uikit.UIStoryboardSegue;
-import ios.uikit.UITableViewController;
-import ios.uikit.enums.UIAlertActionStyle;
-import ios.uikit.enums.UIAlertControllerStyle;
-import ios.uikit.protocol.UITableViewDataSource;
+import apple.NSObject;
+import apple.corelocation.CLLocation;
+import apple.corelocation.struct.CLLocationCoordinate2D;
+import apple.uikit.UIAlertAction;
+import apple.uikit.UIAlertController;
+import apple.uikit.UIAlertView;
+import apple.uikit.UILabel;
+import apple.uikit.UIStoryboardSegue;
+import apple.uikit.UITableViewController;
+import apple.uikit.enums.UIAlertActionStyle;
+import apple.uikit.enums.UIAlertControllerStyle;
+import apple.uikit.protocol.UITableViewDataSource;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("TableViewController")

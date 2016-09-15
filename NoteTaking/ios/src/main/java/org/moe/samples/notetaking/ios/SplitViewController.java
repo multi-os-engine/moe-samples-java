@@ -7,8 +7,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.uikit.UISplitViewController;
-import ios.uikit.enums.UIStatusBarStyle;
+import apple.uikit.UISplitViewController;
+import apple.uikit.enums.UIStatusBarStyle;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("SplitViewController")

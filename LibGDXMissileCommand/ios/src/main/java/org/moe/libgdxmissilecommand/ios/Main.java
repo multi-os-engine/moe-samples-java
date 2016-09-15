@@ -36,7 +36,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.uikit.c.UIKit;
+import apple.uikit.c.UIKit;
 
 
 @ObjCClassName("Main")

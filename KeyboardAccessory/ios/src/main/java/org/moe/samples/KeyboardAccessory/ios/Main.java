@@ -32,12 +32,12 @@ package org.moe.samples.keyboardaccessory.ios;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.NSObject;
-import ios.foundation.NSDictionary;
-import ios.uikit.UIApplication;
-import ios.uikit.UIWindow;
-import ios.uikit.c.UIKit;
-import ios.uikit.protocol.UIApplicationDelegate;
+import apple.NSObject;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIApplication;
+import apple.uikit.UIWindow;
+import apple.uikit.c.UIKit;
+import apple.uikit.protocol.UIApplicationDelegate;
 
 public class Main extends NSObject implements UIApplicationDelegate {
 

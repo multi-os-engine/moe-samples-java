@@ -36,8 +36,8 @@ import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.elements.common.AtomicElement;
 
-import ios.uikit.UILabel;
-import ios.uikit.UITableViewCell;
+import apple.uikit.UILabel;
+import apple.uikit.UITableViewCell;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("AtomicElementTableViewCell")

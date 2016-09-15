@@ -39,12 +39,12 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.simplenetworkstreams.common.Networking;
 import org.moe.samples.simplenetworkstreams.common.SocketServerThreadBase;
 
-import ios.NSObject;
-import ios.c.Globals;
-import ios.uikit.UIColor;
-import ios.uikit.UILabel;
-import ios.uikit.UITextView;
-import ios.uikit.UIViewController;
+import apple.NSObject;
+import apple.c.Globals;
+import apple.uikit.UIColor;
+import apple.uikit.UILabel;
+import apple.uikit.UITextView;
+import apple.uikit.UIViewController;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("ServerController")

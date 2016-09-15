@@ -34,12 +34,12 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.elements.common.AtomicElement;
 
-import ios.NSObject;
-import ios.foundation.NSIndexPath;
-import ios.uikit.UIImage;
-import ios.uikit.UITableView;
-import ios.uikit.UITableViewCell;
-import ios.uikit.protocol.UITableViewDataSource;
+import apple.NSObject;
+import apple.foundation.NSIndexPath;
+import apple.uikit.UIImage;
+import apple.uikit.UITableView;
+import apple.uikit.UITableViewCell;
+import apple.uikit.protocol.UITableViewDataSource;
 
 public class ElementsSortedByAtomicNumberDataSource extends NSObject implements UITableViewDataSource, ElementsDataSource {
 

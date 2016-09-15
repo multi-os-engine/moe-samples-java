@@ -29,7 +29,7 @@
 
 package org.moe.samples.simplenetworkstreams.ios;
 
-import ios.c.Globals;
+import apple.c.Globals;
 
 abstract class AsyncTask {
 

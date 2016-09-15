@@ -35,22 +35,22 @@ import org.moe.frameworks.inapppurchase.ios.utils.SKProductDetails;
 import java.util.HashMap;
 import java.util.Map;
 
-import ios.foundation.NSArray;
-import ios.foundation.NSError;
-import ios.foundation.NSMutableSet;
-import ios.foundation.NSNotificationCenter;
-import ios.foundation.NSUserDefaults;
-import ios.storekit.SKPayment;
-import ios.storekit.SKPaymentQueue;
-import ios.storekit.SKPaymentTransaction;
-import ios.storekit.SKProduct;
-import ios.storekit.SKProductsRequest;
-import ios.storekit.SKProductsResponse;
-import ios.storekit.SKRequest;
-import ios.storekit.enums.Enums;
-import ios.storekit.enums.SKPaymentTransactionState;
-import ios.storekit.protocol.SKPaymentTransactionObserver;
-import ios.storekit.protocol.SKProductsRequestDelegate;
+import apple.foundation.NSArray;
+import apple.foundation.NSError;
+import apple.foundation.NSMutableSet;
+import apple.foundation.NSNotificationCenter;
+import apple.foundation.NSUserDefaults;
+import apple.storekit.SKPayment;
+import apple.storekit.SKPaymentQueue;
+import apple.storekit.SKPaymentTransaction;
+import apple.storekit.SKProduct;
+import apple.storekit.SKProductsRequest;
+import apple.storekit.SKProductsResponse;
+import apple.storekit.SKRequest;
+import apple.storekit.enums.Enums;
+import apple.storekit.enums.SKPaymentTransactionState;
+import apple.storekit.protocol.SKPaymentTransactionObserver;
+import apple.storekit.protocol.SKProductsRequestDelegate;
 
 public class PlatformIAPHelper extends AbstractIAPHelper implements SKProductsRequestDelegate, SKPaymentTransactionObserver {
     static {

@@ -34,25 +34,25 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.flipview.common.Strings;
 
-import ios.NSObject;
-import ios.coregraphics.c.CoreGraphics;
-import ios.coregraphics.struct.CGPoint;
-import ios.coregraphics.struct.CGRect;
-import ios.coregraphics.struct.CGSize;
-import ios.foundation.NSString;
-import ios.foundation.NSURL;
-import ios.foundation.c.Foundation;
-import ios.uikit.UIApplication;
-import ios.uikit.UIButton;
-import ios.uikit.UIColor;
-import ios.uikit.UIFont;
-import ios.uikit.UIImage;
-import ios.uikit.UIView;
-import ios.uikit.enums.UIButtonType;
-import ios.uikit.enums.UIControlContentHorizontalAlignment;
-import ios.uikit.enums.UIControlContentVerticalAlignment;
-import ios.uikit.enums.UIControlEvents;
-import ios.uikit.enums.UIControlState;
+import apple.NSObject;
+import apple.coregraphics.c.CoreGraphics;
+import apple.coregraphics.struct.CGPoint;
+import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
+import apple.foundation.NSString;
+import apple.foundation.NSURL;
+import apple.foundation.c.Foundation;
+import apple.uikit.UIApplication;
+import apple.uikit.UIButton;
+import apple.uikit.UIColor;
+import apple.uikit.UIFont;
+import apple.uikit.UIImage;
+import apple.uikit.UIView;
+import apple.uikit.enums.UIButtonType;
+import apple.uikit.enums.UIControlContentHorizontalAlignment;
+import apple.uikit.enums.UIControlContentVerticalAlignment;
+import apple.uikit.enums.UIControlEvents;
+import apple.uikit.enums.UIControlState;
 
 public class FlippedView extends FrontView {
 

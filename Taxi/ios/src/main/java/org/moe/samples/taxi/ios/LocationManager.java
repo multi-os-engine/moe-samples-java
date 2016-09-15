@@ -29,13 +29,13 @@
 
 package org.moe.samples.taxi.ios;
 
-import ios.corelocation.CLLocation;
-import ios.corelocation.CLLocationManager;
-import ios.corelocation.c.CoreLocation;
-import ios.corelocation.enums.CLAuthorizationStatus;
-import ios.corelocation.protocol.CLLocationManagerDelegate;
-import ios.foundation.NSArray;
-import ios.foundation.NSError;
+import apple.corelocation.CLLocation;
+import apple.corelocation.CLLocationManager;
+import apple.corelocation.c.CoreLocation;
+import apple.corelocation.enums.CLAuthorizationStatus;
+import apple.corelocation.protocol.CLLocationManagerDelegate;
+import apple.foundation.NSArray;
+import apple.foundation.NSError;
 
 public class LocationManager implements CLLocationManagerDelegate {
 

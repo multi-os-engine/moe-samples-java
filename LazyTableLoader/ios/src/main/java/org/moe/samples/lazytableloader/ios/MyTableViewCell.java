@@ -34,8 +34,8 @@ import org.moe.natj.general.ann.Owned;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 
-import ios.uikit.UITableViewCell;
-import ios.uikit.enums.UITableViewCellStyle;
+import apple.uikit.UITableViewCell;
+import apple.uikit.enums.UITableViewCellStyle;
 
 @ObjCClassName("MyTableViewCell")
 public class MyTableViewCell extends UITableViewCell {

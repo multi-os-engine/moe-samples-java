@@ -43,26 +43,26 @@ import org.moe.samples.openglbox.common.Geometry;
 import org.moe.samples.openglbox.common.Parameters;
 import org.moe.samples.openglbox.common.Shaders;
 
-import ios.coregraphics.struct.CGRect;
-import ios.coregraphics.struct.CGSize;
-import ios.foundation.NSBundle;
-import ios.foundation.NSMutableDictionary;
-import ios.foundation.NSNumber;
-import ios.foundation.NSSet;
-import ios.glkit.GLKTextureInfo;
-import ios.glkit.GLKTextureLoader;
-import ios.glkit.GLKView;
-import ios.glkit.GLKViewController;
-import ios.glkit.c.GLKit;
-import ios.glkit.enums.GLKViewDrawableDepthFormat;
-import ios.glkit.protocol.GLKViewDelegate;
-import ios.glkit.struct.GLKMatrix4;
-import ios.opengles.EAGLContext;
-import ios.opengles.c.OpenGLES;
-import ios.opengles.enums.EAGLRenderingAPI;
-import ios.opengles.enums.ES2;
-import ios.uikit.UIEvent;
-import ios.uikit.enums.UIRectEdge;
+import apple.coregraphics.struct.CGRect;
+import apple.coregraphics.struct.CGSize;
+import apple.foundation.NSBundle;
+import apple.foundation.NSMutableDictionary;
+import apple.foundation.NSNumber;
+import apple.foundation.NSSet;
+import apple.glkit.GLKTextureInfo;
+import apple.glkit.GLKTextureLoader;
+import apple.glkit.GLKView;
+import apple.glkit.GLKViewController;
+import apple.glkit.c.GLKit;
+import apple.glkit.enums.GLKViewDrawableDepthFormat;
+import apple.glkit.protocol.GLKViewDelegate;
+import apple.glkit.struct.GLKMatrix4;
+import apple.opengles.EAGLContext;
+import apple.opengles.c.OpenGLES;
+import apple.opengles.enums.EAGLRenderingAPI;
+import apple.opengles.enums.ES2;
+import apple.uikit.UIEvent;
+import apple.uikit.enums.UIRectEdge;
 
 public class OpenGLBoxController extends GLKViewController implements
 		GLKViewDelegate {
