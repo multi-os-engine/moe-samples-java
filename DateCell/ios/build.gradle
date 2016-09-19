@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         jcenter()
+        mavenLocal()
     }
     dependencies {
         classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
@@ -19,6 +20,7 @@ moe {
         packageName 'org.moe.samples.datecell.ios'
         appIconsSource 'AppIcon'
         launchScreenFilePath 'src/main/resources/LaunchScreen.xib'
+        bundleID 'org.moe.samples.DataCell'
         // Default values for other parameters are listed below.
 
         // Absolute path to Info.plist file.
@@ -34,5 +36,13 @@ moe {
         //supportedInterfaceOrientations = ['UIInterfaceOrientationPortrait',
         //                                'UIInterfaceOrientationLandscapeLeft',
         //                                'UIInterfaceOrientationLandscapeRight']
+    }
+}
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
     }
 }
