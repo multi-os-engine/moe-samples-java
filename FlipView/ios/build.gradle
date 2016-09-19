@@ -17,8 +17,16 @@ moe {
     xcode {
         mainTarget 'FlipView'
         packageName 'org.moe.samples.flipview.ios'
-
+        bundleID 'org.moe.samples.FlipView'
         appIconsSource 'AppIcon'
         launchImagesSource 'LaunchImage'
+    }
+}
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
     }
 }
