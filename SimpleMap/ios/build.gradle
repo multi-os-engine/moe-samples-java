@@ -19,3 +19,11 @@ moe {
         packageName 'org.moe.samples.simplemap.ios'
     }
 }
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
+    }
+}

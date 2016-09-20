@@ -20,3 +20,11 @@ moe {
         packageName 'org.moe.samples.elements.ios'
     }
 }
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
+    }
+}

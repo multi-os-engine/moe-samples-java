@@ -25,3 +25,11 @@ moe {
         locationWhenInUseUsageDescription 'We do our best to preserve your battery life'
     }
 }
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
+    }
+}

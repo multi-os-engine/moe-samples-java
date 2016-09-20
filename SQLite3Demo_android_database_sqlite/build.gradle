@@ -16,6 +16,7 @@ allprojects {
     repositories {
         jcenter()
     }
+    apply plugin: 'eclipse'
 }
 
 task clean(type: Delete) {

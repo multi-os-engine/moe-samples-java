@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         jcenter()
+        mavenLocal()
     }
     dependencies {
         classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
@@ -28,5 +29,13 @@ moe {
         bundleShortVersionString '1.0'
         bundleVersion '1'
         deploymentTarget '9.0'
+    }
+}
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
     }
 }

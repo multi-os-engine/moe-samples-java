@@ -36,4 +36,5 @@ allprojects {
         mavenLocal()
         maven { url('https://oss.sonatype.org/content/repositories/snapshots') }
     }
+    apply plugin: 'eclipse'
 }

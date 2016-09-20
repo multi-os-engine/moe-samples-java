@@ -16,4 +16,5 @@ allprojects {
     repositories {
         jcenter()
     }
+    apply plugin: 'eclipse'
 }

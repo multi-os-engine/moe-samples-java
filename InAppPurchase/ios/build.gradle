@@ -24,5 +24,14 @@ moe {
         bundleShortVersionString '1.0'
         bundleVersion '1'
         deploymentTarget '9.0'
+        bundleID 'org.moe.samples.InAppPurchase'
+    }
+}
+
+// Setup Eclipse
+eclipse {
+    // Set MOE natures and build commands
+    project {
+        natures 'org.multi-os-engine.project'
     }
 }
