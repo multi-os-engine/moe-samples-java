@@ -18,6 +18,7 @@ moe {
     xcode {
         mainTarget 'TheElements'
         packageName 'org.moe.samples.elements.ios'
+        bundleID 'org.moe.samples.TheElements'
     }
 }
 

@@ -18,6 +18,7 @@ moe {
     xcode {
         mainTarget 'SimpleNetworkStreams'
         packageName 'org.moe.samples.simplenetworkstreams.ios'
+        bundleID 'org.moe.samples.SimpleNetworkStreams'
     }
 }
 

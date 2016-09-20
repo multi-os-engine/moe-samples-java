@@ -18,6 +18,7 @@ moe {
     xcode {
         mainTarget 'WebBrowser'
         packageName 'org.moe.samples.webbrowser.ios'
+        bundleID 'org.moe.samples.WebBrowser'
     }
 }
 

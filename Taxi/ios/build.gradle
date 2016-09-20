@@ -23,6 +23,7 @@ moe {
         appIconsSource 'AppIcon'
         launchScreenFilePath 'src/main/resources/LaunchScreen.xib'
         locationWhenInUseUsageDescription 'We do our best to preserve your battery life'
+        bundleID 'org.moe.samples.Taxi'
     }
 }
 

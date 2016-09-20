@@ -18,6 +18,7 @@ moe {
     xcode {
         mainTarget 'OpenGLBox'
         packageName 'org.moe.samples.openglbox.ios'
+        bundleID 'org.moe.samples.OpenGLBox'
     }
 }
 

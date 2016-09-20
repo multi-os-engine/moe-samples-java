@@ -24,7 +24,7 @@ moe {
         bundleShortVersionString '1.0'
         bundleVersion '1'
         deploymentTarget '9.0'
-
+        bundleID 'org.moe.samples.SQLite3Demo-java-sql'
         supportedInterfaceOrientations = ['UIInterfaceOrientationPortrait',
                                         'UIInterfaceOrientationLandscapeLeft',
                                         'UIInterfaceOrientationLandscapeRight']

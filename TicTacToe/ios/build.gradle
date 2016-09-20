@@ -18,6 +18,7 @@ moe {
     xcode {
         mainTarget 'TicTacToe'
         packageName 'org.moe.samples.tictactoe.ios'
+        bundleID 'org.moe.samples.TicTacToe'
     }
 }
 

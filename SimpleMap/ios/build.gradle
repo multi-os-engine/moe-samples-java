@@ -17,6 +17,7 @@ moe {
     xcode {
         mainTarget 'SimpleMap'
         packageName 'org.moe.samples.simplemap.ios'
+        bundleID 'org.moe.samples.SimpleMap'
     }
 }
 
