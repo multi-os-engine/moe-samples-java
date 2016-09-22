@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "22.0.1"
+    compileSdkVersion 22
+    buildToolsVersion "23.0.1"
 
     sourceSets {
         main {
@@ -11,8 +11,7 @@ android {
             res.srcDir 'res'
             assets.srcDir 'assets'
 
-            jniLibs.srcDir 'src/main/native-libs'
-            jni.srcDirs = []           //disable automatic ndk-build call
+            jniLibs.srcDirs = ['src/main/native-libs']
         }
     }
 
@@ -33,11 +32,11 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:22.0.1'
+    compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.github.markushi:circlebutton:1.1'
     compile project(':lib')
     compile project(':lib').files('libs/natj-api.jar')
-    compile fileTree(dir: "$buildDir/native-libs", include: '**/*.jar')
+    compile fileTree(include: ['*.jar'], dir: "$buildDir/native-libs")
 }
 
 task nativeLibsToJar(type: Zip, description: 'create a jar archive of the native libs') {
@@ -50,12 +49,4 @@ task nativeLibsToJar(type: Zip, description: 'create a jar archive of the native
 
 tasks.withType(org.gradle.api.tasks.compile.JavaCompile) {
     compileTask -> compileTask.dependsOn nativeLibsToJar
-}
-
-clean.dependsOn 'cleanCopyNativeLibs'
-
-tasks.withType(com.android.build.gradle.tasks.PackageApplication) {
-    pkgTask ->
-        pkgTask.jniFolders = new HashSet()
-        pkgTask.jniFolders.add(new File(buildDir, 'native-libs'))
 }

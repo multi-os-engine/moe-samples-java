@@ -39,6 +39,7 @@ import org.moe.natj.c.ann.Variadic;
 import org.moe.natj.c.map.CStringArrayMapper;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.ReferenceInfo;
 import org.moe.natj.general.ann.Runtime;
@@ -55,7 +56,7 @@ import org.moe.natj.general.ptr.VoidPtr;
 import com.lib.ui.struct.sqlite3_rtree_geometry;
 import com.lib.ui.struct.sqlite3_rtree_query_info;
 
-@Generated
+@Library("sqlite3")
 @Runtime(CRuntime.class)
 public final class Globals {
 	static {

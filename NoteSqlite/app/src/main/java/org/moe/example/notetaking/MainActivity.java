@@ -33,6 +33,7 @@ package org.moe.example.notetaking;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -49,6 +50,18 @@ import java.util.PriorityQueue;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    static {
+        try {
+            System.loadLibrary("c++_shared");
+            System.loadLibrary("natj");
+
+            Log.d("MainActivity", "Native libs loaded");
+        } catch (Exception e) {
+            Log.e("MainActivity", "System.loadLibrary", e);
+        }
+    }
+
     ISQLiteDatabase db;
     ArrayList<Note> objects;
     private String DEFAULT_TEXT = "New Note";
