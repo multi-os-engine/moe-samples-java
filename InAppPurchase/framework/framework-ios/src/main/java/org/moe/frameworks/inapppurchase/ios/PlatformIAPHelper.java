@@ -47,7 +47,7 @@ import apple.storekit.SKProduct;
 import apple.storekit.SKProductsRequest;
 import apple.storekit.SKProductsResponse;
 import apple.storekit.SKRequest;
-import apple.storekit.enums.Enums;
+import apple.storekit.enums.SKErrorCode;
 import apple.storekit.enums.SKPaymentTransactionState;
 import apple.storekit.protocol.SKPaymentTransactionObserver;
 import apple.storekit.protocol.SKProductsRequestDelegate;
@@ -224,7 +224,7 @@ public class PlatformIAPHelper extends AbstractIAPHelper implements SKProductsRe
     }
 
     private void failedTransaction(SKPaymentTransaction transaction) {
-        if (transaction.error().code() != Enums.SKErrorPaymentCancelled) {
+        if (transaction.error().code() != SKErrorCode.PaymentCancelled) {
             if (errorHandler != null) {
                 errorHandler.callback("ios/PlatformIAPHelper [requestDidFailWithError]",
                         "Transaction error: " + transaction.error().localizedDescription());
