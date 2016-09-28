@@ -10,9 +10,9 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
  * PARTICULAR PURPOSE.
  */
-package com.longevitysoft.android.xml.plist;
+package org.longevitysoft.android.xml.plist;
 
-import com.longevitysoft.android.util.Stringer;
+import org.longevitysoft.android.util.Stringer;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -29,7 +29,7 @@
 
 package org.moe.samples.elements.common;
 
-import com.longevitysoft.android.xml.plist.domain.*;
+import org.longevitysoft.android.xml.plist.domain.*;
 
 import java.lang.String;
 
@@ -62,8 +62,8 @@ public class AtomicElement {
     }
 
     public AtomicElement(Dict cat) {
-        com.longevitysoft.android.xml.plist.domain.Integer integerValue;
-        com.longevitysoft.android.xml.plist.domain.String stringValue;
+        org.longevitysoft.android.xml.plist.domain.Integer integerValue;
+        org.longevitysoft.android.xml.plist.domain.String stringValue;
         integerValue = cat.getConfigurationInteger("atomicNumber");
         if (integerValue != null)
             this.atomicNumber = integerValue.getValue();

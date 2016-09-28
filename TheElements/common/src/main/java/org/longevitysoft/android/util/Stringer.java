@@ -10,7 +10,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
  * PARTICULAR PURPOSE.
  */
-package com.longevitysoft.android.util;
+package org.longevitysoft.android.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

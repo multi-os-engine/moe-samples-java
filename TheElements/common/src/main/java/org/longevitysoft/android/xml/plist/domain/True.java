@@ -1,4 +1,4 @@
-package com.longevitysoft.android.xml.plist.domain;
+package org.longevitysoft.android.xml.plist.domain;
 
 /**
  * Represents a simple plist true element.

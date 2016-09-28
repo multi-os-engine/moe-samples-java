@@ -10,7 +10,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
  * PARTICULAR PURPOSE.
  */
-package com.longevitysoft.android.xml.plist.domain;
+package org.longevitysoft.android.xml.plist.domain;
 
 /**
  * Represents a simple plist int element.

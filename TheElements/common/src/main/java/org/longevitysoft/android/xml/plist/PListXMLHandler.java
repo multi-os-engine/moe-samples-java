@@ -10,11 +10,11 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
  * PARTICULAR PURPOSE.
  */
-package com.longevitysoft.android.xml.plist;
+package org.longevitysoft.android.xml.plist;
 
-import com.longevitysoft.android.util.Stringer;
-import com.longevitysoft.android.xml.plist.domain.PList;
-import com.longevitysoft.android.xml.plist.domain.PListObject;
+import org.longevitysoft.android.util.Stringer;
+import org.longevitysoft.android.xml.plist.domain.PList;
+import org.longevitysoft.android.xml.plist.domain.PListObject;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;

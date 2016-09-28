@@ -4,11 +4,11 @@ import android.content.res.AssetManager;
 import android.util.Log;
 
 import org.moe.samples.elements.common.AtomicElement;
-import com.longevitysoft.android.xml.plist.PListXMLHandler;
-import com.longevitysoft.android.xml.plist.PListXMLParser;
-import com.longevitysoft.android.xml.plist.domain.Array;
-import com.longevitysoft.android.xml.plist.domain.Dict;
-import com.longevitysoft.android.xml.plist.domain.PList;
+import org.longevitysoft.android.xml.plist.PListXMLHandler;
+import org.longevitysoft.android.xml.plist.PListXMLParser;
+import org.longevitysoft.android.xml.plist.domain.Array;
+import org.longevitysoft.android.xml.plist.domain.Dict;
+import org.longevitysoft.android.xml.plist.domain.PList;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

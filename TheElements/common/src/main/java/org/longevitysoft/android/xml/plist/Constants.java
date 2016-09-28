@@ -11,7 +11,7 @@
  * PARTICULAR PURPOSE.
  */
 
-package com.longevitysoft.android.xml.plist;
+package org.longevitysoft.android.xml.plist;
 
 /**
  * @author fbeachler

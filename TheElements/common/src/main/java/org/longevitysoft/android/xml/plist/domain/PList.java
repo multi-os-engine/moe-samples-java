@@ -10,10 +10,10 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A 
  * PARTICULAR PURPOSE.
  */
-package com.longevitysoft.android.xml.plist.domain;
+package org.longevitysoft.android.xml.plist.domain;
 
-import com.longevitysoft.android.util.Stringer;
-import com.longevitysoft.android.xml.plist.Constants;
+import org.longevitysoft.android.util.Stringer;
+import org.longevitysoft.android.xml.plist.Constants;
 
 import java.util.Stack;
 

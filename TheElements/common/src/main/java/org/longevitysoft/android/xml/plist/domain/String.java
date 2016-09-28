@@ -1,6 +1,6 @@
-package com.longevitysoft.android.xml.plist.domain;
+package org.longevitysoft.android.xml.plist.domain;
 
-import com.longevitysoft.android.util.Stringer;
+import org.longevitysoft.android.util.Stringer;
 
 /**
  * Represents a simple plist string element. Not to be confused with
