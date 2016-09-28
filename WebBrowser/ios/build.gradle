@@ -20,6 +20,7 @@ moe {
         mainTarget 'WebBrowser'
         packageName 'org.moe.samples.webbrowser.ios'
         bundleID 'org.moe.samples.WebBrowser'
+        infoPlistPath 'src/main/Info.plist'
     }
 }
 
