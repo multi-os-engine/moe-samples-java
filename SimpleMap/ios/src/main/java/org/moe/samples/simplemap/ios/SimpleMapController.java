@@ -61,8 +61,8 @@ public class SimpleMapController extends UIViewController {
 
 	private static final String PointAnnotationViewID = "PointAnnotation";
 
-	private WeakReference<UITextField> fieldRef;
-	private WeakReference<MKMapView> mapRef;
+	private UITextField pinLabelField;
+	private MKMapView mapView;
 
 	private final NSMutableDictionary views = NSMutableDictionary.alloc().init();
 	private final NSMutableArray constraints = NSMutableArray.alloc().init();
@@ -97,18 +97,15 @@ public class SimpleMapController extends UIViewController {
 		views.put("bottomGuide", this.bottomLayoutGuide());
 		views.put("topGuide", this.topLayoutGuide());
 
-		final MKMapView mapView = MKMapView.alloc().init();
+		mapView = MKMapView.alloc().init();
 		mapView.setTranslatesAutoresizingMaskIntoConstraints(false);
 		view().addSubview(mapView);
 		views.put("map", mapView);
 
-		final UITextField pinLabelField = UITextField.alloc().init();
+		pinLabelField = UITextField.alloc().init();
 		pinLabelField.setTranslatesAutoresizingMaskIntoConstraints(false);
 		view().addSubview(pinLabelField);
 		views.put("pinLabel", pinLabelField);
-
-		mapRef = new WeakReference<MKMapView>(mapView);
-		fieldRef = new WeakReference<UITextField>(pinLabelField);
 
 		mapView.setDelegate(new MKMapViewDelegate() {
 
@@ -190,12 +187,11 @@ public class SimpleMapController extends UIViewController {
 	public void annotationAction(UIButton sender) {
 		if (sender.titleLabel().text().equals("+")) {
 			MKPointAnnotation pa = MKPointAnnotation.alloc().init();
-			pa.setTitle(fieldRef.get().text());
-			pa.setCoordinate(mapRef.get().centerCoordinate());
-			mapRef.get().addAnnotation(pa);
+			pa.setTitle(pinLabelField.text());
+			pa.setCoordinate(mapView.centerCoordinate());
+			mapView.addAnnotation(pa);
 		} else {
-			mapRef.get().removeAnnotations(mapRef.get().selectedAnnotations());
+			mapView.removeAnnotations(mapView.selectedAnnotations());
 		}
 	}
-
 }
