@@ -9,8 +9,8 @@ Running the application with non-default localization is currently only supporte
 
 ### 1. Add `-args` to the scheme in Xcode
 
-![Adding args](/images/1-args.png)
+![Adding args](/LocalizedString/images/1-args.png)
 
 ### 1. Change language
 
-![Change language](/images/2-lang.png)
+![Change language](/LocalizedString/images/2-lang.png)
