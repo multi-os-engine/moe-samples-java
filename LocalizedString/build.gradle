@@ -1,0 +1,52 @@
+/************************/
+/** Build Script Setup **/
+/************************/
+
+buildscript {
+    // Add central and local Maven repos
+    repositories {
+        jcenter()
+        mavenLocal()
+    }
+    dependencies {
+        // MOE plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
+    }
+}
+
+/*******************/
+/** Project Setup **/
+/*******************/
+
+// Apply plugins
+apply plugin: 'moe'
+
+// Set source and target to Java 8
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+// Set maven repository
+
+// Exclude all files from Gradle's test runner
+test { exclude '**' }
+
+// Setup MOE
+moe {
+    xcode.mainTarget = 'LocalizedString'
+    xcode.testTarget = 'LocalizedString-Test'
+    xcode.packageName = 'moe.org.localizedstring'
+    xcode.launchScreenFilePath = 'src/main/resources/LaunchScreen.xib'
+    xcode.bundleID = 'org.moe.samples.LocalizedString'
+    xcode.generateProject = false
+    xcode.xcodeProjectDirPath = 'xcode'
+}
+
+// Set dependencies
+dependencies {
+    // Compile with 'jar' files in the project's 'lib' directory
+    compile fileTree(dir: 'lib', include: '*.jar')
+
+}
+
+
+
