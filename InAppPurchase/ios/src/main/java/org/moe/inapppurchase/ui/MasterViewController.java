@@ -84,24 +84,19 @@ public class MasterViewController extends UITableViewController {
         UITableViewCell cell = uiTableView.dequeueReusableCellWithIdentifierForIndexPath("Cell", nsIndexPath);
 
         ProductDetails product = productsStore.getProductAt((int) nsIndexPath.row());
-
         cell.textLabel().setText(product.getTitle());
-
         cell.detailTextLabel().setText(product.getPrice());
-
+        UIButton button = UIButton.alloc().init();
+        button.setTitleColorForState(view().tintColor(), UIControlState.Normal);
         if (productsStore != null && productsStore.isProductPurchased(product.getProductID())) {
-            cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
-            cell.setAccessoryView(null);
-            cell.detailTextLabel().setText("");
+            button.setTitleForState("Buy Again", UIControlState.Normal);
         } else {
-            UIButton button = UIButton.alloc().initWithFrame(CoreGraphics.CGRectMake(0, 0, 72, 37));
-            button.setTitleColorForState(view().tintColor(), UIControlState.Normal);
             button.setTitleForState("Buy", UIControlState.Normal);
-            button.setTag(nsIndexPath.row());
-            button.addTargetActionForControlEvents(this, new SEL("buyButtonTapped:"), UIControlEvents.TouchUpInside);
-            cell.setAccessoryType(UITableViewCellAccessoryType.None);
-            cell.setAccessoryView(button);
         }
+        button.sizeToFit();
+        button.setTag(nsIndexPath.row());
+        button.addTargetActionForControlEvents(this, new SEL("buyButtonTapped:"), UIControlEvents.TouchUpInside);
+        cell.setAccessoryView(button);
 
         return cell;
     }

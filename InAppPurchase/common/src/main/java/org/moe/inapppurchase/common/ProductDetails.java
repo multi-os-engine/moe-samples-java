@@ -45,15 +45,6 @@ public class ProductDetails {
         mDescription = description;
     }
 
-    public ProductDetails(String productID, String price, String title, String description) {
-        mItemType = "";
-        mProductID = productID;
-        mType = "";
-        mPrice = price;
-        mTitle = title;
-        mDescription = description;
-    }
-
     public String getItemType() {
         return mItemType;
     }

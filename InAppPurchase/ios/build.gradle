@@ -12,7 +12,8 @@ apply plugin: 'moe'
 
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
-    compile project(':common')
+    compile project(":common")
+    compile project(":framework:framework-ios")
 }
 
 moe {
