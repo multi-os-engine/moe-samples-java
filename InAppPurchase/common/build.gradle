@@ -9,5 +9,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile fileTree(dir: '../framework/build/libs', include: ['*.jar'])
 
-    compile project(':framework')
+    compile project(':framework:framework-common')
 }

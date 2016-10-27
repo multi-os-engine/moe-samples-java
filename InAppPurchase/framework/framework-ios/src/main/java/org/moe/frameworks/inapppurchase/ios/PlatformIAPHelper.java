@@ -53,18 +53,33 @@ import apple.storekit.protocol.SKPaymentTransactionObserver;
 import apple.storekit.protocol.SKProductsRequestDelegate;
 
 public class PlatformIAPHelper extends AbstractIAPHelper implements SKProductsRequestDelegate, SKPaymentTransactionObserver {
+
     static {
         try {
+            // Fix NatJ runtime class initialization order for binding classes.
             Class.forName(SKProduct.class.getName());
+            Class.forName(SKPaymentTransaction.class.getName());
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
     private SKProductsRequest productsRequest;
     private Map<String, SKProduct> nativeProductsMap = new HashMap<>();
 
+    // Force the Objective-C reference for this instance to be kept.
+    private NSArray selfReference = NSArray.arrayWithObject(this);
+
     public PlatformIAPHelper() {
+        this.setDebugHandler(new DebugHandler() {
+
+            @Override
+            public void callback(String component, String msg) {
+                System.out.println(component + ": " + msg);
+            }
+
+        });
+
         purchasedProductIdentifiers.clear();
 
         if (productIdentifiers != null) {
@@ -74,6 +89,7 @@ public class PlatformIAPHelper extends AbstractIAPHelper implements SKProductsRe
                 }
             }
         }
+        ((SKPaymentQueue) SKPaymentQueue.defaultQueue()).addTransactionObserver(this);
     }
 
     @Override
@@ -92,7 +108,11 @@ public class PlatformIAPHelper extends AbstractIAPHelper implements SKProductsRe
     }
 
     @Override
-    public void closeHelper() {}
+    public void closeHelper() {
+        // Remove forced strong Objective-C reference to this instance.
+        ((SKPaymentQueue) SKPaymentQueue.defaultQueue()).removeTransactionObserver(this);
+        selfReference.clear();
+    }
 
     @Override
     public void setDebugHandler(DebugHandler handler) {
@@ -145,7 +165,6 @@ public class PlatformIAPHelper extends AbstractIAPHelper implements SKProductsRe
 
     @Override
     public void productsRequestDidReceiveResponse(SKProductsRequest skProductsRequest, SKProductsResponse skProductsResponse) {
-        System.out.println();
         if (debugHandler != null) {
             debugHandler.callback("ios/PlatformIAPHelper [productsRequestDidReceiveResponse]",
                     "Loaded list of products...");
@@ -154,10 +173,11 @@ public class PlatformIAPHelper extends AbstractIAPHelper implements SKProductsRe
         SKProductDetails[] products = new SKProductDetails[nativeProducts.size()];
         nativeProductsMap.clear();
         for (int i = 0; i < nativeProducts.size(); i++) {
-            nativeProductsMap.put(nativeProducts.get(i).productIdentifier(), nativeProducts.get(i));
-            products[i] = new SKProductDetails(nativeProducts.get(i).productIdentifier(),
-                    nativeProducts.get(i).price(), nativeProducts.get(i).localizedTitle(),
-                    nativeProducts.get(i).localizedDescription());
+            SKProduct skProduct = nativeProducts.get(i);
+            nativeProductsMap.put(skProduct.productIdentifier(), skProduct);
+            products[i] = new SKProductDetails(skProduct.productIdentifier(),
+                    skProduct.price(), skProduct.localizedTitle(),
+                    skProduct.localizedDescription());
         }
 
         if (completionHandler != null)
