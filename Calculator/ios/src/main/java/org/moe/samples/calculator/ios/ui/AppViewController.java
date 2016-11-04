@@ -35,6 +35,7 @@ import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.IBAction;
+import org.moe.natj.objc.ann.IBOutlet;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
@@ -253,13 +254,11 @@ public class AppViewController extends UIViewController {
         calcNum.setText(str);
     }
 
-    @IBAction
     @Selector("setButtonActive:")
     public void setButtonActive(UIButton button) {
         button.setBackgroundColor(orange);
     }
 
-    @IBAction
     @Selector("setButtonInactive:")
     public void setButtonInactive(UIButton button) {
         final UIColor color = defaultColorMap.get(button);
@@ -268,81 +267,101 @@ public class AppViewController extends UIViewController {
 
     @Selector("displayLabel")
     @Property
+    @IBOutlet
     public native UILabel getDisplayLabel();
 
     @Selector("buttonC")
     @Property
+    @IBOutlet
     public native UIButton getButtonC();
 
     @Selector("buttonSign")
     @Property
+    @IBOutlet
     public native UIButton getButtonSign();
 
     @Selector("buttonPerc")
     @Property
+    @IBOutlet
     public native UIButton getButtonPerc();
 
     @Selector("buttonDiv")
     @Property
+    @IBOutlet
     public native UIButton getButtonDiv();
 
     @Selector("buttonMul")
     @Property
+    @IBOutlet
     public native UIButton getButtonMul();
 
     @Selector("buttonSub")
     @Property
+    @IBOutlet
     public native UIButton getButtonSub();
 
     @Selector("buttonAdd")
     @Property
+    @IBOutlet
     public native UIButton getButtonAdd();
 
     @Selector("buttonEq")
     @Property
+    @IBOutlet
     public native UIButton getButtonEq();
 
     @Selector("buttonComma")
     @Property
+    @IBOutlet
     public native UIButton getButtonComma();
 
     @Selector("button0")
     @Property
+    @IBOutlet
     public native UIButton getButton0();
 
     @Selector("button1")
     @Property
+    @IBOutlet
     public native UIButton getButton1();
 
     @Selector("button2")
     @Property
+    @IBOutlet
     public native UIButton getButton2();
 
     @Selector("button3")
     @Property
+    @IBOutlet
     public native UIButton getButton3();
 
     @Selector("button4")
     @Property
+    @IBOutlet
     public native UIButton getButton4();
 
     @Selector("button5")
     @Property
+    @IBOutlet
     public native UIButton getButton5();
 
     @Selector("button6")
     @Property
+    @IBOutlet
     public native UIButton getButton6();
 
     @Selector("button7")
     @Property
+    @IBOutlet
     public native UIButton getButton7();
 
     @Selector("button8")
     @Property
+    @IBOutlet
     public native UIButton getButton8();
 
     @Selector("button9")
     @Property
+    @IBOutlet
     public native UIButton getButton9();
 }

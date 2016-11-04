@@ -16,6 +16,7 @@
 		CA5430E025FC70D6957DE9DC /* MOE.framework in Embed Frameworks (MOE) */ = {isa = PBXBuildFile; fileRef = 18E619282ACA8822A1264F04 /* MOE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EF4CB1CC1E427C4FC33A11B7 /* MOE.framework in Embed Frameworks (MOE) */ = {isa = PBXBuildFile; fileRef = 352ACE3C93CE2EF8EA9B7C70 /* MOE.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F76E5F59C1F512114B6066F8 /* MOE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 352ACE3C93CE2EF8EA9B7C70 /* MOE.framework */; };
+		167D77F335499B409498A316 /* moe-main-interfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C996E7766295304F35F428 /* moe-main-interfaces.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		58C6F5361DA66CB600309CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C6F5381DA66CB600309CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEC074379D527F56A758D4AB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		85C996E7766295304F35F428 /* moe-main-interfaces.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "moe-main-interfaces.m"; path = "../build/moe/main/ui-headers/moe-main-interfaces.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				58C6F5261DA66CB600309CB6 /* ios */,
 				5863B87C1DA682C800E46B6A /* ios-Test */,
 				58C6F5251DA66CB600309CB6 /* Products */,
+				C5AE46D2279075F8753CCD40 /* Multi-OS Engine */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +134,14 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
+		};
+		C5AE46D2279075F8753CCD40 /* Multi-OS Engine */ = {
+			isa = PBXGroup;
+			name = "Multi-OS Engine";
+			sourceTree = "<group>";
+			children = (
+				85C996E7766295304F35F428 /* moe-main-interfaces.m */,
+			);
 		};
 /* End PBXGroup section */
 
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1CB8E1B60D4B22E4D808CE /* main.cpp in Sources */,
+				167D77F335499B409498A316 /* moe-main-interfaces.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
