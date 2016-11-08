@@ -58,11 +58,6 @@ public class Main extends NSObject implements UIApplicationDelegate {
 
     @Override
     public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
-        // For set proxy
-        //System.setProperty("http.proxyHost", "proxy_address");
-        //System.setProperty("http.proxyPort", "proxy_port");
-        //System.setProperty("https.proxyHost", "proxy_address");
-        //System.setProperty("https.proxyPort", "proxy_port");
         return true;
     }
 

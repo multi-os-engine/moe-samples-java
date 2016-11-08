@@ -4,7 +4,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.3.+'
     }
 }
 
@@ -18,15 +18,8 @@ dependencies {
 moe {
     xcode {
         mainTarget 'CurrencyConverter'
-        packageName 'org.moe.samples.currencyconverter.ios'
-        applicationExitOnSuspend false
-        bundleShortVersionString '1.0'
-        bundleVersion '1'
-        deploymentTarget '9.0'
-        bundleID 'org.moe.samples.CurrencyConverter'
-        supportedInterfaceOrientations = ['UIInterfaceOrientationPortrait',
-                                        'UIInterfaceOrientationLandscapeLeft',
-                                        'UIInterfaceOrientationLandscapeRight']
+        testTarget 'CurrencyConverter-Test'
+        project 'xcode/CurrencyConverter.xcodeproj'
     }
 }
 

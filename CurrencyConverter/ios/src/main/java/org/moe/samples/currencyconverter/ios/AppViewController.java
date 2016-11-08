@@ -29,6 +29,8 @@
 
 package org.moe.samples.currencyconverter.ios;
 
+import org.moe.natj.objc.ann.IBAction;
+import org.moe.natj.objc.ann.IBOutlet;
 import org.moe.samples.currencyconverter.common.Names;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
@@ -65,6 +67,10 @@ import apple.uikit.protocol.UIPickerViewDataSource;
 import apple.uikit.protocol.UIPickerViewDelegate;
 import apple.uikit.protocol.UITextFieldDelegate;
 
+import static apple.c.Globals.dispatch_async;
+import static apple.c.Globals.dispatch_get_global_queue;
+import static apple.c.Globals.dispatch_get_main_queue;
+
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("AppViewController")
 @RegisterOnStartup
@@ -82,7 +88,7 @@ public class AppViewController extends UIViewController implements UIPickerViewD
     }
 
     private String[][] arraySpinner;
-    private int [] currentIndexes;
+    private int[] currentIndexes;
 
     public UILabel statusText = null;
     public UIButton convertButton = null;
@@ -97,14 +103,14 @@ public class AppViewController extends UIViewController implements UIPickerViewD
         // PickerView Array
         arraySpinner = new String[2][Names.currencyNameSymbols.size()];
         int countKey = 0;
-        for(String key : Names.currencyNameSymbols.keySet()) {
+        for (String key : Names.currencyNameSymbols.keySet()) {
             arraySpinner[0][countKey] = Names.currencyNameSymbols.get(key);
             arraySpinner[1][countKey] = Names.currencyNameSymbols.get(key);
             countKey++;
         }
 
         // Current indexes
-        currentIndexes = new int[] {0, 0};
+        currentIndexes = new int[]{0, 0};
 
         textNumber = getEditNumber();
         textNumber.setDelegate(this);
@@ -116,8 +122,9 @@ public class AppViewController extends UIViewController implements UIPickerViewD
         currencyPicker.setDelegate(this);
     }
 
-    @Selector("BtnPressedCancel_convertButton:")
-    public void btnPressedCancel_convertButton(NSObject sender) {
+    @IBAction
+    @Selector("convert:")
+    public void convert(NSObject sender) {
         String convertFromStr = "";
         String convertToStr = "";
         for (String key : Names.currencyNameSymbols.keySet()) {
@@ -133,37 +140,29 @@ public class AppViewController extends UIViewController implements UIPickerViewD
         asyncGetCurrencyRate(textNumber.text(), convertFromStr, convertToStr);
     }
 
-    private void asyncGetCurrencyRate(final String numberStr, final String curencyFrom, final String currencyTo) {
+    private void asyncGetCurrencyRate(final String numberStr, final String currencyFrom, final String currencyTo) {
         if (numberStr == null || numberStr.isEmpty()) {
             statusText.setText("Please, input number for converting.");
             return;
         }
 
-        Globals.dispatch_async(Globals.dispatch_get_global_queue(0, 0), new Globals.Block_dispatch_async() {
-            @Override
-            public void call_dispatch_async() {
-                double[] convertResult = Currency.convert(Double.parseDouble(numberStr), curencyFrom, currencyTo);
+        dispatch_async(dispatch_get_global_queue(0, 0), () -> {
+            double[] convertResult = Currency.convert(Double.parseDouble(numberStr), currencyFrom, currencyTo);
 
-                final String resultString;
+            final String resultString;
 
-                if (Math.abs(convertResult[0]) < 0.00000001) {
-                    resultString = "Error: Cannot get currency rate!";
-                } else {
-                    BigDecimal x = new BigDecimal(convertResult[1]);
-                    x = x.setScale(2, BigDecimal.ROUND_HALF_UP);
-                    convertResult[1] = x.doubleValue();
-                    resultString = "Currency rate: " + String.valueOf(convertResult[0]) +
-                            ". Result: " + String.valueOf(convertResult[1]) + " " +
-                            Currency.getCurrencySymbol(currencyTo);
-                }
-
-                Globals.dispatch_async(Globals.dispatch_get_main_queue(), new Globals.Block_dispatch_async() {
-                    @Override
-                    public void call_dispatch_async() {
-                        statusText.setText(resultString);
-                    }
-                });
+            if (Math.abs(convertResult[0]) < 0.00000001) {
+                resultString = "Error: Cannot get currency rate!";
+            } else {
+                BigDecimal x = new BigDecimal(convertResult[1]);
+                x = x.setScale(2, BigDecimal.ROUND_HALF_UP);
+                convertResult[1] = x.doubleValue();
+                resultString = "Currency rate: " + String.valueOf(convertResult[0]) +
+                        ". Result: " + String.valueOf(convertResult[1]) + " " +
+                        Currency.getCurrencySymbol(currencyTo);
             }
+
+            dispatch_async(dispatch_get_main_queue(), () -> statusText.setText(resultString));
         });
     }
 
@@ -215,18 +214,22 @@ public class AppViewController extends UIViewController implements UIPickerViewD
 
     @Selector("statusText")
     @Property
+    @IBOutlet
     public native UILabel getLabel();
 
     @Selector("currencyPicker")
     @Property
+    @IBOutlet
     public native UIPickerView getCurrencyPicker();
 
     @Selector("textNumber")
     @Property
+    @IBOutlet
     public native UITextField getEditNumber();
 
     @Selector("convertButton")
     @Property
+    @IBOutlet
     public native UIButton getConvertButton();
 
     private void initCustomKeyboard() {

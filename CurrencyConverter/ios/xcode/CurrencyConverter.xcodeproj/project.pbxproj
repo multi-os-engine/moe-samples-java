@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47E757E667F2865BECD2115F /* moe-main-interfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 51793E85A7919651D77291F2 /* moe-main-interfaces.m */; };
+		585403CF1DD0F7B300A5ACC8 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585403D11DD0F7B300A5ACC8 /* MainUI.storyboard */; };
+		585403D41DD0F7CA00A5ACC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585403D21DD0F7CA00A5ACC8 /* LaunchScreen.storyboard */; };
+		58F2AA101DD0F6A70034BF9D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 58F2AA0F1DD0F6A70034BF9D /* main.cpp */; };
+		58F2AA181DD0F7080034BF9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F2AA171DD0F7080034BF9D /* Assets.xcassets */; };
+		B832086B5B0740DEE01C63F4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF73052947002822B6A9A087 /* main.cpp */; };
+		F33A729284139FB9FDC0FB28 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EF73052947002822B6A9A087 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		881508677BBA819EE09792E2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F52C7BF976F7739D9968C7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		004244EEBC4A0AA15D616345 /* CurrencyConverter-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CurrencyConverter-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51793E85A7919651D77291F2 /* moe-main-interfaces.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "moe-main-interfaces.m"; path = "../build/moe/main/ui-headers/moe-main-interfaces.m"; sourceTree = "<group>"; };
+		585403D01DD0F7B300A5ACC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainUI.storyboard; sourceTree = "<group>"; };
+		585403D31DD0F7CA00A5ACC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		58F2AA0F1DD0F6A70034BF9D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		58F2AA111DD0F6C30034BF9D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58F2AA171DD0F7080034BF9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		97E2BFFD918F3C426DA6015A /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8121C8221C4B5C1564BD2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = CurrencyConverter/Info.plist; sourceTree = SOURCE_ROOT; };
+		EF73052947002822B6A9A087 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A36B30CFBFA96541451B8394 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E10B70645B5913F6488DF115 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		32EABC71F5CFDF25FE74001D = {
+			isa = PBXGroup;
+			children = (
+				7060FFBE338310C423BE8FEC /* CurrencyConverter */,
+				F05E701BEB7AA24040ED1DC0 /* CurrencyConverter-Test */,
+				B6B56AB54406C4F0E2A7C1B8 /* Products */,
+				949491C318484EB40B39B06C /* Multi-OS Engine */,
+			);
+			sourceTree = "<group>";
+		};
+		7060FFBE338310C423BE8FEC /* CurrencyConverter */ = {
+			isa = PBXGroup;
+			children = (
+				C8121C8221C4B5C1564BD2D1 /* Info.plist */,
+				58F2AA171DD0F7080034BF9D /* Assets.xcassets */,
+				585403D11DD0F7B300A5ACC8 /* MainUI.storyboard */,
+				585403D21DD0F7CA00A5ACC8 /* LaunchScreen.storyboard */,
+				CFC3459B03CA83F89FCA258D /* Supporting Files */,
+			);
+			path = CurrencyConverter;
+			sourceTree = "<group>";
+		};
+		790598C59512ED08BB6CEFAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58F2AA0F1DD0F6A70034BF9D /* main.cpp */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		949491C318484EB40B39B06C /* Multi-OS Engine */ = {
+			isa = PBXGroup;
+			children = (
+				51793E85A7919651D77291F2 /* moe-main-interfaces.m */,
+			);
+			name = "Multi-OS Engine";
+			sourceTree = "<group>";
+		};
+		B6B56AB54406C4F0E2A7C1B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97E2BFFD918F3C426DA6015A /* CurrencyConverter.app */,
+				004244EEBC4A0AA15D616345 /* CurrencyConverter-Test.app */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		CFC3459B03CA83F89FCA258D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF73052947002822B6A9A087 /* main.cpp */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F05E701BEB7AA24040ED1DC0 /* CurrencyConverter-Test */ = {
+			isa = PBXGroup;
+			children = (
+				58F2AA111DD0F6C30034BF9D /* Info.plist */,
+				790598C59512ED08BB6CEFAB /* Supporting Files */,
+			);
+			path = "CurrencyConverter-Test";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E6AC93D5E562F1351223625 /* CurrencyConverter-Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21B1E41FD48D010CA142F5B0 /* Build configuration list for PBXNativeTarget "CurrencyConverter-Test" */;
+			buildPhases = (
+				62792CE96554AB8CB2D85C3F /* Compile Sources (MOE) */,
+				A36B30CFBFA96541451B8394 /* Frameworks */,
+				75F5D5CBE7D81A4198FEC640 /* Resources */,
+				15E97970DBADFD02FE31BD63 /* Sources */,
+				881508677BBA819EE09792E2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			name = "CurrencyConverter-Test";
+			productName = "CurrencyConverter-Test";
+			productReference = 004244EEBC4A0AA15D616345 /* CurrencyConverter-Test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74506E319D5DF620F68CBB2C /* CurrencyConverter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2D8348DBE28382F8EF0CE8D /* Build configuration list for PBXNativeTarget "CurrencyConverter" */;
+			buildPhases = (
+				808E5A5F5C18A22739F68F8E /* Compile Sources (MOE) */,
+				E10B70645B5913F6488DF115 /* Frameworks */,
+				893B9FDCE5CD35F88A40C177 /* Resources */,
+				EDEC309F616528B4226648D5 /* Sources */,
+				E6F52C7BF976F7739D9968C7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			name = CurrencyConverter;
+			productName = CurrencyConverter;
+			productReference = 97E2BFFD918F3C426DA6015A /* CurrencyConverter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB85EE0BBA6AA4990A90356C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "My Company";
+				TargetAttributes = {
+					1E6AC93D5E562F1351223625 = {
+						ProvisioningStyle = Automatic;
+					};
+					74506E319D5DF620F68CBB2C = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CE07FFDC072713D3490D3CAC /* Build configuration list for PBXProject "CurrencyConverter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 32EABC71F5CFDF25FE74001D;
+			productRefGroup = B6B56AB54406C4F0E2A7C1B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74506E319D5DF620F68CBB2C /* CurrencyConverter */,
+				1E6AC93D5E562F1351223625 /* CurrencyConverter-Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75F5D5CBE7D81A4198FEC640 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893B9FDCE5CD35F88A40C177 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				585403D41DD0F7CA00A5ACC8 /* LaunchScreen.storyboard in Resources */,
+				58F2AA181DD0F7080034BF9D /* Assets.xcassets in Resources */,
+				585403CF1DD0F7B300A5ACC8 /* MainUI.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62792CE96554AB8CB2D85C3F /* Compile Sources (MOE) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Sources (MOE)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -e\n\nexport MOE_BUILD_SOURCE_SET=\"test\"\n\n# Check project directory\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\ncd \"$MOE_PROJECT_DIR\"\n\n# Export JAVA_HOME\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\n\n# Utility function for finding the Gradle implementation\nfunction findGradle {\n    CD=\"$PWD\"\n    while [ \"$CD\" != \"\" ]; do\n        echo \"Looking for gradlew in $CD\"\n        if [ -x \"$CD/gradlew\" ]; then\n            GRADLE_EXEC=$CD/gradlew\n            return 0\n        fi\n        CD=\"${CD%/*}\"\n    done\n\n    echo \"Checking with 'which'\"\n    GRADLE_EXEC=$(which 'gradle')\n\n    if [ \"$GRADLE_EXEC\" = \"\" ]; then\n        echo \"Failed to locate 'gradle' executable!\"\n        exit 1\n    fi\n}\n\n# Build project with Gradle\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n    \"$GRADLE_EXEC\" --daemon moeXcodeInternal -s\nfi\n\n# Check output directory\nif [ ! -d \"${MOE_PROJECT_BUILD_DIR}\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\n# Copy some resources\nmkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/application.jar\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/preregister.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [ \"${MOE_BUILD_SOURCE_SET}\" == \"test\" ]; then\n    cp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/classlist.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nfi\n\n# Copy android CA certificates on demand\nif [ \"${MOE_COPY_ANDROID_CACERTS}\" == \"YES\" ]; then\n    rm -rf \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    mkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    unzip \"${MOE_SDK_PATH}/sdk/moe-core-certificates.zip\" -d \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\nfi\n\n# Copy and sign MOE framework\nrsync -av --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \\\n    \"${MOE_FRAMEWORK_PATH}/MOE.framework\" \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\nif [ -n \"${EXPANDED_CODE_SIGN_IDENTITY}\" -a \"${CODE_SIGNING_REQUIRED}\" != \"NO\" -a \"${CODE_SIGNING_ALLOWED}\" != \"NO\" ]; then\n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $OTHER_CODE_SIGN_FLAGS \\\n        --preserve-metadata=identifier,entitlements \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework\"\nfi\n";
+		};
+		808E5A5F5C18A22739F68F8E /* Compile Sources (MOE) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Sources (MOE)";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "set -e\n\nexport MOE_BUILD_SOURCE_SET=\"main\"\n\n# Check project directory\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\ncd \"$MOE_PROJECT_DIR\"\n\n# Export JAVA_HOME\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\n\n# Utility function for finding the Gradle implementation\nfunction findGradle {\n    CD=\"$PWD\"\n    while [ \"$CD\" != \"\" ]; do\n        echo \"Looking for gradlew in $CD\"\n        if [ -x \"$CD/gradlew\" ]; then\n            GRADLE_EXEC=$CD/gradlew\n            return 0\n        fi\n        CD=\"${CD%/*}\"\n    done\n\n    echo \"Checking with 'which'\"\n    GRADLE_EXEC=$(which 'gradle')\n\n    if [ \"$GRADLE_EXEC\" = \"\" ]; then\n        echo \"Failed to locate 'gradle' executable!\"\n        exit 1\n    fi\n}\n\n# Build project with Gradle\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n    \"$GRADLE_EXEC\" --daemon moeXcodeInternal -s\nfi\n\n# Check output directory\nif [ ! -d \"${MOE_PROJECT_BUILD_DIR}\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\n# Copy some resources\nmkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/application.jar\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/preregister.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [ \"${MOE_BUILD_SOURCE_SET}\" == \"test\" ]; then\n    cp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/classlist.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nfi\n\n# Copy android CA certificates on demand\nif [ \"${MOE_COPY_ANDROID_CACERTS}\" == \"YES\" ]; then\n    rm -rf \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    mkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    unzip \"${MOE_SDK_PATH}/sdk/moe-core-certificates.zip\" -d \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\nfi\n\n# Copy and sign MOE framework\nrsync -av --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \\\n    \"${MOE_FRAMEWORK_PATH}/MOE.framework\" \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\nif [ -n \"${EXPANDED_CODE_SIGN_IDENTITY}\" -a \"${CODE_SIGNING_REQUIRED}\" != \"NO\" -a \"${CODE_SIGNING_ALLOWED}\" != \"NO\" ]; then\n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $OTHER_CODE_SIGN_FLAGS \\\n        --preserve-metadata=identifier,entitlements \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15E97970DBADFD02FE31BD63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58F2AA101DD0F6A70034BF9D /* main.cpp in Sources */,
+				F33A729284139FB9FDC0FB28 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDEC309F616528B4226648D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B832086B5B0740DEE01C63F4 /* main.cpp in Sources */,
+				47E757E667F2865BECD2115F /* moe-main-interfaces.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		585403D11DD0F7B300A5ACC8 /* MainUI.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				585403D01DD0F7B300A5ACC8 /* Base */,
+			);
+			name = MainUI.storyboard;
+			sourceTree = "<group>";
+		};
+		585403D21DD0F7CA00A5ACC8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				585403D31DD0F7CA00A5ACC8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1C0B7906B97945BD67BAB5BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/CurrencyConverter-Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/..";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.CurrencyConverter;
+				PRODUCT_NAME = "CurrencyConverter-Test";
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		32311BF81986CDB30E8DDB61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/..";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.CurrencyConverter;
+				PRODUCT_NAME = CurrencyConverter;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		62EA8DDBA9252BD9257F919B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"${MOE_FRAMEWORK_PATH}",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B70A18DF83085EEBF1B60D3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CurrencyConverter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/..";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.CurrencyConverter;
+				PRODUCT_NAME = CurrencyConverter;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		F89F87B835971C8BBAE3DFD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEAD_CODE_STRIPPING = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/CurrencyConverter-Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/..";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.CurrencyConverter;
+				PRODUCT_NAME = "CurrencyConverter-Test";
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		FCE56F8AA0DAF304B39D865C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"${MOE_FRAMEWORK_PATH}",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		21B1E41FD48D010CA142F5B0 /* Build configuration list for PBXNativeTarget "CurrencyConverter-Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F89F87B835971C8BBAE3DFD0 /* Debug */,
+				1C0B7906B97945BD67BAB5BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2D8348DBE28382F8EF0CE8D /* Build configuration list for PBXNativeTarget "CurrencyConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32311BF81986CDB30E8DDB61 /* Debug */,
+				B70A18DF83085EEBF1B60D3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE07FFDC072713D3490D3CAC /* Build configuration list for PBXProject "CurrencyConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62EA8DDBA9252BD9257F919B /* Debug */,
+				FCE56F8AA0DAF304B39D865C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB85EE0BBA6AA4990A90356C /* Project object */;
+}
