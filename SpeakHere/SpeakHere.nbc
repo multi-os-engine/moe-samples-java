@@ -1,0 +1,1 @@
+{"output":"src/main/java","platform":"iOS","bindings":[{"type":"header","name":"SpeakHere","headerPath":"xcode/SpeakHere","headerSearchPaths":[],"userHeaderSearchPaths":[],"frameworkSearchPaths":[],"packageBase":"com.migeran.speakhere.ui","importCode":"#import \"SpeakHereViewController.h\"\n#import \"AQLevelMeter.h\""}]}
