@@ -37,7 +37,6 @@ import com.migeran.speakhere.CAXException;
 import com.migeran.speakhere.MeterTable;
 import com.migeran.speakhere.view.LevelMeter;
 
-@Generated
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("AQLevelMeter")
 @RegisterOnStartup

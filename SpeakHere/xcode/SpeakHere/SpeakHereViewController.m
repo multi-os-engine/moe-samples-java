@@ -1,7 +1,10 @@
 #import "SpeakHereViewController.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
 @implementation SpeakHereViewController
 
-- (IBAction)play:(UIBarButtonItem *)sender {
-}
 @end
+
+#pragma clang diagnostic pop

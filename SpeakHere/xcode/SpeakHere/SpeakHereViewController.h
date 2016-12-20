@@ -1,8 +1,10 @@
-#import <UIKit/UIKit.h>
-#import <AVFoundation/AVAudioSession.h>
+@import UIKit;
+@import AVFoundation;
+
 #import "AQLevelMeter.h"
 
-@interface SpeakHereViewController : UIViewController <AVAudioSessionDelegate>
+@interface SpeakHereViewController : UIViewController <AVAudioSessionDelegate,
+    UINavigationBarDelegate>
 
 - (IBAction)record:(UIBarButtonItem *)sender;
 - (IBAction)play:(UIBarButtonItem *)sender;

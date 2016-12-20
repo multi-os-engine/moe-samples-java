@@ -16,12 +16,16 @@ import apple.uikit.UIColor;
 import apple.uikit.UILabel;
 import apple.uikit.UIViewController;
 import apple.uikit.c.UIKit;
+import apple.uikit.enums.UIBarPosition;
+import apple.uikit.enums.UIStatusBarStyle;
+import apple.uikit.protocol.UINavigationBarDelegate;
 
 import java.io.File;
 
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.RegisterOnStartup;
@@ -34,15 +38,18 @@ import org.moe.natj.objc.ann.NotImplemented;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
+import org.moe.natj.objc.map.ObjCObjectMapper;
+
 import com.migeran.speakhere.AQPlayer;
 import com.migeran.speakhere.AQRecorder;
 import com.migeran.speakhere.CAXException;
 
-@Generated
 @Runtime(ObjCRuntime.class)
 @ObjCClassName("SpeakHereViewController")
 @RegisterOnStartup
-public class SpeakHereViewController extends UIViewController implements AVAudioSessionDelegate {
+public class SpeakHereViewController extends UIViewController implements AVAudioSessionDelegate,
+		UINavigationBarDelegate {
+
 	private static final boolean YES = true;
 	private static final boolean NO = false;
 	private static final byte FALSE = 0;
@@ -93,7 +100,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 
 	@Generated
 	public void setBtn_play(UIBarButtonItem value) {
-		org.moe.natj.objc.ObjCObject __old = (org.moe.natj.objc.ObjCObject) btn_play();
+		Object __old = btn_play();
 		if (value != null) {
 			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
 		}
@@ -109,7 +116,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 
 	@Generated
 	public void setBtn_record(UIBarButtonItem value) {
-		org.moe.natj.objc.ObjCObject __old = (org.moe.natj.objc.ObjCObject) btn_record();
+		Object __old = btn_record();
 		if (value != null) {
 			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
 		}
@@ -125,7 +132,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 
 	@Generated
 	public void setFileDescription(UILabel value) {
-		org.moe.natj.objc.ObjCObject __old = (org.moe.natj.objc.ObjCObject) fileDescription();
+		Object __old = fileDescription();
 		if (value != null) {
 			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
 		}
@@ -141,7 +148,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 
 	@Generated
 	public void setLvlMeter_in(AQLevelMeter value) {
-		org.moe.natj.objc.ObjCObject __old = (org.moe.natj.objc.ObjCObject) lvlMeter_in();
+		Object __old = lvlMeter_in();
 		if (value != null) {
 			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
 		}
@@ -318,6 +325,8 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 		UIColor bgColor = UIColor.alloc().initWithRedGreenBlueAlpha(0.39f, 0.44f, 0.57f, 0.5f);
 		lvlMeter_in().setBackgroundColor(bgColor);
 		lvlMeter_in().setBorderColor(bgColor);
+
+		fileDescription().setText("");
 	}
 
 	@Selector("playbackQueueStopped:")
@@ -386,5 +395,15 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 	@Selector("inputIsAvailableChanged:")
 	public void inputIsAvailableChanged(boolean isInputAvailable) {
 		btn_record().setEnabled(isInputAvailable);
+	}
+
+	@Override
+	public long positionForBar(@Mapped(ObjCObjectMapper.class) Object bar) {
+		return UIBarPosition.TopAttached;
+	}
+
+	@Override
+	public long preferredStatusBarStyle() {
+		return UIStatusBarStyle.LightContent;
 	}
 }
