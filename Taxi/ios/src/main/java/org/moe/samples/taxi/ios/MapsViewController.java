@@ -29,21 +29,6 @@
 
 package org.moe.samples.taxi.ios;
 
-import org.moe.natj.general.Pointer;
-import org.moe.natj.general.ann.RegisterOnStartup;
-import org.moe.natj.objc.ObjCRuntime;
-import org.moe.natj.objc.ann.ObjCClassName;
-import org.moe.natj.objc.ann.Property;
-import org.moe.natj.objc.ann.Selector;
-
-import org.moe.googlemaps.GMSAddress;
-import org.moe.googlemaps.GMSGeocoder;
-import org.moe.googlemaps.GMSCameraPosition;
-import org.moe.googlemaps.GMSMapView;
-import org.moe.googlemaps.GMSMarker;
-import org.moe.googlemaps.protocol.GMSMapViewDelegate;
-import org.moe.samples.taxi.common.Parameters;
-
 import apple.NSObject;
 import apple.corelocation.CLLocation;
 import apple.corelocation.struct.CLLocationCoordinate2D;
@@ -52,6 +37,15 @@ import apple.uikit.UISearchBar;
 import apple.uikit.UIViewController;
 import apple.uikit.enums.UISearchBarStyle;
 import apple.uikit.protocol.UISearchBarDelegate;
+import org.moe.googlemaps.*;
+import org.moe.googlemaps.protocol.GMSMapViewDelegate;
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.RegisterOnStartup;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.ObjCClassName;
+import org.moe.natj.objc.ann.Property;
+import org.moe.natj.objc.ann.Selector;
+import org.moe.samples.taxi.common.Parameters;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("MapsViewController")
@@ -117,7 +111,7 @@ public class MapsViewController extends UIViewController implements GMSMapViewDe
 
     @Override
     public void searchBarSearchButtonClicked(UISearchBar searchBar) {
-        getSearchBar().resignFirstResponder() ;
+        getSearchBar().resignFirstResponder();
 
         // Do the search...
         System.out.println("--- searchBar.text: " + getSearchBar().text());

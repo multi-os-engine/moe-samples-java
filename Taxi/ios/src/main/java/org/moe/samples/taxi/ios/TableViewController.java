@@ -29,6 +29,13 @@
 
 package org.moe.samples.taxi.ios;
 
+import apple.NSObject;
+import apple.corelocation.CLLocation;
+import apple.corelocation.struct.CLLocationCoordinate2D;
+import apple.uikit.*;
+import apple.uikit.enums.UIAlertActionStyle;
+import apple.uikit.enums.UIAlertControllerStyle;
+import apple.uikit.protocol.UITableViewDataSource;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
@@ -37,19 +44,6 @@ import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.taxi.common.TaxiRequest;
 import org.moe.samples.taxi.common.TaxiService;
-
-import apple.NSObject;
-import apple.corelocation.CLLocation;
-import apple.corelocation.struct.CLLocationCoordinate2D;
-import apple.uikit.UIAlertAction;
-import apple.uikit.UIAlertController;
-import apple.uikit.UIAlertView;
-import apple.uikit.UILabel;
-import apple.uikit.UIStoryboardSegue;
-import apple.uikit.UITableViewController;
-import apple.uikit.enums.UIAlertActionStyle;
-import apple.uikit.enums.UIAlertControllerStyle;
-import apple.uikit.protocol.UITableViewDataSource;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("TableViewController")
@@ -85,7 +79,6 @@ public class TableViewController extends UITableViewController implements UITabl
     @Selector("commentLabel")
     @Property
     public native UILabel getCommentLabel();
-
 
 
     @Override
@@ -163,7 +156,7 @@ public class TableViewController extends UITableViewController implements UITabl
         );
         if (TaxiService.instance().sendRequest(request)) {
             UIAlertView alert = UIAlertView.alloc().initWithTitleMessageDelegateCancelButtonTitleOtherButtonTitles(
-                    "Taxi", "You car is coming to you!", this, "OK", null
+                    "Taxi", "Your car is coming to you!", this, "OK", null
             );
             alert.show();
         }

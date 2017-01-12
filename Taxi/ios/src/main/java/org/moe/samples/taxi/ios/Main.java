@@ -35,7 +35,6 @@ import apple.uikit.UIApplication;
 import apple.uikit.UIWindow;
 import apple.uikit.c.UIKit;
 import apple.uikit.protocol.UIApplicationDelegate;
-
 import org.moe.googlemaps.GMSServices;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.RegisterOnStartup;
@@ -58,10 +57,9 @@ public class Main extends NSObject implements UIApplicationDelegate {
     private UIWindow window;
 
     @Override
-    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions)
-    {
+    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
         System.out.println("Google Maps SDK Version: " + GMSServices.SDKVersion().toString());
-        String key = "AIzaSyAod4DhhPtB-llKir5eJMYnpBxJocNQf_I";
+        String key = "AIzaSyDBNHlacyZBHNJVbjv90p7vVE0VnflUTIE";
         boolean result = GMSServices.provideAPIKey(key);
         System.out.println("provideAPIKey result: " + (result ? "YES" : "NO"));
 
