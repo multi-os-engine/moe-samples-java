@@ -7,16 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4136B33D6A1ACCD6F56E0C70 /* moe-main-interfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E4FA5A44EE87515228CF84 /* moe-main-interfaces.m */; };
-		585CD7D81E27CC480087EAFF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 585CD7D71E27CC480087EAFF /* main.cpp */; };
-		585CD7DE1E27CC820087EAFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7E01E27CC820087EAFF /* LaunchScreen.storyboard */; };
-		585CD7E21E27CC8B0087EAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7E11E27CC8B0087EAFF /* Assets.xcassets */; };
-		585CD7E51E27CCCC0087EAFF /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7E71E27CCCC0087EAFF /* MainUI.storyboard */; };
-		5B543782DC9F406C8BD29E29 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CAD127218CD81C71DC91EC69 /* main.cpp */; };
+		585CD7E91E27DBAF0087EAFF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 585CD7E81E27DBAF0087EAFF /* main.cpp */; };
+		585CD7EB1E27DBD10087EAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7EA1E27DBD10087EAFF /* Assets.xcassets */; };
+		585CD7EE1E27E21D0087EAFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7F01E27E21D0087EAFF /* LaunchScreen.storyboard */; };
+		585CD7F11E27E2200087EAFF /* RSSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7F31E27E2200087EAFF /* RSSCell.xib */; };
+		6499398411D2DFB9061E85E9 /* moe-main-interfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = E56168F87A0E438BE8D369FC /* moe-main-interfaces.m */; };
+		A061F5E0C614C0FDC680ACAB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9662DCDDC665EA575B4C7 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F2467698A7BB534224E130C7 /* Embed Frameworks */ = {
+		85873FD251926C155FC59F64 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAE699C74ACF7CA10D87C69C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -29,27 +39,27 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3683C3AF1A36AC88F80F87CC /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		585CD7D71E27CC480087EAFF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		585CD7DF1E27CC820087EAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		585CD7E11E27CC8B0087EAFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		585CD7E61E27CCCC0087EAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainUI.storyboard; sourceTree = "<group>"; };
-		6D5FF4DE9591F8947F5B2993 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = TicTacToe/Info.plist; sourceTree = SOURCE_ROOT; };
-		B8E4FA5A44EE87515228CF84 /* moe-main-interfaces.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "moe-main-interfaces.m"; path = "../build/moe/main/ui-headers/moe-main-interfaces.m"; sourceTree = "<group>"; };
-		BCECB1731F02149A1E02B2B2 /* TicTacToe-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TicTacToe-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8C7CDE8A4C5A612104B405E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "TicTacToe-Test/Info.plist"; sourceTree = SOURCE_ROOT; };
-		CAD127218CD81C71DC91EC69 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0B104308E73289AC7624E7BC /* RssReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RssReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BD9662DCDDC665EA575B4C7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0FA5474CB91D931E8C8BD65E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = RssReader/Info.plist; sourceTree = SOURCE_ROOT; };
+		585CD7E81E27DBAF0087EAFF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		585CD7EA1E27DBD10087EAFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		585CD7EF1E27E21D0087EAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		585CD7F21E27E2200087EAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RSSCell.xib; sourceTree = "<group>"; };
+		C5A4B6A28EA7CA0868D04A63 /* RssReader-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RssReader-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1FE3B6EDEA969873B962C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "RssReader-Test/Info.plist"; sourceTree = SOURCE_ROOT; };
+		E56168F87A0E438BE8D369FC /* moe-main-interfaces.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "moe-main-interfaces.m"; path = "../build/moe/main/ui-headers/moe-main-interfaces.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9B1929BFB5561368B8705478 /* Frameworks */ = {
+		77C69BE5D0F94604A379DEE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E514A3457DC3D225B386E5D0 /* Frameworks */ = {
+		D33028740ECF2299C217766A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,124 +69,125 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		148FB86BD4BACACB284FDAD6 /* TicTacToe */ = {
+		0AA472ADFC664EED8036DF9F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				585CD7E11E27CC8B0087EAFF /* Assets.xcassets */,
-				6D5FF4DE9591F8947F5B2993 /* Info.plist */,
-				585CD7E01E27CC820087EAFF /* LaunchScreen.storyboard */,
-				585CD7E71E27CCCC0087EAFF /* MainUI.storyboard */,
-				6B15C67403F3D0F2063FD9CF /* Supporting Files */,
-			);
-			path = TicTacToe;
-			sourceTree = "<group>";
-		};
-		25B349D5C3B5BC4B7628516A /* TicTacToe-Test */ = {
-			isa = PBXGroup;
-			children = (
-				C8C7CDE8A4C5A612104B405E /* Info.plist */,
-				B2343F36FC0B09AC4D8504E4 /* Supporting Files */,
-			);
-			path = "TicTacToe-Test";
-			sourceTree = "<group>";
-		};
-		30B9F053F2C3CD93CA846B63 = {
-			isa = PBXGroup;
-			children = (
-				148FB86BD4BACACB284FDAD6 /* TicTacToe */,
-				25B349D5C3B5BC4B7628516A /* TicTacToe-Test */,
-				DD5D37F20E09B45D05C495CC /* Frameworks */,
-				867489B8B0630D4C9D5E91AA /* Products */,
-				DEA3D4BA97CCEB495AAD70A7 /* Multi-OS Engine */,
-			);
-			sourceTree = "<group>";
-		};
-		6B15C67403F3D0F2063FD9CF /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CAD127218CD81C71DC91EC69 /* main.cpp */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		867489B8B0630D4C9D5E91AA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3683C3AF1A36AC88F80F87CC /* TicTacToe.app */,
-				BCECB1731F02149A1E02B2B2 /* TicTacToe-Test.app */,
+				0B104308E73289AC7624E7BC /* RssReader.app */,
+				C5A4B6A28EA7CA0868D04A63 /* RssReader-Test.app */,
 			);
 			path = Products;
 			sourceTree = "<group>";
 		};
-		B2343F36FC0B09AC4D8504E4 /* Supporting Files */ = {
+		758859B1233CA12E32F2DAB0 = {
 			isa = PBXGroup;
 			children = (
-				585CD7D71E27CC480087EAFF /* main.cpp */,
+				A351383DB53E31F76A205820 /* RssReader */,
+				9EE7F286EA85AB53AA788643 /* RssReader-Test */,
+				DB3A4908F1619E84E330D0E2 /* Frameworks */,
+				0AA472ADFC664EED8036DF9F /* Products */,
+				E35E2F4D447E417FCE98E324 /* Multi-OS Engine */,
+			);
+			sourceTree = "<group>";
+		};
+		9EE7F286EA85AB53AA788643 /* RssReader-Test */ = {
+			isa = PBXGroup;
+			children = (
+				E1FE3B6EDEA969873B962C82 /* Info.plist */,
+				EC236034ED3760C8C272E65D /* Supporting Files */,
+			);
+			path = "RssReader-Test";
+			sourceTree = "<group>";
+		};
+		A351383DB53E31F76A205820 /* RssReader */ = {
+			isa = PBXGroup;
+			children = (
+				585CD7EA1E27DBD10087EAFF /* Assets.xcassets */,
+				0FA5474CB91D931E8C8BD65E /* Info.plist */,
+				585CD7F01E27E21D0087EAFF /* LaunchScreen.storyboard */,
+				585CD7F31E27E2200087EAFF /* RSSCell.xib */,
+				D9B203BFE7C103387EA88933 /* Supporting Files */,
+			);
+			path = RssReader;
+			sourceTree = "<group>";
+		};
+		D9B203BFE7C103387EA88933 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0BD9662DCDDC665EA575B4C7 /* main.cpp */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DD5D37F20E09B45D05C495CC /* Frameworks */ = {
+		DB3A4908F1619E84E330D0E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		DEA3D4BA97CCEB495AAD70A7 /* Multi-OS Engine */ = {
+		E35E2F4D447E417FCE98E324 /* Multi-OS Engine */ = {
 			isa = PBXGroup;
 			children = (
-				B8E4FA5A44EE87515228CF84 /* moe-main-interfaces.m */,
+				E56168F87A0E438BE8D369FC /* moe-main-interfaces.m */,
 			);
 			name = "Multi-OS Engine";
+			sourceTree = "<group>";
+		};
+		EC236034ED3760C8C272E65D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				585CD7E81E27DBAF0087EAFF /* main.cpp */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		21A563AFF656126C1D15A7DB /* TicTacToe-Test */ = {
+		617E39769C178EF2A299C47A /* RssReader */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BF6C93D4FC1BAE94ACBFF0DD /* Build configuration list for PBXNativeTarget "TicTacToe-Test" */;
+			buildConfigurationList = 9446F2F9EFD00183A07EB70E /* Build configuration list for PBXNativeTarget "RssReader" */;
 			buildPhases = (
-				EBB2616FEF25C1FA144B69F8 /* Compile Sources (MOE) */,
-				9B1929BFB5561368B8705478 /* Frameworks */,
-				43E8ADFBF69AB6F30114DD22 /* Resources */,
-				4FAB8F5E977C9C4E6FBA4925 /* Sources */,
-				F2467698A7BB534224E130C7 /* Embed Frameworks */,
+				8A6E8F41C82BE579C84C5D82 /* Compile Sources (MOE) */,
+				77C69BE5D0F94604A379DEE5 /* Frameworks */,
+				6251FA9C6F58C86685A105E6 /* Resources */,
+				C4268BFE30E88B4690F14B3B /* Sources */,
+				FAE699C74ACF7CA10D87C69C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
-			name = "TicTacToe-Test";
-			productName = "TicTacToe-Test";
-			productReference = BCECB1731F02149A1E02B2B2 /* TicTacToe-Test.app */;
+			name = RssReader;
+			productName = RssReader;
+			productReference = 0B104308E73289AC7624E7BC /* RssReader.app */;
 			productType = "com.apple.product-type.application";
 		};
-		567CC5C2AAB82CB991F52EAC /* TicTacToe */ = {
+		BA5968AA189D11C2D7706EC8 /* RssReader-Test */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C97788E3C14872FD6A6FBDF0 /* Build configuration list for PBXNativeTarget "TicTacToe" */;
+			buildConfigurationList = B5067970909B7A0C9281B908 /* Build configuration list for PBXNativeTarget "RssReader-Test" */;
 			buildPhases = (
-				D47A8CDF879F8ADF5C4B277E /* Compile Sources (MOE) */,
-				E514A3457DC3D225B386E5D0 /* Frameworks */,
-				FCAC10BD6C69F5DABAE03C9A /* Resources */,
-				D62390D8E9FA7DD34823C126 /* Sources */,
+				8C5AB7A04905104C7505E26D /* Compile Sources (MOE) */,
+				D33028740ECF2299C217766A /* Frameworks */,
+				79CBD3423C3A520AA0D53F40 /* Resources */,
+				676C203F3DC576B4C509A3AB /* Sources */,
+				85873FD251926C155FC59F64 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
-			name = TicTacToe;
-			productName = TicTacToe;
-			productReference = 3683C3AF1A36AC88F80F87CC /* TicTacToe.app */;
+			name = "RssReader-Test";
+			productName = "RssReader-Test";
+			productReference = C5A4B6A28EA7CA0868D04A63 /* RssReader-Test.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A0D8BCBCE0E5D3BDB6C4FBDA /* Project object */ = {
+		5A49D94529D26F58D6E06AFA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "My Company";
 			};
-			buildConfigurationList = 67443C25A095C637AAC99E4C /* Build configuration list for PBXProject "TicTacToe" */;
+			buildConfigurationList = 775AA4AF27093DA87C2581AD /* Build configuration list for PBXProject "RssReader" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -184,39 +195,39 @@
 				en,
 				Base,
 			);
-			mainGroup = 30B9F053F2C3CD93CA846B63;
-			productRefGroup = 867489B8B0630D4C9D5E91AA /* Products */;
+			mainGroup = 758859B1233CA12E32F2DAB0;
+			productRefGroup = 0AA472ADFC664EED8036DF9F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				567CC5C2AAB82CB991F52EAC /* TicTacToe */,
-				21A563AFF656126C1D15A7DB /* TicTacToe-Test */,
+				617E39769C178EF2A299C47A /* RssReader */,
+				BA5968AA189D11C2D7706EC8 /* RssReader-Test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		43E8ADFBF69AB6F30114DD22 /* Resources */ = {
+		6251FA9C6F58C86685A105E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				585CD7EE1E27E21D0087EAFF /* LaunchScreen.storyboard in Resources */,
+				585CD7EB1E27DBD10087EAFF /* Assets.xcassets in Resources */,
+				585CD7F11E27E2200087EAFF /* RSSCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCAC10BD6C69F5DABAE03C9A /* Resources */ = {
+		79CBD3423C3A520AA0D53F40 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585CD7E51E27CCCC0087EAFF /* MainUI.storyboard in Resources */,
-				585CD7E21E27CC8B0087EAFF /* Assets.xcassets in Resources */,
-				585CD7DE1E27CC820087EAFF /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D47A8CDF879F8ADF5C4B277E /* Compile Sources (MOE) */ = {
+		8A6E8F41C82BE579C84C5D82 /* Compile Sources (MOE) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -230,7 +241,7 @@
 			shellPath = /bin/bash;
 			shellScript = "set -e\n\nexport MOE_BUILD_SOURCE_SET=\"main\"\n\n# Check project directory\nif [ ! -d \"$MOE_PROJECT_DIR\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_DIR' doesn't point to a directory!\"; exit 1;\nfi\ncd \"$MOE_PROJECT_DIR\"\n\n# Export JAVA_HOME\nexport JAVA_HOME=$(/usr/libexec/java_home -v 1.8)\n\n# Utility function for finding the Gradle implementation\nfunction findGradle {\n    CD=\"$PWD\"\n    while [ \"$CD\" != \"\" ]; do\n        echo \"Looking for gradlew in $CD\"\n        if [ -x \"$CD/gradlew\" ]; then\n            GRADLE_EXEC=$CD/gradlew\n            return 0\n        fi\n        CD=\"${CD%/*}\"\n    done\n\n    echo \"Checking with 'which'\"\n    GRADLE_EXEC=$(which 'gradle')\n\n    if [ \"$GRADLE_EXEC\" = \"\" ]; then\n        echo \"Failed to locate 'gradle' executable!\"\n        exit 1\n    fi\n}\n\n# Build project with Gradle\nif [ -z \"$MOE_GRADLE_EXTERNAL_BUILD\" ]; then\n    findGradle\n    \"$GRADLE_EXEC\" --no-daemon moeXcodeInternal -s\nfi\n\n# Check output directory\nif [ ! -d \"${MOE_PROJECT_BUILD_DIR}\" ]; then\n    echo \"$0:$LINENO:1: error: 'MOE_PROJECT_BUILD_DIR' doesn't point to a directory!\"; exit 1;\nfi\n\n# Copy some resources\nmkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/application.jar\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\ncp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/preregister.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [ \"${MOE_BUILD_SOURCE_SET}\" == \"test\" ]; then\n    cp \"${MOE_PROJECT_BUILD_DIR}/moe/${MOE_BUILD_SOURCE_SET}/classlist.txt\" \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nfi\n\n# Copy android CA certificates on demand\nif [ \"${MOE_COPY_ANDROID_CACERTS}\" == \"YES\" ]; then\n    rm -rf \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    mkdir -p \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\n    unzip \"${MOE_SDK_PATH}/sdk/moe-core-certificates.zip\" -d \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/android_root/etc/security/cacerts\"\nfi\n\n# Copy and sign MOE framework\nrsync -av --filter \"- CVS/\" --filter \"- .svn/\" --filter \"- .git/\" --filter \"- .hg/\" --filter \"- Headers\" --filter \"- PrivateHeaders\" --filter \"- Modules\" \\\n    \"${MOE_FRAMEWORK_PATH}/MOE.framework\" \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/\"\nif [ -n \"${EXPANDED_CODE_SIGN_IDENTITY}\" -a \"${CODE_SIGNING_REQUIRED}\" != \"NO\" -a \"${CODE_SIGNING_ALLOWED}\" != \"NO\" ]; then\n    /usr/bin/codesign --force --sign $EXPANDED_CODE_SIGN_IDENTITY $OTHER_CODE_SIGN_FLAGS \\\n        --preserve-metadata=identifier,entitlements \"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MOE.framework\"\nfi\n";
 		};
-		EBB2616FEF25C1FA144B69F8 /* Compile Sources (MOE) */ = {
+		8C5AB7A04905104C7505E26D /* Compile Sources (MOE) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -247,55 +258,56 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4FAB8F5E977C9C4E6FBA4925 /* Sources */ = {
+		676C203F3DC576B4C509A3AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585CD7D81E27CC480087EAFF /* main.cpp in Sources */,
+				585CD7E91E27DBAF0087EAFF /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D62390D8E9FA7DD34823C126 /* Sources */ = {
+		C4268BFE30E88B4690F14B3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B543782DC9F406C8BD29E29 /* main.cpp in Sources */,
-				4136B33D6A1ACCD6F56E0C70 /* moe-main-interfaces.m in Sources */,
+				A061F5E0C614C0FDC680ACAB /* main.cpp in Sources */,
+				6499398411D2DFB9061E85E9 /* moe-main-interfaces.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		585CD7E01E27CC820087EAFF /* LaunchScreen.storyboard */ = {
+		585CD7F01E27E21D0087EAFF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				585CD7DF1E27CC820087EAFF /* Base */,
+				585CD7EF1E27E21D0087EAFF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		585CD7E71E27CCCC0087EAFF /* MainUI.storyboard */ = {
+		585CD7F31E27E2200087EAFF /* RSSCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				585CD7E61E27CCCC0087EAFF /* Base */,
+				585CD7F21E27E2200087EAFF /* Base */,
 			);
-			name = MainUI.storyboard;
-			sourceTree = "<group>";
+			name = RSSCell.xib;
+			path = ../src/main/resources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		59524B25CE9C108F16CD1A4B /* Release */ = {
+		096FD12AEC2DA4EAFD24FD6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEAD_CODE_STRIPPING = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = TicTacToe/Info.plist;
+				INFOPLIST_FILE = RssReader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_COPY_ANDROID_CACERTS = YES;
 				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
 				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
 				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
@@ -307,22 +319,51 @@
 				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
 				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
 				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
-				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.TicTacToe;
-				PRODUCT_NAME = TicTacToe;
+				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.RssReader;
+				PRODUCT_NAME = RssReader;
 				STRIP_STYLE = "non-global";
 			};
-			name = Release;
+			name = Debug;
 		};
-		8791ACDA2E4730484F26B3E3 /* Debug */ = {
+		3F849250A45A4DCAC7AA4F57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEAD_CODE_STRIPPING = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "$(SRCROOT)/TicTacToe-Test/Info.plist";
+				INFOPLIST_FILE = "RssReader-Test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = NO;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/../";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.RssReader;
+				PRODUCT_NAME = "RssReader-Test";
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
+		639BF7076323BB594F135AFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				DEAD_CODE_STRIPPING = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "RssReader-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MOE_COPY_ANDROID_CACERTS = NO;
 				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
@@ -338,40 +379,13 @@
 				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
-				PRODUCT_NAME = "TicTacToe-Test";
+				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.RssReader;
+				PRODUCT_NAME = "RssReader-Test";
 				STRIP_STYLE = "non-global";
 			};
 			name = Debug;
 		};
-		94BE8BB2DF8208BA9E630087 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				DEAD_CODE_STRIPPING = NO;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "$(SRCROOT)/TicTacToe-Test/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MOE_COPY_ANDROID_CACERTS = NO;
-				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
-				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
-				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
-				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
-				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
-				MOE_PROJECT_DIR = "${SRCROOT}/../";
-				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
-				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
-				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/test/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
-				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
-				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
-				ONLY_ACTIVE_ARCH = NO;
-				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
-				PRODUCT_NAME = "TicTacToe-Test";
-				STRIP_STYLE = "non-global";
-			};
-			name = Release;
-		};
-		C762061A49B2C8C5629E783E /* Debug */ = {
+		858CADDF7C955001D9824780 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -413,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -423,36 +437,7 @@
 			};
 			name = Debug;
 		};
-		C98C94F46CD4A436B2AD7FF2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				DEAD_CODE_STRIPPING = NO;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = TicTacToe/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MOE_COPY_ANDROID_CACERTS = NO;
-				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
-				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
-				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
-				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
-				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
-				MOE_PROJECT_DIR = "${SRCROOT}/../";
-				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
-				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
-				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
-				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
-				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
-				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
-				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.TicTacToe;
-				PRODUCT_NAME = TicTacToe;
-				STRIP_STYLE = "non-global";
-			};
-			name = Debug;
-		};
-		F617AF013D52389CF0C71E56 /* Release */ = {
+		B030FC4B466111F84DECEA7B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -487,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -497,37 +482,66 @@
 			};
 			name = Release;
 		};
+		C7B383234FBBF08F0D50AF5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				DEAD_CODE_STRIPPING = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = RssReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MOE_COPY_ANDROID_CACERTS = YES;
+				MOE_FRAMEWORK_PATH = "${MOE_SDK_PATH}/sdk/${PLATFORM_NAME}";
+				MOE_OTHER_LDFLAGS = "${MOE_SECT_OAT} ${MOE_SECT_ART} ${MOE_SEGPROT} ${MOE_PAGEZERO} ${MOE_CUSTOM_OTHER_LDFLAGS} -lstdc++ -framework MOE";
+				"MOE_PAGEZERO[sdk=iphoneos*]" = "";
+				"MOE_PAGEZERO[sdk=iphonesimulator*]" = "-pagezero_size 4096";
+				MOE_PROJECT_BUILD_DIR = "${MOE_PROJECT_DIR}/build";
+				MOE_PROJECT_DIR = "${SRCROOT}/../";
+				MOE_SDK_PATH = "${MOE_PROJECT_BUILD_DIR}/moe/sdk";
+				MOE_SECT_ART = "-sectcreate __ARTDATA __artdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.art\"";
+				MOE_SECT_OAT = "-sectcreate __OATDATA __oatdata \"${MOE_PROJECT_BUILD_DIR}/moe/main/xcode/${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${arch}.oat\"";
+				"MOE_SEGPROT[sdk=iphoneos*]" = "-segprot __OATDATA rx rx -segprot __ARTDATA rw rw";
+				"MOE_SEGPROT[sdk=iphonesimulator*]" = "-segprot __OATDATA rwx rx -segprot __ARTDATA rwx rw";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "${MOE_OTHER_LDFLAGS}";
+				PRODUCT_BUNDLE_IDENTIFIER = org.moe.samples.RssReader;
+				PRODUCT_NAME = RssReader;
+				STRIP_STYLE = "non-global";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		67443C25A095C637AAC99E4C /* Build configuration list for PBXProject "TicTacToe" */ = {
+		775AA4AF27093DA87C2581AD /* Build configuration list for PBXProject "RssReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C762061A49B2C8C5629E783E /* Debug */,
-				F617AF013D52389CF0C71E56 /* Release */,
+				858CADDF7C955001D9824780 /* Debug */,
+				B030FC4B466111F84DECEA7B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BF6C93D4FC1BAE94ACBFF0DD /* Build configuration list for PBXNativeTarget "TicTacToe-Test" */ = {
+		9446F2F9EFD00183A07EB70E /* Build configuration list for PBXNativeTarget "RssReader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8791ACDA2E4730484F26B3E3 /* Debug */,
-				94BE8BB2DF8208BA9E630087 /* Release */,
+				096FD12AEC2DA4EAFD24FD6A /* Debug */,
+				C7B383234FBBF08F0D50AF5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C97788E3C14872FD6A6FBDF0 /* Build configuration list for PBXNativeTarget "TicTacToe" */ = {
+		B5067970909B7A0C9281B908 /* Build configuration list for PBXNativeTarget "RssReader-Test" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C98C94F46CD4A436B2AD7FF2 /* Debug */,
-				59524B25CE9C108F16CD1A4B /* Release */,
+				639BF7076323BB594F135AFA /* Debug */,
+				3F849250A45A4DCAC7AA4F57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A0D8BCBCE0E5D3BDB6C4FBDA /* Project object */;
+	rootObject = 5A49D94529D26F58D6E06AFA /* Project object */;
 }

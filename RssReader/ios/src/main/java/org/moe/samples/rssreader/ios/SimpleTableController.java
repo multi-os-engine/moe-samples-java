@@ -42,86 +42,80 @@ import apple.uikit.enums.UITableViewRowAnimation;
 
 public class SimpleTableController extends UITableViewController {
 
-	private static final String CELL_IDENTIFIER = "Cell";
+    private static final String CELL_IDENTIFIER = "Cell";
 
-	private final ArrayList<String> options = new ArrayList<String>();
+    private final ArrayList<String> options = new ArrayList<String>();
 
-	public static interface EventListener {
-		public void tableViewDidSelectRow(UITableView tableView, String row);
-	}
+    public static interface EventListener {
+        public void tableViewDidSelectRow(UITableView tableView, String row);
+    }
 
-	private EventListener listener;
+    private EventListener listener;
 
-	public static native SimpleTableController alloc();
+    public static native SimpleTableController alloc();
 
-	@Override
-	public native SimpleTableController init();
+    @Override
+    public native SimpleTableController init();
 
-	protected SimpleTableController(Pointer peer) {
-		super(peer);
-	}
+    protected SimpleTableController(Pointer peer) {
+        super(peer);
+    }
 
-	@Override
-	public void viewDidLoad() {
-		super.viewDidLoad();
+    @Override
+    public void viewDidLoad() {
+        super.viewDidLoad();
 
-		tableView().registerClassForCellReuseIdentifier(
-				new org.moe.natj.objc.Class("UITableViewCell"),
-				CELL_IDENTIFIER);
-	}
+        tableView().registerClassForCellReuseIdentifier(new org.moe.natj.objc.Class
+                ("UITableViewCell"), CELL_IDENTIFIER);
+    }
 
-	public void add(String elem) {
-		options.add(elem);
-		if (tableView() != null) {
-			NSIndexPath path = NSIndexPath.indexPathForRowInSection(
-					options.size() - 1, 0);
-			NSArray paths = NSArray.arrayWithObject(path);
-			tableView().insertRowsAtIndexPathsWithRowAnimation(paths,
-					UITableViewRowAnimation.Automatic);
-		}
-	}
+    public void add(String elem) {
+        options.add(elem);
+        if (tableView() != null) {
+            NSIndexPath path = NSIndexPath.indexPathForRowInSection(options.size() - 1, 0);
+            NSArray paths = NSArray.arrayWithObject(path);
+            tableView().insertRowsAtIndexPathsWithRowAnimation(paths, UITableViewRowAnimation
+                    .Automatic);
+        }
+    }
 
-	@Override
-	public long numberOfSectionsInTableView(UITableView tableView) {
-		return 1;
-	}
+    @Override
+    public long numberOfSectionsInTableView(UITableView tableView) {
+        return 1;
+    }
 
-	@Override
-	public long tableViewNumberOfRowsInSection(UITableView tableView, long section) {
-		return options.size();
-	}
+    @Override
+    public long tableViewNumberOfRowsInSection(UITableView tableView, long section) {
+        return options.size();
+    }
 
-	@Override
-	public UITableViewCell tableViewCellForRowAtIndexPath(
-			UITableView tableView, NSIndexPath indexPath) {
-		UITableViewCell cell = (UITableViewCell) tableView
-				.dequeueReusableCellWithIdentifierForIndexPath(CELL_IDENTIFIER,
-						indexPath);
+    @Override
+    public UITableViewCell tableViewCellForRowAtIndexPath(UITableView tableView, NSIndexPath
+            indexPath) {
+        UITableViewCell cell = (UITableViewCell) tableView
+                .dequeueReusableCellWithIdentifierForIndexPath(CELL_IDENTIFIER, indexPath);
 
-		cell.textLabel().setText(options.get((int)indexPath.row()));
+        cell.textLabel().setText(options.get((int) indexPath.row()));
 
-		return cell;
-	}
+        return cell;
+    }
 
-	@Override
-	public void tableViewDidSelectRowAtIndexPath(UITableView tableView,
-			NSIndexPath indexPath) {
-		if (listener != null) {
-			listener.tableViewDidSelectRow(tableView,
-					options.get((int)indexPath.row()));
-		}
-	}
+    @Override
+    public void tableViewDidSelectRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+        if (listener != null) {
+            listener.tableViewDidSelectRow(tableView, options.get((int) indexPath.row()));
+        }
+    }
 
-	public ArrayList<String> getOptions() {
-		return options;
-	}
+    public ArrayList<String> getOptions() {
+        return options;
+    }
 
-	public EventListener getListener() {
-		return listener;
-	}
+    public EventListener getListener() {
+        return listener;
+    }
 
-	public void setListener(EventListener listener) {
-		this.listener = listener;
-	}
-
+    public void setListener(EventListener listener) {
+        this.listener = listener;
+    }
 }

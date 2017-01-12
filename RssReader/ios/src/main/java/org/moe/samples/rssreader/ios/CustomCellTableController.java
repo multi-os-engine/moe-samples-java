@@ -40,81 +40,77 @@ import apple.uikit.UITableViewController;
 
 public abstract class CustomCellTableController extends UITableViewController {
 
-	public static final String CELL_IDENTIFIER = "Cell";
+    public static final String CELL_IDENTIFIER = "Cell";
 
-	private final ArrayList<Object> data = new ArrayList<Object>();
+    private final ArrayList<Object> data = new ArrayList<Object>();
 
-	public static interface EventListener {
-		public void tableViewDidSelectRow(UITableView tableView, Object row);
-	}
+    public interface EventListener {
+        void tableViewDidSelectRow(UITableView tableView, Object row);
+    }
 
-	private EventListener listener;
+    private EventListener listener;
 
-	public static native CustomCellTableController alloc();
+    public static native CustomCellTableController alloc();
 
-	@Override
-	public native CustomCellTableController init();
+    @Override
+    public native CustomCellTableController init();
 
-	protected CustomCellTableController(Pointer peer) {
-		super(peer);
-	}
+    protected CustomCellTableController(Pointer peer) {
+        super(peer);
+    }
 
-	@Override
-	public void viewDidLoad() {
-		super.viewDidLoad();
+    @Override
+    public void viewDidLoad() {
+        super.viewDidLoad();
 
-		prepareController();
-	}
+        prepareController();
+    }
 
-	protected abstract void prepareController();
+    protected abstract void prepareController();
 
-	protected void add(Object elem) {
-		data.add(elem);
-	}
+    protected void add(Object elem) {
+        data.add(elem);
+    }
 
-	@Override
-	public long numberOfSectionsInTableView(UITableView tableView) {
-		return 1;
-	}
+    @Override
+    public long numberOfSectionsInTableView(UITableView tableView) {
+        return 1;
+    }
 
-	@Override
-	public long tableViewNumberOfRowsInSection(UITableView tableView, long section) {
-		return data.size();
-	}
+    @Override
+    public long tableViewNumberOfRowsInSection(UITableView tableView, long section) {
+        return data.size();
+    }
 
-	@Override
-	public UITableViewCell tableViewCellForRowAtIndexPath(
-			UITableView tableView, NSIndexPath indexPath) {
-		UITableViewCell cell = (UITableViewCell) tableView
-				.dequeueReusableCellWithIdentifierForIndexPath(CELL_IDENTIFIER,
-						indexPath);
+    @Override
+    public UITableViewCell tableViewCellForRowAtIndexPath(UITableView tableView, NSIndexPath
+            indexPath) {
+        UITableViewCell cell = tableView.dequeueReusableCellWithIdentifierForIndexPath
+                (CELL_IDENTIFIER, indexPath);
 
-		setupCellAtIndex(cell, data.get((int)indexPath.row()));
+        setupCellAtIndex(cell, data.get((int) indexPath.row()));
 
-		return cell;
-	}
+        return cell;
+    }
 
-	protected abstract void setupCellAtIndex(UITableViewCell cell,
-			Object rowData);
+    protected abstract void setupCellAtIndex(UITableViewCell cell, Object rowData);
 
-	@Override
-	public void tableViewDidSelectRowAtIndexPath(UITableView tableView,
-			NSIndexPath indexPath) {
-		if (listener != null) {
-			listener.tableViewDidSelectRow(tableView, data.get((int)indexPath.row()));
-		}
-	}
+    @Override
+    public void tableViewDidSelectRowAtIndexPath(UITableView tableView, NSIndexPath indexPath) {
+        if (listener != null) {
+            listener.tableViewDidSelectRow(tableView, data.get((int) indexPath.row()));
+        }
+    }
 
-	public ArrayList<Object> getOptions() {
-		return data;
-	}
+    public ArrayList<Object> getOptions() {
+        return data;
+    }
 
-	public EventListener getListener() {
-		return listener;
-	}
+    public EventListener getListener() {
+        return listener;
+    }
 
-	public void setListener(EventListener listener) {
-		this.listener = listener;
-	}
-
+    public void setListener(EventListener listener) {
+        this.listener = listener;
+    }
 }
