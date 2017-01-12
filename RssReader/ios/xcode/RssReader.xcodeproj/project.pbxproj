@@ -10,7 +10,7 @@
 		585CD7E91E27DBAF0087EAFF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 585CD7E81E27DBAF0087EAFF /* main.cpp */; };
 		585CD7EB1E27DBD10087EAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7EA1E27DBD10087EAFF /* Assets.xcassets */; };
 		585CD7EE1E27E21D0087EAFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7F01E27E21D0087EAFF /* LaunchScreen.storyboard */; };
-		585CD7F11E27E2200087EAFF /* RSSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585CD7F31E27E2200087EAFF /* RSSCell.xib */; };
+		58DA51DF1E27E71D00EA186E /* RSSCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58DA51E11E27E71D00EA186E /* RSSCell.xib */; };
 		6499398411D2DFB9061E85E9 /* moe-main-interfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = E56168F87A0E438BE8D369FC /* moe-main-interfaces.m */; };
 		A061F5E0C614C0FDC680ACAB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0BD9662DCDDC665EA575B4C7 /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -45,7 +45,7 @@
 		585CD7E81E27DBAF0087EAFF /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		585CD7EA1E27DBD10087EAFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		585CD7EF1E27E21D0087EAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		585CD7F21E27E2200087EAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RSSCell.xib; sourceTree = "<group>"; };
+		58DA51E01E27E71D00EA186E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RSSCell.xib; sourceTree = "<group>"; };
 		C5A4B6A28EA7CA0868D04A63 /* RssReader-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RssReader-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1FE3B6EDEA969873B962C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "RssReader-Test/Info.plist"; sourceTree = SOURCE_ROOT; };
 		E56168F87A0E438BE8D369FC /* moe-main-interfaces.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "moe-main-interfaces.m"; path = "../build/moe/main/ui-headers/moe-main-interfaces.m"; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 				585CD7EA1E27DBD10087EAFF /* Assets.xcassets */,
 				0FA5474CB91D931E8C8BD65E /* Info.plist */,
 				585CD7F01E27E21D0087EAFF /* LaunchScreen.storyboard */,
-				585CD7F31E27E2200087EAFF /* RSSCell.xib */,
+				58DA51E11E27E71D00EA186E /* RSSCell.xib */,
 				D9B203BFE7C103387EA88933 /* Supporting Files */,
 			);
 			path = RssReader;
@@ -213,7 +213,7 @@
 			files = (
 				585CD7EE1E27E21D0087EAFF /* LaunchScreen.storyboard in Resources */,
 				585CD7EB1E27DBD10087EAFF /* Assets.xcassets in Resources */,
-				585CD7F11E27E2200087EAFF /* RSSCell.xib in Resources */,
+				58DA51DF1E27E71D00EA186E /* RSSCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,14 +286,13 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		585CD7F31E27E2200087EAFF /* RSSCell.xib */ = {
+		58DA51E11E27E71D00EA186E /* RSSCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				585CD7F21E27E2200087EAFF /* Base */,
+				58DA51E01E27E71D00EA186E /* Base */,
 			);
 			name = RSSCell.xib;
-			path = ../src/main/resources;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 

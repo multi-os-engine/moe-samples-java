@@ -153,13 +153,16 @@ public class RSSReaderController extends CustomCellTableController {
                         1.0), true);
                 loaderThread = null;
             });
-        }); loaderThread.start();
+        });
+        loaderThread.start();
     }
 
     private void handleError(String errorMessage) {
-        UIAlertView alertView = UIAlertView.alloc().init();
-        alertView.setMessage("Cannot Show Rss news: " + errorMessage);
-        alertView.show();
+        Globals.dispatch_async(Globals.dispatch_get_main_queue(), () -> {
+            UIAlertView alertView = UIAlertView.alloc().init();
+            alertView.setMessage("Cannot Show Rss news: " + errorMessage);
+            alertView.show();
+        });
     }
 
     @Override
