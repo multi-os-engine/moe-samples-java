@@ -33,12 +33,15 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.IBAction;
+import org.moe.natj.objc.ann.IBOutlet;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.tictactoe.common.TicTacToe;
 
 import apple.NSObject;
+import apple.quartzcore.CALayer;
 import apple.uikit.UIButton;
 import apple.uikit.UIColor;
 import apple.uikit.UILabel;
@@ -64,7 +67,6 @@ public class TicTacToeViewController extends UIViewController {
     private TicTacToe ticTacToeGame;
 
     public UILabel statusText = null;
-    public UIButton newGameButton = null;
 
     public UIButton gameButton0 = null;
     public UIButton gameButton1 = null;
@@ -82,7 +84,6 @@ public class TicTacToeViewController extends UIViewController {
     public void viewDidLoad() {
         ticTacToeGame = new TicTacToe();
         statusText = getStatusTextLabel();
-        newGameButton = getNewGameButton();
 
         gameButton0 = getGameButton0();
         gameButton1 = getGameButton1();
@@ -99,139 +100,68 @@ public class TicTacToeViewController extends UIViewController {
         startNewGame();
     }
 
+    @IBOutlet
     @Selector("statusText")
     @Property
     public native UILabel getStatusTextLabel();
 
-    @Selector("newGameButton")
-    @Property
-    public native UIButton getNewGameButton();
-
+    @IBOutlet
     @Selector("gameButton0")
     @Property
     public native UIButton getGameButton0();
 
+    @IBOutlet
     @Selector("gameButton1")
     @Property
     public native UIButton getGameButton1();
 
+    @IBOutlet
     @Selector("gameButton2")
     @Property
     public native UIButton getGameButton2();
 
+    @IBOutlet
     @Selector("gameButton3")
     @Property
     public native UIButton getGameButton3();
 
+    @IBOutlet
     @Selector("gameButton4")
     @Property
     public native UIButton getGameButton4();
 
+    @IBOutlet
     @Selector("gameButton5")
     @Property
     public native UIButton getGameButton5();
 
+    @IBOutlet
     @Selector("gameButton6")
     @Property
     public native UIButton getGameButton6();
 
+    @IBOutlet
     @Selector("gameButton7")
     @Property
     public native UIButton getGameButton7();
 
+    @IBOutlet
     @Selector("gameButton8")
     @Property
     public native UIButton getGameButton8();
 
-    @Selector("BtnPressedCancel_newGameButton:")
-    public void btnPressedCancel_newGameButton(NSObject sender){
+    @IBAction
+    @Selector("newGame:")
+    public void newGame(NSObject sender) {
         startNewGame();
     }
 
-    @Selector("BtnPressedCancel_gameButton0:")
-    public void btnPressedCancel_gameButton0(NSObject sender) {
-        makeMove(0, "X");
-        ticTacToeGame.newTurn(0, TicTacToe.playerX);
-        ticTacToeGame.minimax(0, TicTacToe.player0);
-        ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
-        makeMove(ticTacToeGame.getComputersMove(), "0");
-        checkGameOver();
-    }
-
-    @Selector("BtnPressedCancel_gameButton1:")
-    public void btnPressedCancel_gameButton1(NSObject sender){
-        makeMove(1, "X");
-        ticTacToeGame.newTurn(1, TicTacToe.playerX);
-        ticTacToeGame.minimax(0, TicTacToe.player0);
-        ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
-        makeMove(ticTacToeGame.getComputersMove(), "0");
-        checkGameOver();
-    }
-
-    @Selector("BtnPressedCancel_gameButton2:")
-    public void btnPressedCancel_gameButton2(NSObject sender){
-        makeMove(2, "X");
-        ticTacToeGame.newTurn(2, TicTacToe.playerX);
-        ticTacToeGame.minimax(0, TicTacToe.player0);
-        ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
-        makeMove(ticTacToeGame.getComputersMove(), "0");
-        checkGameOver();
-    }
-
-    @Selector("BtnPressedCancel_gameButton3:")
-    public void btnPressedCancel_gameButton3(NSObject sender){
-        makeMove(3, "X");
-        ticTacToeGame.newTurn(3, TicTacToe.playerX);
-        ticTacToeGame.minimax(0, TicTacToe.player0);
-        ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
-        makeMove(ticTacToeGame.getComputersMove(), "0");
-        checkGameOver();
-    }
-
-    @Selector("BtnPressedCancel_gameButton4:")
-    public void btnPressedCancel_gameButton4(NSObject sender){
-        makeMove(4, "X");
-        ticTacToeGame.newTurn(4, TicTacToe.playerX);
-        ticTacToeGame.minimax(0, TicTacToe.player0);
-        ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
-        makeMove(ticTacToeGame.getComputersMove(), "0");
-        checkGameOver();
-    }
-
-    @Selector("BtnPressedCancel_gameButton5:")
-    public void btnPressedCancel_gameButton5(NSObject sender){
-        makeMove(5, "X");
-        ticTacToeGame.newTurn(5, TicTacToe.playerX);
-        ticTacToeGame.minimax(0, TicTacToe.player0);
-        ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
-        makeMove(ticTacToeGame.getComputersMove(), "0");
-        checkGameOver();
-    }
-
-    @Selector("BtnPressedCancel_gameButton6:")
-    public void btnPressedCancel_gameButton6(NSObject sender){
-        makeMove(6, "X");
-        ticTacToeGame.newTurn(6, TicTacToe.playerX);
-        ticTacToeGame.minimax(0, TicTacToe.player0);
-        ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
-        makeMove(ticTacToeGame.getComputersMove(), "0");
-        checkGameOver();
-    }
-
-    @Selector("BtnPressedCancel_gameButton7:")
-    public void btnPressedCancel_gameButton7(NSObject sender){
-        makeMove(7, "X");
-        ticTacToeGame.newTurn(7, TicTacToe.playerX);
-        ticTacToeGame.minimax(0, TicTacToe.player0);
-        ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
-        makeMove(ticTacToeGame.getComputersMove(), "0");
-        checkGameOver();
-    }
-
-    @Selector("BtnPressedCancel_gameButton8:")
-    public void btnPressedCancel_gameButton8(NSObject sender){
-        makeMove(8, "X");
-        ticTacToeGame.newTurn(8, TicTacToe.playerX);
+    @IBAction
+    @Selector("gameButtonAction:")
+    public void gameButtonAction(UIButton sender) {
+        int btn = (int) sender.tag();
+        makeMove(btn, "X");
+        ticTacToeGame.newTurn(btn, TicTacToe.playerX);
         ticTacToeGame.minimax(0, TicTacToe.player0);
         ticTacToeGame.newTurn(ticTacToeGame.getComputersMove(), TicTacToe.player0);
         makeMove(ticTacToeGame.getComputersMove(), "0");
@@ -240,29 +170,29 @@ public class TicTacToeViewController extends UIViewController {
 
     public void startNewGame() {
         statusText.setText("Status: New Game, your turn...");
-        statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 0 / 255.0, (float) 0 / 255.0, (float) 0 / 255.0, (float) 1.0));
+        statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 0 / 255.0, (float) 0 /
+                255.0, (float) 0 / 255.0, (float) 1.0));
         ticTacToeGame.startNewGame();
 
-        gameButton0.setTitleForState("", UIControlState.Normal);
-        gameButton0.setEnabled(true);
-        gameButton1.setTitleForState("", UIControlState.Normal);
-        gameButton1.setEnabled(true);
-        gameButton2.setTitleForState("", UIControlState.Normal);
-        gameButton2.setEnabled(true);
+        setButtonToStartState(gameButton0, 0);
+        setButtonToStartState(gameButton1, 1);
+        setButtonToStartState(gameButton2, 2);
 
-        gameButton3.setTitleForState("", UIControlState.Normal);
-        gameButton3.setEnabled(true);
-        gameButton4.setTitleForState("", UIControlState.Normal);
-        gameButton4.setEnabled(true);
-        gameButton5.setTitleForState("", UIControlState.Normal);
-        gameButton5.setEnabled(true);
+        setButtonToStartState(gameButton3, 3);
+        setButtonToStartState(gameButton4, 4);
+        setButtonToStartState(gameButton5, 5);
 
-        gameButton6.setTitleForState("", UIControlState.Normal);
-        gameButton6.setEnabled(true);
-        gameButton7.setTitleForState("", UIControlState.Normal);
-        gameButton7.setEnabled(true);
-        gameButton8.setTitleForState("", UIControlState.Normal);
-        gameButton8.setEnabled(true);
+        setButtonToStartState(gameButton6, 6);
+        setButtonToStartState(gameButton7, 7);
+        setButtonToStartState(gameButton8, 8);
+    }
+
+    private void setButtonToStartState(UIButton button, int tag) {
+        button.setTitleForState("", UIControlState.Normal);
+        button.setEnabled(true);
+        button.setTag(tag);
+        final CALayer layer = button.layer();
+        layer.setCornerRadius(6.0);
     }
 
     public void checkGameOver() {
@@ -281,20 +211,21 @@ public class TicTacToeViewController extends UIViewController {
 
             if (ticTacToeGame.wonX()) {
                 statusText.setText("Status: Congratulation! You win!");
-                statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 50.0 / 255.0, (float) 205.0/255.0, (float) 50.0/255.0, (float) 1.0));
-            }
-            else if (ticTacToeGame.won0()) {
+                statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 50.0 / 255.0,
+                        (float) 205.0 / 255.0, (float) 50.0 / 255.0, (float) 1.0));
+            } else if (ticTacToeGame.won0()) {
                 statusText.setText("Status: Unfortunately, you lost!");
-                statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 255.0/255.0, (float) 0/255.0, (float) 0/255.0, (float) 1.0));
-            }
-            else {
+                statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 255.0 / 255.0,
+                        (float) 0 / 255.0, (float) 0 / 255.0, (float) 1.0));
+            } else {
                 statusText.setText("Status: It's a draw!");
-                statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 218.0 / 255.0, (float) 165.0 / 255.0, (float) 32.0 / 255.0, (float) 1.0));
+                statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 218.0 / 255.0,
+                        (float) 165.0 / 255.0, (float) 32.0 / 255.0, (float) 1.0));
             }
-        }
-        else {
+        } else {
             statusText.setText("Status: Your turn...");
-            statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 0.0/255.0, (float) 0.0/255.0, (float) 0.0/255.0, (float) 1.0));
+            statusText.setTextColor(UIColor.colorWithRedGreenBlueAlpha((float) 0.0 / 255.0,
+                    (float) 0.0 / 255.0, (float) 0.0 / 255.0, (float) 1.0));
         }
     }
 

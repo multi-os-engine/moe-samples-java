@@ -29,14 +29,14 @@
 
 package org.moe.samples.tictactoe.ios;
 
+import org.moe.natj.general.Pointer;
+
 import apple.NSObject;
 import apple.foundation.NSDictionary;
 import apple.uikit.UIApplication;
 import apple.uikit.UIWindow;
 import apple.uikit.c.UIKit;
 import apple.uikit.protocol.UIApplicationDelegate;
-
-import org.moe.natj.general.Pointer;
 
 public class Main extends NSObject implements UIApplicationDelegate {
 
@@ -53,7 +53,8 @@ public class Main extends NSObject implements UIApplicationDelegate {
     private UIWindow window;
 
     @Override
-    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
+    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application,
+                                                            NSDictionary launchOptions) {
         return true;
     }
 
