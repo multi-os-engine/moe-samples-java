@@ -36,144 +36,139 @@ import org.moe.samples.museummap.common.database.ISQLiteDatabase;
 
 public class SQLiteDatabase implements ISQLiteDatabase {
 
-	private final VoidPtr dbHandle;
+    private final VoidPtr dbHandle;
 
-	public SQLiteDatabase(VoidPtr dbHandle) {
-		if (dbHandle == null) {
-			throw new NullPointerException("dbHandle can't be null");
-		}
-		this.dbHandle = dbHandle;
-	}
+    public SQLiteDatabase(VoidPtr dbHandle) {
+        if (dbHandle == null) {
+            throw new NullPointerException("dbHandle can't be null");
+        }
+        this.dbHandle = dbHandle;
+    }
 
-	@Override
-	public ISQLiteContentValues newContentValues() {
-		return new SQLiteContentValues();
-	}
+    @Override
+    public ISQLiteContentValues newContentValues() {
+        return new SQLiteContentValues();
+    }
 
-	@Override
-	public ISQLiteCursor query(String table, String[] columns,
-			String selection, String[] selectionArgs, String groupBy,
-			String having, String orderBy) {
-		if (selectionArgs != null || groupBy != null || having != null || orderBy != null) {
-			throw new RuntimeException("Unimplemented");
-		}
-		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT ");
-		if (columns == null || columns.length == 0) {
-			sql.append("*");
-		} else {
-			for (String val : columns) {
-				sql.append(val);
-				sql.append(",");
-			}
-			sql.deleteCharAt(sql.length() - 1);
-		}
-		sql.append(" FROM ");
-		sql.append(table);
-		if (!TextUtils.isEmpty(selection)) {
-			sql.append(" WHERE (");
-			sql.append(selection);
-			sql.append(")");
-		}
+    @Override
+    public ISQLiteCursor query(String table, String[] columns, String selection, String[]
+            selectionArgs, String groupBy, String having, String orderBy) {
+        if (selectionArgs != null || groupBy != null || having != null || orderBy != null) {
+            throw new RuntimeException("Unimplemented");
+        }
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT ");
+        if (columns == null || columns.length == 0) {
+            sql.append("*");
+        } else {
+            for (String val : columns) {
+                sql.append(val);
+                sql.append(",");
+            }
+            sql.deleteCharAt(sql.length() - 1);
+        }
+        sql.append(" FROM ");
+        sql.append(table);
+        if (!TextUtils.isEmpty(selection)) {
+            sql.append(" WHERE (");
+            sql.append(selection);
+            sql.append(")");
+        }
 
-		SQLiteStatement stmt = new SQLiteStatement(sql.toString(), null);
-		if (stmt.prepare(dbHandle)) {
-			return stmt.query();
-		} else {
-			System.err.println("Error querying - " + stmt.getLastError());
-			System.err.println("\tin: " + stmt.getStatement());
-		}
-		return null;
-	}
+        SQLiteStatement stmt = new SQLiteStatement(sql.toString(), null);
+        if (stmt.prepare(dbHandle)) {
+            return stmt.query();
+        } else {
+            System.err.println("Error querying - " + stmt.getLastError());
+            System.err.println("\tin: " + stmt.getStatement());
+        }
+        return null;
+    }
 
-	@Override
-	public ISQLiteCursor rawQuery(String sql, String[] selectionArgs) {
-		SQLiteStatement stmt = new SQLiteStatement(sql, null);
-		if (stmt.prepare(dbHandle)) {
-			return stmt.query();
-		} else {
-			System.err.println("Error querying - " + stmt.getLastError());
-			System.err.println("\tin: " + stmt.getStatement());
-		}
-		return null;
-	}
+    @Override
+    public ISQLiteCursor rawQuery(String sql, String[] selectionArgs) {
+        SQLiteStatement stmt = new SQLiteStatement(sql, null);
+        if (stmt.prepare(dbHandle)) {
+            return stmt.query();
+        } else {
+            System.err.println("Error querying - " + stmt.getLastError());
+            System.err.println("\tin: " + stmt.getStatement());
+        }
+        return null;
+    }
 
-	@Override
-	public int delete(String table, String whereClause, String[] whereArgs) {
-		if (whereArgs != null) {
-			throw new RuntimeException("Unimplemented");
-		}
+    @Override
+    public int delete(String table, String whereClause, String[] whereArgs) {
+        if (whereArgs != null) {
+            throw new RuntimeException("Unimplemented");
+        }
 
-		SQLiteStatement stmt = new SQLiteStatement("DELETE FROM "
-				+ table
-				+ (!TextUtils.isEmpty(whereClause) ? " WHERE " + whereClause
-						: ""), null);
-		int affected = 0;
-		if (stmt.prepare(dbHandle)) {
-			if (!stmt.exec()) {
-				System.err.println("Error deleting - " + stmt.getLastError());
-			} else {
-				affected = stmt.getAffectedCount();
-			}
-		} else {
-			System.err.println("Error deleting - " + stmt.getLastError());
-			System.err.println("\tin: " + stmt.getStatement());
-		}
-		return affected;
-	}
+        SQLiteStatement stmt = new SQLiteStatement("DELETE FROM " + table + (!TextUtils.isEmpty
+                (whereClause) ? " WHERE " + whereClause : ""), null);
+        int affected = 0;
+        if (stmt.prepare(dbHandle)) {
+            if (!stmt.exec()) {
+                System.err.println("Error deleting - " + stmt.getLastError());
+            } else {
+                affected = stmt.getAffectedCount();
+            }
+        } else {
+            System.err.println("Error deleting - " + stmt.getLastError());
+            System.err.println("\tin: " + stmt.getStatement());
+        }
+        return affected;
+    }
 
-	@Override
-	public long insert(String table, String nullColumnHack,
-			ISQLiteContentValues initialValues) {
-		StringBuilder sql = new StringBuilder();
-		sql.append("INSERT");
-		sql.append(" INTO ");
-		sql.append(table);
-		sql.append('(');
+    @Override
+    public long insert(String table, String nullColumnHack, ISQLiteContentValues initialValues) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("INSERT");
+        sql.append(" INTO ");
+        sql.append(table);
+        sql.append('(');
 
-		Object[] bindArgs = null;
-		int size = (initialValues != null && initialValues.size() > 0) ? initialValues
-				.size() : 0;
-		if (size > 0) {
-			bindArgs = new Object[size];
-			int i = 0;
-			for (String colName : initialValues.keySet()) {
-				sql.append((i > 0) ? "," : "");
-				sql.append(colName);
-				bindArgs[i++] = initialValues.get(colName);
-			}
-			sql.append(')');
-			sql.append(" VALUES (");
-			for (i = 0; i < size; i++) {
-				sql.append((i > 0) ? ",?" : "?");
-			}
-		} else {
-			sql.append(nullColumnHack + ") VALUES (NULL");
-		}
-		sql.append(')');
+        Object[] bindArgs = null;
+        int size = (initialValues != null && initialValues.size() > 0) ? initialValues.size() : 0;
+        if (size > 0) {
+            bindArgs = new Object[size];
+            int i = 0;
+            for (String colName : initialValues.keySet()) {
+                sql.append((i > 0) ? "," : "");
+                sql.append(colName);
+                bindArgs[i++] = initialValues.get(colName);
+            }
+            sql.append(')');
+            sql.append(" VALUES (");
+            for (i = 0; i < size; i++) {
+                sql.append((i > 0) ? ",?" : "?");
+            }
+        } else {
+            sql.append(nullColumnHack + ") VALUES (NULL");
+        }
+        sql.append(')');
 
-		SQLiteStatement stmt = new SQLiteStatement(sql.toString(), bindArgs);
-		long lastInsertedID = -1L;
-		if (stmt.prepare(dbHandle)) {
-			if (!stmt.exec()) {
-				System.err.println("Error inserting - " + stmt.getLastError());
-			} else {
-				lastInsertedID = stmt.getLastInsertedID();
-			}
-		} else {
-			System.err.println("Error inserting - " + stmt.getLastError());
-			System.err.println("\tin: " + stmt.getStatement());
-		}
-		return lastInsertedID;
-	}
+        SQLiteStatement stmt = new SQLiteStatement(sql.toString(), bindArgs);
+        long lastInsertedID = -1L;
+        if (stmt.prepare(dbHandle)) {
+            if (!stmt.exec()) {
+                System.err.println("Error inserting - " + stmt.getLastError());
+            } else {
+                lastInsertedID = stmt.getLastInsertedID();
+            }
+        } else {
+            System.err.println("Error inserting - " + stmt.getLastError());
+            System.err.println("\tin: " + stmt.getStatement());
+        }
+        return lastInsertedID;
+    }
 
-	@Override
-	public void update(String tableName, ISQLiteContentValues values,
-			String whereClause, String[] whereArgs) {
+    @Override
+    public void update(String tableName, ISQLiteContentValues values, String whereClause,
+                       String[] whereArgs) {
         if (values == null || values.size() == 0) {
             throw new IllegalArgumentException("Empty values");
         }
-        
+
         StringBuilder sql = new StringBuilder(120);
         sql.append("UPDATE ");
         sql.append(tableName);
@@ -199,28 +194,28 @@ public class SQLiteDatabase implements ISQLiteDatabase {
             sql.append(" WHERE ");
             sql.append(whereClause);
         }
-        
-        SQLiteStatement stmt = new SQLiteStatement(sql.toString(), bindArgs);
-		if (stmt.prepare(dbHandle)) {
-			if (!stmt.exec()) {
-				System.err.println("Error updating - " + stmt.getLastError());
-			}
-		} else {
-			System.err.println("Error updating - " + stmt.getLastError());
-			System.err.println("\tin: " + stmt.getStatement());
-		}
-	}
 
-	@Override
-	public void execSQL(String statement) {
-		SQLiteStatement stmt = new SQLiteStatement(statement, null);
-		if (stmt.prepare(dbHandle)) {
-			if (!stmt.exec()) {
-				System.err.println("Error executing - " + stmt.getLastError());
-			}
-		} else {
-			System.err.println("Error executing - " + stmt.getLastError());
-			System.err.println("\tin: " + stmt.getStatement());
-		}
-	}
+        SQLiteStatement stmt = new SQLiteStatement(sql.toString(), bindArgs);
+        if (stmt.prepare(dbHandle)) {
+            if (!stmt.exec()) {
+                System.err.println("Error updating - " + stmt.getLastError());
+            }
+        } else {
+            System.err.println("Error updating - " + stmt.getLastError());
+            System.err.println("\tin: " + stmt.getStatement());
+        }
+    }
+
+    @Override
+    public void execSQL(String statement) {
+        SQLiteStatement stmt = new SQLiteStatement(statement, null);
+        if (stmt.prepare(dbHandle)) {
+            if (!stmt.exec()) {
+                System.err.println("Error executing - " + stmt.getLastError());
+            }
+        } else {
+            System.err.println("Error executing - " + stmt.getLastError());
+            System.err.println("\tin: " + stmt.getStatement());
+        }
+    }
 }

@@ -31,11 +31,10 @@ package org.moe.samples.museummap.ios.db;
 
 public class TextUtils {
 
-	public static boolean isEmpty(String whereClause) {
-		if(whereClause == null) {
-			return true;
-		}
-		return whereClause.trim().length() == 0;
-	}
-
+    public static boolean isEmpty(String whereClause) {
+        if (whereClause == null) {
+            return true;
+        }
+        return whereClause.trim().length() == 0;
+    }
 }

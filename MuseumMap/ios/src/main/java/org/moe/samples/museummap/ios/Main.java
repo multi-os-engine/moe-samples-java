@@ -29,6 +29,10 @@
 
 package org.moe.samples.museummap.ios;
 
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.RegisterOnStartup;
+import org.moe.natj.objc.ann.Selector;
+
 import apple.NSObject;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSDictionary;
@@ -39,10 +43,6 @@ import apple.uikit.UIViewController;
 import apple.uikit.UIWindow;
 import apple.uikit.c.UIKit;
 import apple.uikit.protocol.UIApplicationDelegate;
-
-import org.moe.natj.general.Pointer;
-import org.moe.natj.general.ann.RegisterOnStartup;
-import org.moe.natj.objc.ann.Selector;
 
 @RegisterOnStartup
 public class Main extends NSObject implements UIApplicationDelegate {
@@ -61,12 +61,8 @@ public class Main extends NSObject implements UIApplicationDelegate {
     private UIWindow window;
 
     @Override
-    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
-        // For setup proxy
-        //System.setProperty("http.proxyHost", "http_proxy_address");
-        //System.setProperty("http.proxyPort", "http_proxy_port");
-        //System.setProperty("https.proxyHost", "https_proxy_address");
-        //System.setProperty("https.proxyPort", "https_proxy_port");
+    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application,
+                                                            NSDictionary launchOptions) {
         UIViewController vc = MuseumMapController.alloc().init();
         UINavigationController navigationController = UINavigationController.alloc().init();
 

@@ -36,61 +36,60 @@ import java.util.Set;
 
 public class SQLiteContentValues implements ISQLiteContentValues {
 
-	private final HashMap<String, Object> mValues = new HashMap<>();
-	
-	@Override
-	public void put(String key, String value) {
-		mValues.put(key, value);
-	}
+    private final HashMap<String, Object> mValues = new HashMap<>();
 
-	@Override
-	public void put(String key, Byte value) {
-		mValues.put(key, value);
-	}
+    @Override
+    public void put(String key, String value) {
+        mValues.put(key, value);
+    }
 
-	@Override
-	public void put(String key, Short value) {
-		mValues.put(key, value);
-	}
+    @Override
+    public void put(String key, Byte value) {
+        mValues.put(key, value);
+    }
 
-	@Override
-	public void put(String key, Integer value) {
-		mValues.put(key, value);
-	}
+    @Override
+    public void put(String key, Short value) {
+        mValues.put(key, value);
+    }
 
-	@Override
-	public void put(String key, Long value) {
-		mValues.put(key, value);
-	}
+    @Override
+    public void put(String key, Integer value) {
+        mValues.put(key, value);
+    }
 
-	@Override
-	public void put(String key, Float value) {
-		mValues.put(key, value);
-	}
+    @Override
+    public void put(String key, Long value) {
+        mValues.put(key, value);
+    }
 
-	@Override
-	public void put(String key, Double value) {
-		mValues.put(key, value);
-	}
+    @Override
+    public void put(String key, Float value) {
+        mValues.put(key, value);
+    }
 
-	@Override
-	public void put(String key, Boolean value) {
-		mValues.put(key, value);
-	}
+    @Override
+    public void put(String key, Double value) {
+        mValues.put(key, value);
+    }
 
-	@Override
-	public int size() {
-		return mValues.size();
-	}
+    @Override
+    public void put(String key, Boolean value) {
+        mValues.put(key, value);
+    }
 
-	@Override
-	public Set<String> keySet() {
-		return mValues.keySet();
-	}
+    @Override
+    public int size() {
+        return mValues.size();
+    }
 
-	@Override
-	public Object get(String colName) {
-		return mValues.get(colName);
-	}
+    @Override
+    public Set<String> keySet() {
+        return mValues.keySet();
+    }
 
+    @Override
+    public Object get(String colName) {
+        return mValues.get(colName);
+    }
 }

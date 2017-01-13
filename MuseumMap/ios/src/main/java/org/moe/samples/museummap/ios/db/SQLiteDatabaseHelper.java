@@ -36,7 +36,6 @@ import org.moe.samples.museummap.common.core.Utils;
 import org.moe.samples.museummap.common.database.ISQLiteDatabase;
 import org.moe.samples.museummap.common.database.ISQLiteDatabaseHelper;
 import org.moe.samples.museummap.common.model.entities.MuseumEntity;
-
 import org.sqlite.c.Globals;
 
 import java.io.File;
@@ -50,83 +49,80 @@ import apple.foundation.enums.NSSearchPathDomainMask;
 
 public class SQLiteDatabaseHelper implements ISQLiteDatabaseHelper {
 
-	private final String databaseFile;
+    private final String databaseFile;
 
-	private VoidPtr connectionHandle = null;
+    private VoidPtr connectionHandle = null;
 
-	public SQLiteDatabaseHelper(String databaseFile) {
-		this.databaseFile = databaseFile;
-		try {
-			init();
-		} catch (Exception e) {
-			connectionHandle = null;
-		}
-	}
+    public SQLiteDatabaseHelper(String databaseFile) {
+        this.databaseFile = databaseFile;
+        try {
+            init();
+        } catch (Exception e) {
+            connectionHandle = null;
+        }
+    }
 
-	private void init() throws IOException {
-		// Get path to database
-		String docPath = getDocumentsPath();
-		if (docPath == null) {
-			System.err.println("Failed to load app's document path");
-			return;
-		}
-		File file = new File(docPath, databaseFile);
+    private void init() throws IOException {
+        // Get path to database
+        String docPath = getDocumentsPath();
+        if (docPath == null) {
+            System.err.println("Failed to load app's document path");
+            return;
+        }
+        File file = new File(docPath, databaseFile);
 
-		// Check existence
-		boolean isNew = !file.exists();
+        // Check existence
+        boolean isNew = !file.exists();
 
-		// Open database
-		@SuppressWarnings("unchecked")
-		Ptr<VoidPtr> dbHandleRef = (Ptr<VoidPtr>) PtrFactory.newPointerPtr(Void.class, 2, 1, true, false);
-		if (Globals.sqlite3_open(file.getCanonicalPath(), dbHandleRef) != 0) {
-			throw new IOException("Failed to open/create database file");
-		}
-		connectionHandle = dbHandleRef.get();
-		
-		// Initialize
-		if (isNew) {
-			onCreate(getWritableDatabase());
-		} else {
-			// onUpdate(getWritableDatabase());
-		}
-	}
+        // Open database
+        @SuppressWarnings("unchecked") Ptr<VoidPtr> dbHandleRef = (Ptr<VoidPtr>) PtrFactory
+                .newPointerPtr(Void.class, 2, 1, true, false);
+        if (Globals.sqlite3_open(file.getCanonicalPath(), dbHandleRef) != 0) {
+            throw new IOException("Failed to open/create database file");
+        }
+        connectionHandle = dbHandleRef.get();
 
-	private void onCreate(ISQLiteDatabase sqLiteDatabase) {
-		Utils.executeSQLStatement(sqLiteDatabase, Utils
-				.createTableSQL(MuseumEntity.TABLE_NAME,
-						MuseumEntity.fields));
-	}
+        // Initialize
+        if (isNew) {
+            onCreate(getWritableDatabase());
+        } else {
+            // onUpdate(getWritableDatabase());
+        }
+    }
 
-	@SuppressWarnings("unused")
-	private void onUpdate(ISQLiteDatabase sqLiteDatabase) {
-		Utils.executeSQLStatement(sqLiteDatabase, Utils
-				.dropTableIfExistsSQL(MuseumEntity.TABLE_NAME));
-		onCreate(sqLiteDatabase);
-	}
+    private void onCreate(ISQLiteDatabase sqLiteDatabase) {
+        Utils.executeSQLStatement(sqLiteDatabase, Utils.createTableSQL(MuseumEntity.TABLE_NAME,
+                MuseumEntity.fields));
+    }
 
-	private String getDocumentsPath() {
-		NSArray paths = Foundation.NSSearchPathForDirectoriesInDomains(
-				NSSearchPathDirectory.DocumentDirectory,
-				NSSearchPathDomainMask.UserDomainMask, true);
-		return (String) paths.firstObject();
-	}
+    @SuppressWarnings("unused")
+    private void onUpdate(ISQLiteDatabase sqLiteDatabase) {
+        Utils.executeSQLStatement(sqLiteDatabase, Utils.dropTableIfExistsSQL(MuseumEntity
+                .TABLE_NAME));
+        onCreate(sqLiteDatabase);
+    }
 
-	@Override
-	public ISQLiteDatabase getWritableDatabase() {
-		return new SQLiteDatabase(connectionHandle);
-	}
+    private String getDocumentsPath() {
+        NSArray paths = Foundation.NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory
+                .DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true);
+        return (String) paths.firstObject();
+    }
 
-	@Override
-	public void close() {
-		if (connectionHandle != null) {
-			Globals.sqlite3_close(connectionHandle);
-			connectionHandle = null;
-		}
-	}
+    @Override
+    public ISQLiteDatabase getWritableDatabase() {
+        return new SQLiteDatabase(connectionHandle);
+    }
 
-	@Override
-	public InputStream getDefaultDatabaseContents() {
-		return null;
-	}
+    @Override
+    public void close() {
+        if (connectionHandle != null) {
+            Globals.sqlite3_close(connectionHandle);
+            connectionHandle = null;
+        }
+    }
 
+    @Override
+    public InputStream getDefaultDatabaseContents() {
+        return null;
+    }
 }

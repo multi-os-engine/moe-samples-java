@@ -32,147 +32,146 @@ package org.moe.samples.museummap.ios.db;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
-
 import org.sqlite.c.Globals;
 
 public class SQLiteStatement {
-	
-	private final String statement;
 
-	private final Object[] bindArgs;
+    private final String statement;
 
-	private VoidPtr stmtHandle;
+    private final Object[] bindArgs;
 
-	private VoidPtr dbHandle;
+    private VoidPtr stmtHandle;
 
-	private String lastError;
+    private VoidPtr dbHandle;
 
-	private int affectedCount = 0;
+    private String lastError;
 
-	private long lastInsertedID = -1;
-	
-	VoidPtr getStmtHandle() {
-		return stmtHandle;
-	}
+    private int affectedCount = 0;
 
-	VoidPtr getDbHandle() {
-		return dbHandle;
-	}
+    private long lastInsertedID = -1;
 
-	String getLastError() {
-		return lastError;
-	}
+    VoidPtr getStmtHandle() {
+        return stmtHandle;
+    }
 
-	public SQLiteStatement(String statement, Object[] bindArgs) {
-		if (statement == null) {
-			throw new NullPointerException();
-		}
-		this.statement = statement;
-		this.bindArgs = bindArgs == null ? new Object[0] : bindArgs;
-	}
+    VoidPtr getDbHandle() {
+        return dbHandle;
+    }
 
-	public boolean prepare(VoidPtr dbHandle) {
-		if (dbHandle == null) {
-			throw new NullPointerException();
-		}
-		this.dbHandle = dbHandle;
+    String getLastError() {
+        return lastError;
+    }
 
-		@SuppressWarnings("unchecked")
-		Ptr<VoidPtr> stmtRef = (Ptr<VoidPtr>) PtrFactory.newPointerPtr(
-				Void.class, 2, 1, true, false);
-		int err = Globals.sqlite3_prepare_v2(dbHandle, statement, -1, stmtRef,
-				null);
-		if (err != 0) {
-			lastError = Globals.sqlite3_errmsg(dbHandle);
-			return false;
-		}
-		stmtHandle = stmtRef.get();
-		int idx = 0;
-		for (Object bind : bindArgs) {
-			idx++;
-			if (bind instanceof String) {
-				err = Globals.sqlite3_bind_text(stmtHandle, idx, (String) bind, -1, new Globals.Function_sqlite3_bind_text() {
-					@Override
-					public void call_sqlite3_bind_text(VoidPtr arg0) {
+    public SQLiteStatement(String statement, Object[] bindArgs) {
+        if (statement == null) {
+            throw new NullPointerException();
+        }
+        this.statement = statement;
+        this.bindArgs = bindArgs == null ? new Object[0] : bindArgs;
+    }
 
-					}
-				});
-			} else if (bind instanceof Integer) {
-				err = Globals.sqlite3_bind_int(stmtHandle, idx,  (Integer) bind);
-			} else if (bind instanceof Long) {
-				err = Globals.sqlite3_bind_int64(stmtHandle, idx,  (Long) bind);
-			} else if (bind instanceof Double) {
-				err = Globals.sqlite3_bind_double(stmtHandle, idx,  (Double) bind);
-			} else if (bind == null) {
-				err = Globals.sqlite3_bind_null(stmtHandle, idx);
-			} else {
-				lastError = "No implemented SQLite3 bind function found for " + bind.getClass().getName();
-				return false;
-			}
-			if (err != 0) {
-				lastError = Globals.sqlite3_errmsg(dbHandle);
-				return false;
-			}
-		}
-		return true;
-	}
-	
-	public boolean exec() {
-		if (stmtHandle == null) {
-			throw new RuntimeException("statement handle is closed");
-		}
-		int err = Globals.sqlite3_step(stmtHandle);
-		if (err == 101 /* SQLITE_DONE */) {
-			affectedCount = Globals.sqlite3_changes(dbHandle);
-			lastInsertedID = Globals.sqlite3_last_insert_rowid(dbHandle);
-		}
-		close();
-		if (err != 101 /* SQLITE_DONE */) {
-			lastError = Globals.sqlite3_errmsg(dbHandle);
-			return false;
-		}
-		return true;
-	}
+    public boolean prepare(VoidPtr dbHandle) {
+        if (dbHandle == null) {
+            throw new NullPointerException();
+        }
+        this.dbHandle = dbHandle;
 
-	public SQLiteCursor query() {
-		return new SQLiteCursor(this);
-	}
+        @SuppressWarnings("unchecked") Ptr<VoidPtr> stmtRef = (Ptr<VoidPtr>) PtrFactory
+                .newPointerPtr(Void.class, 2, 1, true, false);
+        int err = Globals.sqlite3_prepare_v2(dbHandle, statement, -1, stmtRef, null);
+        if (err != 0) {
+            lastError = Globals.sqlite3_errmsg(dbHandle);
+            return false;
+        }
+        stmtHandle = stmtRef.get();
+        int idx = 0;
+        for (Object bind : bindArgs) {
+            idx++;
+            if (bind instanceof String) {
+                err = Globals.sqlite3_bind_text(stmtHandle, idx, (String) bind, -1, new Globals
+                        .Function_sqlite3_bind_text() {
+                    @Override
+                    public void call_sqlite3_bind_text(VoidPtr arg0) {
 
-	private void close() {
-		if (stmtHandle != null) {
-			Globals.sqlite3_finalize(stmtHandle);
-			stmtHandle = null;
-		}
-	}
+                    }
+                });
+            } else if (bind instanceof Integer) {
+                err = Globals.sqlite3_bind_int(stmtHandle, idx, (Integer) bind);
+            } else if (bind instanceof Long) {
+                err = Globals.sqlite3_bind_int64(stmtHandle, idx, (Long) bind);
+            } else if (bind instanceof Double) {
+                err = Globals.sqlite3_bind_double(stmtHandle, idx, (Double) bind);
+            } else if (bind == null) {
+                err = Globals.sqlite3_bind_null(stmtHandle, idx);
+            } else {
+                lastError = "No implemented SQLite3 bind function found for " + bind.getClass()
+                        .getName();
+                return false;
+            }
+            if (err != 0) {
+                lastError = Globals.sqlite3_errmsg(dbHandle);
+                return false;
+            }
+        }
+        return true;
+    }
 
-	boolean step() {
-		if (stmtHandle == null) {
-			throw new RuntimeException("statement handle is closed");
-		}
-		int err = Globals.sqlite3_step(stmtHandle);
-		if (err != 100 /* SQLITE_ROW */) {
-			lastError = Globals.sqlite3_errmsg(dbHandle);
-			return false;
-		}
-		return true;
-	}
+    public boolean exec() {
+        if (stmtHandle == null) {
+            throw new RuntimeException("statement handle is closed");
+        }
+        int err = Globals.sqlite3_step(stmtHandle);
+        if (err == 101 /* SQLITE_DONE */) {
+            affectedCount = Globals.sqlite3_changes(dbHandle);
+            lastInsertedID = Globals.sqlite3_last_insert_rowid(dbHandle);
+        }
+        close();
+        if (err != 101 /* SQLITE_DONE */) {
+            lastError = Globals.sqlite3_errmsg(dbHandle);
+            return false;
+        }
+        return true;
+    }
 
-	void reset() {
-		if (stmtHandle == null) {
-			throw new RuntimeException("statement handle is closed");
-		}
-		Globals.sqlite3_reset(stmtHandle);
-	}
+    public SQLiteCursor query() {
+        return new SQLiteCursor(this);
+    }
 
-	public String getStatement() {
-		return statement;
-	}
+    private void close() {
+        if (stmtHandle != null) {
+            Globals.sqlite3_finalize(stmtHandle);
+            stmtHandle = null;
+        }
+    }
 
-	public int getAffectedCount() {
-		return affectedCount;
-	}
+    boolean step() {
+        if (stmtHandle == null) {
+            throw new RuntimeException("statement handle is closed");
+        }
+        int err = Globals.sqlite3_step(stmtHandle);
+        if (err != 100 /* SQLITE_ROW */) {
+            lastError = Globals.sqlite3_errmsg(dbHandle);
+            return false;
+        }
+        return true;
+    }
 
-	public long getLastInsertedID() {
-		return lastInsertedID;
-	}
+    void reset() {
+        if (stmtHandle == null) {
+            throw new RuntimeException("statement handle is closed");
+        }
+        Globals.sqlite3_reset(stmtHandle);
+    }
+
+    public String getStatement() {
+        return statement;
+    }
+
+    public int getAffectedCount() {
+        return affectedCount;
+    }
+
+    public long getLastInsertedID() {
+        return lastInsertedID;
+    }
 }
