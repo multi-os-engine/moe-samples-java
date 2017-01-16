@@ -22,6 +22,7 @@ The following samples are available for the Multi-OS Engine:
 | **OpenGLBox** | OK | Demonstrates 3D graphics programming using OpenGL |
 | **Planets** | OK | Demonstrates working with UI Kit graphics |
 | **RssReader** | OK | Demonstrates use of HTTP and HTTPS using Java* API |
+| **SimpleChart** | OK | A simple application displaying a chart using the Charts pod |
 | **SimpleMap** | OK | A simple application that demonstrates working with MapView <br />**Notes:** Requires Google Maps API Key |
 | **SimpleNetworkStreams** | FAIL | Demonstrates work with sockets <br />**Notes:** Launches, but not functional |
 | **Snake** | OK | A port of the Android Snake sample. Demonstrates simple game creation technique without sprites. Using UIImageView. |

@@ -1,0 +1,23 @@
+package org.moe.samples.simplechart.charts.protocol;
+
+
+import org.moe.natj.general.ann.Generated;
+import org.moe.natj.general.ann.Library;
+import org.moe.natj.general.ann.Runtime;
+import org.moe.natj.objc.ObjCRuntime;
+import org.moe.natj.objc.ann.ObjCProtocolName;
+import org.moe.natj.objc.ann.ObjCProtocolSourceName;
+import org.moe.natj.objc.ann.Selector;
+import org.moe.samples.simplechart.charts.ScatterChartData;
+
+@Generated
+@Library("Charts")
+@Runtime(ObjCRuntime.class)
+@ObjCProtocolSourceName("ScatterChartDataProvider")
+@ObjCProtocolName("_TtP6Charts24ScatterChartDataProvider_")
+public interface ScatterChartDataProvider extends
+		BarLineScatterCandleBubbleChartDataProvider {
+	@Generated
+	@Selector("scatterData")
+	ScatterChartData scatterData();
+}
