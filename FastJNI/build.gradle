@@ -14,64 +14,44 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-/************************/
-/** Build Script Setup **/
-/************************/
-
 buildscript {
-    // Add central and local Maven repos
     repositories {
         jcenter()
         mavenLocal()
     }
     dependencies {
-        // MOE plugin
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
+        // Multi-OS Engine plugin
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.3.+'
     }
 }
 
-/*******************/
-/** Project Setup **/
-/*******************/
-
 // Apply plugins
-apply plugin: 'moe'
 apply plugin: 'eclipse'
+apply plugin: 'moe'
 
 // Set source and target to Java 8
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
-// Set maven repository
-
 // Exclude all files from Gradle's test runner
 test { exclude '**' }
 
-// Setup MOE
+// Setup Multi-OS Engine
 moe {
-    xcode.mainTarget = 'FastJNI'
-    xcode.testTarget = 'FastJNI-Test'
-    xcode.packageName = 'org.moe.moe.fastjni'
-    xcode.launchScreenFilePath = 'src/main/resources/LaunchScreen.xib'
-    xcode.bundleID = 'org.moe.FastJNI'
-    xcode.generateProject = false
-    xcode.xcodeProjectDirPath = 'xcode'
+    xcode.project 'xcode/FastJNI.xcodeproj'
+    xcode.mainTarget 'FastJNI'
+    xcode.testTarget 'FastJNI-Test'
 }
 
-// Set dependencies
 dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
     compile fileTree(dir: 'lib', include: '*.jar')
-
 }
 
 // Setup Eclipse
 eclipse {
-    // Set MOE natures and build commands
+    // Set Multi-OS Engine nature
     project {
         natures 'org.multi-os-engine.project'
     }
 }
-
-
-

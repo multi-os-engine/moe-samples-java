@@ -16,6 +16,7 @@ limitations under the License.
 
 package org.moe.moe.fastjni;
 
+import org.moe.MOE;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ann.Selector;
@@ -48,7 +49,7 @@ public class Main extends NSObject implements UIApplicationDelegate {
     @Override
     public boolean applicationDidFinishLaunchingWithOptions(UIApplication application,
                                                             NSDictionary launchOptions) {
-        System.loadLibrary("test");
+        MOE.loadStatic("test");
         System.out.println("Array Size\tJNI Time\tFastJNI Time");
         test(1);
         test(2);
