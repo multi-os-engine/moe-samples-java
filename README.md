@@ -5,9 +5,9 @@ The following samples are available for the Multi-OS Engine:
 
 | Name | Test Status | Description |
 |------|:-----------:|-------------|
-| **Calculator** | OK | A cross platform calculator. Demonstrates simple techniques: work with buttons, performing actions<br />**Notes:** The Android module is just a Hello World |
-| **CurrencyConverter** | OK | Demonstrates how to open an URL and retrieve the content of that URL just using built-in Java* classes |
-| **FastJNI** | OK | Demonstrates the usage of Android's FastJNI |
+| **Calculator** | OK | A cross platform calculator. Demonstrates simple techniques: work with buttons, performing actions. |
+| **CurrencyConverter** | OK | Demonstrates how to open an URL and retrieve the content of that URL just using built-in Java* classes. |
+| **FastJNI** | OK | Demonstrates the usage of Android's FastJNI. |
 | **HelloMaven** | PARTIAL | Demonstrates how to use Multi-OS Engine in Maven environment |
 | **InAppPurchase** | PARTIAL | Demonstrates how to make purchases in your applications <br />**Notes:** Android module does not compile, iOS works |
 | **LibGDXMissileCommand** | OK | Shows how to implement libGDX game <br />**Notes:** Launch on iOS Simulator only works from Xcode on Xcode 8 |
