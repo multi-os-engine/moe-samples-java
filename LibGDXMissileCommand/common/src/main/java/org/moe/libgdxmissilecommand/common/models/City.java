@@ -69,7 +69,7 @@ public class City extends GameObject {
                 explosionTime = 0;
                 Assets.playSound(Assets.explosionSound);
             }
-            TextureRegion keyFrame = Assets.citiesDestroyAnimation.getKeyFrame(explosionTime, false);
+            TextureRegion keyFrame = (TextureRegion) Assets.citiesDestroyAnimation.getKeyFrame(explosionTime, false);
             if (Assets.citiesDestroyAnimation.getKeyFrameIndex(explosionTime) == 1) {
                 batch.draw(keyFrame, getX(), getY(), getWidth(), 15);
                 if (isAlive())

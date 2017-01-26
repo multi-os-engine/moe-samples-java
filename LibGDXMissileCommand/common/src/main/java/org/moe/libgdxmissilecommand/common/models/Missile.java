@@ -75,7 +75,7 @@ public class Missile extends GameObject {
                 explosionTime = 0;
                 Assets.playSound(Assets.explosionSound);
             }
-            TextureRegion keyFrame = Assets.explosionAnimation.getKeyFrame(explosionTime, false);
+            TextureRegion keyFrame = (TextureRegion) Assets.explosionAnimation.getKeyFrame(explosionTime, false);
             batch.draw(keyFrame, getX() - 74 / 2, getY() - 76 / 2, 74, 76);
             if (Assets.explosionAnimation.isAnimationFinished(explosionTime))
                 alive = false;

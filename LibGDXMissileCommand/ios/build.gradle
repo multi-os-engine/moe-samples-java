@@ -4,7 +4,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.2.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.3.+'
     }
 }
 
@@ -16,7 +16,8 @@ configurations { natives }
 // under build/libs/ios/.
 task copyNatives << {
     file("xcode/native/ios/").mkdirs();
-    configurations.natives.files.each { jar ->
+    def LD_FLAGS = "LIBGDX_NATIVES = "
+    configurations.natives.files.each { jar->
         def outputDir = null
         if (jar.name.endsWith("natives-ios.jar")) outputDir = file("xcode/native/ios")
         if (outputDir != null) {
@@ -27,9 +28,19 @@ task copyNatives << {
                         from libFile.getAbsolutePath()
                         into outputDir
                     }
+                    LD_FLAGS += " -force_load \${SRCROOT}/native/ios/" + libFile.getName()
                 }
             }
         }
+    }
+    def outFlags = file("xcode/LibGDXMissileCommand/custom.xcconfig");
+    outFlags.write LD_FLAGS
+
+    def proguard = file("proguard.append.cfg")
+    if (!proguard.exists()) {
+        proguard = new File("proguard.append.cfg")
+        proguard << "\n-keep class com.badlogic.** { *; }\n"
+        proguard << "-keep enum com.badlogic.** { *; }\n"
     }
 }
 
@@ -45,14 +56,9 @@ dependencies {
 
 moe {
     xcode {
+        project 'xcode/LibGDXMissileCommand.xcodeproj'
         mainTarget 'LibGDXMissileCommand'
-        companyIdentifier 'org.moe'
-        packageName 'org.moe.samples.LibGDXMissileCommand.ios'
-        //infoPlistPath '' // Absolute path to Info.plist file. If this arg is not set new Info.plist will be generated.
-        deploymentTarget '9.0'
-        xcodeProjectDirPath 'xcode'
-        generateProject false
-
+        testTarget 'LibGDXMissileCommand-Test'
     }
 }
 
