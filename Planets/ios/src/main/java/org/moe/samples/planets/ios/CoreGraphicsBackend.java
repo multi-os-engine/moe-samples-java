@@ -41,44 +41,41 @@ import apple.uikit.UIView;
 
 public class CoreGraphicsBackend extends UIView {
 
-	private Simulation simulation;
+    private Simulation simulation;
 
-	public static native CoreGraphicsBackend alloc();
+    public static native CoreGraphicsBackend alloc();
 
-	@Override
-	public native CoreGraphicsBackend init();
+    @Override
+    public native CoreGraphicsBackend init();
 
-	@Override
-	public native CoreGraphicsBackend initWithFrame(CGRect frame);
+    @Override
+    public native CoreGraphicsBackend initWithFrame(CGRect frame);
 
-	protected CoreGraphicsBackend(Pointer peer) {
-		super(peer);
-	}
+    protected CoreGraphicsBackend(Pointer peer) {
+        super(peer);
+    }
 
-	@Override
-	public void drawRect(CGRect rect) {
-		UIColor.blackColor().set();
-		UIBezierPath.bezierPathWithRect(this.bounds()).fill();
+    @Override
+    public void drawRect(CGRect rect) {
+        UIColor.blackColor().set();
+        UIBezierPath.bezierPathWithRect(this.bounds()).fill();
 
-		if (simulation == null) {
-			return;
-		}
+        if (simulation == null) {
+            return;
+        }
 
-		UIColor.orangeColor().set();
-		for (Planet p : simulation.getPlanets()) {
-			CGPoint cgPoint = new CGPoint(p.getLocation().getX(), p.getLocation().getY());
-			UIBezierPath
-					.bezierPathWithArcCenterRadiusStartAngleEndAngleClockwise(
-							cgPoint, p.getRadius(), 0, 2 * Simulation.PI, true).fill();
-		}
-	}
+        UIColor.orangeColor().set();
+        for (Planet p : simulation.getPlanets()) {
+            CGPoint cgPoint = new CGPoint(p.getLocation().getX(), p.getLocation().getY());
+            UIBezierPath.bezierPathWithArcCenterRadiusStartAngleEndAngleClockwise(cgPoint, p.getRadius(), 0, 2 * Simulation.PI, true).fill();
+        }
+    }
 
-	public Simulation getSimulation() {
-		return simulation;
-	}
+    public Simulation getSimulation() {
+        return simulation;
+    }
 
-	public void setSimulation(Simulation simulation) {
-		this.simulation = simulation;
-	}
-
+    public void setSimulation(Simulation simulation) {
+        this.simulation = simulation;
+    }
 }

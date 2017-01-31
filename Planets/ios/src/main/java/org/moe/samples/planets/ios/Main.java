@@ -29,6 +29,10 @@
 
 package org.moe.samples.planets.ios;
 
+import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.RegisterOnStartup;
+import org.moe.natj.objc.ann.Selector;
+
 import apple.NSObject;
 import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSDictionary;
@@ -39,11 +43,6 @@ import apple.uikit.UIViewController;
 import apple.uikit.UIWindow;
 import apple.uikit.c.UIKit;
 import apple.uikit.protocol.UIApplicationDelegate;
-
-import org.moe.natj.general.NatJ;
-import org.moe.natj.general.Pointer;
-import org.moe.natj.general.ann.RegisterOnStartup;
-import org.moe.natj.objc.ann.Selector;
 
 @RegisterOnStartup
 public class Main extends NSObject implements UIApplicationDelegate {
@@ -62,7 +61,8 @@ public class Main extends NSObject implements UIApplicationDelegate {
     private UIWindow window;
 
     @Override
-    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
+    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application,
+                                                            NSDictionary launchOptions) {
         UIViewController vc = PlanetsController.alloc().init();
         UINavigationController navigationController = UINavigationController.alloc().init();
 

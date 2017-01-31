@@ -34,58 +34,54 @@ import java.security.SecureRandom;
 
 public class Planet {
 
-	public static final Vector2 MIN_LOCATION = new Vector2();
-	public static final Vector2 MAX_LOCATION = new Vector2();
-	public static final double MIN_RADIUS = 1.0f;
-	public static final double MAX_RADIUS = 10.0f;
+    public static final Vector2 MIN_LOCATION = new Vector2();
+    public static final Vector2 MAX_LOCATION = new Vector2();
+    public static final double MIN_RADIUS = 1.0f;
+    public static final double MAX_RADIUS = 10.0f;
 
-	private final double radius = newRandomFloat(MIN_RADIUS, MAX_RADIUS);
+    private final double radius = newRandomFloat(MIN_RADIUS, MAX_RADIUS);
 
-	private final Vector2 momentum = new Vector2();
+    private final Vector2 momentum = new Vector2();
 
-	private final Vector2 location = newRandomVector2(MIN_LOCATION,
-			MAX_LOCATION);
+    private final Vector2 location = newRandomVector2(MIN_LOCATION, MAX_LOCATION);
 
-	private static SecureRandom secureRandomGenerator = null;
+    private static SecureRandom secureRandomGenerator = null;
 
+    private static double newRandomFloat(double min, double max) {
+        if (secureRandomGenerator == null) {
+            try {
+                secureRandomGenerator = SecureRandom.getInstance("SHA1PRNG");
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+        }
 
-	private static double newRandomFloat(double min, double max) {
-		if (secureRandomGenerator == null) {
-			try {
-				secureRandomGenerator = SecureRandom.getInstance("SHA1PRNG");
-			} catch (NoSuchAlgorithmException e) {
-				e.printStackTrace();
-			}
-		}
+        double randomNumber = 0;
+        if (secureRandomGenerator != null)
+            randomNumber = secureRandomGenerator.nextDouble();
+        return min + (max - min) * ((randomNumber * 16385) / 16384.0);
+    }
 
-		double randomNumber = 0;
-		if (secureRandomGenerator != null)
-			randomNumber = secureRandomGenerator.nextDouble();
-		return min + (max - min)
-				* ((randomNumber * 16385) / 16384.0);
-	}
+    private static Vector2 newRandomVector2(Vector2 min, Vector2 max) {
+        double x = newRandomFloat(min.getX(), max.getX());
+        double y = newRandomFloat(min.getY(), max.getY());
+        return new Vector2(x, y);
+    }
 
-	private static Vector2 newRandomVector2(Vector2 min, Vector2 max) {
-		double x = newRandomFloat(min.getX(), max.getX());
-		double y = newRandomFloat(min.getY(), max.getY());
-		return new Vector2(x, y);
-	}
+    public double getRadius() {
+        return radius;
+    }
 
-	public double getRadius() {
-		return radius;
-	}
+    public Vector2 getMomentum() {
+        return momentum;
+    }
 
-	public Vector2 getMomentum() {
-		return momentum;
-	}
+    public Vector2 getLocation() {
+        return location;
+    }
 
-	public Vector2 getLocation() {
-		return location;
-	}
-
-	@Override
-	public String toString() {
-		return "{ " + radius + ", " + location + ", " + momentum + " }";
-	}
-
+    @Override
+    public String toString() {
+        return "{ " + radius + ", " + location + ", " + momentum + " }";
+    }
 }

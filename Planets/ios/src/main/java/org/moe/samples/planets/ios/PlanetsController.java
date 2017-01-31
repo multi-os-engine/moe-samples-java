@@ -45,79 +45,75 @@ import apple.uikit.UIViewController;
 
 public class PlanetsController extends UIViewController {
 
-	private Simulation simulation;
+    private Simulation simulation;
 
-	private NSTimer timer;
+    private NSTimer timer;
 
-	private UIView renderer;
+    private UIView renderer;
 
-	public static native PlanetsController alloc();
+    public static native PlanetsController alloc();
 
-	@Override
-	public native PlanetsController init();
+    @Override
+    public native PlanetsController init();
 
-	protected PlanetsController(Pointer peer) {
-		super(peer);
-	}
+    protected PlanetsController(Pointer peer) {
+        super(peer);
+    }
 
-	@Override
-	public void viewDidLoad() {
-		super.viewDidLoad();
+    @Override
+    public void viewDidLoad() {
+        super.viewDidLoad();
 
-		setTitle("Planets");
+        setTitle("Planets");
 
-		view().setBackgroundColor(UIColor.whiteColor());
+        view().setBackgroundColor(UIColor.whiteColor());
 
-		renderer = CoreGraphicsBackend.alloc().initWithFrame(view().bounds());
-		view().addSubview(renderer);
+        renderer = CoreGraphicsBackend.alloc().initWithFrame(view().bounds());
+        view().addSubview(renderer);
 
-		renderer.setTranslatesAutoresizingMaskIntoConstraints(false);
-		NSDictionary views = NSDictionary.dictionaryWithObjectForKey(renderer,
-				"renderer");
-		NSArray constrs = NSLayoutConstraint
-				.constraintsWithVisualFormatOptionsMetricsViews(
-						"|-0-[renderer]-0-|", 0, (NSDictionary<String, Object>) NSDictionary.dictionary(),
-						views);
-		view().addConstraints(constrs);
-		constrs = NSLayoutConstraint
-				.constraintsWithVisualFormatOptionsMetricsViews(
-						"V:|-0-[renderer]-0-|", 0, (NSDictionary<String, Object>) NSDictionary.dictionary(),
-						views);
-		view().addConstraints(constrs);
-		view().layoutSubviews();
-	}
+        renderer.setTranslatesAutoresizingMaskIntoConstraints(false);
+        NSDictionary views = NSDictionary.dictionaryWithObjectForKey(renderer, "renderer");
+        NSArray constrs = NSLayoutConstraint.constraintsWithVisualFormatOptionsMetricsViews("|-0" +
+                "-[renderer]-0-|", 0, (NSDictionary<String, Object>) NSDictionary.dictionary()
+						, views);
+        view().addConstraints(constrs);
+        constrs = NSLayoutConstraint.constraintsWithVisualFormatOptionsMetricsViews
+				("V:|-0-[renderer]-0-|", 0, (NSDictionary<String, Object>) NSDictionary.dictionary
+						(), views);
+        view().addConstraints(constrs);
+        view().layoutSubviews();
+    }
 
-	@Override
-	public void viewWillAppear(boolean animated) {
-		super.viewWillAppear(animated);
+    @Override
+    public void viewWillAppear(boolean animated) {
+        super.viewWillAppear(animated);
 
-		if (timer != null) {
-			timer.invalidate();
-		}
-		timer = NSTimer
-				.scheduledTimerWithTimeIntervalTargetSelectorUserInfoRepeats(
-						1.0 / 30.0, this, new SEL("tick:"), null, true);
-	}
+        if (timer != null) {
+            timer.invalidate();
+        }
+        timer = NSTimer.scheduledTimerWithTimeIntervalTargetSelectorUserInfoRepeats(1.0 / 30.0,
+				this, new SEL("tick:"), null, true);
+    }
 
-	@Override
-	public void viewDidDisappear(boolean animated) {
-		if (timer != null) {
-			timer.invalidate();
-			timer = null;
-		}
+    @Override
+    public void viewDidDisappear(boolean animated) {
+        if (timer != null) {
+            timer.invalidate();
+            timer = null;
+        }
 
-		super.viewDidDisappear(animated);
-	}
+        super.viewDidDisappear(animated);
+    }
 
-	@Selector("tick:")
-	public void tick(final NSTimer timer) {
-		if (simulation == null) {
-			Planet.MAX_LOCATION.setSize(view().bounds().size().width(), view().bounds().size().height());
-			simulation = new Simulation(30);
-			((CoreGraphicsBackend) renderer).setSimulation(simulation);
-		}
-		simulation.tick(timer.timeInterval());
-		renderer.setNeedsDisplay();
-	}
-
+    @Selector("tick:")
+    public void tick(final NSTimer timer) {
+        if (simulation == null) {
+            Planet.MAX_LOCATION.setSize(view().bounds().size().width(), view().bounds().size()
+					.height());
+            simulation = new Simulation(30);
+            ((CoreGraphicsBackend) renderer).setSimulation(simulation);
+        }
+        simulation.tick(timer.timeInterval());
+        renderer.setNeedsDisplay();
+    }
 }

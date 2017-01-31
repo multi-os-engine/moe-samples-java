@@ -43,8 +43,8 @@ public class Main extends NSObject implements UIApplicationDelegate {
          * like to pass to UIApplicationMain.
          * The code below will convert the Java String array to native pointers.
          */
-        @SuppressWarnings("unchecked")
-        Ptr<BytePtr> argsPtr = (Ptr<BytePtr>) newPointerPtr(Byte.class, 2, args.length, true, false);
+        @SuppressWarnings("unchecked") Ptr<BytePtr> argsPtr = (Ptr<BytePtr>) newPointerPtr(Byte
+                .class, 2, args.length, true, false);
         Ptr<BytePtr> argsPtrIt = argsPtr;
         for (String arg : args) {
             final byte[] bytes;
@@ -71,7 +71,8 @@ public class Main extends NSObject implements UIApplicationDelegate {
     private UIWindow window;
 
     @Override
-    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
+    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application,
+                                                            NSDictionary launchOptions) {
         return true;
     }
 

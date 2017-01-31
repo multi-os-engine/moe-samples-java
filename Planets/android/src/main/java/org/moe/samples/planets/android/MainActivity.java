@@ -29,18 +29,18 @@
 
 package org.moe.samples.planets.android;
 
+import org.moe.samples.planets.common.Planet;
+import org.moe.samples.planets.common.Simulation;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
-
-import org.moe.samples.planets.common.Planet;
-import org.moe.samples.planets.common.Simulation;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,13 +70,14 @@ public class MainActivity extends AppCompatActivity {
             // Use Color.parseColor to define HTML colors
             paint.setColor(Color.parseColor("#ffa505"));
             for (Planet p : simulation.getPlanets()) {
-                canvas.drawCircle((float) (p.getLocation().getX()), (float) (p.getLocation().getY()), (float) p.getRadius(), paint);
+                canvas.drawCircle((float) (p.getLocation().getX()), (float) (p.getLocation().getY
+                        ()), (float) p.getRadius(), paint);
             }
         }
 
         Handler handler = new Handler(Looper.getMainLooper());
         Runnable movePlanetsRunnable = new Runnable() {
-            public void run(){
+            public void run() {
                 if (getWidth() != 0 && getHeight() != 0) {
                     if (simulation == null) {
                         Planet.MAX_LOCATION.setSize(getWidth(), getHeight());
@@ -89,5 +90,4 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
-
 }

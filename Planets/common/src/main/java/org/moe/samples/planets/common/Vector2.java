@@ -31,73 +31,72 @@ package org.moe.samples.planets.common;
 
 public class Vector2 {
 
-	private double x, y;
+    private double x, y;
 
-	public Vector2() {
-		x = y = 0.0f;
-	}
+    public Vector2() {
+        x = y = 0.0f;
+    }
 
-	public Vector2(double e) {
-		x = y = e;
-	}
+    public Vector2(double e) {
+        x = y = e;
+    }
 
-	public Vector2(double x, double y) {
-		this.x = x;
-		this.y = y;
-	}
+    public Vector2(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
 
-	public double getX() {
-		return x;
-	}
+    public double getX() {
+        return x;
+    }
 
-	public void setX(double x) {
-		this.x = x;
-	}
+    public void setX(double x) {
+        this.x = x;
+    }
 
-	public double getY() {
-		return y;
-	}
+    public double getY() {
+        return y;
+    }
 
-	public void setY(double y) {
-		this.y = y;
-	}
+    public void setY(double y) {
+        this.y = y;
+    }
 
-	public void zero() {
-		x = y = 0.0f;
-	}
+    public void zero() {
+        x = y = 0.0f;
+    }
 
-	public Vector2 diff(Vector2 v) {
-		return new Vector2(x - v.getX(), y - v.getY());
-	}
+    public Vector2 diff(Vector2 v) {
+        return new Vector2(x - v.getX(), y - v.getY());
+    }
 
-	public double length() {
-		return Math.sqrt(x * x + y * y);
-	}
+    public double length() {
+        return Math.sqrt(x * x + y * y);
+    }
 
-	public Vector2 mul(double e) {
-		x *= e;
-		y *= e;
-		return this;
-	}
+    public Vector2 mul(double e) {
+        x *= e;
+        y *= e;
+        return this;
+    }
 
-	public Vector2 add(Vector2 v) {
-		x += v.x;
-		y += v.y;
-		return this;
-	}
+    public Vector2 add(Vector2 v) {
+        x += v.x;
+        y += v.y;
+        return this;
+    }
 
-	public void setSize(double width, double height) {
-		x = width;
-		y = height;
-	}
+    public void setSize(double width, double height) {
+        x = width;
+        y = height;
+    }
 
-	@Override
-	public String toString() {
-		return "( " + x + ", " + y + " )";
-	}
+    @Override
+    public String toString() {
+        return "( " + x + ", " + y + " )";
+    }
 
-	public Vector2 copy() {
-		return new Vector2(x, y);
-	}
-
+    public Vector2 copy() {
+        return new Vector2(x, y);
+    }
 }
