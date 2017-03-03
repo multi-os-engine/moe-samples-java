@@ -9,7 +9,7 @@ The following samples are available for the Multi-OS Engine:
 | **CurrencyConverter** | OK | Demonstrates how to open an URL and retrieve the content of that URL just using built-in Java* classes. |
 | **FastJNI** | OK | Demonstrates the usage of Android's FastJNI. |
 | **HelloMaven** | OK | Demonstrates how to use Multi-OS Engine in Maven environment. |
-| **InAppPurchase** | PARTIAL | Demonstrates how to make purchases in your applications. <br />**Notes:** <br /> - Android module does not compile, iOS works. <br /> - Sample is using Multi-OS Engine 1.2. |
+| **InAppPurchase** | PARTIAL | Demonstrates how to make purchases in your applications. <br />**Notes:** Android module does not compile, iOS works. |
 | **LibGDXMissileCommand** | OK | Shows how to implement libGDX game. |
 | **LocalizedString** | OK | Shows how to use iOS's localization APIs. |
 | **MuseumMap** | OK | Sample is based on SimpleMap sample. This application demonstrates how to work with SQL DB. <br />**Notes:** Requires Google Maps API Key |
