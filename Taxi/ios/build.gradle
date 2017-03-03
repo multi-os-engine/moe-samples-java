@@ -36,6 +36,10 @@ moe {
          mainScheme 'Taxi'
          testScheme 'Taxi-Test'
     }
+
+    natjgen {
+        config='pods.nbc'
+    }
 }
 
 dependencies {

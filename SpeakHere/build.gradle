@@ -37,6 +37,10 @@ moe {
       mainTarget 'SpeakHere'
       testTarget 'SpeakHere-Test'
     }
+
+    natjgen {
+        config='SpeakHere.nbc'
+    }
 }
 
 // Set dependencies

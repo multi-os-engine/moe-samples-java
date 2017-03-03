@@ -320,7 +320,7 @@ public class AQPlayer implements Function_AudioQueueNewOutput, Function_AudioQue
 	}
 
 	@Override
-	public void call_AudioQueueAddPropertyListener(VoidPtr inUserData, VoidPtr inAQ, int inID) {
+	public void call_AudioQueueAddPropertyListener(VoidPtr inUserData, AudioQueueRef inAQ, int inID) {
 		IntPtr size = PtrFactory.newIntReference(4);
 		IntPtr isRunningRef = PtrFactory.newIntReference(mIsRunning);
 
@@ -332,7 +332,7 @@ public class AQPlayer implements Function_AudioQueueNewOutput, Function_AudioQue
 	}
 
 	@Override
-	public void call_AudioQueueNewOutput(VoidPtr inUserData, VoidPtr inAQ, AudioQueueBuffer inCompleteAQBuffer) {
+	public void call_AudioQueueNewOutput(VoidPtr inUserData, AudioQueueRef inAQ, AudioQueueBuffer inCompleteAQBuffer) {
 		if (mIsDone)
 			return;
 

@@ -69,11 +69,11 @@
 /* Begin PBXGroup section */
 		11236C66490972FB1EA3F4E7 /* Multi-OS Engine */ = {
 			isa = PBXGroup;
-			name = "Multi-OS Engine";
-			sourceTree = "<group>";
 			children = (
 				1EB08A0C79A9F530D95B3E8B /* moe-main-interfaces.m */,
 			);
+			name = "Multi-OS Engine";
+			sourceTree = "<group>";
 		};
 		235E336D9FBC6ED908F4C9C7 /* Frameworks */ = {
 			isa = PBXGroup;

@@ -37,6 +37,10 @@ moe {
         mainScheme 'SimpleChart'
         testScheme 'SimpleChart-Test'
     }
+
+    natjgen {
+        config='pods.nbc'
+    }
 }
 
 dependencies {

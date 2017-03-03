@@ -4,6 +4,8 @@ Multi-OS Engine LibGDX Sample
 Environment setup for LibGDX
 ----------------------------
 
+In case of an error during building libGDX, try to update the JDK.
+
 - Install Ant and Maven
 - Install Multi-OS Engne version 1.0.648 or later
 - Clone libGDX master branch from github repository:

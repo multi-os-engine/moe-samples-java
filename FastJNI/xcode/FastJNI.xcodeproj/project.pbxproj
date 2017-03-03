@@ -114,11 +114,11 @@
 		};
 		51E4E2D3FE578DFE614AD0BC /* Multi-OS Engine */ = {
 			isa = PBXGroup;
-			name = "Multi-OS Engine";
-			sourceTree = "<group>";
 			children = (
 				6A30B44F029BF2441B10EDBE /* moe-main-interfaces.m */,
 			);
+			name = "Multi-OS Engine";
+			sourceTree = "<group>";
 		};
 		D3D9BDDAEEC02E504AFD7F92 = {
 			isa = PBXGroup;

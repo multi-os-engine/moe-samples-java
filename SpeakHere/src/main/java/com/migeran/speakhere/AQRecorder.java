@@ -135,7 +135,7 @@ public class AQRecorder implements Function_AudioQueueNewInput {
 	// AudioQueue callback function, called when an input buffers has been
 	// filled.
 	@Override
-	public void call_AudioQueueNewInput(VoidPtr inUserData, VoidPtr inAQ, AudioQueueBuffer inBuffer, AudioTimeStamp inStartTime, int inNumPackets, @ReferenceInfo(type = AudioStreamPacketDescription.class) ConstPtr<AudioStreamPacketDescription> inPacketDesc) {
+	public void call_AudioQueueNewInput(VoidPtr inUserData, AudioQueueRef inAQ, AudioQueueBuffer inBuffer, AudioTimeStamp inStartTime, int inNumPackets, @ReferenceInfo(type = AudioStreamPacketDescription.class) ConstPtr<AudioStreamPacketDescription> inPacketDesc) {
 		try {
 			if (inNumPackets > 0) {
 				// write packets to file
