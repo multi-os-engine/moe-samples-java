@@ -1,6 +1,7 @@
 package com.com.ios.ui;
 
 import apple.NSObject;
+import apple.uikit.UIButton;
 import apple.uikit.UILabel;
 import apple.uikit.UIViewController;
 import org.moe.natj.general.Pointer;
@@ -31,16 +32,23 @@ public class AppViewController extends UIViewController {
     }
 
     public UILabel statusText = null;
+    public UIButton helloButton = null;
 
     @Override
     public void viewDidLoad() {
         statusText = getLabel();
+        helloButton = getButton();
     }
 
     @Selector("statusText")
     @Property
     @IBOutlet
     public native UILabel getLabel();
+
+    @Selector("helloButton")
+    @Property
+    @IBOutlet
+    public native UIButton getButton();
 
     @Selector("seyHello:")
     @IBAction
