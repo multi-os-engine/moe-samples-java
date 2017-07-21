@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE rss PUBLIC "-//Netscape Communications//DTD RSS 0.91//EN" "http://my.netscape.com/publish/formats/rss-0.91.dtd">
+<rss version="0.91"><channel><title>Apache POI Changes</title><link>https://poi.apache.org/changes.html</link><description>Apache POI Changes</description><language>en-us</language>
+<item><title>HWPF: fix(bug 50955)</title><link>https://poi.apache.org/changes.html</link><description>fix by POI Developers (bug 50955) - HWPF: Fix charset handling in HWPFOldDocument</description></item>
+<item><title>XSSF: add(bug 60826)</title><link>https://poi.apache.org/changes.html</link><description>add by POI Developers (bug 60826) - XSSF: Add initial streaming, read-only support for xlsb files</description></item>
+<item><title>XSSF: fix(bug 51519)</title><link>https://poi.apache.org/changes.html</link><description>fix by POI Developers (bug 51519) - XSSF: Allow user to select or ignore phonetic strings in shared strings table</description></item>
+<item><title>XSLF: fix(bug 60662)</title><link>https://poi.apache.org/changes.html</link><description>fix by POI Developers (bug 60662) - XSLF: Slide import delete unrecognized elements in group shape</description></item>
+<item><title>XSLF: fix(bug 60715)</title><link>https://poi.apache.org/changes.html</link><description>fix by POI Developers (bug 60715) - XSLF: Blank layout was not found</description></item>
+<item><title>SS Common: add(bug 59227,github-48)</title><link>https://poi.apache.org/changes.html</link><description>add by POI Developers (bug 59227,github-48) - SS Common: Support Chinese and Japanese date formats</description></item>
+<item><title>XSSF: fix(bug 59983)</title><link>https://poi.apache.org/changes.html</link><description>fix by POI Developers (bug 59983) - XSSF: Shift shared formulas when shifting rows in a sheet</description></item>
+<item><title>SL Common,XSLF,HSLF: fix(bug 60625)</title><link>https://poi.apache.org/changes.html</link><description>fix by POI Developers (bug 60625) - SL Common,XSLF,HSLF: Rendering issue with background and shape overlayed by image</description></item>
+<item><title>XSSF: fix(bug 60626)</title><link>https://poi.apache.org/changes.html</link><description>fix by POI Developers (bug 60626) - XSSF: ArrayIndexOutOfBoundsException in EvilUnclosedBRFixingInputStream</description></item>
+</channel></rss>
