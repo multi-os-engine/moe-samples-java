@@ -40,6 +40,7 @@ import apple.uikit.protocol.UISearchBarDelegate;
 import org.moe.googlemaps.*;
 import org.moe.googlemaps.protocol.GMSMapViewDelegate;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassName;
@@ -61,11 +62,13 @@ public class MapsViewController extends UIViewController implements GMSMapViewDe
     private boolean located = false;
     private CLLocationCoordinate2D selectedCoordinate;
     private String address = "";
+    private UIImage image = UIImage.alloc().init();
 
     protected MapsViewController(Pointer peer) {
         super(peer);
     }
 
+    @Owned
     @Selector("alloc")
     public static native MapsViewController alloc();
 
@@ -80,7 +83,7 @@ public class MapsViewController extends UIViewController implements GMSMapViewDe
     @Property
     public native UISearchBar getSearchBar();
 
-    private GMSMarker marker;
+    private GMSMarker marker = GMSMarker.alloc().init();
 
     @Override
     public void viewDidLoad() {
@@ -90,12 +93,11 @@ public class MapsViewController extends UIViewController implements GMSMapViewDe
         getMapView().settings().setCompassButton(true);
 
         // Creates a marker with current location
-        marker = GMSMarker.alloc().init();
         marker.setTitle("My location");
         marker.setSnippet("Russia");
         marker.setMap(getMapView());
 
-        getSearchBar().setBackgroundImage(UIImage.alloc().init());
+        getSearchBar().setBackgroundImage(image);
         getSearchBar().setSearchBarStyle(UISearchBarStyle.Default);
 
         getSearchBar().setDelegate(this);
@@ -115,6 +117,15 @@ public class MapsViewController extends UIViewController implements GMSMapViewDe
 
         // Do the search...
         System.out.println("--- searchBar.text: " + getSearchBar().text());
+    }
+
+    @Override
+    public void viewWillDisappear(boolean animated) {
+        super.viewWillDisappear(animated);
+        marker.setMap(null);
+        getSearchBar().setDelegate(null);
+        LocationManager.getSharedManager().setDelegate(null);
+        getMapView().setDelegate(null);
     }
 
     @Override

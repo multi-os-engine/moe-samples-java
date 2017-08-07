@@ -37,6 +37,7 @@ import apple.uikit.enums.UIAlertActionStyle;
 import apple.uikit.enums.UIAlertControllerStyle;
 import apple.uikit.protocol.UITableViewDataSource;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCClassName;
@@ -50,6 +51,7 @@ import org.moe.samples.taxi.common.TaxiService;
 @RegisterOnStartup
 public class TableViewController extends UITableViewController implements UITableViewDataSource {
 
+    @Owned
     @Selector("alloc")
     public static native TableViewController alloc();
 
