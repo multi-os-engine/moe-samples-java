@@ -35,8 +35,11 @@ import apple.uikit.UIApplication;
 import apple.uikit.UIWindow;
 import apple.uikit.c.UIKit;
 import apple.uikit.protocol.UIApplicationDelegate;
+
+import org.moe.GCUtil;
 import org.moe.googlemaps.GMSServices;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ann.Selector;
 
@@ -47,6 +50,7 @@ public class Main extends NSObject implements UIApplicationDelegate {
         UIKit.UIApplicationMain(0, null, null, Main.class.getName());
     }
 
+    @Owned
     @Selector("alloc")
     public static native Main alloc();
 
@@ -58,6 +62,7 @@ public class Main extends NSObject implements UIApplicationDelegate {
 
     @Override
     public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
+        GCUtil.register();
         System.out.println("Google Maps SDK Version: " + GMSServices.SDKVersion().toString());
         String key = "AIzaSyDBNHlacyZBHNJVbjv90p7vVE0VnflUTIE";
         boolean result = GMSServices.provideAPIKey(key);
