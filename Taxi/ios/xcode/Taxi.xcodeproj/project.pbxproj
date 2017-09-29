@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063F4F4A0B7E4A38B3D5748C /* Pods_Taxi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CE7B7B2E708D6889D148AC /* Pods_Taxi.framework */; };
 		580CCE631E27853300C6DC07 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 580CCE621E27853300C6DC07 /* main.cpp */; };
 		580CCE651E27864C00C6DC07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 580CCE641E27864C00C6DC07 /* Assets.xcassets */; };
 		580CCE681E27865F00C6DC07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 580CCE6A1E27865F00C6DC07 /* LaunchScreen.storyboard */; };
 		580CCE6C1E2786E400C6DC07 /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 580CCE6B1E2786E400C6DC07 /* marker.png */; };
 		580CCE6F1E2787D600C6DC07 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 580CCE711E2787D600C6DC07 /* MainUI.storyboard */; };
-		7720D67103B09CF1138FEC85 /* libPods-Taxi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E4A182F4495DA7DCB2F2A8 /* libPods-Taxi.a */; };
 		7DFB829BADBFF3A3B6CC4021 /* moe-main-interfaces.m in Sources */ = {isa = PBXBuildFile; fileRef = 46255D70A407B1792D94E10D /* moe-main-interfaces.m */; };
 		8E4299B14CCEA7780B4AB5DB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F958083CDEC3B4989A6F5AD /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -50,11 +50,11 @@
 		580CCE691E27865F00C6DC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		580CCE6B1E2786E400C6DC07 /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
 		580CCE701E2787D600C6DC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainUI.storyboard; sourceTree = "<group>"; };
+		80CE7B7B2E708D6889D148AC /* Pods_Taxi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taxi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E70228279B5E25B60A2E18 /* Taxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8946470A44097E31CDD1C379 /* Pods-Taxi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taxi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Taxi/Pods-Taxi.debug.xcconfig"; sourceTree = "<group>"; };
 		AFC9212DF8887D3A7360198C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Taxi/Info.plist; sourceTree = SOURCE_ROOT; };
 		D8FCFF84CF3C3DB8E56FD3EF /* Taxi-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Taxi-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9E4A182F4495DA7DCB2F2A8 /* libPods-Taxi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Taxi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7720D67103B09CF1138FEC85 /* libPods-Taxi.a in Frameworks */,
+				063F4F4A0B7E4A38B3D5748C /* Pods_Taxi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +142,7 @@
 		C2BEC61E70F058D952DAF9FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D9E4A182F4495DA7DCB2F2A8 /* libPods-Taxi.a */,
+				80CE7B7B2E708D6889D148AC /* Pods_Taxi.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -212,6 +212,11 @@
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "My Company";
+				TargetAttributes = {
+					0C53BA32AD7B3B00B6B92E97 = {
+						DevelopmentTeam = CVQ7CHHHZY;
+					};
+				};
 			};
 			buildConfigurationList = 688325A1A256245583A49081 /* Build configuration list for PBXProject "Taxi" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -289,13 +294,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Taxi-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC67296C574989B035B0A66B /* Compile Sources (MOE) */ = {
@@ -318,9 +326,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Taxi/Pods-Taxi-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -456,7 +467,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CVQ7CHHHZY;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -493,7 +504,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CVQ7CHHHZY;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
