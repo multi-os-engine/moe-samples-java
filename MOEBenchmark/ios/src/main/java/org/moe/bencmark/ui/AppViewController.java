@@ -43,7 +43,9 @@ public class AppViewController extends UIViewController {
                 .Block_dispatch_async() {
             @Override
             public void call_dispatch_async() {
+                System.out.println("Starting");
                 double[] res = commandline.createRes();
+                commandline.printValues(res);
                 commandline.writeCSV(res, "csvfile", applicationDocumentsDirectory());
                 System.out.println(applicationDocumentsDirectory());
             }
