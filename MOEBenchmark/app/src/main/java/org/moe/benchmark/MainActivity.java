@@ -36,9 +36,15 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(String... param) {
+            System.out.println("Starting");
             double[] res = commandline.createRes();
+            commandline.printValues("Primitives", res);
             //String l = myActivity.getFilesDir().getPath();
             commandline.writeCSV(res, param[0], "/data/data/org.moe.benchmark");
+
+            res = commandline.createObjRes();
+            commandline.printValues("Objects", res);
+
             return null;
         }
 

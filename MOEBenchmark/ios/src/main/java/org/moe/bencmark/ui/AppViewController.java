@@ -45,9 +45,12 @@ public class AppViewController extends UIViewController {
             public void call_dispatch_async() {
                 System.out.println("Starting");
                 double[] res = commandline.createRes();
-                commandline.printValues(res);
+                commandline.printValues("Primitives", res);
                 commandline.writeCSV(res, "csvfile", applicationDocumentsDirectory());
                 System.out.println(applicationDocumentsDirectory());
+
+                res = commandline.createObjRes();
+                commandline.printValues("Objects", res);
             }
         });
     }
