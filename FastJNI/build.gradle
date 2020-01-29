@@ -21,7 +21,7 @@ buildscript {
     }
     dependencies {
         // Multi-OS Engine plugin
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.4.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.5.+'
     }
 }
 
