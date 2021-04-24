@@ -31,14 +31,12 @@ package org.moe.samples.openglbox.ios;
 
 import org.moe.natj.c.CRuntime;
 import org.moe.natj.general.Pointer;
-import org.moe.natj.general.ann.ByValue;
-import org.moe.natj.general.ann.Mapped;
+import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.FloatPtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.impl.PtrFactory;
 import org.moe.natj.objc.ann.Selector;
-import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.samples.openglbox.common.Geometry;
 import org.moe.samples.openglbox.common.Parameters;
 import org.moe.samples.openglbox.common.Shaders;
@@ -63,6 +61,7 @@ import apple.opengles.enums.EAGLRenderingAPI;
 import apple.opengles.enums.ES2;
 import apple.uikit.UIEvent;
 import apple.uikit.enums.UIRectEdge;
+import apple.uikit.protocol.UIViewControllerTransitionCoordinator;
 
 public class OpenGLBoxController extends GLKViewController implements
 		GLKViewDelegate {
@@ -118,11 +117,11 @@ public class OpenGLBoxController extends GLKViewController implements
 		setupGL();
 	}
 
-    @Override
-    public void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size, @Mapped(ObjCObjectMapper.class) Object coordinator) {
-        if (isPaused())
-            glkView.setNeedsDisplay();
-    }
+	@Override
+	public void viewWillTransitionToSizeWithTransitionCoordinator(CGSize size, UIViewControllerTransitionCoordinator coordinator) {
+		if (isPaused())
+			glkView.setNeedsDisplay();
+	}
 
 	@Override
 	public void viewDidDisappear(boolean animated) {
