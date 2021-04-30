@@ -5,13 +5,13 @@ repositories {
 }
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 30
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "org.moe.samples.tictactoe.android"
         minSdkVersion 19
-        targetSdkVersion 22
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
     }
@@ -27,5 +27,5 @@ android {
 dependencies {
     compile project(':common')
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'androidx.appcompat:appcompat:1.2.0'
 }
