@@ -1,30 +1,22 @@
-import groovy.json.JsonSlurper
 
 buildscript {
 
-    ant.get(src: 'http://libgdx.badlogicgames.com/libgdx-site/service/getVersions?release=false', dest: 'versions.json')
-    def versionFile = file('versions.json')
-    def json
-    if (versionFile.exists()) {
-        json = new JsonSlurper().parseText(versionFile.text)
-    } else throw new GradleException("Unable to retrieve latest versions, please check your internet connection")
-
+    version = '1.0'
     ext {
-        gdxVersion = json.libgdxSnapshot
-        roboVMVersion = json.robovmVersion
-        roboVMGradleVersion = json.robovmPluginVersion
-        androidToolsVersion = json.androidBuildtoolsVersion
-        androidSDKVersion = json.androidSDKVersion
-        androidGradleToolsVersion = json.androidGradleToolVersion
-        gwtVersion = json.gwtVersion
-        gwtGradleVersion = json.gwtPluginVersion
+        appName = "my-gdx-game"
+        gdxVersion = '1.9.11'
+        roboVMVersion = '2.3.12'
+        box2DLightsVersion = '1.5'
+        ashleyVersion = '1.7.3'
+        aiVersion = '1.8.2'
+        gdxControllersVersion = '2.1.0'
     }
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:4.2.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -32,11 +24,25 @@ buildscript {
 }
 
 allprojects {
-    repositories {
-        jcenter()
-        mavenLocal()
-        maven { url('https://oss.sonatype.org/content/repositories/snapshots') }
-        google()
+    apply plugin: "eclipse"
+
+    version = '1.0'
+    ext {
+        appName = "my-gdx-game"
+        gdxVersion = '1.9.11'
+        roboVMVersion = '2.3.12'
+        box2DLightsVersion = '1.5'
+        ashleyVersion = '1.7.3'
+        aiVersion = '1.8.2'
+        gdxControllersVersion = '2.1.0'
     }
-    apply plugin: 'eclipse'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+        maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    }
 }
