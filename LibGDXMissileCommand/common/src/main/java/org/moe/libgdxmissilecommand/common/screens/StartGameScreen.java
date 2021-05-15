@@ -80,13 +80,13 @@ public class StartGameScreen extends ScreenAdapter {
         game.batcher.begin();
 
         if((currentTimeSec - startTimeSec) < 3) {
-            //font.draw(game.batcher, "WARNING", 330, org.moe.libgdxmissilecommand.common.Assets.screenHeight / 2);
+            font.draw(game.batcher, "WARNING", 330, org.moe.libgdxmissilecommand.common.Assets.screenHeight / 2);
         } else if((currentTimeSec - startTimeSec) < 6) {
-            //font.draw(game.batcher, "ALIENS SHIPS COMING", 230, org.moe.libgdxmissilecommand.common.Assets.screenHeight / 2);
+            font.draw(game.batcher, "ALIENS SHIPS COMING", 230, org.moe.libgdxmissilecommand.common.Assets.screenHeight / 2);
         } else if((currentTimeSec - startTimeSec) < 9) {
-            //font.draw(game.batcher, "PROTECT THE CITYS", 250, org.moe.libgdxmissilecommand.common.Assets.screenHeight / 2);
+            font.draw(game.batcher, "PROTECT THE CITYS", 250, org.moe.libgdxmissilecommand.common.Assets.screenHeight / 2);
         } else if((currentTimeSec - startTimeSec) < 12) {
-            //font.draw(game.batcher, "PREPARE THE MISSILES", 230, org.moe.libgdxmissilecommand.common.Assets.screenHeight / 2);
+            font.draw(game.batcher, "PREPARE THE MISSILES", 230, org.moe.libgdxmissilecommand.common.Assets.screenHeight / 2);
         } else {
             game.setScreen(new MissileCommandGameScreen(game));
         }

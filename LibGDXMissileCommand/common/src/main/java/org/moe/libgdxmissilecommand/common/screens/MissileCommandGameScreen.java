@@ -132,8 +132,11 @@ public class MissileCommandGameScreen extends ScreenAdapter {
         int printTime = (int) time;
         if (printTime < 0)
             printTime = 0;
-        //fontTime.draw(game.batcher, "Time: " + String.valueOf(printTime) + "s", Assets.screenWidth - 150, Assets.screenHeight - 25);
-        //fontTime.draw(game.batcher, "Score: " + String.valueOf(score), 2, Assets.screenHeight - 25);
+        fontTime.draw(game.batcher, "Time: " + String.valueOf(printTime) + "s",
+                Assets.screenWidth - 150, Assets.screenHeight - 25);
+        fontTime.draw(game.batcher, "Score: " + String.valueOf(score),
+                2, Assets.screenHeight - 25);
+
         for(int i = 0; i < missiles.size(); i++) {
             Missile missile = missiles.get(i);
             if (missile.isAlive()) {
@@ -162,7 +165,9 @@ public class MissileCommandGameScreen extends ScreenAdapter {
 
         if (playing) {
             if (time <= 0) {
-                //fontTitle.draw(game.batcher, "Wave " + String.valueOf(wave) + " Starts in " + String.valueOf((int)(3 + time)) + "s", 230, 240);
+                fontTitle.draw(game.batcher, "Wave " + String.valueOf(wave) +
+                        " Starts in " + String.valueOf((int)(3 + time)) + "s",
+                        230, 240);
                 if (time < -3) {
                     time = 60;
                     wave++;
@@ -172,15 +177,20 @@ public class MissileCommandGameScreen extends ScreenAdapter {
             pauseButton.draw(game.batcher);
         } else {
             if (City.getCityCounter() > 0) {
-                //fontTitle.draw(game.batcher, "Touch the screen to resuming the game", 100, 320 + fontTitle.getLineHeight());
-                //fontTitle.draw(game.batcher, "Or press back button to exit in the main menu", 70, 320 - fontTitle.getLineHeight());
+                fontTitle.draw(game.batcher, "Touch the screen to resuming the game",
+                        100, 320 + fontTitle.getLineHeight());
+                fontTitle.draw(game.batcher, "Or press back button to exit in the main menu",
+                        70, 320 - fontTitle.getLineHeight());
             } else {
-                //fontTitle.draw(game.batcher, "You Lose!", 320, 320 + fontTitle.getLineHeight());
-                //fontTitle.draw(game.batcher, "Score: " + String.valueOf(score), 320, 320 - fontTitle.getLineHeight());
+                fontTitle.draw(game.batcher, "You Lose!",
+                        320, 320 + fontTitle.getLineHeight());
+                fontTitle.draw(game.batcher, "Score: " + String.valueOf(score),
+                        320, 320 - fontTitle.getLineHeight());
             }
             backButton.draw(game.batcher);
         }
-        //fontTime.draw(game.batcher, "fps: " + Gdx.graphics.getFramesPerSecond(), 0, 0);
+        fontTime.draw(game.batcher, "fps: " + Gdx.graphics.getFramesPerSecond(), 0, 0);
+
         game.batcher.end();
     }
 

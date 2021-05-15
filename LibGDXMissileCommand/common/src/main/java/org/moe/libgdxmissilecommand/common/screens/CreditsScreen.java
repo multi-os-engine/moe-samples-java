@@ -93,7 +93,7 @@ public class CreditsScreen extends ScreenAdapter {
         game.batcher.enableBlending();
         game.batcher.begin();
         backButton.draw(game.batcher);
-        //font.draw(game.batcher, "Programmer: Matheus Palheta\n\nGame Design: Jucimar Jr", 200, 320);
+        font.draw(game.batcher, "Programmer: Matheus Palheta\n\nGame Design: Jucimar Jr", 200, 320);
         game.batcher.end();
     }
 
