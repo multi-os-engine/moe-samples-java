@@ -30,6 +30,7 @@
 package org.moe.samples.planets.ios;
 
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.samples.planets.common.Planet;
 import org.moe.samples.planets.common.Simulation;
 
@@ -39,6 +40,7 @@ import apple.uikit.UIBezierPath;
 import apple.uikit.UIColor;
 import apple.uikit.UIView;
 
+@RegisterOnStartup
 public class CoreGraphicsBackend extends UIView {
 
     private Simulation simulation;
