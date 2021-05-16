@@ -254,14 +254,6 @@
 			attributes = {
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Test;
-				TargetAttributes = {
-					7C4011C076B8323EB9820E9E = {
-						DevelopmentTeam = KS54L6J34G;
-					};
-					F027C650264EF15500426F4F = {
-						DevelopmentTeam = KS54L6J34G;
-					};
-				};
 			};
 			buildConfigurationList = 79EDF3FDAA88E13B08C91F41 /* Build configuration list for PBXProject "LibGDXMissileCommand" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -431,7 +423,6 @@
 			buildSettings = {
 				COMPRESS_PNG_FILES = NO;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = KS54L6J34G;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -465,7 +456,6 @@
 			buildSettings = {
 				COMPRESS_PNG_FILES = NO;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = KS54L6J34G;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +543,6 @@
 			buildSettings = {
 				COMPRESS_PNG_FILES = NO;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = KS54L6J34G;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -587,7 +576,6 @@
 			buildSettings = {
 				COMPRESS_PNG_FILES = NO;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = KS54L6J34G;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
