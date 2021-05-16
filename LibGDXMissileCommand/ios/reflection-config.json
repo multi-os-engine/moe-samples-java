@@ -1,0 +1,29 @@
+[
+  {
+    "name" : "com.badlogic.gdx.graphics.g2d.GlyphLayout",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name" : "com.badlogic.gdx.graphics.g2d.GlyphLayout$GlyphRun",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  },
+  {
+    "name" : "com.badlogic.gdx.graphics.Color",
+    "methods": [
+      {
+        "name": "<init>",
+        "parameterTypes": []
+      }
+    ]
+  }
+]
