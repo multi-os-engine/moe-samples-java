@@ -1,0 +1,29 @@
+[
+  {
+    "name" : "java.nio.DoubleBuffer"
+  },
+  {
+    "name" : "java.nio.IntBuffer"
+  },
+  {
+    "name" : "java.nio.FloatBuffer"
+  },
+  {
+    "name" : "java.nio.Buffer"
+  },
+  {
+    "name" : "java.nio.LongBuffer"
+  },
+  {
+    "name" : "java.nio.CharBuffer"
+  },
+  {
+    "name" : "java.nio.ByteBuffer"
+  },
+  {
+    "name" : "java.nio.ShortBuffer"
+  },
+  {
+    "name" : "java.lang.String"
+  }
+]

@@ -31,31 +31,98 @@ package org.moe.libgdxmissilecommand.ios;
 
 import com.badlogic.gdx.backends.iosmoe.IOSApplication;
 import com.badlogic.gdx.backends.iosmoe.IOSApplicationConfiguration;
+
 import org.moe.libgdxmissilecommand.common.MissileCommand;
 import org.moe.natj.general.Pointer;
-import org.moe.natj.objc.ann.ObjCClassName;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ann.Selector;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import apple.NSObject;
+import apple.foundation.NSDictionary;
+import apple.uikit.UIApplication;
+import apple.uikit.UIWindow;
 import apple.uikit.c.UIKit;
+import apple.uikit.protocol.UIApplicationDelegate;
 
+@RegisterOnStartup
+public class Main extends NSObject implements UIApplicationDelegate {
 
-@ObjCClassName("Main")
-public class Main extends IOSApplication.Delegate {
-
-    protected Main(Pointer peer) {
-        super(peer);
+    public static void main(String[] args) {
+        UIKit.UIApplicationMain(0, null, null, Main.class.getName());
     }
 
     @Selector("alloc")
     public static native Main alloc();
 
-    public static void main(String[] args) {
-        UIKit.UIApplicationMain(0, null, null, Main.class.getSimpleName());
+    protected Main(Pointer peer) {
+        super(peer);
+    }
+
+    private MyIOSApplication app;
+
+    @Override
+    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
+        IOSApplicationConfiguration configuration = new IOSApplicationConfiguration();
+        app = new MyIOSApplication(new MissileCommand(), configuration);
+        app.setApplicationLogger(new MyLogger());
+        try {
+            Method method = IOSApplication.class.getDeclaredMethod("didFinishLaunching", UIApplication.class, NSDictionary.class);
+            method.setAccessible(true);
+            method.invoke(app, application, launchOptions);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+    @Override
+    public void applicationDidBecomeActive (UIApplication application) {
+        try {
+            Method method = IOSApplication.class.getDeclaredMethod("didBecomeActive", UIApplication.class);
+            method.setAccessible(true);
+            method.invoke(app, application);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    protected IOSApplication createApplication() {
-        IOSApplicationConfiguration config = new IOSApplicationConfiguration();
-        return new IOSApplication(new MissileCommand(), config);
+    public void applicationWillEnterForeground (UIApplication application) {
+        try {
+            Method method = IOSApplication.class.getDeclaredMethod("willEnterForeground", UIApplication.class);
+            method.setAccessible(true);
+            method.invoke(app, application);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void applicationWillResignActive (UIApplication application) {
+        try {
+            Method method = IOSApplication.class.getDeclaredMethod("willResignActive", UIApplication.class);
+            method.setAccessible(true);
+            method.invoke(app, application);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void applicationWillTerminate (UIApplication application) {
+        try {
+            Method method = IOSApplication.class.getDeclaredMethod("willTerminate", UIApplication.class);
+            method.setAccessible(true);
+            method.invoke(app, application);
+        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public UIWindow window () {
+        return app.getUIWindow();
     }
 }

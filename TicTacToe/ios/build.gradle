@@ -1,11 +1,17 @@
 buildscript {
     repositories {
-        jcenter()
         mavenLocal()
+        mavenCentral()
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
     }
     dependencies {
         // Multi-OS Engine plugin
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.4.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '2.0.0-SNAPSHOT'
+    }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
     }
 }
 
@@ -18,9 +24,6 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 // Set maven repository
-repositories {
-    jcenter()
-}
 
 // Exclude all files from Gradle's test runner
 test { exclude '**' }
@@ -39,9 +42,9 @@ moe {
 
 dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
-    compile fileTree(dir: 'lib', include: '*.jar')
+    implementation fileTree(dir: 'lib', include: '*.jar')
 
-    compile project(':common')
+    implementation project(':common')
 }
 
 // Setup Eclipse
