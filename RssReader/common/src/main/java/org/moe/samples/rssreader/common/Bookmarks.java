@@ -31,6 +31,6 @@ package org.moe.samples.rssreader.common;
 
 public class Bookmarks {
     public static final String[] bookmarks = new String[] {
-        "http://www.apple.com/main/rss/hotnews/hotnews.rss",
+        "https://www.apple.com/main/rss/hotnews/hotnews.rss",
         "https://phoronix.com/rss.php", };
 }
