@@ -56,7 +56,7 @@ EXPORT jint Test_fastjni(JNIEnv* env, jobject java_this, jbyteArray array) {
 
 static JNINativeMethod methods[] = {
     NATIVE_METHOD(Test, jni, "([B)I", jni),
-    NATIVE_METHOD(Test, fastjni, "!([B)I", fastjni),
+    NATIVE_METHOD(Test, fastjni, "([B)I", fastjni),
 };
 
 /*
@@ -117,9 +117,9 @@ extern "C" __attribute__((visibility ("default"))) jint JNI_OnLoad_test(JavaVM* 
         ALOGE("ERROR: registerNatives failed");
         goto bail;
     }
-    
+
     result = JNI_VERSION_1_4;
-    
+
 bail:
     return result;
 }

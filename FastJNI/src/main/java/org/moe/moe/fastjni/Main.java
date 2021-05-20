@@ -49,7 +49,7 @@ public class Main extends NSObject implements UIApplicationDelegate {
     @Override
     public boolean applicationDidFinishLaunchingWithOptions(UIApplication application,
                                                             NSDictionary launchOptions) {
-        MOE.loadStatic("test");
+        System.loadLibrary("test");
         System.out.println("Array Size\tJNI Time\tFastJNI Time");
         test(1);
         test(2);
