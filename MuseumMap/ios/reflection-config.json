@@ -1,0 +1,12 @@
+[
+  {
+    "name" : "org.moe.samples.museummap.ios.MuseumMapController$1",
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
+  },
+  {
+    "name" : "org.moe.samples.museummap.ios.MuseumMapController$2",
+    "allDeclaredMethods" : true,
+    "allPublicMethods" : true
+  }
+]
