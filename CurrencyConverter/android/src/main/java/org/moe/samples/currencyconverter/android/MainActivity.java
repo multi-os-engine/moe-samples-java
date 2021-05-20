@@ -30,7 +30,6 @@
 package org.moe.samples.currencyconverter.android;
 
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
@@ -41,13 +40,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import org.moe.currencyconverter.R;
 import org.moe.samples.currencyconverter.common.Currency;
 import org.moe.samples.currencyconverter.common.Names;
 
 import java.math.BigDecimal;
 import java.util.Locale;
-
-import org.moe.currencyconverter.R;
 
 public class MainActivity extends AppCompatActivity {
 
