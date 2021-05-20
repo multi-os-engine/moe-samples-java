@@ -107,9 +107,8 @@ public class MuseumMapController extends UIViewController {
 
         setEdgesForExtendedLayout(UIRectEdge.None);
         view().setBackgroundColor(UIColor.whiteColor());
-        //Error!!
-        //views.put("topGuide", this.topLayoutGuide());
-        //views.put("bottomGuide", this.bottomLayoutGuide());
+        views.put("topGuide", this.topLayoutGuide());
+        views.put("bottomGuide", this.bottomLayoutGuide());
         mapView = MKMapView.alloc().init();
         mapView.setTranslatesAutoresizingMaskIntoConstraints(false);
         view().addSubview(mapView);
@@ -199,15 +198,15 @@ public class MuseumMapController extends UIViewController {
                 .constraintsWithVisualFormatOptionsMetricsViews("H:|-0-[map]-0-|", 0, null, views));
         constraints.addObjectsFromArray(NSLayoutConstraint
                 .constraintsWithVisualFormatOptionsMetricsViews
-                        ("V:|-[pinLabel]-[updatePinBtn]-[map]-0-|", 0, null,
+                        ("V:[topGuide]-[pinLabel]-[updatePinBtn]-[map]-0-[bottomGuide]", 0, null,
                                 views));
         constraints.addObjectsFromArray(NSLayoutConstraint
                 .constraintsWithVisualFormatOptionsMetricsViews
-                        ("V:|-[pinLabel]-[addPinBtn]-[map]-0-|", 0, null,
+                        ("V:[topGuide]-[pinLabel]-[addPinBtn]-[map]-0-[bottomGuide]", 0, null,
                                 views));
         constraints.addObjectsFromArray(NSLayoutConstraint
                 .constraintsWithVisualFormatOptionsMetricsViews
-                        ("V:|-[pinLabel]-[remPinBtn]-[map]-0-|", 0, null,
+                        ("V:[topGuide]-[pinLabel]-[remPinBtn]-[map]-0-[bottomGuide]", 0, null,
                                 views));
 
         view().addConstraints(constraints);

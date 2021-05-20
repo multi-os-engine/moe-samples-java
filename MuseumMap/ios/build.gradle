@@ -34,7 +34,7 @@ test { exclude '**' }
 // Setup Multi-OS Engine
 moe {
     nativeImage {
-        options = ['--enable-url-protocols=https', '--enable-url-protocols=http']
+        options = ['--enable-url-protocols=https', '--enable-url-protocols=http', '-H:DynamicProxyConfigurationFiles=../../../../../../dynamic-proxies.json']
     }
     xcode {
         project 'xcode/MuseumMap.xcodeproj'
