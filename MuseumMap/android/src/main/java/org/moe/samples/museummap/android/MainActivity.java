@@ -33,17 +33,20 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 import org.moe.samples.museummap.android.db.AndroidSQLiteDatabaseHelper;
 import org.moe.samples.museummap.common.MuseumSearchEngine;
 import org.moe.samples.museummap.common.model.Museum;
@@ -62,30 +65,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                .getMap();
+        ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(GoogleMap googleMap) {
+                mMap = googleMap;
+                mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                    @Override
+                    public boolean onMarkerClick(Marker marker) {
+                        currentMarker = marker;
+                        nameMarker.setText(marker.getTitle());
+                        return false;
+                    }
+                });
+
+                mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(LatLng latLng) {
+                        currentMarker = null;
+                    }
+                });
+
+                ArrayList<Museum> museums = source.getAllMuseum();
+                System.out.println(museums.size());
+                for (Museum museum : museums) {
+                    source.createMuseum(museum);
+                    mMap.addMarker(new MarkerOptions()
+                            .position(new LatLng(museum.getLatitude(), museum.getLongitude()))
+                            .title(museum.getName()));
+                }
+            }
+        });
+
 
         final Context ctx = getApplicationContext();
         source = new DataSource(new AndroidSQLiteDatabaseHelper(ctx, "local.db"));
         source.open();
 
         nameMarker = (EditText) findViewById(R.id.editText);
-
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                currentMarker = marker;
-                nameMarker.setText(marker.getTitle());
-                return false;
-            }
-        });
-
-        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-            @Override
-            public void onMapClick(LatLng latLng) {
-                currentMarker = null;
-            }
-        });
 
         Button addButton = (Button)findViewById(R.id.btnPlus);
         Button removeButton = (Button)findViewById(R.id.btnMinus);
@@ -133,14 +149,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ArrayList<Museum> museums = source.getAllMuseum();
-        System.out.println(museums.size());
-        for (Museum museum : museums) {
-            source.createMuseum(museum);
-            mMap.addMarker(new MarkerOptions()
-                    .position(new LatLng(museum.getLatitude(), museum.getLongitude()))
-                    .title(museum.getName()));
-        }
+    }
+
+    public void init(){
+
     }
 
     private class LoadTask extends AsyncTask<Double, Void, Void> {
