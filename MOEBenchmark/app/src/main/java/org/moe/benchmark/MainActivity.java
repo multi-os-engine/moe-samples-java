@@ -1,16 +1,8 @@
 package org.moe.benchmark;
 
-import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             double[] res = commandline.createRes();
             commandline.printValues("Primitives", res);
             //String l = myActivity.getFilesDir().getPath();
-            commandline.writeCSV(res, param[0], "/data/data/org.moe.benchmark");
+            commandline.writeCSV(res, param[0], getFilesDir().getPath());
 
             res = commandline.createObjRes();
             commandline.printValues("Objects", res);
