@@ -31,6 +31,7 @@ package org.moe.samples.elements.ios;
 
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.elements.common.AtomicElement;
 
@@ -48,6 +49,7 @@ import apple.uikit.UIImage;
 import apple.uikit.UITapGestureRecognizer;
 import apple.uikit.UIView;
 
+@RegisterOnStartup
 public class AtomicElementView extends UIView {
 
     @Selector("alloc")

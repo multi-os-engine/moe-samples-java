@@ -31,6 +31,7 @@ package org.moe.samples.elements.ios;
 
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.NInt;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.elements.common.AtomicElement;
 
@@ -41,6 +42,7 @@ import apple.uikit.UITableView;
 import apple.uikit.UITableViewCell;
 import apple.uikit.protocol.UITableViewDataSource;
 
+@RegisterOnStartup
 public class ElementsSortedByNameDataSource extends NSObject implements UITableViewDataSource, ElementsDataSource {
 
     @Selector("alloc")
