@@ -161,7 +161,7 @@ public class  PListXMLHandler extends DefaultHandler2 {
 //                        .append(Constants.PIPE).append(attributes.getLength())
 //                        .toString());
 		tempVal.newBuilder();
-		if (localName.equalsIgnoreCase(Constants.TAG_PLIST)) {
+		if (qName.equalsIgnoreCase(Constants.TAG_PLIST)) {
 			if (null != pList) {
 				// there should only be one PList element in the root
 				throw new SAXException(
@@ -173,10 +173,10 @@ public class  PListXMLHandler extends DefaultHandler2 {
 				throw new SAXException(
 						"invalid PList - please see http://www.apple.com/DTDs/PropertyList-1.0.dtd");
 			}
-			if (localName.equalsIgnoreCase(Constants.TAG_DICT) ||
-					localName.equalsIgnoreCase(Constants.TAG_PLIST_ARRAY)) {
+			if (qName.equalsIgnoreCase(Constants.TAG_DICT) ||
+					qName.equalsIgnoreCase(Constants.TAG_PLIST_ARRAY)) {
 				try {
-					PListObject objToAdd = pList.buildObject(localName, tempVal
+					PListObject objToAdd = pList.buildObject(qName, tempVal
 							.getBuilder().toString());
 					if (objToAdd != null)
 						pList.stackObject(objToAdd, key);
@@ -219,14 +219,14 @@ public class  PListXMLHandler extends DefaultHandler2 {
 //						.append(Constants.PIPE).append(uri)
 //						.append(Constants.PIPE)
 //						.append(tempVal.getBuilder().toString()).toString());
-		if (localName.equalsIgnoreCase(Constants.TAG_KEY)) {
+		if (qName.equalsIgnoreCase(Constants.TAG_KEY)) {
 			key = tempVal.getBuilder().toString().trim();
-		} else if (localName.equalsIgnoreCase(Constants.TAG_DICT) || 
-				localName.equalsIgnoreCase(Constants.TAG_PLIST_ARRAY)) {
+		} else if (qName.equalsIgnoreCase(Constants.TAG_DICT) ||
+				qName.equalsIgnoreCase(Constants.TAG_PLIST_ARRAY)) {
 			pList.popStack();
-		} else if (!localName.equalsIgnoreCase(Constants.TAG_PLIST)) {
+		} else if (!qName.equalsIgnoreCase(Constants.TAG_PLIST)) {
 			try {
-				PListObject objToAdd = pList.buildObject(localName, tempVal
+				PListObject objToAdd = pList.buildObject(qName, tempVal
 						.getBuilder().toString());
 				if (objToAdd != null)
 					pList.stackObject(objToAdd, key);
@@ -234,7 +234,7 @@ public class  PListXMLHandler extends DefaultHandler2 {
 				throw new SAXException(e);
 			}
 			key = null;
-		} else if (localName.equalsIgnoreCase(Constants.TAG_PLIST)) {
+		} else if (qName.equalsIgnoreCase(Constants.TAG_PLIST)) {
 			if (null != parseListener) {
 				parseListener.onPListParseDone(pList, ParseMode.END_TAG);
 			}
