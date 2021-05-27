@@ -30,6 +30,7 @@
 package org.moe.samples.rssreader.ios;
 
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.rssreader.common.Bookmarks;
@@ -66,6 +67,7 @@ import apple.uikit.enums.UIPopoverArrowDirection;
 import apple.uikit.enums.UIUserInterfaceIdiom;
 import apple.uikit.struct.UIEdgeInsets;
 
+@RegisterOnStartup
 public class RSSReaderController extends CustomCellTableController {
 
     private static final double textViewHPadding;
@@ -142,26 +144,34 @@ public class RSSReaderController extends CustomCellTableController {
                 return;
             }
 
-            Globals.dispatch_sync(Globals.dispatch_get_main_queue(), () -> {
-                getOptions().clear();
-                for (RSSFeedItem item : feed.getItems()) {
-                    add(item);
+            Globals.dispatch_sync(Globals.dispatch_get_main_queue(), new Globals.Block_dispatch_sync() {
+                @Override
+                public void call_dispatch_sync() {
+                    RSSReaderController.this.getOptions().clear();
+                    for (RSSFeedItem item : feed.getItems()) {
+                        RSSReaderController.this.add(item);
+                    }
+                    System.out.println("Finished loading url " + url);
+                    RSSReaderController.this.tableView().reloadData();
+                    RSSReaderController.this.tableView().scrollRectToVisibleAnimated(CoreGraphics.CGRectMake(0.0, 0.0, 1.0,
+                            1.0), true);
+                    loaderThread = null;
                 }
-                System.out.println("Finished loading url " + url);
-                tableView().reloadData();
-                tableView().scrollRectToVisibleAnimated(CoreGraphics.CGRectMake(0.0, 0.0, 1.0,
-                        1.0), true);
-                loaderThread = null;
             });
         });
         loaderThread.start();
     }
 
     private void handleError(String errorMessage) {
-        Globals.dispatch_async(Globals.dispatch_get_main_queue(), () -> {
-            UIAlertView alertView = UIAlertView.alloc().init();
-            alertView.setMessage("Cannot Show Rss news: " + errorMessage);
-            alertView.show();
+        System.out.println(errorMessage);
+        Globals.dispatch_async(Globals.dispatch_get_main_queue(), new Globals.Block_dispatch_async() {
+            @Override
+            public void call_dispatch_async() {
+                System.out.println("This will not get printed!");
+                UIAlertView alertView = UIAlertView.alloc().init();
+                alertView.setMessage("Cannot Show Rss news: " + errorMessage);
+                alertView.show();
+            }
         });
     }
 
@@ -183,17 +193,23 @@ public class RSSReaderController extends CustomCellTableController {
             bms.add(bm);
         }
         if (UIDevice.currentDevice().userInterfaceIdiom() == UIUserInterfaceIdiom.Phone) {
-            bms.setListener((tableView, row) -> {
-                loadURL(row);
-                navigationController().popViewControllerAnimated(true);
+            bms.setListener(new SimpleTableController.EventListener() {
+                @Override
+                public void tableViewDidSelectRow(UITableView tableView, String row) {
+                    RSSReaderController.this.loadURL(row);
+                    RSSReaderController.this.navigationController().popViewControllerAnimated(true);
+                }
             });
             navigationController().pushViewControllerAnimated(bms, true);
         } else {
             final UIPopoverController ctrl = UIPopoverController.alloc()
                     .initWithContentViewController(bms);
-            bms.setListener((tableView, row) -> {
-                loadURL(row);
-                ctrl.dismissPopoverAnimated(true);
+            bms.setListener(new SimpleTableController.EventListener() {
+                @Override
+                public void tableViewDidSelectRow(UITableView tableView, String row) {
+                    RSSReaderController.this.loadURL(row);
+                    ctrl.dismissPopoverAnimated(true);
+                }
             });
             ctrl.presentPopoverFromBarButtonItemPermittedArrowDirectionsAnimated(navigationItem()
                     .rightBarButtonItem(), UIPopoverArrowDirection.Any, true);

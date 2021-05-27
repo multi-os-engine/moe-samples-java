@@ -55,6 +55,7 @@ import apple.uikit.UIViewController;
 import apple.uikit.enums.UIControlEvents;
 import apple.uikit.enums.UIControlState;
 import apple.uikit.enums.UIViewAnimationTransition;
+import apple.uikit.protocol.UIViewControllerTransitionCoordinator;
 
 @org.moe.natj.general.ann.Runtime(ObjCRuntime.class)
 @ObjCClassName("AtomicElementViewController")
@@ -163,7 +164,7 @@ public class AtomicElementViewController extends UIViewController {
     }
 
     @Override
-    public void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size, @Mapped(ObjCObjectMapper.class) Object coordinator) {
+    public void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size, @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
         CGRect viewRect = getRectForSubViews(size);
         atomicElementView.setFrame(viewRect);
         atomicElementFlippedView.setFrame(viewRect);

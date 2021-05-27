@@ -16,6 +16,9 @@ limitations under the License.
 
 package org.moe.moe.fastjni;
 
+import org.moe.natj.general.ann.RegisterOnStartup;
+
+@RegisterOnStartup
 public class Test {
     public native int jni(byte[] bytes);
 

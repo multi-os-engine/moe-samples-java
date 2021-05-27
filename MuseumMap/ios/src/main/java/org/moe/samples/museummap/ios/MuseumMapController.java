@@ -30,6 +30,7 @@
 package org.moe.samples.museummap.ios;
 
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.museummap.common.MuseumSearchEngine;
@@ -64,6 +65,7 @@ import apple.uikit.enums.UIReturnKeyType;
 import apple.uikit.enums.UITextBorderStyle;
 import apple.uikit.protocol.UITextFieldDelegate;
 
+@RegisterOnStartup
 public class MuseumMapController extends UIViewController {
 
     private static final String PointAnnotationViewID = "PointAnnotation";
@@ -105,10 +107,8 @@ public class MuseumMapController extends UIViewController {
 
         setEdgesForExtendedLayout(UIRectEdge.None);
         view().setBackgroundColor(UIColor.whiteColor());
-
-        views.put("bottomGuide", this.bottomLayoutGuide());
         views.put("topGuide", this.topLayoutGuide());
-
+        views.put("bottomGuide", this.bottomLayoutGuide());
         mapView = MKMapView.alloc().init();
         mapView.setTranslatesAutoresizingMaskIntoConstraints(false);
         view().addSubview(mapView);
@@ -137,7 +137,7 @@ public class MuseumMapController extends UIViewController {
             }
 
             @Override
-            public MKAnnotationView mapViewViewForAnnotation(MKMapView mapView, Object annotation) {
+            public MKAnnotationView mapViewViewForAnnotation(MKMapView mapView, MKAnnotation annotation) {
                 MKPinAnnotationView view = (MKPinAnnotationView) mapView
                         .dequeueReusableAnnotationViewWithIdentifier(PointAnnotationViewID);
                 if (view == null) {
@@ -270,16 +270,19 @@ public class MuseumMapController extends UIViewController {
                         }
                     }
 
-                    Globals.dispatch_sync(Globals.dispatch_get_main_queue(), () -> {
-                        for (Museum museum : museums) {
-                            if (museum.getId() == -1) {
-                                MKPointAnnotation pa = MKPointAnnotation.alloc().init();
-                                pa.setTitle(museum.getName());
-                                pa.setCoordinate(new CLLocationCoordinate2D(museum.getLatitude(),
-                                        museum.getLongitude()));
-                                mapView.addAnnotation(pa);
+                    Globals.dispatch_sync(Globals.dispatch_get_main_queue(), new Globals.Block_dispatch_sync() {
+                        @Override
+                        public void call_dispatch_sync() {
+                            for (Museum museum : museums) {
+                                if (museum.getId() == -1) {
+                                    MKPointAnnotation pa = MKPointAnnotation.alloc().init();
+                                    pa.setTitle(museum.getName());
+                                    pa.setCoordinate(new CLLocationCoordinate2D(museum.getLatitude(),
+                                            museum.getLongitude()));
+                                    mapView.addAnnotation(pa);
+                                }
+                                source.createMuseum(museum);
                             }
-                            source.createMuseum(museum);
                         }
                     });
                 } finally {
@@ -291,10 +294,14 @@ public class MuseumMapController extends UIViewController {
     }
 
     private void handleError(String errorMessage) {
-        Globals.dispatch_sync(Globals.dispatch_get_main_queue(), () -> {
-            UIAlertView alertView = UIAlertView.alloc().init();
-            alertView.setMessage("Cannot get museums: " + errorMessage);
-            alertView.show();
+        System.out.println(errorMessage);
+        Globals.dispatch_sync(Globals.dispatch_get_main_queue(), new Globals.Block_dispatch_sync() {
+            @Override
+            public void call_dispatch_sync() {
+                UIAlertView alertView = UIAlertView.alloc().init();
+                alertView.setMessage("Cannot get museums: " + errorMessage);
+                alertView.show();
+            }
         });
     }
 }

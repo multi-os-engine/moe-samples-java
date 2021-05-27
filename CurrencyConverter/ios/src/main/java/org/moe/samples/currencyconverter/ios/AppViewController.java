@@ -146,23 +146,31 @@ public class AppViewController extends UIViewController implements UIPickerViewD
             return;
         }
 
-        dispatch_async(dispatch_get_global_queue(0, 0), () -> {
-            double[] convertResult = Currency.convert(Double.parseDouble(numberStr), currencyFrom, currencyTo);
+        dispatch_async(dispatch_get_global_queue(0, 0), new Globals.Block_dispatch_async() {
+            @Override
+            public void call_dispatch_async() {
+                double[] convertResult = Currency.convert(Double.parseDouble(numberStr), currencyFrom, currencyTo);
 
-            final String resultString;
+                final String resultString;
 
-            if (Math.abs(convertResult[0]) < 0.00000001) {
-                resultString = "Error: Cannot get currency rate!";
-            } else {
-                BigDecimal x = new BigDecimal(convertResult[1]);
-                x = x.setScale(2, BigDecimal.ROUND_HALF_UP);
-                convertResult[1] = x.doubleValue();
-                resultString = "Currency rate: " + String.valueOf(convertResult[0]) +
-                        ". Result: " + String.valueOf(convertResult[1]) + " " +
-                        Currency.getCurrencySymbol(currencyTo);
+                if (Math.abs(convertResult[0]) < 0.00000001) {
+                    resultString = "Error: Cannot get currency rate!";
+                } else {
+                    BigDecimal x = new BigDecimal(convertResult[1]);
+                    x = x.setScale(2, BigDecimal.ROUND_HALF_UP);
+                    convertResult[1] = x.doubleValue();
+                    resultString = "Currency rate: " + String.valueOf(convertResult[0]) +
+                            ". Result: " + String.valueOf(convertResult[1]) + " " +
+                            Currency.getCurrencySymbol(currencyTo);
+                }
+
+                dispatch_async(dispatch_get_main_queue(), new Globals.Block_dispatch_async() {
+                    @Override
+                    public void call_dispatch_async() {
+                        statusText.setText(resultString);
+                    }
+                });
             }
-
-            dispatch_async(dispatch_get_main_queue(), () -> statusText.setText(resultString));
         });
     }
 

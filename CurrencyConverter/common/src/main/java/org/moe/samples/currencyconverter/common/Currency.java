@@ -57,8 +57,7 @@ public class Currency {
         }
 
         try {
-            String sUrl = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22" +
-                    currencyIdentifierFrom + currencyIdentifierTo + "%22)&env=store://datatables.org/alltableswithkeys";
+            String sUrl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/" + currencyIdentifierFrom.toLowerCase() + "/"+ currencyIdentifierTo.toLowerCase() +".json";
             rate = getRateFromURL(sUrl);
             if (rate.equals("N/A")) {
                 return 0.0;
@@ -117,10 +116,11 @@ public class Currency {
         }
 
         String rate = sb.toString();
-        int startIndex = rate.indexOf("<Rate>");
-        int endIndex = rate.indexOf("</Rate>");
+        int startIndex = rate.lastIndexOf(":");
+        int endIndex = rate.indexOf("}");
         if (startIndex != -1 && endIndex != -1) {
-            rate = rate.substring(startIndex + 6, endIndex);
+            rate = rate.substring(startIndex + 1, endIndex);
+            System.out.println("Rate: " + rate);
         } else {
             rate = "";
         }

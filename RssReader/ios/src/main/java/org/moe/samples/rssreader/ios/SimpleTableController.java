@@ -30,6 +30,7 @@
 package org.moe.samples.rssreader.ios;
 
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.RegisterOnStartup;
 
 import java.util.ArrayList;
 
@@ -40,6 +41,7 @@ import apple.uikit.UITableViewCell;
 import apple.uikit.UITableViewController;
 import apple.uikit.enums.UITableViewRowAnimation;
 
+@RegisterOnStartup
 public class SimpleTableController extends UITableViewController {
 
     private static final String CELL_IDENTIFIER = "Cell";

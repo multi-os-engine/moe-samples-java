@@ -31,6 +31,7 @@ package org.moe.samples.elements.ios;
 
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ann.Selector;
 
 import apple.NSObject;
@@ -53,6 +54,7 @@ import apple.uikit.enums.UIControlContentVerticalAlignment;
 import apple.uikit.enums.UIControlEvents;
 import apple.uikit.enums.UIControlState;
 
+@RegisterOnStartup
 public class AtomicElementFlippedView extends AtomicElementView {
 
     @Selector("alloc")

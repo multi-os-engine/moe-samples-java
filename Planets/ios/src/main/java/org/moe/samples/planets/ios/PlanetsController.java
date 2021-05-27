@@ -30,6 +30,7 @@
 package org.moe.samples.planets.ios;
 
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.samples.planets.common.Planet;
@@ -43,6 +44,7 @@ import apple.uikit.UIColor;
 import apple.uikit.UIView;
 import apple.uikit.UIViewController;
 
+@RegisterOnStartup
 public class PlanetsController extends UIViewController {
 
     private Simulation simulation;
