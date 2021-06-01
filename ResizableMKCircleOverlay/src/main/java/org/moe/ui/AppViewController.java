@@ -19,32 +19,22 @@
 package org.moe.ui;
 
 import org.moe.natj.general.Pointer;
-import org.moe.natj.general.ann.Generated;
-import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
-import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Property;
 import org.moe.natj.objc.ann.Selector;
-import org.moe.natj.objc.map.ObjCObjectMapper;
 
-import android.util.Log;
-
-import apple.NSObject;
 import apple.c.Globals;
 import apple.coregraphics.struct.CGPoint;
 import apple.corelocation.struct.CLLocationCoordinate2D;
 import apple.foundation.NSSet;
-import apple.foundation.NSString;
 import apple.mapkit.MKAnnotationView;
 import apple.mapkit.MKCircle;
-import apple.mapkit.MKCircleView;
 import apple.mapkit.MKMapView;
 import apple.mapkit.MKOverlayRenderer;
-import apple.mapkit.MKOverlayView;
 import apple.mapkit.MKPinAnnotationView;
 import apple.mapkit.MKPointAnnotation;
 import apple.mapkit.MKUserLocation;
@@ -57,7 +47,6 @@ import apple.mapkit.struct.MKCoordinateRegion;
 import apple.mapkit.struct.MKCoordinateSpan;
 import apple.mapkit.struct.MKMapPoint;
 import apple.mapkit.struct.MKMapRect;
-import apple.uikit.UIButton;
 import apple.uikit.UIColor;
 import apple.uikit.UIEvent;
 import apple.uikit.UILabel;
@@ -65,9 +54,7 @@ import apple.uikit.UITouch;
 import apple.uikit.UIViewController;
 
 import static apple.corelocation.c.CoreLocation.CLLocationCoordinate2DMake;
-import static apple.mapkit.c.MapKit.MKCoordinateRegionMake;
 import static apple.mapkit.c.MapKit.MKCoordinateRegionMakeWithDistance;
-import static apple.mapkit.c.MapKit.MKCoordinateSpanMake;
 import static apple.mapkit.c.MapKit.MKMapPointForCoordinate;
 import static apple.mapkit.c.MapKit.MKMapPointsPerMeterAtLatitude;
 
@@ -154,15 +141,18 @@ public class AppViewController extends UIViewController implements MKMapViewDele
                 /* Test if the touch was within the bounds of the circle */
                 if(xPath >= 0 && yPath >= 0 && xPath < mapRect.size().width() && yPath < mapRect
                         .size().height()){
-                    Log.d(TAG, "Disable Map Panning");
+                    System.out.println(TAG + ": " + "Disable Map Panning");
 
                     /*
                      This block is to ensure scrollEnabled = NO happens before the any move event.
                      */
-                    Globals.dispatch_async(Globals.dispatch_get_main_queue(), () -> {
-                        mapView().setScrollEnabled(false);
-                        panEnabled = false;
-                        oldoffset = circleView.getCircleRadius();
+                    Globals.dispatch_async(Globals.dispatch_get_main_queue(), new Globals.Block_dispatch_async() {
+                        @Override
+                        public void call_dispatch_async() {
+                            mapView().setScrollEnabled(false);
+                            panEnabled = false;
+                            oldoffset = circleView.getCircleRadius();
+                        }
                     });
 
                 } else{
@@ -262,7 +252,7 @@ public class AppViewController extends UIViewController implements MKMapViewDele
     }
 
     @Override
-    public MKAnnotationView mapViewViewForAnnotation(MKMapView mapView, @Mapped(ObjCObjectMapper.class) Object annotation) {
+    public MKAnnotationView mapViewViewForAnnotation(MKMapView mapView, MKAnnotation annotation) {
 
         if (annotation instanceof MKUserLocation) {
             return null;
@@ -277,7 +267,7 @@ public class AppViewController extends UIViewController implements MKMapViewDele
     }
 
     @Override
-    public MKOverlayRenderer mapViewRendererForOverlay(MKMapView mapView, @Mapped(ObjCObjectMapper.class) Object overlay) {
+    public MKOverlayRenderer mapViewRendererForOverlay(MKMapView mapView, MKOverlay overlay) {
         circleView = CustomMKCircleOverlay.alloc().initWithCircle0((MKCircle) overlay);
         circleView.setFillColor(UIColor.redColor());
         circleView.setDelegate(this);
@@ -310,6 +300,6 @@ public class AppViewController extends UIViewController implements MKMapViewDele
 
     @Override
     public void onRadiusChange(double radius) {
-        Log.d(TAG, "on radius change: " + radius);
+        System.out.println(TAG + ": " +  "on radius change: " + radius);
     }
 }
