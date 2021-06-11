@@ -6,7 +6,7 @@ import static apple.corefoundation.c.CoreFoundation.CFAbsoluteTimeGetCurrent;
 import apple.audiotoolbox.enums.Enums;
 import apple.audiotoolbox.opaque.AudioQueueRef;
 import apple.audiotoolbox.struct.AudioQueueLevelMeterState;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
 import apple.coregraphics.c.CoreGraphics;
 import apple.coregraphics.struct.CGPoint;
 import apple.coregraphics.struct.CGRect;

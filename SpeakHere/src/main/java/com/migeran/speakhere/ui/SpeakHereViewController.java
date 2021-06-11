@@ -4,7 +4,7 @@ import apple.avfoundation.AVAudioSession;
 import apple.avfoundation.c.AVFoundation;
 import apple.avfoundation.enums.AVAudioSessionRouteChangeReason;
 import apple.avfoundation.protocol.AVAudioSessionDelegate;
-import apple.coreaudio.struct.AudioStreamBasicDescription;
+import apple.coreaudiotypes.struct.AudioStreamBasicDescription;
 import apple.foundation.NSBundle;
 import apple.foundation.NSDictionary;
 import apple.foundation.NSNotification;
@@ -18,6 +18,7 @@ import apple.uikit.UIViewController;
 import apple.uikit.c.UIKit;
 import apple.uikit.enums.UIBarPosition;
 import apple.uikit.enums.UIStatusBarStyle;
+import apple.uikit.protocol.UIBarPositioning;
 import apple.uikit.protocol.UINavigationBarDelegate;
 
 import java.io.File;
@@ -408,7 +409,7 @@ public class SpeakHereViewController extends UIViewController implements AVAudio
 	}
 
 	@Override
-	public long positionForBar(@Mapped(ObjCObjectMapper.class) Object bar) {
+	public long positionForBar(UIBarPositioning bar) {
 		return UIBarPosition.TopAttached;
 	}
 
