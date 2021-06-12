@@ -4,7 +4,7 @@ buildscript {
     version = '1.0'
     ext {
         appName = "my-gdx-game"
-        gdxVersion = '1.9.11'
+        gdxVersion = '1.10.1-SNAPSHOT'
         roboVMVersion = '2.3.12'
         box2DLightsVersion = '1.5'
         ashleyVersion = '1.7.3'
@@ -12,6 +12,7 @@ buildscript {
         gdxControllersVersion = '2.1.0'
     }
     repositories {
+        mavenLocal()
         mavenCentral()
         google()
     }
@@ -29,7 +30,7 @@ allprojects {
     version = '1.0'
     ext {
         appName = "my-gdx-game"
-        gdxVersion = '1.9.11'
+        gdxVersion = '1.10.1-SNAPSHOT'
         roboVMVersion = '2.3.12'
         box2DLightsVersion = '1.5'
         ashleyVersion = '1.7.3'

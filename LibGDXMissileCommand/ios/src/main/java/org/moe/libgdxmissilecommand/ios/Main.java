@@ -35,6 +35,7 @@ import com.badlogic.gdx.backends.iosmoe.IOSApplicationConfiguration;
 import org.moe.libgdxmissilecommand.common.MissileCommand;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.RegisterOnStartup;
+import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 
 import java.lang.reflect.InvocationTargetException;
@@ -48,7 +49,7 @@ import apple.uikit.c.UIKit;
 import apple.uikit.protocol.UIApplicationDelegate;
 
 @RegisterOnStartup
-public class Main extends NSObject implements UIApplicationDelegate {
+public class Main extends IOSApplication.Delegate {
 
     public static void main(String[] args) {
         UIKit.UIApplicationMain(0, null, null, Main.class.getName());
@@ -57,72 +58,13 @@ public class Main extends NSObject implements UIApplicationDelegate {
     @Selector("alloc")
     public static native Main alloc();
 
+    @Override
+    protected IOSApplication createApplication() {
+        IOSApplicationConfiguration configuration = new IOSApplicationConfiguration();
+        return new IOSApplication(new MissileCommand(), configuration);
+    }
+
     protected Main(Pointer peer) {
         super(peer);
-    }
-
-    private MyIOSApplication app;
-
-    @Override
-    public boolean applicationDidFinishLaunchingWithOptions(UIApplication application, NSDictionary launchOptions) {
-        IOSApplicationConfiguration configuration = new IOSApplicationConfiguration();
-        app = new MyIOSApplication(new MissileCommand(), configuration);
-        app.setApplicationLogger(new MyLogger());
-        try {
-            Method method = IOSApplication.class.getDeclaredMethod("didFinishLaunching", UIApplication.class, NSDictionary.class);
-            method.setAccessible(true);
-            method.invoke(app, application, launchOptions);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-        return true;
-    }
-    @Override
-    public void applicationDidBecomeActive (UIApplication application) {
-        try {
-            Method method = IOSApplication.class.getDeclaredMethod("didBecomeActive", UIApplication.class);
-            method.setAccessible(true);
-            method.invoke(app, application);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void applicationWillEnterForeground (UIApplication application) {
-        try {
-            Method method = IOSApplication.class.getDeclaredMethod("willEnterForeground", UIApplication.class);
-            method.setAccessible(true);
-            method.invoke(app, application);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void applicationWillResignActive (UIApplication application) {
-        try {
-            Method method = IOSApplication.class.getDeclaredMethod("willResignActive", UIApplication.class);
-            method.setAccessible(true);
-            method.invoke(app, application);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void applicationWillTerminate (UIApplication application) {
-        try {
-            Method method = IOSApplication.class.getDeclaredMethod("willTerminate", UIApplication.class);
-            method.setAccessible(true);
-            method.invoke(app, application);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public UIWindow window () {
-        return app.getUIWindow();
     }
 }
