@@ -57,6 +57,9 @@ dependencies {
 }
 
 moe {
+    nativeImage {
+        options = ["--features=com.badlogic.gdx.backends.svm.ConfigCollectionFeature"]
+    }
     xcode {
         project 'xcode/LibGDXMissileCommand.xcodeproj'
         mainTarget 'LibGDXMissileCommand'
