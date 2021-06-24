@@ -386,7 +386,7 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				"ARCHS[sdk=iphoneos*]" = arm64;
-				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 			};
 			name = Debug;
 		};
@@ -430,7 +430,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				"ARCHS[sdk=iphoneos*]" = arm64;
-				"ARCHS[sdk=iphonesimulator*]" = x86_64;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
 			};
 			name = Release;
 		};
