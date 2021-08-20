@@ -32,234 +32,304 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ChartHighlight extends NSObject {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected ChartHighlight(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected ChartHighlight(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native ChartHighlight alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native ChartHighlight alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Generated
-	@Selector("axis")
-	@NInt
-	public native long axis();
+    @Generated
+    @Selector("axis")
+    @NInt
+    public native long axis();
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    /**
+     * the index of the data object - in case it refers to more than one
+     */
+    @Generated
+    @Selector("dataIndex")
+    @NInt
+    public native long dataIndex();
 
-	@Generated
-	@Selector("dataIndex")
-	@NInt
-	public native long dataIndex();
+    @Generated
+    @Selector("dataSetIndex")
+    @NInt
+    public native long dataSetIndex();
 
-	@Generated
-	@Selector("dataSetIndex")
-	@NInt
-	public native long dataSetIndex();
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("description")
+    public native String description();
 
-	@Generated
-	@Selector("description")
-	public native String description();
+    /**
+     * the x-position (pixels) on which this highlight object was last drawn
+     */
+    @Generated
+    @Selector("drawX")
+    @NFloat
+    public native double drawX();
 
-	@Generated
-	@Selector("drawX")
-	@NFloat
-	public native double drawX();
+    /**
+     * the y-position (pixels) on which this highlight object was last drawn
+     */
+    @Generated
+    @Selector("drawY")
+    @NFloat
+    public native double drawY();
 
-	@Generated
-	@Selector("drawY")
-	@NFloat
-	public native double drawY();
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    @Generated
+    @Selector("init")
+    public native ChartHighlight init();
 
-	@Generated
-	@Selector("init")
-	public native ChartHighlight init();
+    /**
+     * \param x the x-value of the highlighted value
+     * 
+     * \param dataSetIndex the index of the DataSet the highlighted value belongs to
+     * 
+     * \param stackIndex references which value of a stacked-bar entry has been selected
+     */
+    @Generated
+    @Selector("initWithX:dataSetIndex:stackIndex:")
+    public native ChartHighlight initWithXDataSetIndexStackIndex(double x, @NInt long dataSetIndex,
+            @NInt long stackIndex);
 
-	@Generated
-	@Selector("initWithX:dataSetIndex:stackIndex:")
-	public native ChartHighlight initWithXDataSetIndexStackIndex(double x,
-			@NInt long dataSetIndex, @NInt long stackIndex);
+    /**
+     * \param x the x-value of the highlighted value
+     * 
+     * \param y the y-value of the highlighted value
+     * 
+     * \param dataSetIndex the index of the DataSet the highlighted value belongs to
+     * 
+     * \param dataIndex The data index to search in (only used in CombinedChartView currently)
+     */
+    @Generated
+    @Selector("initWithX:y:dataSetIndex:dataIndex:")
+    public native ChartHighlight initWithXYDataSetIndexDataIndex(double x, double y, @NInt long dataSetIndex,
+            @NInt long dataIndex);
 
-	@Generated
-	@Selector("initWithX:y:dataSetIndex:")
-	public native ChartHighlight initWithXYDataSetIndex(double x, double y,
-			@NInt long dataSetIndex);
+    /**
+     * \param x the x-value of the highlighted value
+     * 
+     * \param y the y-value of the highlighted value
+     * 
+     * \param xPx the x-pixel of the highlighted value
+     * 
+     * \param yPx the y-pixel of the highlighted value
+     * 
+     * \param dataIndex the index of the Data the highlighted value belongs to
+     * 
+     * \param dataSetIndex the index of the DataSet the highlighted value belongs to
+     * 
+     * \param stackIndex references which value of a stacked-bar entry has been selected
+     * 
+     * \param axis the axis the highlighted value belongs to
+     */
+    @Generated
+    @Selector("initWithX:y:xPx:yPx:dataIndex:dataSetIndex:stackIndex:axis:")
+    public native ChartHighlight initWithXYXPxYPxDataIndexDataSetIndexStackIndexAxis(double x, double y,
+            @NFloat double xPx, @NFloat double yPx, @NInt long dataIndex, @NInt long dataSetIndex,
+            @NInt long stackIndex, @NInt long axis);
 
-	@Generated
-	@Selector("initWithX:y:xPx:yPx:dataIndex:dataSetIndex:stackIndex:axis:")
-	public native ChartHighlight initWithXYXPxYPxDataIndexDataSetIndexStackIndexAxis(
-			double x, double y, @NFloat double xPx, @NFloat double yPx,
-			@NInt long dataIndex, @NInt long dataSetIndex,
-			@NInt long stackIndex, @NInt long axis);
+    /**
+     * \param x the x-value of the highlighted value
+     * 
+     * \param y the y-value of the highlighted value
+     * 
+     * \param xPx the x-pixel of the highlighted value
+     * 
+     * \param yPx the y-pixel of the highlighted value
+     * 
+     * \param dataIndex the index of the Data the highlighted value belongs to
+     * 
+     * \param dataSetIndex the index of the DataSet the highlighted value belongs to
+     * 
+     * \param stackIndex references which value of a stacked-bar entry has been selected
+     * 
+     * \param axis the axis the highlighted value belongs to
+     */
+    @Generated
+    @Selector("initWithX:y:xPx:yPx:dataSetIndex:axis:")
+    public native ChartHighlight initWithXYXPxYPxDataSetIndexAxis(double x, double y, @NFloat double xPx,
+            @NFloat double yPx, @NInt long dataSetIndex, @NInt long axis);
 
-	@Generated
-	@Selector("initWithX:y:xPx:yPx:dataSetIndex:axis:")
-	public native ChartHighlight initWithXYXPxYPxDataSetIndexAxis(double x,
-			double y, @NFloat double xPx, @NFloat double yPx,
-			@NInt long dataSetIndex, @NInt long axis);
+    /**
+     * \param x the x-value of the highlighted value
+     * 
+     * \param y the y-value of the highlighted value
+     * 
+     * \param xPx the x-pixel of the highlighted value
+     * 
+     * \param yPx the y-pixel of the highlighted value
+     * 
+     * \param dataSetIndex the index of the DataSet the highlighted value belongs to
+     * 
+     * \param stackIndex references which value of a stacked-bar entry has been selected
+     * 
+     * \param axis the axis the highlighted value belongs to
+     */
+    @Generated
+    @Selector("initWithX:y:xPx:yPx:dataSetIndex:stackIndex:axis:")
+    public native ChartHighlight initWithXYXPxYPxDataSetIndexStackIndexAxis(double x, double y, @NFloat double xPx,
+            @NFloat double yPx, @NInt long dataSetIndex, @NInt long stackIndex, @NInt long axis);
 
-	@Generated
-	@Selector("initWithX:y:xPx:yPx:dataSetIndex:stackIndex:axis:")
-	public native ChartHighlight initWithXYXPxYPxDataSetIndexStackIndexAxis(
-			double x, double y, @NFloat double xPx, @NFloat double yPx,
-			@NInt long dataSetIndex, @NInt long stackIndex, @NInt long axis);
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("isEqual:")
+    public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    @Generated
+    @Selector("isStacked")
+    public native boolean isStacked();
 
-	@Generated
-	@Selector("isEqual:")
-	public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("isStacked")
-	public native boolean isStacked();
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    /**
+     * the index of the data object - in case it refers to more than one
+     */
+    @Generated
+    @Selector("setDataIndex:")
+    public native void setDataIndex(@NInt long value);
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    /**
+     * Sets the x- and y-position (pixels) where this highlight was last drawn.
+     */
+    @Generated
+    @Selector("setDrawWithPt:")
+    public native void setDrawWithPt(@ByValue CGPoint pt);
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
+    /**
+     * Sets the x- and y-position (pixels) where this highlight was last drawn.
+     */
+    @Generated
+    @Selector("setDrawWithX:y:")
+    public native void setDrawWithXY(@NFloat double x, @NFloat double y);
 
-	@Generated
-	@Selector("setDataIndex:")
-	public native void setDataIndex(@NInt long value);
+    /**
+     * the x-position (pixels) on which this highlight object was last drawn
+     */
+    @Generated
+    @Selector("setDrawX:")
+    public native void setDrawX(@NFloat double value);
 
-	@Generated
-	@Selector("setDrawWithPt:")
-	public native void setDrawWithPt(@ByValue CGPoint pt);
+    /**
+     * the y-position (pixels) on which this highlight object was last drawn
+     */
+    @Generated
+    @Selector("setDrawY:")
+    public native void setDrawY(@NFloat double value);
 
-	@Generated
-	@Selector("setDrawWithX:y:")
-	public native void setDrawWithXY(@NFloat double x, @NFloat double y);
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("setDrawX:")
-	public native void setDrawX(@NFloat double value);
+    @Generated
+    @Selector("stackIndex")
+    @NInt
+    public native long stackIndex();
 
-	@Generated
-	@Selector("setDrawY:")
-	public native void setDrawY(@NFloat double value);
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 
-	@Generated
-	@Selector("stackIndex")
-	@NInt
-	public native long stackIndex();
+    @Generated
+    @Selector("x")
+    public native double x();
 
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
+    @Generated
+    @Selector("xPx")
+    @NFloat
+    public native double xPx();
 
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("y")
+    public native double y();
 
-	@Generated
-	@Selector("x")
-	public native double x();
-
-	@Generated
-	@Selector("xPx")
-	@NFloat
-	public native double xPx();
-
-	@Generated
-	@Selector("y")
-	public native double y();
-
-	@Generated
-	@Selector("yPx")
-	@NFloat
-	public native double yPx();
+    @Generated
+    @Selector("yPx")
+    @NFloat
+    public native double yPx();
 }

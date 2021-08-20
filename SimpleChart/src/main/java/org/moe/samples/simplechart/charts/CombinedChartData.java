@@ -32,217 +32,221 @@ import org.moe.samples.simplechart.charts.protocol.IChartDataSet;
 @ObjCClassName("_TtC6Charts17CombinedChartData")
 @ObjCClassBinding
 public class CombinedChartData extends BarLineScatterCandleBubbleChartData {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CombinedChartData(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected CombinedChartData(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Selector("allData")
-	public native NSArray<? extends ChartData> allData();
+    /**
+     * All data objects in row: line-bar-scatter-candle-bubble if not null.
+     */
+    @Generated
+    @Selector("allData")
+    public native NSArray<? extends ChartData> allData();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native CombinedChartData alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native CombinedChartData alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Generated
-	@Selector("barData")
-	public native BarChartData barData();
+    @Generated
+    @Selector("barData")
+    public native BarChartData barData();
 
-	@Generated
-	@Selector("bubbleData")
-	public native BubbleChartData bubbleData();
+    @Generated
+    @Selector("bubbleData")
+    public native BubbleChartData bubbleData();
 
-	@Generated
-	@Selector("calcMinMax")
-	public native void calcMinMax();
+    @Generated
+    @Selector("calcMinMax")
+    public native void calcMinMax();
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("candleData")
-	public native CandleChartData candleData();
+    @Generated
+    @Selector("candleData")
+    public native CandleChartData candleData();
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    @Generated
+    @Selector("dataByIndex:")
+    public native ChartData dataByIndex(@NInt long index);
 
-	@Generated
-	@Selector("dataByIndex:")
-	public native ChartData dataByIndex(@NInt long index);
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
-	@Generated
-	@Selector("description")
-	public static native String description_static();
+    /**
+     * Get the Entry for a corresponding highlight object
+     * \param highlight
+     * 
+     * 
+     * returns:
+     * The entry that is highlighted
+     */
+    @Generated
+    @Selector("entryForHighlight:")
+    public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
 
-	@Generated
-	@Selector("entryForHighlight:")
-	public native ChartDataEntry entryForHighlight(ChartHighlight highlight);
+    /**
+     * Get dataset for highlight
+     * \param highlight current highlight
+     * 
+     * 
+     * returns:
+     * dataset related to highlight
+     */
+    @Generated
+    @Selector("getDataSetByHighlight:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native IChartDataSet getDataSetByHighlight(ChartHighlight highlight);
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("init")
-	public native CombinedChartData init();
+    @Generated
+    @Selector("init")
+    public native CombinedChartData init();
 
-	@Generated
-	@Selector("initWithDataSet:")
-	public native CombinedChartData initWithDataSet(
-			@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    @Generated
+    @Selector("initWithDataSet:")
+    public native CombinedChartData initWithDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
 
-	@Generated
-	@Selector("initWithDataSets:")
-	public native CombinedChartData initWithDataSets(NSArray<?> dataSets);
+    @Generated
+    @Selector("initWithDataSets:")
+    public native CombinedChartData initWithDataSets(NSArray<?> dataSets);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    @Generated
+    @Selector("lineData")
+    public native LineChartData lineData();
 
-	@Generated
-	@Selector("lineData")
-	public native LineChartData lineData();
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    @Generated
+    @Selector("notifyDataChanged")
+    public native void notifyDataChanged();
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    @Generated
+    @Selector("removeDataSet:")
+    public native boolean removeDataSet(@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
 
-	@Generated
-	@Selector("notifyDataChanged")
-	public native void notifyDataChanged();
+    @Generated
+    @Selector("removeDataSetByIndex:")
+    public native boolean removeDataSetByIndex(@NInt long index);
 
-	@Generated
-	@Selector("removeDataSet:")
-	public native boolean removeDataSet(
-			@Mapped(ObjCObjectMapper.class) IChartDataSet dataSet);
+    @Generated
+    @Selector("removeEntry:dataSetIndex:")
+    public native boolean removeEntryDataSetIndex(ChartDataEntry entry, @NInt long dataSetIndex);
 
-	@Generated
-	@Selector("removeDataSetByIndex:")
-	public native boolean removeDataSetByIndex(@NInt long index);
+    @Generated
+    @Selector("removeEntryWithXValue:dataSetIndex:")
+    public native boolean removeEntryWithXValueDataSetIndex(double xValue, @NInt long dataSetIndex);
 
-	@Generated
-	@Selector("removeEntry:dataSetIndex:")
-	public native boolean removeEntryDataSetIndex(ChartDataEntry entry,
-			@NInt long dataSetIndex);
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Selector("removeEntryWithXValue:dataSetIndex:")
-	public native boolean removeEntryWithXValueDataSetIndex(double xValue,
-			@NInt long dataSetIndex);
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    @Generated
+    @Selector("scatterData")
+    public native ScatterChartData scatterData();
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
+    @Generated
+    @Selector("setBarData:")
+    public native void setBarData(BarChartData value);
 
-	@Generated
-	@Selector("scatterData")
-	public native ScatterChartData scatterData();
+    @Generated
+    @Selector("setBubbleData:")
+    public native void setBubbleData(BubbleChartData value);
 
-	@Generated
-	@Selector("setBarData:")
-	public native void setBarData(BarChartData value);
+    @Generated
+    @Selector("setCandleData:")
+    public native void setCandleData(CandleChartData value);
 
-	@Generated
-	@Selector("setBubbleData:")
-	public native void setBubbleData(BubbleChartData value);
+    @Generated
+    @Selector("setLineData:")
+    public native void setLineData(LineChartData value);
 
-	@Generated
-	@Selector("setCandleData:")
-	public native void setCandleData(CandleChartData value);
+    @Generated
+    @Selector("setScatterData:")
+    public native void setScatterData(ScatterChartData value);
 
-	@Generated
-	@Selector("setLineData:")
-	public native void setLineData(LineChartData value);
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("setScatterData:")
-	public native void setScatterData(ScatterChartData value);
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
-
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
-
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

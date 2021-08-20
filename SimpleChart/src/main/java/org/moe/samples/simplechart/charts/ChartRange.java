@@ -29,161 +29,152 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ChartRange extends NSObject {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected ChartRange(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected ChartRange(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native ChartRange alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native ChartRange alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    /**
+     * \param value
+     * 
+     * 
+     * returns:
+     * <code>true</code> if this range contains (if the value is in between) the given value, <code>false</code> ifnot.
+     */
+    @Generated
+    @Selector("contains:")
+    public native boolean contains(double value);
 
-	@Generated
-	@Selector("contains:")
-	public native boolean contains(double value);
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
-	@Generated
-	@Selector("description")
-	public static native String description_static();
+    @Generated
+    @Selector("from")
+    public native double from();
 
-	@Generated
-	@Selector("from")
-	public native double from();
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    @Generated
+    @Selector("init")
+    public native ChartRange init();
 
-	@Generated
-	@Selector("init")
-	public native ChartRange init();
+    @Generated
+    @Selector("initFrom:to:")
+    public native ChartRange initFromTo(double from, double to);
 
-	@Generated
-	@Selector("initFrom:to:")
-	public native ChartRange initFromTo(double from, double to);
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("isLarger:")
+    public native boolean isLarger(double value);
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    @Generated
+    @Selector("isSmaller:")
+    public native boolean isSmaller(double value);
 
-	@Generated
-	@Selector("isLarger:")
-	public native boolean isLarger(double value);
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("isSmaller:")
-	public native boolean isSmaller(double value);
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    @Generated
+    @Selector("setFrom:")
+    public native void setFrom(double value);
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    @Generated
+    @Selector("setTo:")
+    public native void setTo(double value);
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("setFrom:")
-	public native void setFrom(double value);
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Generated
-	@Selector("setTo:")
-	public native void setTo(double value);
+    @Generated
+    @Selector("to")
+    public native double to();
 
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
-
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
-
-	@Generated
-	@Selector("to")
-	public native double to();
-
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

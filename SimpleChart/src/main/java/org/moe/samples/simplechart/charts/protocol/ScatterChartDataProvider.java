@@ -15,9 +15,8 @@ import org.moe.samples.simplechart.charts.ScatterChartData;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("ScatterChartDataProvider")
 @ObjCProtocolName("_TtP6Charts24ScatterChartDataProvider_")
-public interface ScatterChartDataProvider extends
-		BarLineScatterCandleBubbleChartDataProvider {
-	@Generated
-	@Selector("scatterData")
-	ScatterChartData scatterData();
+public interface ScatterChartDataProvider extends BarLineScatterCandleBubbleChartDataProvider {
+    @Generated
+    @Selector("scatterData")
+    ScatterChartData scatterData();
 }

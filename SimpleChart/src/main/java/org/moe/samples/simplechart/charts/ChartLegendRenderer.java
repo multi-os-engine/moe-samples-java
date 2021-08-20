@@ -33,167 +33,163 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ChartLegendRenderer extends ChartRenderer {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected ChartLegendRenderer(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected ChartLegendRenderer(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native ChartLegendRenderer alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native ChartLegendRenderer alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    /**
+     * Prepares the legend and calculates all needed forms, labels and colors.
+     */
+    @Generated
+    @Selector("computeLegendWithData:")
+    public native void computeLegendWithData(ChartData data);
 
-	@Generated
-	@Selector("computeLegendWithData:")
-	public native void computeLegendWithData(ChartData data);
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
-	@Generated
-	@Selector("description")
-	public static native String description_static();
+    /**
+     * Draws the Legend-form at the given position with the color at the given index.
+     */
+    @Generated
+    @Selector("drawFormWithContext:x:y:entry:legend:")
+    public native void drawFormWithContextXYEntryLegend(CGContextRef context, @NFloat double x, @NFloat double y,
+            ChartLegendEntry entry, ChartLegend legend);
 
-	@Generated
-	@Selector("drawFormWithContext:x:y:entry:legend:")
-	public native void drawFormWithContextXYEntryLegend(CGContextRef context,
-			@NFloat double x, @NFloat double y, ChartLegendEntry entry,
-			ChartLegend legend);
+    /**
+     * Draws the provided label at the given position.
+     */
+    @Generated
+    @Selector("drawLabelWithContext:x:y:label:font:textColor:")
+    public native void drawLabelWithContextXYLabelFontTextColor(CGContextRef context, @NFloat double x,
+            @NFloat double y, String label, UIFont font, UIColor textColor);
 
-	@Generated
-	@Selector("drawLabelWithContext:x:y:label:font:textColor:")
-	public native void drawLabelWithContextXYLabelFontTextColor(
-			CGContextRef context, @NFloat double x, @NFloat double y,
-			String label, UIFont font, UIColor textColor);
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    @Generated
+    @Selector("init")
+    public native ChartLegendRenderer init();
 
-	@Generated
-	@Selector("init")
-	public native ChartLegendRenderer init();
+    @Generated
+    @Selector("initWithViewPortHandler:")
+    public native ChartLegendRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
-	@Generated
-	@Selector("initWithViewPortHandler:")
-	public native ChartLegendRenderer initWithViewPortHandler(
-			ChartViewPortHandler viewPortHandler);
+    @Generated
+    @Selector("initWithViewPortHandler:legend:")
+    public native ChartLegendRenderer initWithViewPortHandlerLegend(ChartViewPortHandler viewPortHandler,
+            ChartLegend legend);
 
-	@Generated
-	@Selector("initWithViewPortHandler:legend:")
-	public native ChartLegendRenderer initWithViewPortHandlerLegend(
-			ChartViewPortHandler viewPortHandler, ChartLegend legend);
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    /**
+     * the legend object this renderer renders
+     */
+    @Generated
+    @Selector("legend")
+    public native ChartLegend legend();
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("legend")
-	public native ChartLegend legend();
+    @Generated
+    @Selector("renderLegendWithContext:")
+    public native void renderLegendWithContext(CGContextRef context);
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Selector("renderLegendWithContext:")
-	public native void renderLegendWithContext(CGContextRef context);
+    /**
+     * the legend object this renderer renders
+     */
+    @Generated
+    @Selector("setLegend:")
+    public native void setLegend(ChartLegend value);
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Generated
-	@Selector("setLegend:")
-	public native void setLegend(ChartLegend value);
-
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
-
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
-
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

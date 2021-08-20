@@ -35,164 +35,146 @@ import org.moe.samples.simplechart.charts.protocol.IBarChartDataSet;
 @ObjCClassName("_TtC6Charts26HorizontalBarChartRenderer")
 @ObjCClassBinding
 public class HorizontalBarChartRenderer extends BarChartRenderer {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected HorizontalBarChartRenderer(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected HorizontalBarChartRenderer(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native HorizontalBarChartRenderer alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native HorizontalBarChartRenderer alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
-	@Generated
-	@Selector("description")
-	public static native String description_static();
+    @Generated
+    @Selector("drawDataSetWithContext:dataSet:index:")
+    public native void drawDataSetWithContextDataSetIndex(CGContextRef context,
+            @Mapped(ObjCObjectMapper.class) IBarChartDataSet dataSet, @NInt long index);
 
-	@Generated
-	@Selector("drawDataSetWithContext:dataSet:index:")
-	public native void drawDataSetWithContextDataSetIndex(CGContextRef context,
-			@Mapped(ObjCObjectMapper.class) IBarChartDataSet dataSet,
-			@NInt long index);
+    @Generated
+    @Selector("drawValuesWithContext:")
+    public native void drawValuesWithContext(CGContextRef context);
 
-	@Generated
-	@Selector("drawValuesWithContext:")
-	public native void drawValuesWithContext(CGContextRef context);
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    @Generated
+    @Selector("init")
+    public native HorizontalBarChartRenderer init();
 
-	@Generated
-	@Selector("init")
-	public native HorizontalBarChartRenderer init();
+    @Generated
+    @Selector("initBuffers")
+    public native void initBuffers();
 
-	@Generated
-	@Selector("initBuffers")
-	public native void initBuffers();
+    @Generated
+    @Selector("initWithAnimator:viewPortHandler:")
+    public native HorizontalBarChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
+            ChartViewPortHandler viewPortHandler);
 
-	@Generated
-	@Selector("initWithAnimator:viewPortHandler:")
-	public native HorizontalBarChartRenderer initWithAnimatorViewPortHandler(
-			ChartAnimator animator, ChartViewPortHandler viewPortHandler);
+    @Generated
+    @Selector("initWithDataProvider:animator:viewPortHandler:")
+    public native HorizontalBarChartRenderer initWithDataProviderAnimatorViewPortHandler(
+            @Mapped(ObjCObjectMapper.class) BarChartDataProvider dataProvider, ChartAnimator animator,
+            ChartViewPortHandler viewPortHandler);
 
-	@Generated
-	@Selector("initWithDataProvider:animator:viewPortHandler:")
-	public native HorizontalBarChartRenderer initWithDataProviderAnimatorViewPortHandler(
-			@Mapped(ObjCObjectMapper.class) BarChartDataProvider dataProvider,
-			ChartAnimator animator, ChartViewPortHandler viewPortHandler);
+    @Generated
+    @Selector("initWithViewPortHandler:")
+    public native HorizontalBarChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
-	@Generated
-	@Selector("initWithViewPortHandler:")
-	public native HorizontalBarChartRenderer initWithViewPortHandler(
-			ChartViewPortHandler viewPortHandler);
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("isDrawingValuesAllowedWithDataProvider:")
+    public native boolean isDrawingValuesAllowedWithDataProvider(
+            @Mapped(ObjCObjectMapper.class) ChartDataProvider dataProvider);
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("isDrawingValuesAllowedWithDataProvider:")
-	public native boolean isDrawingValuesAllowedWithDataProvider(
-			@Mapped(ObjCObjectMapper.class) ChartDataProvider dataProvider);
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
-
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
-
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
-
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

@@ -2,13 +2,15 @@ package org.moe.samples.simplechart.charts;
 
 
 import apple.NSObject;
+import apple.coregraphics.struct.CGRect;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
-import apple.foundation.NSNumberFormatter;
 import apple.foundation.NSSet;
+import apple.uikit.UIAccessibilityElement;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -21,23 +23,26 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.Class;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
-import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
+import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
-import org.moe.samples.simplechart.charts.protocol.IChartAxisValueFormatter;
 
+/**
+ * A simple abstraction over UIAccessibilityElement and NSAccessibilityElement.
+ */
 @Generated
 @Library("Charts")
 @Runtime(ObjCRuntime.class)
+@ObjCClassName("_TtC6Charts24NSUIAccessibilityElement")
 @ObjCClassBinding
-public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAxisValueFormatter {
+public class NSUIAccessibilityElement extends UIAccessibilityElement {
     static {
         NatJ.register();
     }
 
     @Generated
-    protected ChartDefaultAxisValueFormatter(Pointer peer) {
+    protected NSUIAccessibilityElement(Pointer peer) {
         super(peer);
     }
 
@@ -46,9 +51,14 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
     public static native boolean accessInstanceVariablesDirectly();
 
     @Generated
+    @Selector("accessibilityFrame")
+    @ByValue
+    public native CGRect accessibilityFrame();
+
+    @Generated
     @Owned
     @Selector("alloc")
-    public static native ChartDefaultAxisValueFormatter alloc();
+    public static native NSUIAccessibilityElement alloc();
 
     @Generated
     @Selector("allocWithZone:")
@@ -58,18 +68,6 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
     public static native boolean automaticallyNotifiesObserversForKey(String key);
-
-    @Generated
-    @Selector("block")
-    @ObjCBlock(name = "call_block_ret")
-    public native Block_block_ret block();
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_block_ret {
-        @Generated
-        String call_block_ret(double arg0, ChartAxisBase arg1);
-    }
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
@@ -90,6 +88,10 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
     public static native Class classForKeyedUnarchiver();
 
     @Generated
+    @Selector("clearTextInputContextIdentifier:")
+    public static native void clearTextInputContextIdentifier(String identifier);
+
+    @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
@@ -98,41 +100,18 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
     public static native String description_static();
 
     @Generated
-    @Selector("formatter")
-    public native NSNumberFormatter formatter();
-
-    @Generated
-    @Selector("hasAutoDecimals")
-    public native boolean hasAutoDecimals();
-
-    @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
     @Generated
     @Selector("init")
-    public native ChartDefaultAxisValueFormatter init();
+    public native NSUIAccessibilityElement init();
 
     @Generated
-    @Selector("initWithBlock:")
-    public native ChartDefaultAxisValueFormatter initWithBlock(
-            @ObjCBlock(name = "call_initWithBlock") Block_initWithBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_initWithBlock {
-        @Generated
-        String call_initWithBlock(double arg0, ChartAxisBase arg1);
-    }
-
-    @Generated
-    @Selector("initWithDecimals:")
-    public native ChartDefaultAxisValueFormatter initWithDecimals(@NInt long decimals);
-
-    @Generated
-    @Selector("initWithFormatter:")
-    public native ChartDefaultAxisValueFormatter initWithFormatter(NSNumberFormatter formatter);
+    @Selector("initWithAccessibilityContainer:")
+    public native NSUIAccessibilityElement initWithAccessibilityContainer(
+            @Mapped(ObjCObjectMapper.class) Object container);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -170,31 +149,12 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
     public static native boolean resolveInstanceMethod(SEL sel);
 
     @Generated
-    @Selector("setBlock:")
-    public native void setBlock(@ObjCBlock(name = "call_setBlock") Block_setBlock value);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_setBlock {
-        @Generated
-        String call_setBlock(double arg0, ChartAxisBase arg1);
-    }
-
-    @Generated
-    @Selector("setFormatter:")
-    public native void setFormatter(NSNumberFormatter value);
-
-    @Generated
-    @Selector("setHasAutoDecimals:")
-    public native void setHasAutoDecimals(boolean value);
+    @Selector("setAccessibilityFrame:")
+    public native void setAccessibilityFrame(@ByValue CGRect value);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion(@NInt long aVersion);
-
-    @Generated
-    @Selector("stringForValue:axis:")
-    public native String stringForValueAxis(double value, ChartAxisBase axis);
 
     @Generated
     @Selector("superclass")
@@ -204,16 +164,4 @@ public class ChartDefaultAxisValueFormatter extends NSObject implements IChartAx
     @Selector("version")
     @NInt
     public static native long version_static();
-
-    @Generated
-    @Selector("withBlock:")
-    public static native ChartDefaultAxisValueFormatter withBlock(
-            @ObjCBlock(name = "call_withBlock") Block_withBlock block);
-
-    @Runtime(ObjCRuntime.class)
-    @Generated
-    public interface Block_withBlock {
-        @Generated
-        String call_withBlock(double arg0, ChartAxisBase arg1);
-    }
 }

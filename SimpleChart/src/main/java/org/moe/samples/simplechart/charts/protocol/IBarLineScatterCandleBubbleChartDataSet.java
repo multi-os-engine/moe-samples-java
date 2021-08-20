@@ -19,37 +19,37 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolSourceName("IBarLineScatterCandleBubbleChartDataSet")
 @ObjCProtocolName("_TtP6Charts39IBarLineScatterCandleBubbleChartDataSet_")
 public interface IBarLineScatterCandleBubbleChartDataSet extends IChartDataSet {
-	@Generated
-	@Selector("highlightColor")
-	UIColor highlightColor();
+    @Generated
+    @Selector("highlightColor")
+    UIColor highlightColor();
 
-	@Generated
-	@Selector("highlightLineDashLengths")
-	NSArray<? extends NSNumber> highlightLineDashLengths();
+    @Generated
+    @Selector("highlightLineDashLengths")
+    NSArray<? extends NSNumber> highlightLineDashLengths();
 
-	@Generated
-	@Selector("highlightLineDashPhase")
-	@NFloat
-	double highlightLineDashPhase();
+    @Generated
+    @Selector("highlightLineDashPhase")
+    @NFloat
+    double highlightLineDashPhase();
 
-	@Generated
-	@Selector("highlightLineWidth")
-	@NFloat
-	double highlightLineWidth();
+    @Generated
+    @Selector("highlightLineWidth")
+    @NFloat
+    double highlightLineWidth();
 
-	@Generated
-	@Selector("setHighlightColor:")
-	void setHighlightColor(UIColor value);
+    @Generated
+    @Selector("setHighlightColor:")
+    void setHighlightColor(UIColor value);
 
-	@Generated
-	@Selector("setHighlightLineDashLengths:")
-	void setHighlightLineDashLengths(NSArray<? extends NSNumber> value);
+    @Generated
+    @Selector("setHighlightLineDashLengths:")
+    void setHighlightLineDashLengths(NSArray<? extends NSNumber> value);
 
-	@Generated
-	@Selector("setHighlightLineDashPhase:")
-	void setHighlightLineDashPhase(@NFloat double value);
+    @Generated
+    @Selector("setHighlightLineDashPhase:")
+    void setHighlightLineDashPhase(@NFloat double value);
 
-	@Generated
-	@Selector("setHighlightLineWidth:")
-	void setHighlightLineWidth(@NFloat double value);
+    @Generated
+    @Selector("setHighlightLineWidth:")
+    void setHighlightLineWidth(@NFloat double value);
 }

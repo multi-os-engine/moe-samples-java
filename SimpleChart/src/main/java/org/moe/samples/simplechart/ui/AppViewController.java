@@ -67,7 +67,7 @@ public class AppViewController extends UIViewController implements ChartViewDele
         ChartLimitLine llXAxis = ChartLimitLine.alloc().initWithLimitLabel(10.0, "Index 10");
         llXAxis.setLineWidth(4.0);
         llXAxis.setLineDashLengths(arrayOfFloats(10.0f, 10.0f, 0.0f));
-        llXAxis.setLabelPosition(ChartLimitLabelPosition.RightBottom);
+        llXAxis.setLabelPosition(ChartLimitLabelPosition.BottomRight);
         llXAxis.setValueFont(UIFont.systemFontOfSize(10.f));
 
         chartView.xAxis().setGridLineDashLengths(arrayOfFloats(10.0f, 10.0f));
@@ -76,13 +76,13 @@ public class AppViewController extends UIViewController implements ChartViewDele
         ChartLimitLine ll1 = ChartLimitLine.alloc().initWithLimitLabel(10.0, "Upper Limit");
         ll1.setLineWidth(4.0);
         ll1.setLineDashLengths(arrayOfFloats(5.0f, 5.0f));
-        ll1.setLabelPosition(ChartLimitLabelPosition.RightTop);
+        ll1.setLabelPosition(ChartLimitLabelPosition.TopRight);
         ll1.setValueFont(UIFont.systemFontOfSize(10.f));
 
         ChartLimitLine ll2 = ChartLimitLine.alloc().initWithLimitLabel(10.0, "Lower Limit");
         ll2.setLineWidth(4.0);
         ll2.setLineDashLengths(arrayOfFloats(5.0f, 5.0f));
-        ll2.setLabelPosition(ChartLimitLabelPosition.RightBottom);
+        ll2.setLabelPosition(ChartLimitLabelPosition.BottomRight);
         ll2.setValueFont(UIFont.systemFontOfSize(10.f));
 
         ChartYAxis leftAxis = chartView.leftAxis();
@@ -105,7 +105,7 @@ public class AppViewController extends UIViewController implements ChartViewDele
             values.add(ChartDataEntry.alloc().initWithXY(stepI, Math.sin(stepI)));
         }
 
-        LineChartDataSet set1 = LineChartDataSet.alloc().initWithValuesLabel(values, "DataSet 1");
+        LineChartDataSet set1 = LineChartDataSet.alloc().initWithEntriesLabel(values, "DataSet 1");
 
         set1.setLineDashLengths(arrayOfFloats(5.0f, 2.5f));
         set1.setHighlightLineDashLengths(arrayOfFloats(5.0f, 2.5f));

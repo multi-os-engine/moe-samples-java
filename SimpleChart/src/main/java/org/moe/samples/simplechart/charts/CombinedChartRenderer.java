@@ -32,223 +32,231 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCClassName("_TtC6Charts21CombinedChartRenderer")
 @ObjCClassBinding
 public class CombinedChartRenderer extends ChartDataRendererBase {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected CombinedChartRenderer(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected CombinedChartRenderer(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native CombinedChartRenderer alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native CombinedChartRenderer alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("chart")
-	public native CombinedChartView chart();
+    @Generated
+    @Selector("chart")
+    public native CombinedChartView chart();
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
-	@Generated
-	@Selector("description")
-	public static native String description_static();
+    /**
+     * if set to true, a grey area is drawn behind each bar that indicates the maximum value
+     */
+    @Generated
+    @Selector("drawBarShadowEnabled")
+    public native boolean drawBarShadowEnabled();
 
-	@Generated
-	@Selector("drawBarShadowEnabled")
-	public native boolean drawBarShadowEnabled();
+    @Generated
+    @Selector("drawDataWithContext:")
+    public native void drawDataWithContext(CGContextRef context);
 
-	@Generated
-	@Selector("drawDataWithContext:")
-	public native void drawDataWithContext(CGContextRef context);
+    @Generated
+    @Selector("drawExtrasWithContext:")
+    public native void drawExtrasWithContext(CGContextRef context);
 
-	@Generated
-	@Selector("drawExtrasWithContext:")
-	public native void drawExtrasWithContext(CGContextRef context);
+    @Generated
+    @Selector("drawHighlightedWithContext:indices:")
+    public native void drawHighlightedWithContextIndices(CGContextRef context, NSArray<? extends ChartHighlight> indices);
 
-	@Generated
-	@Selector("drawHighlightedWithContext:indices:")
-	public native void drawHighlightedWithContextIndices(CGContextRef context,
-			NSArray<? extends ChartHighlight> indices);
+    /**
+     * if set to true, all values are drawn above their bars, instead of below their top
+     */
+    @Generated
+    @Selector("drawValueAboveBarEnabled")
+    public native boolean drawValueAboveBarEnabled();
 
-	@Generated
-	@Selector("drawValueAboveBarEnabled")
-	public native boolean drawValueAboveBarEnabled();
+    @Generated
+    @Selector("drawValuesWithContext:")
+    public native void drawValuesWithContext(CGContextRef context);
 
-	@Generated
-	@Selector("drawValuesWithContext:")
-	public native void drawValuesWithContext(CGContextRef context);
+    /**
+     * returns:
+     * The sub-renderer object at the specified index.
+     */
+    @Generated
+    @Selector("getSubRendererWithIndex:")
+    public native ChartDataRendererBase getSubRendererWithIndex(@NInt long index);
 
-	@Generated
-	@Selector("getSubRendererWithIndex:")
-	public native ChartDataRendererBase getSubRendererWithIndex(@NInt long index);
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    @Generated
+    @Selector("init")
+    public native CombinedChartRenderer init();
 
-	@Generated
-	@Selector("init")
-	public native CombinedChartRenderer init();
+    @Generated
+    @Selector("initBuffers")
+    public native void initBuffers();
 
-	@Generated
-	@Selector("initBuffers")
-	public native void initBuffers();
+    @Generated
+    @Selector("initWithAnimator:viewPortHandler:")
+    public native CombinedChartRenderer initWithAnimatorViewPortHandler(ChartAnimator animator,
+            ChartViewPortHandler viewPortHandler);
 
-	@Generated
-	@Selector("initWithAnimator:viewPortHandler:")
-	public native CombinedChartRenderer initWithAnimatorViewPortHandler(
-			ChartAnimator animator, ChartViewPortHandler viewPortHandler);
+    @Generated
+    @Selector("initWithChart:animator:viewPortHandler:")
+    public native CombinedChartRenderer initWithChartAnimatorViewPortHandler(CombinedChartView chart,
+            ChartAnimator animator, ChartViewPortHandler viewPortHandler);
 
-	@Generated
-	@Selector("initWithChart:animator:viewPortHandler:")
-	public native CombinedChartRenderer initWithChartAnimatorViewPortHandler(
-			CombinedChartView chart, ChartAnimator animator,
-			ChartViewPortHandler viewPortHandler);
+    @Generated
+    @Selector("initWithViewPortHandler:")
+    public native CombinedChartRenderer initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
-	@Generated
-	@Selector("initWithViewPortHandler:")
-	public native CombinedChartRenderer initWithViewPortHandler(
-			ChartViewPortHandler viewPortHandler);
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    /**
+     * <code>true</code> if drawing shadows (maxvalue) for each bar is enabled, <code>false</code> ifnot
+     */
+    @Generated
+    @Selector("isDrawBarShadowEnabled")
+    public native boolean isDrawBarShadowEnabled();
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    /**
+     * <code>true</code> if drawing values above bars is enabled, <code>false</code> ifnot
+     */
+    @Generated
+    @Selector("isDrawValueAboveBarEnabled")
+    public native boolean isDrawValueAboveBarEnabled();
 
-	@Generated
-	@Selector("isDrawBarShadowEnabled")
-	public native boolean isDrawBarShadowEnabled();
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("isDrawValueAboveBarEnabled")
-	public native boolean isDrawValueAboveBarEnabled();
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    @Generated
+    @Selector("setChart:")
+    public native void setChart_unsafe(CombinedChartView value);
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    @Generated
+    public void setChart(CombinedChartView value) {
+        Object __old = chart();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setChart_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
+    /**
+     * if set to true, a grey area is drawn behind each bar that indicates the maximum value
+     */
+    @Generated
+    @Selector("setDrawBarShadowEnabled:")
+    public native void setDrawBarShadowEnabled(boolean value);
 
-	@Generated
-	@Selector("setChart:")
-	public native void setChart_unsafe(CombinedChartView value);
+    /**
+     * if set to true, all values are drawn above their bars, instead of below their top
+     */
+    @Generated
+    @Selector("setDrawValueAboveBarEnabled:")
+    public native void setDrawValueAboveBarEnabled(boolean value);
 
-	@Generated
-	public void setChart(CombinedChartView value) {
-		Object __old = chart();
-		if (value != null) {
-			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-		}
-		setChart_unsafe(value);
-		if (__old != null) {
-			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-		}
-	}
+    /**
+     * All sub-renderers.
+     */
+    @Generated
+    @Selector("setSubRenderers:")
+    public native void setSubRenderers(NSArray<? extends ChartDataRendererBase> value);
 
-	@Generated
-	@Selector("setDrawBarShadowEnabled:")
-	public native void setDrawBarShadowEnabled(boolean value);
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("setDrawValueAboveBarEnabled:")
-	public native void setDrawValueAboveBarEnabled(boolean value);
+    /**
+     * All sub-renderers.
+     */
+    @Generated
+    @Selector("subRenderers")
+    public native NSArray<? extends ChartDataRendererBase> subRenderers();
 
-	@Generated
-	@Selector("setSubRenderers:")
-	public native void setSubRenderers(
-			NSArray<? extends ChartDataRendererBase> value);
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
-
-	@Generated
-	@Selector("subRenderers")
-	public native NSArray<? extends ChartDataRendererBase> subRenderers();
-
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
-
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

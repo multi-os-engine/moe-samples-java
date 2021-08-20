@@ -30,181 +30,195 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ChartAxisRendererBase extends ChartRenderer {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected ChartAxisRendererBase(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected ChartAxisRendererBase(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native ChartAxisRendererBase alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native ChartAxisRendererBase alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Generated
-	@Selector("axis")
-	public native ChartAxisBase axis();
+    /**
+     * base axis this axis renderer works with
+     */
+    @Generated
+    @Selector("axis")
+    public native ChartAxisBase axis();
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    /**
+     * Sets up the axis values. Computes the desired number of labels between the two given extremes.
+     */
+    @Generated
+    @Selector("computeAxisValuesWithMin:max:")
+    public native void computeAxisValuesWithMinMax(double min, double max);
 
-	@Generated
-	@Selector("computeAxisValuesWithMin:max:")
-	public native void computeAxisValuesWithMinMax(double min, double max);
+    /**
+     * Computes the axis values.
+     * \param min the minimum value in the data object for this axis
+     * 
+     * \param max the maximum value in the data object for this axis
+     */
+    @Generated
+    @Selector("computeAxisWithMin:max:inverted:")
+    public native void computeAxisWithMinMaxInverted(double min, double max, boolean inverted);
 
-	@Generated
-	@Selector("computeAxisWithMin:max:inverted:")
-	public native void computeAxisWithMinMaxInverted(double min, double max,
-			boolean inverted);
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
-	@Generated
-	@Selector("description")
-	public static native String description_static();
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    @Generated
+    @Selector("init")
+    public native ChartAxisRendererBase init();
 
-	@Generated
-	@Selector("init")
-	public native ChartAxisRendererBase init();
+    @Generated
+    @Selector("initWithViewPortHandler:")
+    public native ChartAxisRendererBase initWithViewPortHandler(ChartViewPortHandler viewPortHandler);
 
-	@Generated
-	@Selector("initWithViewPortHandler:")
-	public native ChartAxisRendererBase initWithViewPortHandler(
-			ChartViewPortHandler viewPortHandler);
+    @Generated
+    @Selector("initWithViewPortHandler:transformer:axis:")
+    public native ChartAxisRendererBase initWithViewPortHandlerTransformerAxis(ChartViewPortHandler viewPortHandler,
+            ChartTransformer transformer, ChartAxisBase axis);
 
-	@Generated
-	@Selector("initWithViewPortHandler:transformer:axis:")
-	public native ChartAxisRendererBase initWithViewPortHandlerTransformerAxis(
-			ChartViewPortHandler viewPortHandler, ChartTransformer transformer,
-			ChartAxisBase axis);
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    /**
+     * Draws the axis labels on the specified context
+     */
+    @Generated
+    @Selector("renderAxisLabelsWithContext:")
+    public native void renderAxisLabelsWithContext(CGContextRef context);
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    /**
+     * Draws the line that goes alongside the axis.
+     */
+    @Generated
+    @Selector("renderAxisLineWithContext:")
+    public native void renderAxisLineWithContext(CGContextRef context);
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    /**
+     * Draws the grid lines belonging to the axis.
+     */
+    @Generated
+    @Selector("renderGridLinesWithContext:")
+    public native void renderGridLinesWithContext(CGContextRef context);
 
-	@Generated
-	@Selector("renderAxisLabelsWithContext:")
-	public native void renderAxisLabelsWithContext(CGContextRef context);
+    /**
+     * Draws the LimitLines associated with this axis to the screen.
+     */
+    @Generated
+    @Selector("renderLimitLinesWithContext:")
+    public native void renderLimitLinesWithContext(CGContextRef context);
 
-	@Generated
-	@Selector("renderAxisLineWithContext:")
-	public native void renderAxisLineWithContext(CGContextRef context);
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Selector("renderGridLinesWithContext:")
-	public native void renderGridLinesWithContext(CGContextRef context);
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Selector("renderLimitLinesWithContext:")
-	public native void renderLimitLinesWithContext(CGContextRef context);
+    /**
+     * base axis this axis renderer works with
+     */
+    @Generated
+    @Selector("setAxis:")
+    public native void setAxis(ChartAxisBase value);
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    /**
+     * transformer to transform values to screen pixels and return
+     */
+    @Generated
+    @Selector("setTransformer:")
+    public native void setTransformer(ChartTransformer value);
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("setAxis:")
-	public native void setAxis(ChartAxisBase value);
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Generated
-	@Selector("setTransformer:")
-	public native void setTransformer(ChartTransformer value);
+    /**
+     * transformer to transform values to screen pixels and return
+     */
+    @Generated
+    @Selector("transformer")
+    public native ChartTransformer transformer();
 
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
-
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
-
-	@Generated
-	@Selector("transformer")
-	public native ChartTransformer transformer();
-
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }

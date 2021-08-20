@@ -1,1 +1,17 @@
-{"output":"src/main/java","platform":"iOS","bindings":[{"type":"header","name":"Charts","objcClassGenerationMode":"Binding","headerPath":"build/moe/xcodebuild/Debug-iphonesimulator/Charts.framework/Headers","headerSearchPaths":[],"userHeaderSearchPaths":[],"frameworkSearchPaths":[],"packageBase":"org.moe.samples.simplechart","importCode":"#import <UIKit/UIKit.h>\n#import \"Charts-Swift.h\""}]}
+{
+  "output": "src/main/java",
+  "platform": "iOS",
+  "bindings": [
+    {
+      "type": "header",
+      "name": "Charts",
+      "objcClassGenerationMode": "Binding",
+      "headerPath": "build/moe/xcodebuild/Debug-iphoneos/Charts/Charts.framework/Headers",
+      "headerSearchPaths": [],
+      "userHeaderSearchPaths": [],
+      "frameworkSearchPaths": [],
+      "packageBase": "org.moe.samples.simplechart",
+      "importCode": "#import <UIKit/UIKit.h>\n#import \"Charts-Swift.h\""
+    }
+  ]
+}

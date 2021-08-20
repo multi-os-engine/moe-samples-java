@@ -15,7 +15,16 @@ import org.moe.samples.simplechart.charts.ChartHighlight;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("IChartHighlighter")
 public interface IChartHighlighter {
-	@Generated
-	@Selector("getHighlightWithX:y:")
-	ChartHighlight getHighlightWithXY(@NFloat double x, @NFloat double y);
+    /**
+     * \param x
+     * 
+     * \param y
+     * 
+     * 
+     * returns:
+     * A Highlight object corresponding to the given x- and y- touch positions in pixels.
+     */
+    @Generated
+    @Selector("getHighlightWithX:y:")
+    ChartHighlight getHighlightWithXY(@NFloat double x, @NFloat double y);
 }

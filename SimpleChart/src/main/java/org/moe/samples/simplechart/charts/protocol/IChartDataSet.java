@@ -1,10 +1,12 @@
 package org.moe.samples.simplechart.charts.protocol;
 
 
+import apple.coregraphics.struct.CGPoint;
 import apple.foundation.NSArray;
 import apple.foundation.NSNumber;
 import apple.uikit.UIColor;
 import apple.uikit.UIFont;
+import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.Mapped;
@@ -25,226 +27,522 @@ import org.moe.samples.simplechart.charts.ChartDataEntry;
 @ObjCProtocolSourceName("IChartDataSet")
 @ObjCProtocolName("_TtP6Charts13IChartDataSet_")
 public interface IChartDataSet {
-	@Generated
-	@Selector("addColor:")
-	void addColor(UIColor color);
+    @Generated
+    @Selector("addColor:")
+    void addColor(UIColor color);
 
-	@Generated
-	@Selector("addEntry:")
-	boolean addEntry(ChartDataEntry e);
+    /**
+     * Adds an Entry to the DataSet dynamically.
+     * <em>optional feature, can return <code>false</code> ifnot implemented</em>
+     * Entries are added to the end of the list.
+     * \param e the entry to add
+     * 
+     * 
+     * returns:
+     * <code>true</code> if the entry was added successfully, <code>false</code> ifthis feature is not supported
+     */
+    @Generated
+    @Selector("addEntry:")
+    boolean addEntry(ChartDataEntry e);
 
-	@Generated
-	@Selector("addEntryOrdered:")
-	boolean addEntryOrdered(ChartDataEntry e);
+    /**
+     * Adds an Entry to the DataSet dynamically.
+     * Entries are added to their appropriate index in the values array respective to their x-position.
+     * This will also recalculate the current minimum and maximum values of the DataSet and the value-sum.
+     * <em>optional feature, can return <code>false</code> ifnot implemented</em>
+     * Entries are added to the end of the list.
+     * \param e the entry to add
+     * 
+     * 
+     * returns:
+     * <code>true</code> if the entry was added successfully, <code>false</code> ifthis feature is not supported
+     */
+    @Generated
+    @Selector("addEntryOrdered:")
+    boolean addEntryOrdered(ChartDataEntry e);
 
-	@Generated
-	@Selector("axisDependency")
-	@NInt
-	long axisDependency();
+    /**
+     * The axis this DataSet should be plotted against.
+     */
+    @Generated
+    @Selector("axisDependency")
+    @NInt
+    long axisDependency();
 
-	@Generated
-	@Selector("calcMinMax")
-	void calcMinMax();
+    /**
+     * Calculates the minimum and maximum x and y values (_xMin, _xMax, _yMin, _yMax).
+     */
+    @Generated
+    @Selector("calcMinMax")
+    void calcMinMax();
 
-	@Generated
-	@Selector("calcMinMaxYFromX:toX:")
-	void calcMinMaxYFromXToX(double fromX, double toX);
+    /**
+     * Calculates the min and max y-values from the Entry closest to the given fromX to the Entry closest to the given toX value.
+     * This is only needed for the autoScaleMinMax feature.
+     */
+    @Generated
+    @Selector("calcMinMaxYFromX:toX:")
+    void calcMinMaxYFromXToX(double fromX, double toX);
 
-	@Generated
-	@Selector("clear")
-	void clear();
+    /**
+     * Removes all values from this DataSet and does all necessary recalculations.
+     * <em>optional feature, could throw if not implemented</em>
+     */
+    @Generated
+    @Selector("clear")
+    void clear();
 
-	@Generated
-	@Selector("colorAtIndex:")
-	UIColor colorAtIndex(@NInt long atIndex);
+    /**
+     * returns:
+     * The color at the given index of the DataSet’s color array.
+     * This prevents out-of-bounds by performing a modulus on the color index, so colours will repeat themselves.
+     */
+    @Generated
+    @Selector("colorAtIndex:")
+    UIColor colorAtIndex(@NInt long atIndex);
 
-	@Generated
-	@Selector("colors")
-	NSArray<? extends UIColor> colors();
+    /**
+     * All the colors that are used for this DataSet.
+     * Colors are reused as soon as the number of Entries the DataSet represents is higher than the size of the colors array.
+     */
+    @Generated
+    @Selector("colors")
+    NSArray<? extends UIColor> colors();
 
-	@Generated
-	@Selector("contains:")
-	boolean contains(ChartDataEntry e);
+    /**
+     * Checks if this DataSet contains the specified Entry.
+     * 
+     * returns:
+     * <code>true</code> if contains the entry, <code>false</code> ifnot.
+     */
+    @Generated
+    @Selector("contains:")
+    boolean contains(ChartDataEntry e);
 
-	@Generated
-	@Selector("drawValuesEnabled")
-	boolean drawValuesEnabled();
+    /**
+     * Set this to true to draw y-icons on the chart
+     * note:
+     * For bar and line charts: if <code>maxVisibleCount</code> is reached, no icons will be drawn even if this is enabled.
+     */
+    @Generated
+    @Selector("drawIconsEnabled")
+    boolean drawIconsEnabled();
 
-	@Generated
-	@Selector("entriesForXValue:")
-	NSArray<? extends ChartDataEntry> entriesForXValue(double xValue);
+    /**
+     * Set this to true to draw y-values on the chart.
+     * note:
+     * For bar and line charts: if <code>maxVisibleCount</code> is reached, no values will be drawn even if this is enabled.
+     */
+    @Generated
+    @Selector("drawValuesEnabled")
+    boolean drawValuesEnabled();
 
-	@Generated
-	@Selector("entryCount")
-	@NInt
-	long entryCount();
+    /**
+     * returns:
+     * All Entry objects found at the given x-value with binary search.
+     * An empty array if no Entry object at that x-value.
+     */
+    @Generated
+    @Selector("entriesForXValue:")
+    NSArray<? extends ChartDataEntry> entriesForXValue(double xValue);
 
-	@Generated
-	@Selector("entryForIndex:")
-	ChartDataEntry entryForIndex(@NInt long i);
+    /**
+     * The number of y-values this DataSet represents
+     */
+    @Generated
+    @Selector("entryCount")
+    @NInt
+    long entryCount();
 
-	@Generated
-	@Selector("entryForXValue:closestToY:")
-	ChartDataEntry entryForXValueClosestToY(double xValue, double yValue);
+    /**
+     * throws:
+     * out of bounds
+     * if <code>i</code> is out of bounds, it may throw an out-of-bounds exception
+     * 
+     * returns:
+     * The entry object found at the given index (not x-value!)
+     */
+    @Generated
+    @Selector("entryForIndex:")
+    ChartDataEntry entryForIndex(@NInt long i);
 
-	@Generated
-	@Selector("entryForXValue:closestToY:rounding:")
-	ChartDataEntry entryForXValueClosestToYRounding(double xValue,
-			double yValue, @NInt long rounding);
+    /**
+     * \param xValue the x-value
+     * 
+     * \param closestToY If there are multiple y-values for the specified x-value,
+     * 
+     * 
+     * returns:
+     * The first Entry object found at the given x-value with binary search.
+     * If the no Entry at the specified x-value is found, this method returns the Entry at the closest x-value.
+     * nil if no Entry object at that x-value.
+     */
+    @Generated
+    @Selector("entryForXValue:closestToY:")
+    ChartDataEntry entryForXValueClosestToY(double xValue, double yValue);
 
-	@Generated
-	@Selector("entryIndexWithEntry:")
-	@NInt
-	long entryIndexWithEntry(ChartDataEntry e);
+    /**
+     * \param xValue the x-value
+     * 
+     * \param closestToY If there are multiple y-values for the specified x-value,
+     * 
+     * \param rounding determine whether to round up/down/closest if there is no Entry matching the provided x-value
+     * 
+     * 
+     * returns:
+     * The first Entry object found at the given x-value with binary search.
+     * If the no Entry at the specified x-value is found, this method returns the Entry at the closest x-value according to the rounding.
+     * nil if no Entry object at that x-value.
+     */
+    @Generated
+    @Selector("entryForXValue:closestToY:rounding:")
+    ChartDataEntry entryForXValueClosestToYRounding(double xValue, double yValue, @NInt long rounding);
 
-	@Generated
-	@Selector("entryIndexWithX:closestToY:rounding:")
-	@NInt
-	long entryIndexWithXClosestToYRounding(double xValue, double yValue,
-			@NInt long rounding);
+    /**
+     * \param e the entry to search for
+     * 
+     * 
+     * returns:
+     * The array-index of the specified entry
+     */
+    @Generated
+    @Selector("entryIndexWithEntry:")
+    @NInt
+    long entryIndexWithEntry(ChartDataEntry e);
 
-	@Generated
-	@Selector("form")
-	@NInt
-	long form();
+    /**
+     * \param xValue x-value of the entry to search for
+     * 
+     * \param closestToY If there are multiple y-values for the specified x-value,
+     * 
+     * \param rounding Rounding method if exact value was not found
+     * 
+     * 
+     * returns:
+     * The array-index of the specified entry.
+     * If the no Entry at the specified x-value is found, this method returns the index of the Entry at the closest x-value according to the rounding.
+     */
+    @Generated
+    @Selector("entryIndexWithX:closestToY:rounding:")
+    @NInt
+    long entryIndexWithXClosestToYRounding(double xValue, double yValue, @NInt long rounding);
 
-	@Generated
-	@Selector("formLineDashLengths")
-	NSArray<? extends NSNumber> formLineDashLengths();
+    /**
+     * The form to draw for this dataset in the legend.
+     * Return <code>.Default</code> to use the default legend form.
+     */
+    @Generated
+    @Selector("form")
+    @NInt
+    long form();
 
-	@Generated
-	@Selector("formLineDashPhase")
-	@NFloat
-	double formLineDashPhase();
+    /**
+     * Line dash configuration for legend shapes that consist of lines.
+     * This is the actual dash pattern.
+     * I.e. [2, 3] will paint [–   –   ]
+     * [1, 3, 4, 2] will paint [-   ––  -   ––  ]
+     */
+    @Generated
+    @Selector("formLineDashLengths")
+    NSArray<? extends NSNumber> formLineDashLengths();
 
-	@Generated
-	@Selector("formLineWidth")
-	@NFloat
-	double formLineWidth();
+    /**
+     * Line dash configuration for legend shapes that consist of lines.
+     * This is how much (in pixels) into the dash pattern are we starting from.
+     */
+    @Generated
+    @Selector("formLineDashPhase")
+    @NFloat
+    double formLineDashPhase();
 
-	@Generated
-	@Selector("formSize")
-	@NFloat
-	double formSize();
+    /**
+     * The line width for drawing the form of this dataset in the legend
+     * Return <code>NaN</code> to use the default legend form line width.
+     */
+    @Generated
+    @Selector("formLineWidth")
+    @NFloat
+    double formLineWidth();
 
-	@Generated
-	@Selector("highlightEnabled")
-	boolean highlightEnabled();
+    /**
+     * The form size to draw for this dataset in the legend.
+     * Return <code>NaN</code> to use the default legend form size.
+     */
+    @Generated
+    @Selector("formSize")
+    @NFloat
+    double formSize();
 
-	@Generated
-	@Selector("isDrawValuesEnabled")
-	boolean isDrawValuesEnabled();
+    /**
+     * if true, value highlighting is enabled
+     */
+    @Generated
+    @Selector("highlightEnabled")
+    boolean highlightEnabled();
 
-	@Generated
-	@Selector("isHighlightEnabled")
-	boolean isHighlightEnabled();
+    /**
+     * Offset of icons drawn on the chart.
+     * For all charts except Pie and Radar it will be ordinary (x offset, y offset).
+     * For Pie and Radar chart it will be (y offset, distance from center offset); so if you want icon to be rendered under value, you should increase X component of CGPoint, and if you want icon to be rendered closet to center, you should decrease height component of CGPoint.
+     */
+    @Generated
+    @Selector("iconsOffset")
+    @ByValue
+    CGPoint iconsOffset();
 
-	@Generated
-	@Selector("isVisible")
-	boolean isVisible();
+    /**
+     * Returns true if y-icon drawing is enabled, false if not
+     */
+    @Generated
+    @Selector("isDrawIconsEnabled")
+    boolean isDrawIconsEnabled();
 
-	@Generated
-	@Selector("label")
-	String label();
+    /**
+     * <code>true</code> if y-value drawing is enabled, <code>false</code> ifnot
+     */
+    @Generated
+    @Selector("isDrawValuesEnabled")
+    boolean isDrawValuesEnabled();
 
-	@Generated
-	@Selector("needsFormatter")
-	boolean needsFormatter();
+    /**
+     * <code>true</code> if value highlighting is enabled for this dataset
+     */
+    @Generated
+    @Selector("isHighlightEnabled")
+    boolean isHighlightEnabled();
 
-	@Generated
-	@Selector("notifyDataSetChanged")
-	void notifyDataSetChanged();
+    /**
+     * <code>true</code> if this DataSet is visible inside the chart, or <code>false</code> ifit is currently hidden.
+     */
+    @Generated
+    @Selector("isVisible")
+    boolean isVisible();
 
-	@Generated
-	@Selector("removeEntry:")
-	boolean removeEntry(ChartDataEntry entry);
+    /**
+     * The label string that describes the DataSet.
+     */
+    @Generated
+    @Selector("label")
+    String label();
 
-	@Generated
-	@Selector("removeEntryWithIndex:")
-	boolean removeEntryWithIndex(@NInt long index);
+    /**
+     * <code>true</code> if the valueFormatter object of this DataSet is null.
+     */
+    @Generated
+    @Selector("needsFormatter")
+    boolean needsFormatter();
 
-	@Generated
-	@Selector("removeEntryWithX:")
-	boolean removeEntryWithX(double x);
+    /**
+     * Use this method to tell the data set that the underlying data has changed
+     */
+    @Generated
+    @Selector("notifyDataSetChanged")
+    void notifyDataSetChanged();
 
-	@Generated
-	@Selector("removeFirst")
-	boolean removeFirst();
+    /**
+     * Removes an Entry from the DataSet dynamically.
+     * <em>optional feature, can return <code>false</code> ifnot implemented</em>
+     * \param entry the entry to remove
+     * 
+     * 
+     * returns:
+     * <code>true</code> if the entry was removed successfully, <code>false</code> ifthe entry does not exist or if this feature is not supported
+     */
+    @Generated
+    @Selector("removeEntry:")
+    boolean removeEntry(ChartDataEntry entry);
 
-	@Generated
-	@Selector("removeLast")
-	boolean removeLast();
+    /**
+     * Removes the Entry object at the given index in the values array from the DataSet.
+     * <em>optional feature, can return <code>false</code> ifnot implemented</em>
+     * \param index the index of the entry to remove
+     * 
+     * 
+     * returns:
+     * <code>true</code> if the entry was removed successfully, <code>false</code> ifthe entry does not exist or if this feature is not supported
+     */
+    @Generated
+    @Selector("removeEntryWithIndex:")
+    boolean removeEntryWithIndex(@NInt long index);
 
-	@Generated
-	@Selector("resetColors")
-	void resetColors();
+    /**
+     * Removes the Entry object closest to the given x-value from the DataSet.
+     * <em>optional feature, can return <code>false</code> ifnot implemented</em>
+     * \param x the x-value to remove
+     * 
+     * 
+     * returns:
+     * <code>true</code> if the entry was removed successfully, <code>false</code> ifthe entry does not exist or if this feature is not supported
+     */
+    @Generated
+    @Selector("removeEntryWithX:")
+    boolean removeEntryWithX(double x);
 
-	@Generated
-	@Selector("setColor:")
-	void setColor(UIColor color);
+    /**
+     * Removes the first Entry (at index 0) of this DataSet from the entries array.
+     * <em>optional feature, can return <code>false</code> ifnot implemented</em>
+     * 
+     * returns:
+     * <code>true</code> if the entry was removed successfully, <code>false</code> ifthe entry does not exist or if this feature is not supported
+     */
+    @Generated
+    @Selector("removeFirst")
+    boolean removeFirst();
 
-	@Generated
-	@Selector("setDrawValuesEnabled:")
-	void setDrawValuesEnabled(boolean value);
+    /**
+     * Removes the last Entry (at index 0) of this DataSet from the entries array.
+     * <em>optional feature, can return <code>false</code> ifnot implemented</em>
+     * 
+     * returns:
+     * <code>true</code> if the entry was removed successfully, <code>false</code> ifthe entry does not exist or if this feature is not supported
+     */
+    @Generated
+    @Selector("removeLast")
+    boolean removeLast();
 
-	@Generated
-	@Selector("setHighlightEnabled:")
-	void setHighlightEnabled(boolean value);
+    @Generated
+    @Selector("resetColors")
+    void resetColors();
 
-	@Generated
-	@Selector("setValueFont:")
-	void setValueFont(UIFont value);
+    @Generated
+    @Selector("setColor:")
+    void setColor(UIColor color);
 
-	@Generated
-	@Selector("setValueFormatter:")
-	void setValueFormatter(@Mapped(ObjCObjectMapper.class) Object value);
+    /**
+     * Set this to true to draw y-icons on the chart
+     * note:
+     * For bar and line charts: if <code>maxVisibleCount</code> is reached, no icons will be drawn even if this is enabled.
+     */
+    @Generated
+    @Selector("setDrawIconsEnabled:")
+    void setDrawIconsEnabled(boolean value);
 
-	@Generated
-	@Selector("setValueTextColor:")
-	void setValueTextColor(UIColor value);
+    /**
+     * Set this to true to draw y-values on the chart.
+     * note:
+     * For bar and line charts: if <code>maxVisibleCount</code> is reached, no values will be drawn even if this is enabled.
+     */
+    @Generated
+    @Selector("setDrawValuesEnabled:")
+    void setDrawValuesEnabled(boolean value);
 
-	@Generated
-	@Selector("setVisible:")
-	void setVisible(boolean value);
+    /**
+     * if true, value highlighting is enabled
+     */
+    @Generated
+    @Selector("setHighlightEnabled:")
+    void setHighlightEnabled(boolean value);
 
-	@Generated
-	@Selector("valueColors")
-	NSArray<? extends UIColor> valueColors();
+    /**
+     * Offset of icons drawn on the chart.
+     * For all charts except Pie and Radar it will be ordinary (x offset, y offset).
+     * For Pie and Radar chart it will be (y offset, distance from center offset); so if you want icon to be rendered under value, you should increase X component of CGPoint, and if you want icon to be rendered closet to center, you should decrease height component of CGPoint.
+     */
+    @Generated
+    @Selector("setIconsOffset:")
+    void setIconsOffset(@ByValue CGPoint value);
 
-	@Generated
-	@Selector("valueFont")
-	UIFont valueFont();
+    /**
+     * the font for the value-text labels
+     */
+    @Generated
+    @Selector("setValueFont:")
+    void setValueFont(UIFont value);
 
-	@Generated
-	@Selector("valueFormatter")
-	@MappedReturn(ObjCObjectMapper.class)
-	Object valueFormatter();
+    /**
+     * Custom formatter that is used instead of the auto-formatter if set
+     */
+    @Generated
+    @Selector("setValueFormatter:")
+    void setValueFormatter(@Mapped(ObjCObjectMapper.class) IChartValueFormatter value);
 
-	@Generated
-	@Selector("valueTextColor")
-	UIColor valueTextColor();
+    /**
+     * Sets/get a single color for value text.
+     * Setting the color clears the colors array and adds a single color.
+     * Getting will return the first color in the array.
+     */
+    @Generated
+    @Selector("setValueTextColor:")
+    void setValueTextColor(UIColor value);
 
-	@Generated
-	@Selector("valueTextColorAt:")
-	UIColor valueTextColorAt(@NInt long index);
+    /**
+     * Set the visibility of this DataSet. If not visible, the DataSet will not be drawn to the chart upon refreshing it.
+     */
+    @Generated
+    @Selector("setVisible:")
+    void setVisible(boolean value);
 
-	@Generated
-	@Selector("visible")
-	boolean visible();
+    /**
+     * List representing all colors that are used for drawing the actual values for this DataSet
+     */
+    @Generated
+    @Selector("valueColors")
+    NSArray<? extends UIColor> valueColors();
 
-	@Generated
-	@Selector("xMax")
-	double xMax();
+    /**
+     * the font for the value-text labels
+     */
+    @Generated
+    @Selector("valueFont")
+    UIFont valueFont();
 
-	@Generated
-	@Selector("xMin")
-	double xMin();
+    /**
+     * Custom formatter that is used instead of the auto-formatter if set
+     */
+    @Generated
+    @Selector("valueFormatter")
+    @MappedReturn(ObjCObjectMapper.class)
+    IChartValueFormatter valueFormatter();
 
-	@Generated
-	@Selector("yMax")
-	double yMax();
+    /**
+     * Sets/get a single color for value text.
+     * Setting the color clears the colors array and adds a single color.
+     * Getting will return the first color in the array.
+     */
+    @Generated
+    @Selector("valueTextColor")
+    UIColor valueTextColor();
 
-	@Generated
-	@Selector("yMin")
-	double yMin();
+    /**
+     * returns:
+     * The color at the specified index that is used for drawing the values inside the chart. Uses modulus internally.
+     */
+    @Generated
+    @Selector("valueTextColorAt:")
+    UIColor valueTextColorAt(@NInt long index);
+
+    /**
+     * Set the visibility of this DataSet. If not visible, the DataSet will not be drawn to the chart upon refreshing it.
+     */
+    @Generated
+    @Selector("visible")
+    boolean visible();
+
+    /**
+     * The maximum x-value this DataSet holds
+     */
+    @Generated
+    @Selector("xMax")
+    double xMax();
+
+    /**
+     * The minimum x-value this DataSet holds
+     */
+    @Generated
+    @Selector("xMin")
+    double xMin();
+
+    /**
+     * The maximum y-value this DataSet holds
+     */
+    @Generated
+    @Selector("yMax")
+    double yMax();
+
+    /**
+     * The minimum y-value this DataSet holds
+     */
+    @Generated
+    @Selector("yMin")
+    double yMin();
 }

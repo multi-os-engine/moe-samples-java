@@ -15,21 +15,20 @@ import org.moe.samples.simplechart.charts.BarChartData;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("BarChartDataProvider")
 @ObjCProtocolName("_TtP6Charts20BarChartDataProvider_")
-public interface BarChartDataProvider extends
-		BarLineScatterCandleBubbleChartDataProvider {
-	@Generated
-	@Selector("barData")
-	BarChartData barData();
+public interface BarChartDataProvider extends BarLineScatterCandleBubbleChartDataProvider {
+    @Generated
+    @Selector("barData")
+    BarChartData barData();
 
-	@Generated
-	@Selector("isDrawBarShadowEnabled")
-	boolean isDrawBarShadowEnabled();
+    @Generated
+    @Selector("isDrawBarShadowEnabled")
+    boolean isDrawBarShadowEnabled();
 
-	@Generated
-	@Selector("isDrawValueAboveBarEnabled")
-	boolean isDrawValueAboveBarEnabled();
+    @Generated
+    @Selector("isDrawValueAboveBarEnabled")
+    boolean isDrawValueAboveBarEnabled();
 
-	@Generated
-	@Selector("isHighlightFullBarEnabled")
-	boolean isHighlightFullBarEnabled();
+    @Generated
+    @Selector("isHighlightFullBarEnabled")
+    boolean isHighlightFullBarEnabled();
 }

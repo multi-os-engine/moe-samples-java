@@ -15,9 +15,8 @@ import org.moe.samples.simplechart.charts.BubbleChartData;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("BubbleChartDataProvider")
 @ObjCProtocolName("_TtP6Charts23BubbleChartDataProvider_")
-public interface BubbleChartDataProvider extends
-		BarLineScatterCandleBubbleChartDataProvider {
-	@Generated
-	@Selector("bubbleData")
-	BubbleChartData bubbleData();
+public interface BubbleChartDataProvider extends BarLineScatterCandleBubbleChartDataProvider {
+    @Generated
+    @Selector("bubbleData")
+    BubbleChartData bubbleData();
 }

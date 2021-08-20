@@ -14,11 +14,17 @@ import org.moe.samples.simplechart.charts.ChartAnimator;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("ChartAnimatorDelegate")
 public interface ChartAnimatorDelegate {
-	@Generated
-	@Selector("animatorStopped:")
-	void animatorStopped(ChartAnimator animator);
+    /**
+     * Called when the Animator has stopped.
+     */
+    @Generated
+    @Selector("animatorStopped:")
+    void animatorStopped(ChartAnimator animator);
 
-	@Generated
-	@Selector("animatorUpdated:")
-	void animatorUpdated(ChartAnimator animator);
+    /**
+     * Called when the Animator has stepped.
+     */
+    @Generated
+    @Selector("animatorUpdated:")
+    void animatorUpdated(ChartAnimator animator);
 }
