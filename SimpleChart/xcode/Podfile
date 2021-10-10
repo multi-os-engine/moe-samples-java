@@ -2,5 +2,5 @@ platform :ios, '9.3'
 use_frameworks!
 
 target 'SimpleChart' do
-    pod 'Charts', '~> 3.0.1'
+    pod 'Charts', '~> 3.5.0'
 end

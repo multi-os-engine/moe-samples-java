@@ -19,115 +19,213 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolSourceName("IPieChartDataSet")
 @ObjCProtocolName("_TtP6Charts16IPieChartDataSet_")
 public interface IPieChartDataSet extends IChartDataSet {
-	@Generated
-	@Selector("automaticallyDisableSliceSpacing")
-	boolean automaticallyDisableSliceSpacing();
+    /**
+     * When enabled, slice spacing will be 0.0 when the smallest value is going to be smaller than the slice spacing itself.
+     */
+    @Generated
+    @Selector("automaticallyDisableSliceSpacing")
+    boolean automaticallyDisableSliceSpacing();
 
-	@Generated
-	@Selector("entryLabelColor")
-	UIColor entryLabelColor();
+    /**
+     * the color for the slice-text labels
+     */
+    @Generated
+    @Selector("entryLabelColor")
+    UIColor entryLabelColor();
 
-	@Generated
-	@Selector("entryLabelFont")
-	UIFont entryLabelFont();
+    /**
+     * the font for the slice-text labels
+     */
+    @Generated
+    @Selector("entryLabelFont")
+    UIFont entryLabelFont();
 
-	@Generated
-	@Selector("selectionShift")
-	@NFloat
-	double selectionShift();
+    /**
+     * get/sets the color for the highlighted sector
+     */
+    @Generated
+    @Selector("highlightColor")
+    UIColor highlightColor();
 
-	@Generated
-	@Selector("setAutomaticallyDisableSliceSpacing:")
-	void setAutomaticallyDisableSliceSpacing(boolean value);
+    /**
+     * indicates the selection distance of a pie slice
+     */
+    @Generated
+    @Selector("selectionShift")
+    @NFloat
+    double selectionShift();
 
-	@Generated
-	@Selector("setEntryLabelColor:")
-	void setEntryLabelColor(UIColor value);
+    /**
+     * When enabled, slice spacing will be 0.0 when the smallest value is going to be smaller than the slice spacing itself.
+     */
+    @Generated
+    @Selector("setAutomaticallyDisableSliceSpacing:")
+    void setAutomaticallyDisableSliceSpacing(boolean value);
 
-	@Generated
-	@Selector("setEntryLabelFont:")
-	void setEntryLabelFont(UIFont value);
+    /**
+     * the color for the slice-text labels
+     */
+    @Generated
+    @Selector("setEntryLabelColor:")
+    void setEntryLabelColor(UIColor value);
 
-	@Generated
-	@Selector("setSelectionShift:")
-	void setSelectionShift(@NFloat double value);
+    /**
+     * the font for the slice-text labels
+     */
+    @Generated
+    @Selector("setEntryLabelFont:")
+    void setEntryLabelFont(UIFont value);
 
-	@Generated
-	@Selector("setSliceSpace:")
-	void setSliceSpace(@NFloat double value);
+    /**
+     * get/sets the color for the highlighted sector
+     */
+    @Generated
+    @Selector("setHighlightColor:")
+    void setHighlightColor(UIColor value);
 
-	@Generated
-	@Selector("setValueLineColor:")
-	void setValueLineColor(UIColor value);
+    /**
+     * indicates the selection distance of a pie slice
+     */
+    @Generated
+    @Selector("setSelectionShift:")
+    void setSelectionShift(@NFloat double value);
 
-	@Generated
-	@Selector("setValueLinePart1Length:")
-	void setValueLinePart1Length(@NFloat double value);
+    /**
+     * the space in pixels between the pie-slices
+     * <em>default</em>: 0
+     * <em>maximum</em>: 20
+     */
+    @Generated
+    @Selector("setSliceSpace:")
+    void setSliceSpace(@NFloat double value);
 
-	@Generated
-	@Selector("setValueLinePart1OffsetPercentage:")
-	void setValueLinePart1OffsetPercentage(@NFloat double value);
+    /**
+     * When valuePosition is OutsideSlice and enabled, line will have the same color as the slice
+     */
+    @Generated
+    @Selector("setUseValueColorForLine:")
+    void setUseValueColorForLine(boolean value);
 
-	@Generated
-	@Selector("setValueLinePart2Length:")
-	void setValueLinePart2Length(@NFloat double value);
+    /**
+     * When valuePosition is OutsideSlice, indicates line color
+     */
+    @Generated
+    @Selector("setValueLineColor:")
+    void setValueLineColor(UIColor value);
 
-	@Generated
-	@Selector("setValueLineVariableLength:")
-	void setValueLineVariableLength(boolean value);
+    /**
+     * When valuePosition is OutsideSlice, indicates length of first half of the line
+     */
+    @Generated
+    @Selector("setValueLinePart1Length:")
+    void setValueLinePart1Length(@NFloat double value);
 
-	@Generated
-	@Selector("setValueLineWidth:")
-	void setValueLineWidth(@NFloat double value);
+    /**
+     * When valuePosition is OutsideSlice, indicates offset as percentage out of the slice size
+     */
+    @Generated
+    @Selector("setValueLinePart1OffsetPercentage:")
+    void setValueLinePart1OffsetPercentage(@NFloat double value);
 
-	@Generated
-	@Selector("setXValuePosition:")
-	void setXValuePosition(@NInt long value);
+    /**
+     * When valuePosition is OutsideSlice, indicates length of second half of the line
+     */
+    @Generated
+    @Selector("setValueLinePart2Length:")
+    void setValueLinePart2Length(@NFloat double value);
 
-	@Generated
-	@Selector("setYValuePosition:")
-	void setYValuePosition(@NInt long value);
+    /**
+     * When valuePosition is OutsideSlice, this allows variable line length
+     */
+    @Generated
+    @Selector("setValueLineVariableLength:")
+    void setValueLineVariableLength(boolean value);
 
-	@Generated
-	@Selector("sliceSpace")
-	@NFloat
-	double sliceSpace();
+    /**
+     * When valuePosition is OutsideSlice, indicates line width
+     */
+    @Generated
+    @Selector("setValueLineWidth:")
+    void setValueLineWidth(@NFloat double value);
 
-	@Generated
-	@Selector("valueLineColor")
-	UIColor valueLineColor();
+    @Generated
+    @Selector("setXValuePosition:")
+    void setXValuePosition(@NInt long value);
 
-	@Generated
-	@Selector("valueLinePart1Length")
-	@NFloat
-	double valueLinePart1Length();
+    @Generated
+    @Selector("setYValuePosition:")
+    void setYValuePosition(@NInt long value);
 
-	@Generated
-	@Selector("valueLinePart1OffsetPercentage")
-	@NFloat
-	double valueLinePart1OffsetPercentage();
+    /**
+     * the space in pixels between the pie-slices
+     * <em>default</em>: 0
+     * <em>maximum</em>: 20
+     */
+    @Generated
+    @Selector("sliceSpace")
+    @NFloat
+    double sliceSpace();
 
-	@Generated
-	@Selector("valueLinePart2Length")
-	@NFloat
-	double valueLinePart2Length();
+    /**
+     * When valuePosition is OutsideSlice and enabled, line will have the same color as the slice
+     */
+    @Generated
+    @Selector("useValueColorForLine")
+    boolean useValueColorForLine();
 
-	@Generated
-	@Selector("valueLineVariableLength")
-	boolean valueLineVariableLength();
+    /**
+     * When valuePosition is OutsideSlice, indicates line color
+     */
+    @Generated
+    @Selector("valueLineColor")
+    UIColor valueLineColor();
 
-	@Generated
-	@Selector("valueLineWidth")
-	@NFloat
-	double valueLineWidth();
+    /**
+     * When valuePosition is OutsideSlice, indicates length of first half of the line
+     */
+    @Generated
+    @Selector("valueLinePart1Length")
+    @NFloat
+    double valueLinePart1Length();
 
-	@Generated
-	@Selector("xValuePosition")
-	@NInt
-	long xValuePosition();
+    /**
+     * When valuePosition is OutsideSlice, indicates offset as percentage out of the slice size
+     */
+    @Generated
+    @Selector("valueLinePart1OffsetPercentage")
+    @NFloat
+    double valueLinePart1OffsetPercentage();
 
-	@Generated
-	@Selector("yValuePosition")
-	@NInt
-	long yValuePosition();
+    /**
+     * When valuePosition is OutsideSlice, indicates length of second half of the line
+     */
+    @Generated
+    @Selector("valueLinePart2Length")
+    @NFloat
+    double valueLinePart2Length();
+
+    /**
+     * When valuePosition is OutsideSlice, this allows variable line length
+     */
+    @Generated
+    @Selector("valueLineVariableLength")
+    boolean valueLineVariableLength();
+
+    /**
+     * When valuePosition is OutsideSlice, indicates line width
+     */
+    @Generated
+    @Selector("valueLineWidth")
+    @NFloat
+    double valueLineWidth();
+
+    @Generated
+    @Selector("xValuePosition")
+    @NInt
+    long xValuePosition();
+
+    @Generated
+    @Selector("yValuePosition")
+    @NInt
+    long yValuePosition();
 }

@@ -16,21 +16,20 @@ import org.moe.samples.simplechart.charts.ChartTransformer;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("BarLineScatterCandleBubbleChartDataProvider")
 @ObjCProtocolName("_TtP6Charts43BarLineScatterCandleBubbleChartDataProvider_")
-public interface BarLineScatterCandleBubbleChartDataProvider extends
-		ChartDataProvider {
-	@Generated
-	@Selector("getTransformerForAxis:")
-	ChartTransformer getTransformerForAxis(@NInt long forAxis);
+public interface BarLineScatterCandleBubbleChartDataProvider extends ChartDataProvider {
+    @Generated
+    @Selector("getTransformerForAxis:")
+    ChartTransformer getTransformerForAxis(@NInt long forAxis);
 
-	@Generated
-	@Selector("highestVisibleX")
-	double highestVisibleX();
+    @Generated
+    @Selector("highestVisibleX")
+    double highestVisibleX();
 
-	@Generated
-	@Selector("isInvertedWithAxis:")
-	boolean isInvertedWithAxis(@NInt long axis);
+    @Generated
+    @Selector("isInvertedWithAxis:")
+    boolean isInvertedWithAxis(@NInt long axis);
 
-	@Generated
-	@Selector("lowestVisibleX")
-	double lowestVisibleX();
+    @Generated
+    @Selector("lowestVisibleX")
+    double lowestVisibleX();
 }

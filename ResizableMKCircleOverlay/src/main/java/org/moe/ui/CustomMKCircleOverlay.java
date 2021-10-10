@@ -27,11 +27,8 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.Owned;
 import org.moe.natj.general.ann.RegisterOnStartup;
 import org.moe.natj.objc.ObjCRuntime;
-import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassName;
 import org.moe.natj.objc.ann.Selector;
-
-import android.util.Log;
 
 import apple.c.Globals;
 import apple.coregraphics.c.CoreGraphics;
@@ -44,7 +41,6 @@ import apple.mapkit.c.MapKit;
 import apple.mapkit.struct.MKMapPoint;
 import apple.mapkit.struct.MKMapRect;
 
-import static apple.c.Globals.dispatch_get_main_queue;
 import static apple.coregraphics.c.CoreGraphics.CGContextSetFillColorWithColor;
 import static apple.coregraphics.c.CoreGraphics.CGContextSetLineWidth;
 import static apple.coregraphics.c.CoreGraphics.CGContextSetShouldAntialias;
@@ -96,11 +92,11 @@ public class CustomMKCircleOverlay extends MKCircleRenderer {
             MINDIS = min;
             MAXDIS = max;
         }else if(min > 0){
-            Log.d(TAG, "Max distance smaller than Min");
+            System.out.println(TAG + ": " + "Max distance smaller than Min");
             MINDIS = min;
             MAXDIS = min;
         }else{
-            Log.d(TAG, "Trying to set a negative radius--Using Default");
+            System.out.println(TAG + ": " + "Trying to set a negative radius--Using Default");
             MINDIS = MINDISTANCE;
             MAXDIS = MAXDISTANCE;
         }
@@ -175,9 +171,12 @@ public class CustomMKCircleOverlay extends MKCircleRenderer {
                 radiusAtLatitude, 0, 2 * Math.PI, 0);
         CoreGraphics.CGContextDrawPath(ctx, CGPathDrawingMode.FillStroke);
 
-        if(delegate != null) {
-            Globals.dispatch_async(Globals.dispatch_get_main_queue(), () -> {
-                delegate.onRadiusChange(mapRadius);
+        if (delegate != null) {
+            Globals.dispatch_async(Globals.dispatch_get_main_queue(), new Globals.Block_dispatch_async() {
+                @Override
+                public void call_dispatch_async() {
+                    delegate.onRadiusChange(mapRadius);
+                }
             });
         }
 

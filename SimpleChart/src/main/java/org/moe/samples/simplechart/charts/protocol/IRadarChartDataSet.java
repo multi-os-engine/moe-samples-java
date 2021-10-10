@@ -17,67 +17,81 @@ import org.moe.natj.objc.ann.Selector;
 @ObjCProtocolSourceName("IRadarChartDataSet")
 @ObjCProtocolName("_TtP6Charts18IRadarChartDataSet_")
 public interface IRadarChartDataSet extends ILineRadarChartDataSet {
-	@Generated
-	@Selector("drawHighlightCircleEnabled")
-	boolean drawHighlightCircleEnabled();
+    /**
+     * flag indicating whether highlight circle should be drawn or not
+     */
+    @Generated
+    @Selector("drawHighlightCircleEnabled")
+    boolean drawHighlightCircleEnabled();
 
-	@Generated
-	@Selector("highlightCircleFillColor")
-	UIColor highlightCircleFillColor();
+    @Generated
+    @Selector("highlightCircleFillColor")
+    UIColor highlightCircleFillColor();
 
-	@Generated
-	@Selector("highlightCircleInnerRadius")
-	@NFloat
-	double highlightCircleInnerRadius();
+    @Generated
+    @Selector("highlightCircleInnerRadius")
+    @NFloat
+    double highlightCircleInnerRadius();
 
-	@Generated
-	@Selector("highlightCircleOuterRadius")
-	@NFloat
-	double highlightCircleOuterRadius();
+    @Generated
+    @Selector("highlightCircleOuterRadius")
+    @NFloat
+    double highlightCircleOuterRadius();
 
-	@Generated
-	@Selector("highlightCircleStrokeAlpha")
-	@NFloat
-	double highlightCircleStrokeAlpha();
+    @Generated
+    @Selector("highlightCircleStrokeAlpha")
+    @NFloat
+    double highlightCircleStrokeAlpha();
 
-	@Generated
-	@Selector("highlightCircleStrokeColor")
-	UIColor highlightCircleStrokeColor();
+    /**
+     * The stroke color for highlight circle.
+     * If <code>nil</code>, the color of the dataset is taken.
+     */
+    @Generated
+    @Selector("highlightCircleStrokeColor")
+    UIColor highlightCircleStrokeColor();
 
-	@Generated
-	@Selector("highlightCircleStrokeWidth")
-	@NFloat
-	double highlightCircleStrokeWidth();
+    @Generated
+    @Selector("highlightCircleStrokeWidth")
+    @NFloat
+    double highlightCircleStrokeWidth();
 
-	@Generated
-	@Selector("isDrawHighlightCircleEnabled")
-	boolean isDrawHighlightCircleEnabled();
+    @Generated
+    @Selector("isDrawHighlightCircleEnabled")
+    boolean isDrawHighlightCircleEnabled();
 
-	@Generated
-	@Selector("setDrawHighlightCircleEnabled:")
-	void setDrawHighlightCircleEnabled(boolean value);
+    /**
+     * flag indicating whether highlight circle should be drawn or not
+     */
+    @Generated
+    @Selector("setDrawHighlightCircleEnabled:")
+    void setDrawHighlightCircleEnabled(boolean value);
 
-	@Generated
-	@Selector("setHighlightCircleFillColor:")
-	void setHighlightCircleFillColor(UIColor value);
+    @Generated
+    @Selector("setHighlightCircleFillColor:")
+    void setHighlightCircleFillColor(UIColor value);
 
-	@Generated
-	@Selector("setHighlightCircleInnerRadius:")
-	void setHighlightCircleInnerRadius(@NFloat double value);
+    @Generated
+    @Selector("setHighlightCircleInnerRadius:")
+    void setHighlightCircleInnerRadius(@NFloat double value);
 
-	@Generated
-	@Selector("setHighlightCircleOuterRadius:")
-	void setHighlightCircleOuterRadius(@NFloat double value);
+    @Generated
+    @Selector("setHighlightCircleOuterRadius:")
+    void setHighlightCircleOuterRadius(@NFloat double value);
 
-	@Generated
-	@Selector("setHighlightCircleStrokeAlpha:")
-	void setHighlightCircleStrokeAlpha(@NFloat double value);
+    @Generated
+    @Selector("setHighlightCircleStrokeAlpha:")
+    void setHighlightCircleStrokeAlpha(@NFloat double value);
 
-	@Generated
-	@Selector("setHighlightCircleStrokeColor:")
-	void setHighlightCircleStrokeColor(UIColor value);
+    /**
+     * The stroke color for highlight circle.
+     * If <code>nil</code>, the color of the dataset is taken.
+     */
+    @Generated
+    @Selector("setHighlightCircleStrokeColor:")
+    void setHighlightCircleStrokeColor(UIColor value);
 
-	@Generated
-	@Selector("setHighlightCircleStrokeWidth:")
-	void setHighlightCircleStrokeWidth(@NFloat double value);
+    @Generated
+    @Selector("setHighlightCircleStrokeWidth:")
+    void setHighlightCircleStrokeWidth(@NFloat double value);
 }

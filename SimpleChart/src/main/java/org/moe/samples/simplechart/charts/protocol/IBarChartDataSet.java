@@ -18,56 +18,91 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("IBarChartDataSet")
 @ObjCProtocolName("_TtP6Charts16IBarChartDataSet_")
-public interface IBarChartDataSet extends
-		IBarLineScatterCandleBubbleChartDataSet {
-	@Generated
-	@Selector("barBorderColor")
-	UIColor barBorderColor();
+public interface IBarChartDataSet extends IBarLineScatterCandleBubbleChartDataSet {
+    /**
+     * the color drawing borders around the bars.
+     */
+    @Generated
+    @Selector("barBorderColor")
+    UIColor barBorderColor();
 
-	@Generated
-	@Selector("barBorderWidth")
-	@NFloat
-	double barBorderWidth();
+    /**
+     * the width used for drawing borders around the bars. If borderWidth == 0, no border will be drawn.
+     */
+    @Generated
+    @Selector("barBorderWidth")
+    @NFloat
+    double barBorderWidth();
 
-	@Generated
-	@Selector("barShadowColor")
-	UIColor barShadowColor();
+    /**
+     * the color used for drawing the bar-shadows. The bar shadows is a surface behind the bar that indicates the maximum value
+     */
+    @Generated
+    @Selector("barShadowColor")
+    UIColor barShadowColor();
 
-	@Generated
-	@Selector("highlightAlpha")
-	@NFloat
-	double highlightAlpha();
+    /**
+     * the alpha value (transparency) that is used for drawing the highlight indicator bar. min = 0.0 (fully transparent), max = 1.0 (fully opaque)
+     */
+    @Generated
+    @Selector("highlightAlpha")
+    @NFloat
+    double highlightAlpha();
 
-	@Generated
-	@Selector("isStacked")
-	boolean isStacked();
+    /**
+     * <code>true</code> if this DataSet is stacked (stacksize > 1) or not.
+     */
+    @Generated
+    @Selector("isStacked")
+    boolean isStacked();
 
-	@Generated
-	@Selector("setBarBorderColor:")
-	void setBarBorderColor(UIColor value);
+    /**
+     * the color drawing borders around the bars.
+     */
+    @Generated
+    @Selector("setBarBorderColor:")
+    void setBarBorderColor(UIColor value);
 
-	@Generated
-	@Selector("setBarBorderWidth:")
-	void setBarBorderWidth(@NFloat double value);
+    /**
+     * the width used for drawing borders around the bars. If borderWidth == 0, no border will be drawn.
+     */
+    @Generated
+    @Selector("setBarBorderWidth:")
+    void setBarBorderWidth(@NFloat double value);
 
-	@Generated
-	@Selector("setBarShadowColor:")
-	void setBarShadowColor(UIColor value);
+    /**
+     * the color used for drawing the bar-shadows. The bar shadows is a surface behind the bar that indicates the maximum value
+     */
+    @Generated
+    @Selector("setBarShadowColor:")
+    void setBarShadowColor(UIColor value);
 
-	@Generated
-	@Selector("setHighlightAlpha:")
-	void setHighlightAlpha(@NFloat double value);
+    /**
+     * the alpha value (transparency) that is used for drawing the highlight indicator bar. min = 0.0 (fully transparent), max = 1.0 (fully opaque)
+     */
+    @Generated
+    @Selector("setHighlightAlpha:")
+    void setHighlightAlpha(@NFloat double value);
 
-	@Generated
-	@Selector("setStackLabels:")
-	void setStackLabels(NSArray<String> value);
+    /**
+     * array of labels used to describe the different values of the stacked bars
+     */
+    @Generated
+    @Selector("setStackLabels:")
+    void setStackLabels(NSArray<String> value);
 
-	@Generated
-	@Selector("stackLabels")
-	NSArray<String> stackLabels();
+    /**
+     * array of labels used to describe the different values of the stacked bars
+     */
+    @Generated
+    @Selector("stackLabels")
+    NSArray<String> stackLabels();
 
-	@Generated
-	@Selector("stackSize")
-	@NInt
-	long stackSize();
+    /**
+     * The maximum number of bars that can be stacked upon another in this DataSet.
+     */
+    @Generated
+    @Selector("stackSize")
+    @NInt
+    long stackSize();
 }

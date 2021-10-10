@@ -2,10 +2,16 @@ buildscript {
     repositories {
         jcenter()
         mavenLocal()
+        maven {
+            url 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
     }
     dependencies {
         // Multi-OS Engine plugin
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.4.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '2.0.0-SNAPSHOT'
+    }
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 1, 'seconds'
     }
 }
 

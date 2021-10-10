@@ -20,42 +20,54 @@ import org.moe.samples.simplechart.charts.ChartData;
 @ObjCProtocolSourceName("ChartDataProvider")
 @ObjCProtocolName("_TtP6Charts17ChartDataProvider_")
 public interface ChartDataProvider {
-	@Generated
-	@Selector("centerOffsets")
-	@ByValue
-	CGPoint centerOffsets();
+    @Generated
+    @Selector("centerOffsets")
+    @ByValue
+    CGPoint centerOffsets();
 
-	@Generated
-	@Selector("chartXMax")
-	double chartXMax();
+    /**
+     * The maximum x-value of the chart, regardless of zoom or translation.
+     */
+    @Generated
+    @Selector("chartXMax")
+    double chartXMax();
 
-	@Generated
-	@Selector("chartXMin")
-	double chartXMin();
+    /**
+     * The minimum x-value of the chart, regardless of zoom or translation.
+     */
+    @Generated
+    @Selector("chartXMin")
+    double chartXMin();
 
-	@Generated
-	@Selector("chartYMax")
-	double chartYMax();
+    /**
+     * The maximum y-value of the chart, regardless of zoom or translation.
+     */
+    @Generated
+    @Selector("chartYMax")
+    double chartYMax();
 
-	@Generated
-	@Selector("chartYMin")
-	double chartYMin();
+    /**
+     * The minimum y-value of the chart, regardless of zoom or translation.
+     */
+    @Generated
+    @Selector("chartYMin")
+    double chartYMin();
 
-	@Generated
-	@Selector("data")
-	ChartData data();
+    @Generated
+    @Selector("data")
+    ChartData data();
 
-	@Generated
-	@Selector("maxHighlightDistance")
-	@NFloat
-	double maxHighlightDistance();
+    @Generated
+    @Selector("maxHighlightDistance")
+    @NFloat
+    double maxHighlightDistance();
 
-	@Generated
-	@Selector("maxVisibleCount")
-	@NInt
-	long maxVisibleCount();
+    @Generated
+    @Selector("maxVisibleCount")
+    @NInt
+    long maxVisibleCount();
 
-	@Generated
-	@Selector("xRange")
-	double xRange();
+    @Generated
+    @Selector("xRange")
+    double xRange();
 }

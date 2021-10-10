@@ -16,99 +16,175 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("ICandleChartDataSet")
 @ObjCProtocolName("_TtP6Charts19ICandleChartDataSet_")
-public interface ICandleChartDataSet extends
-		ILineScatterCandleRadarChartDataSet {
-	@Generated
-	@Selector("barSpace")
-	@NFloat
-	double barSpace();
+public interface ICandleChartDataSet extends ILineScatterCandleRadarChartDataSet {
+    /**
+     * the space that is left out on the left and right side of each candle,
+     * <em>default</em>: 0.1 (10%), max 0.45, min 0.0
+     */
+    @Generated
+    @Selector("barSpace")
+    @NFloat
+    double barSpace();
 
-	@Generated
-	@Selector("decreasingColor")
-	UIColor decreasingColor();
+    /**
+     * color for open < close
+     */
+    @Generated
+    @Selector("decreasingColor")
+    UIColor decreasingColor();
 
-	@Generated
-	@Selector("decreasingFilled")
-	boolean decreasingFilled();
+    /**
+     * Are decreasing values drawn as filled?
+     */
+    @Generated
+    @Selector("decreasingFilled")
+    boolean decreasingFilled();
 
-	@Generated
-	@Selector("increasingColor")
-	UIColor increasingColor();
+    /**
+     * color for open > close
+     */
+    @Generated
+    @Selector("increasingColor")
+    UIColor increasingColor();
 
-	@Generated
-	@Selector("increasingFilled")
-	boolean increasingFilled();
+    /**
+     * Are increasing values drawn as filled?
+     */
+    @Generated
+    @Selector("increasingFilled")
+    boolean increasingFilled();
 
-	@Generated
-	@Selector("isDecreasingFilled")
-	boolean isDecreasingFilled();
+    /**
+     * Are decreasing values drawn as filled?
+     */
+    @Generated
+    @Selector("isDecreasingFilled")
+    boolean isDecreasingFilled();
 
-	@Generated
-	@Selector("isIncreasingFilled")
-	boolean isIncreasingFilled();
+    /**
+     * Are increasing values drawn as filled?
+     */
+    @Generated
+    @Selector("isIncreasingFilled")
+    boolean isIncreasingFilled();
 
-	@Generated
-	@Selector("isShadowColorSameAsCandle")
-	boolean isShadowColorSameAsCandle();
+    /**
+     * Is the shadow color same as the candle color?
+     */
+    @Generated
+    @Selector("isShadowColorSameAsCandle")
+    boolean isShadowColorSameAsCandle();
 
-	@Generated
-	@Selector("neutralColor")
-	UIColor neutralColor();
+    /**
+     * color for open == close
+     */
+    @Generated
+    @Selector("neutralColor")
+    UIColor neutralColor();
 
-	@Generated
-	@Selector("setBarSpace:")
-	void setBarSpace(@NFloat double value);
+    /**
+     * the space that is left out on the left and right side of each candle,
+     * <em>default</em>: 0.1 (10%), max 0.45, min 0.0
+     */
+    @Generated
+    @Selector("setBarSpace:")
+    void setBarSpace(@NFloat double value);
 
-	@Generated
-	@Selector("setDecreasingColor:")
-	void setDecreasingColor(UIColor value);
+    /**
+     * color for open < close
+     */
+    @Generated
+    @Selector("setDecreasingColor:")
+    void setDecreasingColor(UIColor value);
 
-	@Generated
-	@Selector("setDecreasingFilled:")
-	void setDecreasingFilled(boolean value);
+    /**
+     * Are decreasing values drawn as filled?
+     */
+    @Generated
+    @Selector("setDecreasingFilled:")
+    void setDecreasingFilled(boolean value);
 
-	@Generated
-	@Selector("setIncreasingColor:")
-	void setIncreasingColor(UIColor value);
+    /**
+     * color for open > close
+     */
+    @Generated
+    @Selector("setIncreasingColor:")
+    void setIncreasingColor(UIColor value);
 
-	@Generated
-	@Selector("setIncreasingFilled:")
-	void setIncreasingFilled(boolean value);
+    /**
+     * Are increasing values drawn as filled?
+     */
+    @Generated
+    @Selector("setIncreasingFilled:")
+    void setIncreasingFilled(boolean value);
 
-	@Generated
-	@Selector("setNeutralColor:")
-	void setNeutralColor(UIColor value);
+    /**
+     * color for open == close
+     */
+    @Generated
+    @Selector("setNeutralColor:")
+    void setNeutralColor(UIColor value);
 
-	@Generated
-	@Selector("setShadowColor:")
-	void setShadowColor(UIColor value);
+    /**
+     * the color of the shadow line
+     */
+    @Generated
+    @Selector("setShadowColor:")
+    void setShadowColor(UIColor value);
 
-	@Generated
-	@Selector("setShadowColorSameAsCandle:")
-	void setShadowColorSameAsCandle(boolean value);
+    /**
+     * use candle color for the shadow
+     */
+    @Generated
+    @Selector("setShadowColorSameAsCandle:")
+    void setShadowColorSameAsCandle(boolean value);
 
-	@Generated
-	@Selector("setShadowWidth:")
-	void setShadowWidth(@NFloat double value);
+    /**
+     * the width of the candle-shadow-line in pixels.
+     * <em>default</em>: 3.0
+     */
+    @Generated
+    @Selector("setShadowWidth:")
+    void setShadowWidth(@NFloat double value);
 
-	@Generated
-	@Selector("setShowCandleBar:")
-	void setShowCandleBar(boolean value);
+    /**
+     * should the candle bars show?
+     * when false, only “ticks” will show
+     * <em>default</em>: true
+     */
+    @Generated
+    @Selector("setShowCandleBar:")
+    void setShowCandleBar(boolean value);
 
-	@Generated
-	@Selector("shadowColor")
-	UIColor shadowColor();
+    /**
+     * the color of the shadow line
+     */
+    @Generated
+    @Selector("shadowColor")
+    UIColor shadowColor();
 
-	@Generated
-	@Selector("shadowColorSameAsCandle")
-	boolean shadowColorSameAsCandle();
+    /**
+     * use candle color for the shadow
+     */
+    @Generated
+    @Selector("shadowColorSameAsCandle")
+    boolean shadowColorSameAsCandle();
 
-	@Generated
-	@Selector("shadowWidth")
-	@NFloat
-	double shadowWidth();
+    /**
+     * the width of the candle-shadow-line in pixels.
+     * <em>default</em>: 3.0
+     */
+    @Generated
+    @Selector("shadowWidth")
+    @NFloat
+    double shadowWidth();
 
-	@Generated
-	@Selector("showCandleBar")
-	boolean showCandleBar();
+    /**
+     * should the candle bars show?
+     * when false, only “ticks” will show
+     * <em>default</em>: true
+     */
+    @Generated
+    @Selector("showCandleBar")
+    boolean showCandleBar();
 }

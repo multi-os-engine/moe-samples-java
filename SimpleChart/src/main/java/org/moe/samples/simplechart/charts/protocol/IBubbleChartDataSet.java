@@ -15,23 +15,28 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("IBubbleChartDataSet")
 @ObjCProtocolName("_TtP6Charts19IBubbleChartDataSet_")
-public interface IBubbleChartDataSet extends
-		IBarLineScatterCandleBubbleChartDataSet {
-	@Generated
-	@Selector("highlightCircleWidth")
-	@NFloat
-	double highlightCircleWidth();
+public interface IBubbleChartDataSet extends IBarLineScatterCandleBubbleChartDataSet {
+    /**
+     * Sets/gets the width of the circle that surrounds the bubble when highlighted
+     */
+    @Generated
+    @Selector("highlightCircleWidth")
+    @NFloat
+    double highlightCircleWidth();
 
-	@Generated
-	@Selector("isNormalizeSizeEnabled")
-	boolean isNormalizeSizeEnabled();
+    @Generated
+    @Selector("isNormalizeSizeEnabled")
+    boolean isNormalizeSizeEnabled();
 
-	@Generated
-	@Selector("maxSize")
-	@NFloat
-	double maxSize();
+    @Generated
+    @Selector("maxSize")
+    @NFloat
+    double maxSize();
 
-	@Generated
-	@Selector("setHighlightCircleWidth:")
-	void setHighlightCircleWidth(@NFloat double value);
+    /**
+     * Sets/gets the width of the circle that surrounds the bubble when highlighted
+     */
+    @Generated
+    @Selector("setHighlightCircleWidth:")
+    void setHighlightCircleWidth(@NFloat double value);
 }

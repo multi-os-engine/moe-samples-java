@@ -1,6 +1,5 @@
 buildscript {
     repositories {
-        mavenLocal()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
     }
@@ -21,7 +20,7 @@ task copyNatives  {
         def LD_FLAGS = "LIBGDX_NATIVES = "
         configurations.natives.files.each { jar ->
             def outputDir = null
-            if (jar.name.endsWith("natives-ios.jar")) outputDir = file("xcode/native/ios")
+            if (jar.name.matches(".*natives-ios.*")) outputDir = file("xcode/native/ios")
             if (outputDir != null) {
                 FileCollection fileCollection = zipTree(jar)
                 for (File libFile : fileCollection) {
@@ -52,12 +51,15 @@ dependencies {
 
     compile project(":common")
 
-    compile "com.badlogicgames.gdx:gdx-backend-moe:$gdxVersion"
-    natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
+    compile "io.github.berstanio:gdx-backend-moe-metalangle:$gdxVersion"
+    natives "io.github.berstanio:gdx-platform:$gdxVersion:natives-ios-metalangle"
     natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
 }
 
 moe {
+    nativeImage {
+        options = ["--features=com.badlogic.gdx.backends.svm.ConfigCollectionFeatureBase"]
+    }
     xcode {
         project 'xcode/LibGDXMissileCommand.xcodeproj'
         mainTarget 'LibGDXMissileCommand'

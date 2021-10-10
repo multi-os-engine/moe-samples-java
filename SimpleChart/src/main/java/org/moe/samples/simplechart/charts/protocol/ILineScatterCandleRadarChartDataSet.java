@@ -14,33 +14,54 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("ILineScatterCandleRadarChartDataSet")
 @ObjCProtocolName("_TtP6Charts35ILineScatterCandleRadarChartDataSet_")
-public interface ILineScatterCandleRadarChartDataSet extends
-		IBarLineScatterCandleBubbleChartDataSet {
-	@Generated
-	@Selector("drawHorizontalHighlightIndicatorEnabled")
-	boolean drawHorizontalHighlightIndicatorEnabled();
+public interface ILineScatterCandleRadarChartDataSet extends IBarLineScatterCandleBubbleChartDataSet {
+    /**
+     * Enables / disables the horizontal highlight-indicator. If disabled, the indicator is not drawn.
+     */
+    @Generated
+    @Selector("drawHorizontalHighlightIndicatorEnabled")
+    boolean drawHorizontalHighlightIndicatorEnabled();
 
-	@Generated
-	@Selector("drawVerticalHighlightIndicatorEnabled")
-	boolean drawVerticalHighlightIndicatorEnabled();
+    /**
+     * Enables / disables the vertical highlight-indicator. If disabled, the indicator is not drawn.
+     */
+    @Generated
+    @Selector("drawVerticalHighlightIndicatorEnabled")
+    boolean drawVerticalHighlightIndicatorEnabled();
 
-	@Generated
-	@Selector("isHorizontalHighlightIndicatorEnabled")
-	boolean isHorizontalHighlightIndicatorEnabled();
+    /**
+     * <code>true</code> if horizontal highlight indicator lines are enabled (drawn)
+     */
+    @Generated
+    @Selector("isHorizontalHighlightIndicatorEnabled")
+    boolean isHorizontalHighlightIndicatorEnabled();
 
-	@Generated
-	@Selector("isVerticalHighlightIndicatorEnabled")
-	boolean isVerticalHighlightIndicatorEnabled();
+    /**
+     * <code>true</code> if vertical highlight indicator lines are enabled (drawn)
+     */
+    @Generated
+    @Selector("isVerticalHighlightIndicatorEnabled")
+    boolean isVerticalHighlightIndicatorEnabled();
 
-	@Generated
-	@Selector("setDrawHighlightIndicators:")
-	void setDrawHighlightIndicators(boolean enabled);
+    /**
+     * Enables / disables both vertical and horizontal highlight-indicators.
+     * :param: enabled
+     */
+    @Generated
+    @Selector("setDrawHighlightIndicators:")
+    void setDrawHighlightIndicators(boolean enabled);
 
-	@Generated
-	@Selector("setDrawHorizontalHighlightIndicatorEnabled:")
-	void setDrawHorizontalHighlightIndicatorEnabled(boolean value);
+    /**
+     * Enables / disables the horizontal highlight-indicator. If disabled, the indicator is not drawn.
+     */
+    @Generated
+    @Selector("setDrawHorizontalHighlightIndicatorEnabled:")
+    void setDrawHorizontalHighlightIndicatorEnabled(boolean value);
 
-	@Generated
-	@Selector("setDrawVerticalHighlightIndicatorEnabled:")
-	void setDrawVerticalHighlightIndicatorEnabled(boolean value);
+    /**
+     * Enables / disables the vertical highlight-indicator. If disabled, the indicator is not drawn.
+     */
+    @Generated
+    @Selector("setDrawVerticalHighlightIndicatorEnabled:")
+    void setDrawVerticalHighlightIndicatorEnabled(boolean value);
 }

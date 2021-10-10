@@ -18,24 +18,40 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("IScatterChartDataSet")
 @ObjCProtocolName("_TtP6Charts20IScatterChartDataSet_")
-public interface IScatterChartDataSet extends
-		ILineScatterCandleRadarChartDataSet {
-	@Generated
-	@Selector("scatterShapeHoleColor")
-	UIColor scatterShapeHoleColor();
+public interface IScatterChartDataSet extends ILineScatterCandleRadarChartDataSet {
+    /**
+     * returns:
+     * Color for the hole in the shape. Setting to <code>nil</code> will behave as transparent.
+     * <em>default</em>: nil
+     */
+    @Generated
+    @Selector("scatterShapeHoleColor")
+    UIColor scatterShapeHoleColor();
 
-	@Generated
-	@Selector("scatterShapeHoleRadius")
-	@NFloat
-	double scatterShapeHoleRadius();
+    /**
+     * returns:
+     * The radius of the hole in the shape (applies to Square, Circle and Triangle)
+     * Set this to <= 0 to remove holes.
+     * <em>default</em>: 0.0
+     */
+    @Generated
+    @Selector("scatterShapeHoleRadius")
+    @NFloat
+    double scatterShapeHoleRadius();
 
-	@Generated
-	@Selector("scatterShapeSize")
-	@NFloat
-	double scatterShapeSize();
+    /**
+     * The size the scatter shape will have
+     */
+    @Generated
+    @Selector("scatterShapeSize")
+    @NFloat
+    double scatterShapeSize();
 
-	@Generated
-	@Selector("shapeRenderer")
-	@MappedReturn(ObjCObjectMapper.class)
-	Object shapeRenderer();
+    /**
+     * The IShapeRenderer responsible for rendering this DataSet.
+     */
+    @Generated
+    @Selector("shapeRenderer")
+    @MappedReturn(ObjCObjectMapper.class)
+    IShapeRenderer shapeRenderer();
 }

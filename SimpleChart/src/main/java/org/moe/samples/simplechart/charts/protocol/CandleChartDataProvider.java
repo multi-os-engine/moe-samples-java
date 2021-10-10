@@ -15,9 +15,8 @@ import org.moe.samples.simplechart.charts.CandleChartData;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("CandleChartDataProvider")
 @ObjCProtocolName("_TtP6Charts23CandleChartDataProvider_")
-public interface CandleChartDataProvider extends
-		BarLineScatterCandleBubbleChartDataProvider {
-	@Generated
-	@Selector("candleData")
-	CandleChartData candleData();
+public interface CandleChartDataProvider extends BarLineScatterCandleBubbleChartDataProvider {
+    @Generated
+    @Selector("candleData")
+    CandleChartData candleData();
 }

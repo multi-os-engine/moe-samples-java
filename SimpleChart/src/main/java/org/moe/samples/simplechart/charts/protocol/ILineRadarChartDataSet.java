@@ -17,51 +17,95 @@ import org.moe.samples.simplechart.charts.ChartFill;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("ILineRadarChartDataSet")
 @ObjCProtocolName("_TtP6Charts22ILineRadarChartDataSet_")
-public interface ILineRadarChartDataSet extends
-		ILineScatterCandleRadarChartDataSet {
-	@Generated
-	@Selector("drawFilledEnabled")
-	boolean drawFilledEnabled();
+public interface ILineRadarChartDataSet extends ILineScatterCandleRadarChartDataSet {
+    /**
+     * Set to <code>true</code> if the DataSet should be drawn filled (surface), and not just as a line.
+     * Disabling this will give great performance boost.
+     * Please note that this method uses the path clipping for drawing the filled area (with images, gradients and layers).
+     */
+    @Generated
+    @Selector("drawFilledEnabled")
+    boolean drawFilledEnabled();
 
-	@Generated
-	@Selector("fill")
-	ChartFill fill();
+    /**
+     * returns:
+     * The object that is used for filling the area below the line.
+     * <em>default</em>: nil
+     */
+    @Generated
+    @Selector("fill")
+    ChartFill fill();
 
-	@Generated
-	@Selector("fillAlpha")
-	@NFloat
-	double fillAlpha();
+    /**
+     * The alpha value that is used for filling the line surface.
+     * <em>default</em>: 0.33
+     */
+    @Generated
+    @Selector("fillAlpha")
+    @NFloat
+    double fillAlpha();
 
-	@Generated
-	@Selector("fillColor")
-	UIColor fillColor();
+    /**
+     * The color that is used for filling the line surface area.
+     */
+    @Generated
+    @Selector("fillColor")
+    UIColor fillColor();
 
-	@Generated
-	@Selector("isDrawFilledEnabled")
-	boolean isDrawFilledEnabled();
+    /**
+     * <code>true</code> if filled drawing is enabled, <code>false</code> if not
+     */
+    @Generated
+    @Selector("isDrawFilledEnabled")
+    boolean isDrawFilledEnabled();
 
-	@Generated
-	@Selector("lineWidth")
-	@NFloat
-	double lineWidth();
+    /**
+     * line width of the chart (min = 0.0, max = 10)
+     * <em>default</em>: 1
+     */
+    @Generated
+    @Selector("lineWidth")
+    @NFloat
+    double lineWidth();
 
-	@Generated
-	@Selector("setDrawFilledEnabled:")
-	void setDrawFilledEnabled(boolean value);
+    /**
+     * Set to <code>true</code> if the DataSet should be drawn filled (surface), and not just as a line.
+     * Disabling this will give great performance boost.
+     * Please note that this method uses the path clipping for drawing the filled area (with images, gradients and layers).
+     */
+    @Generated
+    @Selector("setDrawFilledEnabled:")
+    void setDrawFilledEnabled(boolean value);
 
-	@Generated
-	@Selector("setFill:")
-	void setFill(ChartFill value);
+    /**
+     * returns:
+     * The object that is used for filling the area below the line.
+     * <em>default</em>: nil
+     */
+    @Generated
+    @Selector("setFill:")
+    void setFill(ChartFill value);
 
-	@Generated
-	@Selector("setFillAlpha:")
-	void setFillAlpha(@NFloat double value);
+    /**
+     * The alpha value that is used for filling the line surface.
+     * <em>default</em>: 0.33
+     */
+    @Generated
+    @Selector("setFillAlpha:")
+    void setFillAlpha(@NFloat double value);
 
-	@Generated
-	@Selector("setFillColor:")
-	void setFillColor(UIColor value);
+    /**
+     * The color that is used for filling the line surface area.
+     */
+    @Generated
+    @Selector("setFillColor:")
+    void setFillColor(UIColor value);
 
-	@Generated
-	@Selector("setLineWidth:")
-	void setLineWidth(@NFloat double value);
+    /**
+     * line width of the chart (min = 0.0, max = 10)
+     * <em>default</em>: 1
+     */
+    @Generated
+    @Selector("setLineWidth:")
+    void setLineWidth(@NFloat double value);
 }

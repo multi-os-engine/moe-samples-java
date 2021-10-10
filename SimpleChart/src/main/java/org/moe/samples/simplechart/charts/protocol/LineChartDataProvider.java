@@ -17,13 +17,12 @@ import org.moe.samples.simplechart.charts.LineChartData;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolSourceName("LineChartDataProvider")
 @ObjCProtocolName("_TtP6Charts21LineChartDataProvider_")
-public interface LineChartDataProvider extends
-		BarLineScatterCandleBubbleChartDataProvider {
-	@Generated
-	@Selector("getAxis:")
-	ChartYAxis getAxis(@NInt long axis);
+public interface LineChartDataProvider extends BarLineScatterCandleBubbleChartDataProvider {
+    @Generated
+    @Selector("getAxis:")
+    ChartYAxis getAxis(@NInt long axis);
 
-	@Generated
-	@Selector("lineData")
-	LineChartData lineData();
+    @Generated
+    @Selector("lineData")
+    LineChartData lineData();
 }

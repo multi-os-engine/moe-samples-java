@@ -22,11 +22,21 @@ import org.moe.samples.simplechart.charts.ChartViewPortHandler;
 @ObjCProtocolSourceName("IShapeRenderer")
 @ObjCProtocolName("_TtP6Charts14IShapeRenderer_")
 public interface IShapeRenderer {
-	@Generated
-	@Selector("renderShapeWithContext:dataSet:viewPortHandler:point:color:")
-	void renderShapeWithContextDataSetViewPortHandlerPointColor(
-			CGContextRef context,
-			@Mapped(ObjCObjectMapper.class) Object dataSet,
-			ChartViewPortHandler viewPortHandler, @ByValue CGPoint point,
-			UIColor color);
+    /**
+     * Renders the provided ScatterDataSet with a shape.
+     * \param context CGContext for drawing on
+     * 
+     * \param dataSet The DataSet to be drawn
+     * 
+     * \param viewPortHandler Contains information about the current state of the view
+     * 
+     * \param point Position to draw the shape at
+     * 
+     * \param color Color to draw the shape
+     */
+    @Generated
+    @Selector("renderShapeWithContext:dataSet:viewPortHandler:point:color:")
+    void renderShapeWithContextDataSetViewPortHandlerPointColor(CGContextRef context,
+            @Mapped(ObjCObjectMapper.class) IScatterChartDataSet dataSet, ChartViewPortHandler viewPortHandler,
+            @ByValue CGPoint point, UIColor color);
 }

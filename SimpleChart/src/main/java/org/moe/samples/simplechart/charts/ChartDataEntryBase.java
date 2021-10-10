@@ -5,6 +5,7 @@ import apple.NSObject;
 import apple.foundation.NSArray;
 import apple.foundation.NSMethodSignature;
 import apple.foundation.NSSet;
+import apple.uikit.UIImage;
 import org.moe.natj.c.ann.FunctionPtr;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
@@ -31,159 +32,198 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @ObjCClassName("_TtC6Charts18ChartDataEntryBase")
 @ObjCClassBinding
 public class ChartDataEntryBase extends NSObject {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected ChartDataEntryBase(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected ChartDataEntryBase(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native ChartDataEntryBase alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native ChartDataEntryBase alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    /**
+     * optional spot for additional data this Entry represents
+     */
+    @Generated
+    @Selector("data")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native Object data();
 
-	@Generated
-	@Selector("data")
-	@MappedReturn(ObjCObjectMapper.class)
-	public native Object data();
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("description")
+    public native String description();
 
-	@Generated
-	@Selector("description")
-	public native String description();
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    /**
+     * optional icon image
+     */
+    @Generated
+    @Selector("icon")
+    public native UIImage icon();
 
-	@Generated
-	@Selector("init")
-	public native ChartDataEntryBase init();
+    @Generated
+    @Selector("init")
+    public native ChartDataEntryBase init();
 
-	@Generated
-	@Selector("initWithY:")
-	public native ChartDataEntryBase initWithY(double y);
+    /**
+     * An Entry represents one single entry in the chart.
+     * \param y the y value (the actual value of the entry)
+     */
+    @Generated
+    @Selector("initWithY:")
+    public native ChartDataEntryBase initWithY(double y);
 
-	@Generated
-	@Selector("initWithY:data:")
-	public native ChartDataEntryBase initWithYData(double y,
-			@Mapped(ObjCObjectMapper.class) Object data);
+    /**
+     * \param y the y value (the actual value of the entry)
+     * 
+     * \param data Space for additional data this Entry represents.
+     */
+    @Generated
+    @Selector("initWithY:data:")
+    public native ChartDataEntryBase initWithYData(double y, @Mapped(ObjCObjectMapper.class) Object data);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    /**
+     * \param y the y value (the actual value of the entry)
+     * 
+     * \param icon icon image
+     */
+    @Generated
+    @Selector("initWithY:icon:")
+    public native ChartDataEntryBase initWithYIcon(double y, UIImage icon);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    /**
+     * \param y the y value (the actual value of the entry)
+     * 
+     * \param icon icon image
+     * 
+     * \param data Space for additional data this Entry represents.
+     */
+    @Generated
+    @Selector("initWithY:icon:data:")
+    public native ChartDataEntryBase initWithYIconData(double y, UIImage icon,
+            @Mapped(ObjCObjectMapper.class) Object data);
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("isEqual:")
-	public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    @Generated
+    @Selector("isEqual:")
+    public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Selector("setData:")
-	public native void setData(@Mapped(ObjCObjectMapper.class) Object value);
+    /**
+     * optional spot for additional data this Entry represents
+     */
+    @Generated
+    @Selector("setData:")
+    public native void setData(@Mapped(ObjCObjectMapper.class) Object value);
 
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
+    /**
+     * optional icon image
+     */
+    @Generated
+    @Selector("setIcon:")
+    public native void setIcon(UIImage value);
 
-	@Generated
-	@Selector("setY:")
-	public native void setY(double value);
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
+    /**
+     * the y value
+     */
+    @Generated
+    @Selector("setY:")
+    public native void setY(double value);
 
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Generated
-	@Selector("y")
-	public native double y();
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
+
+    /**
+     * the y value
+     */
+    @Generated
+    @Selector("y")
+    public native double y();
 }

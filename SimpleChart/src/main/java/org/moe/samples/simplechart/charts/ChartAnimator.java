@@ -31,319 +31,358 @@ import org.moe.samples.simplechart.charts.protocol.ChartAnimatorDelegate;
 @Runtime(ObjCRuntime.class)
 @ObjCClassBinding
 public class ChartAnimator extends NSObject {
-	static {
-		NatJ.register();
-	}
+    static {
+        NatJ.register();
+    }
 
-	@Generated
-	protected ChartAnimator(Pointer peer) {
-		super(peer);
-	}
+    @Generated
+    protected ChartAnimator(Pointer peer) {
+        super(peer);
+    }
 
-	@Generated
-	@Selector("accessInstanceVariablesDirectly")
-	public static native boolean accessInstanceVariablesDirectly();
+    @Generated
+    @Selector("accessInstanceVariablesDirectly")
+    public static native boolean accessInstanceVariablesDirectly();
 
-	@Generated
-	@Owned
-	@Selector("alloc")
-	public static native ChartAnimator alloc();
+    @Generated
+    @Owned
+    @Selector("alloc")
+    public static native ChartAnimator alloc();
 
-	@Generated
-	@Selector("allocWithZone:")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object allocWithZone(VoidPtr zone);
+    @Generated
+    @Selector("allocWithZone:")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object allocWithZone(VoidPtr zone);
 
-	@Generated
-	@Selector("animateWithXAxisDuration:")
-	public native void animateWithXAxisDuration(double xAxisDuration);
+    /**
+     * Animates the drawing / rendering of the chart the x-axis with the specified animation time.
+     * If <code>animate(...)</code> is called, no further calling of <code>invalidate()</code> is necessary to refresh the chart.
+     * \param xAxisDuration duration for animating the x axis
+     * 
+     * \param easing an easing function for the animation
+     */
+    @Generated
+    @Selector("animateWithXAxisDuration:easing:")
+    public native void animateWithXAxisDurationEasing(double xAxisDuration,
+            @ObjCBlock(name = "call_animateWithXAxisDurationEasing") Block_animateWithXAxisDurationEasing easing);
 
-	@Generated
-	@Selector("animateWithXAxisDuration:easing:")
-	public native void animateWithXAxisDurationEasing(
-			double xAxisDuration,
-			@ObjCBlock(name = "call_animateWithXAxisDurationEasing") Block_animateWithXAxisDurationEasing easing);
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_animateWithXAxisDurationEasing {
+        @Generated
+        double call_animateWithXAxisDurationEasing(double arg0, double arg1);
+    }
 
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_animateWithXAxisDurationEasing {
-		@Generated
-		double call_animateWithXAxisDurationEasing(double arg0, double arg1);
-	}
+    /**
+     * Animates the drawing / rendering of the chart the x-axis with the specified animation time.
+     * If <code>animate(...)</code> is called, no further calling of <code>invalidate()</code> is necessary to refresh the chart.
+     * \param xAxisDuration duration for animating the x axis
+     * 
+     * \param easingOption the easing function for the animation
+     */
+    @Generated
+    @Selector("animateWithXAxisDuration:easingOption:")
+    public native void animateWithXAxisDurationEasingOption(double xAxisDuration, @NInt long easingOption);
 
-	@Generated
-	@Selector("animateWithXAxisDuration:easingOption:")
-	public native void animateWithXAxisDurationEasingOption(
-			double xAxisDuration, @NInt long easingOption);
+    /**
+     * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
+     * If <code>animate(...)</code> is called, no further calling of <code>invalidate()</code> is necessary to refresh the chart.
+     * \param xAxisDuration duration for animating the x axis
+     * 
+     * \param yAxisDuration duration for animating the y axis
+     * 
+     * \param easing an easing function for the animation
+     */
+    @Generated
+    @Selector("animateWithXAxisDuration:yAxisDuration:easing:")
+    public native void animateWithXAxisDurationYAxisDurationEasing(
+            double xAxisDuration,
+            double yAxisDuration,
+            @ObjCBlock(name = "call_animateWithXAxisDurationYAxisDurationEasing") Block_animateWithXAxisDurationYAxisDurationEasing easing);
 
-	@Generated
-	@Selector("animateWithXAxisDuration:yAxisDuration:")
-	public native void animateWithXAxisDurationYAxisDuration(
-			double xAxisDuration, double yAxisDuration);
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_animateWithXAxisDurationYAxisDurationEasing {
+        @Generated
+        double call_animateWithXAxisDurationYAxisDurationEasing(double arg0, double arg1);
+    }
 
-	@Generated
-	@Selector("animateWithXAxisDuration:yAxisDuration:easing:")
-	public native void animateWithXAxisDurationYAxisDurationEasing(
-			double xAxisDuration,
-			double yAxisDuration,
-			@ObjCBlock(name = "call_animateWithXAxisDurationYAxisDurationEasing") Block_animateWithXAxisDurationYAxisDurationEasing easing);
+    /**
+     * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
+     * If <code>animate(...)</code> is called, no further calling of <code>invalidate()</code> is necessary to refresh the chart.
+     * \param xAxisDuration duration for animating the x axis
+     * 
+     * \param yAxisDuration duration for animating the y axis
+     * 
+     * \param easingOption the easing function for the animation
+     */
+    @Generated
+    @Selector("animateWithXAxisDuration:yAxisDuration:easingOption:")
+    public native void animateWithXAxisDurationYAxisDurationEasingOption(double xAxisDuration, double yAxisDuration,
+            @NInt long easingOption);
 
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_animateWithXAxisDurationYAxisDurationEasing {
-		@Generated
-		double call_animateWithXAxisDurationYAxisDurationEasing(double arg0,
-				double arg1);
-	}
+    /**
+     * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
+     * If <code>animate(...)</code> is called, no further calling of <code>invalidate()</code> is necessary to refresh the chart.
+     * \param xAxisDuration duration for animating the x axis
+     * 
+     * \param yAxisDuration duration for animating the y axis
+     * 
+     * \param easingOptionX the easing function for the animation on the x axis
+     * 
+     * \param easingOptionY the easing function for the animation on the y axis
+     */
+    @Generated
+    @Selector("animateWithXAxisDuration:yAxisDuration:easingOptionX:easingOptionY:")
+    public native void animateWithXAxisDurationYAxisDurationEasingOptionXEasingOptionY(double xAxisDuration,
+            double yAxisDuration, @NInt long easingOptionX, @NInt long easingOptionY);
 
-	@Generated
-	@Selector("animateWithXAxisDuration:yAxisDuration:easingOption:")
-	public native void animateWithXAxisDurationYAxisDurationEasingOption(
-			double xAxisDuration, double yAxisDuration, @NInt long easingOption);
+    /**
+     * Animates the drawing / rendering of the chart on both x- and y-axis with the specified animation time.
+     * If <code>animate(...)</code> is called, no further calling of <code>invalidate()</code> is necessary to refresh the chart.
+     * \param xAxisDuration duration for animating the x axis
+     * 
+     * \param yAxisDuration duration for animating the y axis
+     * 
+     * \param easingX an easing function for the animation on the x axis
+     * 
+     * \param easingY an easing function for the animation on the y axis
+     */
+    @Generated
+    @Selector("animateWithXAxisDuration:yAxisDuration:easingX:easingY:")
+    public native void animateWithXAxisDurationYAxisDurationEasingXEasingY(
+            double xAxisDuration,
+            double yAxisDuration,
+            @ObjCBlock(name = "call_animateWithXAxisDurationYAxisDurationEasingXEasingY_2") Block_animateWithXAxisDurationYAxisDurationEasingXEasingY_2 easingX,
+            @ObjCBlock(name = "call_animateWithXAxisDurationYAxisDurationEasingXEasingY_3") Block_animateWithXAxisDurationYAxisDurationEasingXEasingY_3 easingY);
 
-	@Generated
-	@Selector("animateWithXAxisDuration:yAxisDuration:easingOptionX:easingOptionY:")
-	public native void animateWithXAxisDurationYAxisDurationEasingOptionXEasingOptionY(
-			double xAxisDuration, double yAxisDuration,
-			@NInt long easingOptionX, @NInt long easingOptionY);
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_animateWithXAxisDurationYAxisDurationEasingXEasingY_2 {
+        @Generated
+        double call_animateWithXAxisDurationYAxisDurationEasingXEasingY_2(double arg0, double arg1);
+    }
 
-	@Generated
-	@Selector("animateWithXAxisDuration:yAxisDuration:easingX:easingY:")
-	public native void animateWithXAxisDurationYAxisDurationEasingXEasingY(
-			double xAxisDuration,
-			double yAxisDuration,
-			@ObjCBlock(name = "call_animateWithXAxisDurationYAxisDurationEasingXEasingY_2") Block_animateWithXAxisDurationYAxisDurationEasingXEasingY_2 easingX,
-			@ObjCBlock(name = "call_animateWithXAxisDurationYAxisDurationEasingXEasingY_3") Block_animateWithXAxisDurationYAxisDurationEasingXEasingY_3 easingY);
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_animateWithXAxisDurationYAxisDurationEasingXEasingY_3 {
+        @Generated
+        double call_animateWithXAxisDurationYAxisDurationEasingXEasingY_3(double arg0, double arg1);
+    }
 
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_animateWithXAxisDurationYAxisDurationEasingXEasingY_2 {
-		@Generated
-		double call_animateWithXAxisDurationYAxisDurationEasingXEasingY_2(
-				double arg0, double arg1);
-	}
+    /**
+     * Animates the drawing / rendering of the chart the y-axis with the specified animation time.
+     * If <code>animate(...)</code> is called, no further calling of <code>invalidate()</code> is necessary to refresh the chart.
+     * \param yAxisDuration duration for animating the y axis
+     * 
+     * \param easing an easing function for the animation
+     */
+    @Generated
+    @Selector("animateWithYAxisDuration:easing:")
+    public native void animateWithYAxisDurationEasing(double yAxisDuration,
+            @ObjCBlock(name = "call_animateWithYAxisDurationEasing") Block_animateWithYAxisDurationEasing easing);
 
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_animateWithXAxisDurationYAxisDurationEasingXEasingY_3 {
-		@Generated
-		double call_animateWithXAxisDurationYAxisDurationEasingXEasingY_3(
-				double arg0, double arg1);
-	}
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_animateWithYAxisDurationEasing {
+        @Generated
+        double call_animateWithYAxisDurationEasing(double arg0, double arg1);
+    }
 
-	@Generated
-	@Selector("animateWithYAxisDuration:")
-	public native void animateWithYAxisDuration(double yAxisDuration);
+    /**
+     * Animates the drawing / rendering of the chart the y-axis with the specified animation time.
+     * If <code>animate(...)</code> is called, no further calling of <code>invalidate()</code> is necessary to refresh the chart.
+     * \param yAxisDuration duration for animating the y axis
+     * 
+     * \param easingOption the easing function for the animation
+     */
+    @Generated
+    @Selector("animateWithYAxisDuration:easingOption:")
+    public native void animateWithYAxisDurationEasingOption(double yAxisDuration, @NInt long easingOption);
 
-	@Generated
-	@Selector("animateWithYAxisDuration:easing:")
-	public native void animateWithYAxisDurationEasing(
-			double yAxisDuration,
-			@ObjCBlock(name = "call_animateWithYAxisDurationEasing") Block_animateWithYAxisDurationEasing easing);
+    @Generated
+    @Selector("automaticallyNotifiesObserversForKey:")
+    public static native boolean automaticallyNotifiesObserversForKey(String key);
 
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_animateWithYAxisDurationEasing {
-		@Generated
-		double call_animateWithYAxisDurationEasing(double arg0, double arg1);
-	}
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:")
+    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
 
-	@Generated
-	@Selector("animateWithYAxisDuration:easingOption:")
-	public native void animateWithYAxisDurationEasingOption(
-			double yAxisDuration, @NInt long easingOption);
+    @Generated
+    @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
+    public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
+            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
+            @Mapped(ObjCObjectMapper.class) Object anArgument);
 
-	@Generated
-	@Selector("automaticallyNotifiesObserversForKey:")
-	public static native boolean automaticallyNotifiesObserversForKey(String key);
+    @Generated
+    @Selector("classFallbacksForKeyedArchiver")
+    public static native NSArray<String> classFallbacksForKeyedArchiver();
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:")
-	public static native void cancelPreviousPerformRequestsWithTarget(
-			@Mapped(ObjCObjectMapper.class) Object aTarget);
+    @Generated
+    @Selector("classForKeyedUnarchiver")
+    public static native Class classForKeyedUnarchiver();
 
-	@Generated
-	@Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
-	public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-			@Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-			@Mapped(ObjCObjectMapper.class) Object anArgument);
+    @Generated
+    @Selector("debugDescription")
+    public static native String debugDescription_static();
 
-	@Generated
-	@Selector("class")
-	public static native Class class_objc_static();
+    @Generated
+    @Selector("delegate")
+    @MappedReturn(ObjCObjectMapper.class)
+    public native ChartAnimatorDelegate delegate();
 
-	@Generated
-	@Selector("classFallbacksForKeyedArchiver")
-	public static native NSArray<String> classFallbacksForKeyedArchiver();
+    @Generated
+    @Selector("description")
+    public static native String description_static();
 
-	@Generated
-	@Selector("classForKeyedUnarchiver")
-	public static native Class classForKeyedUnarchiver();
+    @Generated
+    @Selector("hash")
+    @NUInt
+    public static native long hash_static();
 
-	@Generated
-	@Selector("debugDescription")
-	public static native String debugDescription_static();
+    @Generated
+    @Selector("init")
+    public native ChartAnimator init();
 
-	@Generated
-	@Selector("delegate")
-	@MappedReturn(ObjCObjectMapper.class)
-	public native ChartAnimatorDelegate delegate();
+    @Generated
+    @Selector("instanceMethodForSelector:")
+    @FunctionPtr(name = "call_instanceMethodForSelector_ret")
+    public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("description")
-	public static native String description_static();
+    @Generated
+    @Selector("instanceMethodSignatureForSelector:")
+    public static native NSMethodSignature instanceMethodSignatureForSelector(SEL aSelector);
 
-	@Generated
-	@Selector("hash")
-	@NUInt
-	public static native long hash_static();
+    @Generated
+    @Selector("instancesRespondToSelector:")
+    public static native boolean instancesRespondToSelector(SEL aSelector);
 
-	@Generated
-	@Selector("init")
-	public native ChartAnimator init();
+    @Generated
+    @Selector("isSubclassOfClass:")
+    public static native boolean isSubclassOfClass(Class aClass);
 
-	@Generated
-	@Selector("initialize")
-	public static native void initialize_static();
+    @Generated
+    @Selector("keyPathsForValuesAffectingValueForKey:")
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
 
-	@Generated
-	@Selector("instanceMethodForSelector:")
-	@FunctionPtr(name = "call_instanceMethodForSelector_ret")
-	public static native NSObject.Function_instanceMethodForSelector_ret instanceMethodForSelector(
-			SEL aSelector);
+    @Generated
+    @Owned
+    @Selector("new")
+    @MappedReturn(ObjCObjectMapper.class)
+    public static native Object new_objc();
 
-	@Generated
-	@Selector("instanceMethodSignatureForSelector:")
-	public static native NSMethodSignature instanceMethodSignatureForSelector(
-			SEL aSelector);
+    /**
+     * the phase that is animated and influences the drawn values on the x-axis
+     */
+    @Generated
+    @Selector("phaseX")
+    public native double phaseX();
 
-	@Generated
-	@Selector("instancesRespondToSelector:")
-	public static native boolean instancesRespondToSelector(SEL aSelector);
+    /**
+     * the phase that is animated and influences the drawn values on the y-axis
+     */
+    @Generated
+    @Selector("phaseY")
+    public native double phaseY();
 
-	@Generated
-	@Selector("isSubclassOfClass:")
-	public static native boolean isSubclassOfClass(Class aClass);
+    @Generated
+    @Selector("resolveClassMethod:")
+    public static native boolean resolveClassMethod(SEL sel);
 
-	@Generated
-	@Selector("keyPathsForValuesAffectingValueForKey:")
-	public static native NSSet<String> keyPathsForValuesAffectingValueForKey(
-			String key);
+    @Generated
+    @Selector("resolveInstanceMethod:")
+    public static native boolean resolveInstanceMethod(SEL sel);
 
-	@Generated
-	@Selector("load")
-	public static native void load_objc_static();
+    @Generated
+    @Selector("setDelegate:")
+    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ChartAnimatorDelegate value);
 
-	@Generated
-	@Owned
-	@Selector("new")
-	@MappedReturn(ObjCObjectMapper.class)
-	public static native Object new_objc();
+    @Generated
+    public void setDelegate(@Mapped(ObjCObjectMapper.class) ChartAnimatorDelegate value) {
+        Object __old = delegate();
+        if (value != null) {
+            org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
+        }
+        setDelegate_unsafe(value);
+        if (__old != null) {
+            org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
+        }
+    }
 
-	@Generated
-	@Selector("phaseX")
-	public native double phaseX();
+    /**
+     * the phase that is animated and influences the drawn values on the x-axis
+     */
+    @Generated
+    @Selector("setPhaseX:")
+    public native void setPhaseX(double value);
 
-	@Generated
-	@Selector("phaseY")
-	public native double phaseY();
+    /**
+     * the phase that is animated and influences the drawn values on the y-axis
+     */
+    @Generated
+    @Selector("setPhaseY:")
+    public native void setPhaseY(double value);
 
-	@Generated
-	@Selector("resolveClassMethod:")
-	public static native boolean resolveClassMethod(SEL sel);
+    @Generated
+    @Selector("setStopBlock:")
+    public native void setStopBlock(@ObjCBlock(name = "call_setStopBlock") Block_setStopBlock value);
 
-	@Generated
-	@Selector("resolveInstanceMethod:")
-	public static native boolean resolveInstanceMethod(SEL sel);
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setStopBlock {
+        @Generated
+        void call_setStopBlock();
+    }
 
-	@Generated
-	@Selector("setDelegate:")
-	public native void setDelegate_unsafe(
-			@Mapped(ObjCObjectMapper.class) ChartAnimatorDelegate value);
+    @Generated
+    @Selector("setUpdateBlock:")
+    public native void setUpdateBlock(@ObjCBlock(name = "call_setUpdateBlock") Block_setUpdateBlock value);
 
-	@Generated
-	public void setDelegate(
-			@Mapped(ObjCObjectMapper.class) ChartAnimatorDelegate value) {
-		Object __old = delegate();
-		if (value != null) {
-			org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
-		}
-		setDelegate_unsafe(value);
-		if (__old != null) {
-			org.moe.natj.objc.ObjCRuntime.dissociateObjCObject(this, __old);
-		}
-	}
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_setUpdateBlock {
+        @Generated
+        void call_setUpdateBlock();
+    }
 
-	@Generated
-	@Selector("setPhaseX:")
-	public native void setPhaseX(double value);
+    @Generated
+    @Selector("setVersion:")
+    public static native void setVersion(@NInt long aVersion);
 
-	@Generated
-	@Selector("setPhaseY:")
-	public native void setPhaseY(double value);
+    @Generated
+    @Selector("stop")
+    public native void stop();
 
-	@Generated
-	@Selector("setStopBlock:")
-	public native void setStopBlock(
-			@ObjCBlock(name = "call_setStopBlock") Block_setStopBlock value);
+    @Generated
+    @Selector("stopBlock")
+    @ObjCBlock(name = "call_stopBlock_ret")
+    public native Block_stopBlock_ret stopBlock();
 
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_setStopBlock {
-		@Generated
-		void call_setStopBlock();
-	}
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_stopBlock_ret {
+        @Generated
+        void call_stopBlock_ret();
+    }
 
-	@Generated
-	@Selector("setUpdateBlock:")
-	public native void setUpdateBlock(
-			@ObjCBlock(name = "call_setUpdateBlock") Block_setUpdateBlock value);
+    @Generated
+    @Selector("superclass")
+    public static native Class superclass_static();
 
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_setUpdateBlock {
-		@Generated
-		void call_setUpdateBlock();
-	}
+    @Generated
+    @Selector("updateBlock")
+    @ObjCBlock(name = "call_updateBlock_ret")
+    public native Block_updateBlock_ret updateBlock();
 
-	@Generated
-	@Selector("setVersion:")
-	public static native void setVersion(@NInt long aVersion);
+    @Runtime(ObjCRuntime.class)
+    @Generated
+    public interface Block_updateBlock_ret {
+        @Generated
+        void call_updateBlock_ret();
+    }
 
-	@Generated
-	@Selector("stop")
-	public native void stop();
-
-	@Generated
-	@Selector("stopBlock")
-	@ObjCBlock(name = "call_stopBlock_ret")
-	public native Block_stopBlock_ret stopBlock();
-
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_stopBlock_ret {
-		@Generated
-		void call_stopBlock_ret();
-	}
-
-	@Generated
-	@Selector("superclass")
-	public static native Class superclass_static();
-
-	@Generated
-	@Selector("updateBlock")
-	@ObjCBlock(name = "call_updateBlock_ret")
-	public native Block_updateBlock_ret updateBlock();
-
-	@Runtime(ObjCRuntime.class)
-	@Generated
-	public interface Block_updateBlock_ret {
-		@Generated
-		void call_updateBlock_ret();
-	}
-
-	@Generated
-	@Selector("version")
-	@NInt
-	public static native long version_static();
+    @Generated
+    @Selector("version")
+    @NInt
+    public static native long version_static();
 }
