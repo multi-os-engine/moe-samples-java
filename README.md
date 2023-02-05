@@ -1,6 +1,12 @@
 Multi-OS Engine Samples
 =======================
 
+The goal of this fork is to update MOE examples so that they work with current software:  
+Android Studio Dolphin | 2021.3.1 Patch 1  
+Gradle 7.6  
+Android API 33  
+Tested on MacOs 11.7.3  
+
 The following samples are available for the Multi-OS Engine:
 
 | Name | Test Status | Description |
