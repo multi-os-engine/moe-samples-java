@@ -57,6 +57,7 @@ public class Currency {
         }
 
         try {
+            // yahoo api has been changed, the request does not work!
             String sUrl = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22" +
                     currencyIdentifierFrom + currencyIdentifierTo + "%22)&env=store://datatables.org/alltableswithkeys";
             rate = getRateFromURL(sUrl);
