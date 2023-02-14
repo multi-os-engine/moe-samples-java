@@ -18,10 +18,14 @@ The following samples are available for the Multi-OS Engine:
 | **InAppPurchase** | PARTIAL | Demonstrates how to make purchases in your applications. <br />**Notes:** Android module builds and runs, iOS does not build. |
 | **LibGDXMissileCommand** | - | Shows how to implement libGDX game. |
 | **LocalizedString** | - | Shows how to use iOS's localization APIs. |
+| **MOEBenchmark** |
 | **MuseumMap** | - | Sample is based on SimpleMap sample. This application demonstrates how to work with SQL DB. <br />**Notes:** Requires Google Maps API Key |
+| **OpenGLBox** |
 | **Planets** | OK | Demonstrates working with UI Kit graphics. |
+| **ResizableMKCircleOverlay** |
 | **RssReader** | OK | Demonstrates use of HTTP and HTTPS using Java* API |
 | **SimpleChart** | - | A simple application displaying a chart using the Charts pod |
+| **SpeakHere** |
 | **Taxi** | - | A template for taxi app that allows to select an address on Google Map <br />**Notes:** Multiple issues, needs update. |
 | **TheElements** |OK | Demonstrates reading content from XML file. Works with UITableView, adding cells, using scrolling. Example of Master-Detail view, loading images from assets, reacting to taps in views, flipping view content from front to back |
 | **TicTacToe** | OK | Demonstrates a simple game creation technique without  sprites. Using buttons and performing actions. |
