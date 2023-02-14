@@ -1,11 +1,11 @@
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
         mavenLocal()
     }
     dependencies {
         // Multi-OS Engine plugin
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.5.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.9.0'
     }
 }
 
@@ -19,7 +19,7 @@ targetCompatibility = "1.8"
 
 // Set maven repository
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 // Exclude all files from Gradle's test runner
@@ -36,9 +36,9 @@ moe {
 
 dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
-    compile fileTree(dir: 'lib', include: '*.jar')
+    implementation fileTree(dir: 'lib', include: '*.jar')
 
-    compile project(':common')
+    implementation project(':common')
 }
 
 // Setup Eclipse
