@@ -20,7 +20,7 @@ The following samples are available for the Multi-OS Engine:
 | **LocalizedString** | - | Shows how to use iOS's localization APIs. |
 | **MOEBenchmark** | FAIL | seems like some build steps are missing. No instructions |
 | **MuseumMap** | - | Sample is based on SimpleMap sample. This application demonstrates how to work with SQL DB. <br />**Notes:** Requires Google Maps API Key |
-| **OpenGLBox** |
+| **OpenGLBox** | OK | Shows how to use OpenGL |
 | **Planets** | OK | Demonstrates working with UI Kit graphics. |
 | **ResizableMKCircleOverlay** |
 | **RssReader** | OK | Demonstrates use of HTTP and HTTPS using Java* API |
