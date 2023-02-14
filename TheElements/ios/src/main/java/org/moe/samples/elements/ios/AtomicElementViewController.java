@@ -162,7 +162,6 @@ public class AtomicElementViewController extends UIViewController {
         return viewRect;
     }
 
-    @Override
     public void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size, @Mapped(ObjCObjectMapper.class) Object coordinator) {
         CGRect viewRect = getRectForSubViews(size);
         atomicElementView.setFrame(viewRect);

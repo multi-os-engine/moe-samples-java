@@ -20,7 +20,7 @@ The following samples are available for the Multi-OS Engine:
 | **LocalizedString** | - | Shows how to use iOS's localization APIs. |
 | **MuseumMap** | - | Sample is based on SimpleMap sample. This application demonstrates how to work with SQL DB. <br />**Notes:** Requires Google Maps API Key |
 | **Planets** | OK | Demonstrates working with UI Kit graphics. |
-| **RssReader** | - | Demonstrates use of HTTP and HTTPS using Java* API |
+| **RssReader** | OK | Demonstrates use of HTTP and HTTPS using Java* API |
 | **SimpleChart** | - | A simple application displaying a chart using the Charts pod |
 | **Taxi** | - | A template for taxi app that allows to select an address on Google Map <br />**Notes:** Multiple issues, needs update. |
 | **TheElements** | - | Demonstrates reading content from XML file. Works with UITableView, adding cells, using scrolling. Example of Master-Detail view, loading images from assets, reacting to taps in views, flipping view content from front to back |
