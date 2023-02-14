@@ -18,8 +18,7 @@ The following samples are available for the Multi-OS Engine:
 | **InAppPurchase** | PARTIAL | Demonstrates how to make purchases in your applications. <br />**Notes:** Android module builds and runs, iOS does not build. |
 | **LibGDXMissileCommand** | - | Shows how to implement libGDX game. |
 | **LocalizedString** | - | Shows how to use iOS's localization APIs. |
-| **MOEBenchmark** | FAIL | seems like some build steps are missing.
-No instructions |
+| **MOEBenchmark** | FAIL | seems like some build steps are missing. No instructions |
 | **MuseumMap** | - | Sample is based on SimpleMap sample. This application demonstrates how to work with SQL DB. <br />**Notes:** Requires Google Maps API Key |
 | **OpenGLBox** |
 | **Planets** | OK | Demonstrates working with UI Kit graphics. |
