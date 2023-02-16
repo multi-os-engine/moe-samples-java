@@ -14,7 +14,6 @@ The following samples are available for the Multi-OS Engine:
 | **Calculator** | OK | A cross platform calculator. Demonstrates simple techniques: work with buttons, performing actions. |
 | **CurrencyConverter** | OK | Demonstrates how to open an URL and retrieve the content of that URL just using built-in Java* classes. |
 | **FastJNI** | OK | Demonstrates the usage of Android's FastJNI. |
-| **HelloMaven** | FAIL | no access to moe-maven plugin |
 | **InAppPurchase** | PARTIAL | Demonstrates how to make purchases in your applications. <br />**Notes:** Android module builds and runs, iOS does not build. |
 | **LibGDXMissileCommand** | - | Shows how to implement libGDX game. |
 | **LocalizedString** | - | Shows how to use iOS's localization APIs. |
