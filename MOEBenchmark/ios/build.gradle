@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
         mavenLocal()
     }
     dependencies {
@@ -19,7 +19,7 @@ targetCompatibility = "1.8"
 
 // Set maven repository
 repositories {
-        mavenCentral()
+    jcenter()
 }
 
 // Exclude all files from Gradle's test runner
@@ -41,8 +41,8 @@ moe {
 
 dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
-    implementation fileTree(dir: 'lib', include: '*.jar')
-    implementation project(":common")
+    compile fileTree(dir: 'lib', include: '*.jar')
+    compile project(":common")
 }
 
 // Setup Eclipse
