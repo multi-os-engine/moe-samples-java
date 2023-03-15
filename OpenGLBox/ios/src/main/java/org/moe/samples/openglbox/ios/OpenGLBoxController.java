@@ -63,6 +63,7 @@ import apple.opengles.enums.EAGLRenderingAPI;
 import apple.opengles.enums.ES2;
 import apple.uikit.UIEvent;
 import apple.uikit.enums.UIRectEdge;
+import apple.uikit.protocol.UIViewControllerTransitionCoordinator;
 
 public class OpenGLBoxController extends GLKViewController implements
 		GLKViewDelegate {
@@ -119,7 +120,7 @@ public class OpenGLBoxController extends GLKViewController implements
 	}
 
     @Override
-    public void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size, @Mapped(ObjCObjectMapper.class) Object coordinator) {
+	public void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size, @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
         if (isPaused())
             glkView.setNeedsDisplay();
     }

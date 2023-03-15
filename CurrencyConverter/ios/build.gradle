@@ -4,15 +4,15 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.5.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.9.0'
     }
 }
 
 apply plugin: 'moe'
 
 dependencies {
-    compile fileTree(dir: 'lib', include: '*.jar')
-    compile project(':common')
+    implementation fileTree(dir: 'lib', include: '*.jar')
+    implementation project(':common')
 }
 
 moe {

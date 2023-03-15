@@ -4,19 +4,19 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.5.+'
+        classpath group: 'org.multi-os-engine', name: 'moe-gradle', version: '1.9.0'
     }
 }
 
 apply plugin: 'moe-sdk'
 
 compileJava {
-    targetCompatibility = 1.7
-    sourceCompatibility = 1.7
+    targetCompatibility = 1.9
+    sourceCompatibility = 1.9
 }
 
 dependencies {
-    compile fileTree(dir: 'lib', include: '*.jar')
-    compile files(moe.platformJar)
-    compile project(':framework:framework-common')
+    implementation fileTree(dir: 'lib', include: '*.jar')
+    implementation files(moe.platformJar)
+    implementation project(':framework:framework-common')
 }

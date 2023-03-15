@@ -37,6 +37,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Currency {
 
@@ -57,8 +59,8 @@ public class Currency {
         }
 
         try {
-            String sUrl = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(%22" +
-                    currencyIdentifierFrom + currencyIdentifierTo + "%22)&env=store://datatables.org/alltableswithkeys";
+            String sUrl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/" +
+                    currencyIdentifierFrom.toLowerCase() + "/"+ currencyIdentifierTo.toLowerCase() +".json";
             rate = getRateFromURL(sUrl);
             if (rate.equals("N/A")) {
                 return 0.0;
@@ -71,7 +73,7 @@ public class Currency {
     }
 
     private static String getRateFromURL(String myURL) {
-        System.out.println("Requeted URL:" + myURL);
+        System.out.println("Requested URL:" + myURL);
         StringBuilder sb = new StringBuilder();
         InputStreamReader in = null;
         InputStream inputStream = null;
@@ -116,15 +118,13 @@ public class Currency {
             }
         }
 
-        String rate = sb.toString();
-        int startIndex = rate.indexOf("<Rate>");
-        int endIndex = rate.indexOf("</Rate>");
-        if (startIndex != -1 && endIndex != -1) {
-            rate = rate.substring(startIndex + 6, endIndex);
-        } else {
-            rate = "";
+        Pattern p = Pattern.compile(": (\\d+\\.\\d+)");
+        Matcher m = p.matcher(sb.toString());
+        if (!m.find()) {
+            return "N/A";
         }
-
+        String rate = m.group(1);
+        double _rate = Double.parseDouble(rate);    // sanity check
         return rate;
     }
 
